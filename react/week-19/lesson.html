@@ -1,0 +1,1166 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Week 19 - React 101 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../week-20/lesson.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Course</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Before you start
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../others/lesson0.html">
+            
+                <a href="../../others/lesson0.html">
+            
+                    
+                    Week 0 - Introduction and basic setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../house-rules.md">
+            
+                <span>
+            
+                    
+                    House Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../html-css/">
+            
+                <a href="../../html-css/">
+            
+                    
+                    HTML/CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../html-css/week-01/lesson.html">
+            
+                <a href="../../html-css/week-01/lesson.html">
+            
+                    
+                    Week 1 - Semantic HTML and CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../html-css/week-02/lesson.html">
+            
+                <a href="../../html-css/week-02/lesson.html">
+            
+                    
+                    Week 2 - Responsive Web, Layout and Flexbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../html-css/week-03/lesson.html">
+            
+                <a href="../../html-css/week-03/lesson.html">
+            
+                    
+                    Week 3 - HTML Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../js-core/">
+            
+                <a href="../../js-core/">
+            
+                    
+                    JavaScript I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../js-core/week-04/lesson.html">
+            
+                <a href="../../js-core/week-04/lesson.html">
+            
+                    
+                    Week 4 - Hello JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../js-core/week-05/lesson.html">
+            
+                <a href="../../js-core/week-05/lesson.html">
+            
+                    
+                    Week 5 - Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../js-core/week-06/lesson.html">
+            
+                <a href="../../js-core/week-06/lesson.html">
+            
+                    
+                    Week 6 - More Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../js-core-2/">
+            
+                <a href="../../js-core-2/">
+            
+                    
+                    JavaScript II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../js-core-2/week-07/lesson.html">
+            
+                <a href="../../js-core-2/week-07/lesson.html">
+            
+                    
+                    Week 7 - Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../js-core-2/week-08/lesson.html">
+            
+                <a href="../../js-core-2/week-08/lesson.html">
+            
+                    
+                    Week 8 - JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../js-core-2/week-09/lesson.html">
+            
+                <a href="../../js-core-2/week-09/lesson.html">
+            
+                    
+                    Week 9 - More JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../js-core-3/">
+            
+                <a href="../../js-core-3/">
+            
+                    
+                    JavaScript III
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../js-core-3/week-10/lesson.html">
+            
+                <a href="../../js-core-3/week-10/lesson.html">
+            
+                    
+                    Week 10 - Unit Tests and TDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../js-core-3/week-11/lesson.html">
+            
+                <a href="../../js-core-3/week-11/lesson.html">
+            
+                    
+                    Week 11 - More TDD, ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../js-core-3/week-12/lesson.html">
+            
+                <a href="../../js-core-3/week-12/lesson.html">
+            
+                    
+                    Week 12 - Recap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../node-db/">
+            
+                <a href="../../node-db/">
+            
+                    
+                    Node/DB I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../node-db/week-13/lesson.html">
+            
+                <a href="../../node-db/week-13/lesson.html">
+            
+                    
+                    Week 13 - Node and Express 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../node-db/week-14/lesson.html">
+            
+                <a href="../../node-db/week-14/lesson.html">
+            
+                    
+                    Week 14 - Middleware, Templating and APIs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../node-db/week-15/lesson.html">
+            
+                <a href="../../node-db/week-15/lesson.html">
+            
+                    
+                    Week 15 - Advanced Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../node-db/">
+            
+                <a href="../../node-db/">
+            
+                    
+                    Node/DB II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../node-db/week-16/lesson.html">
+            
+                <a href="../../node-db/week-16/lesson.html">
+            
+                    
+                    Week 16 - Basic SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../node-db/week-17/lesson.html">
+            
+                <a href="../../node-db/week-17/lesson.html">
+            
+                    
+                    Week 17 - SQL with Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../node-db/week-18/lesson.html">
+            
+                <a href="../../node-db/week-18/lesson.html">
+            
+                    
+                    Week 18 - Data Integrity & Analytics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.9.1" data-path="lesson.html">
+            
+                <a href="lesson.html">
+            
+                    
+                    Week 19 - React 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../week-20/lesson.html">
+            
+                <a href="../week-20/lesson.html">
+            
+                    
+                    Week 20 - State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../week-21/lesson.html">
+            
+                <a href="../week-21/lesson.html">
+            
+                    
+                    Week 21 - React-router & Recap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Useful information</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../CODE_OF_CONDUCT.html">
+            
+                <a href="../../CODE_OF_CONDUCT.html">
+            
+                    
+                    Code of Conduct
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../others/useful-links.html">
+            
+                <a href="../../others/useful-links.html">
+            
+                    
+                    Useful links
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../others/PRACTICES.html">
+            
+                <a href="../../others/PRACTICES.html">
+            
+                    
+                    Coding Standards and Best Practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../others/making-a-pull-request.html">
+            
+                <a href="../../others/making-a-pull-request.html">
+            
+                    
+                    Making a Pull Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../others/career-development.html">
+            
+                <a href="../../others/career-development.html">
+            
+                    
+                    Career Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Workshops and other resources</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../others/coding-101.html">
+            
+                <a href="../../others/coding-101.html">
+            
+                    
+                    Coding 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../html-css/compile-scss-instructions.html">
+            
+                <a href="../../html-css/compile-scss-instructions.html">
+            
+                    
+                    Compiling SCSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../node-db/week-13/workshop.html">
+            
+                <a href="../../node-db/week-13/workshop.html">
+            
+                    
+                    Express Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../node-db/week-15/workshop.html">
+            
+                <a href="../../node-db/week-15/workshop.html">
+            
+                    
+                    Hotel Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../others/aws-workshop-2.html">
+            
+                <a href="../../others/aws-workshop-2.html">
+            
+                    
+                    AWS - DynamoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" >
+            
+                <a target="_blank" href="https://github.com/Thomas-Stewart/syllabus/tree/master/java">
+            
+                    
+                    Java module
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">For Mentors</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../CONTRIBUTING.html">
+            
+                <a href="../../CONTRIBUTING.html">
+            
+                    
+                    Contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../others/lesson-template.html">
+            
+                <a href="../../others/lesson-template.html">
+            
+                    
+                    Lesson Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    JavaScript I
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../../js-core/week-04/mentors.md">
+            
+                <span>
+            
+                    
+                    Week 4 - Hello JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Week 19 - React 101</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="react-1">React 1</h1>
+<p><img src="https://img.shields.io/badge/status-draft-darkred.svg" alt=""></p>
+<p><strong>What will we learn today?</strong></p>
+<ul>
+<li><a href="#what-is-react">What is React?</a></li>
+<li><a href="#what-is-a-component">What is a component?</a></li>
+<li><a href="#rendering-with-react">Rendering with React</a></li>
+<li><a href="#jsx">JSX</a></li>
+<li><a href="#lets-create-a-react-app">Let&apos;s Create a React App</a></li>
+<li><a href="#react-components">React Components</a></li>
+<li><a href="#embedding-js-into-jsx">Embedding JS into JSX</a></li>
+<li><a href="#importingexporting-components">Importing/Exporting Components</a></li>
+</ul>
+<h2 id="what-is-react">What is React?</h2>
+<p>React is a JavaScript library created by Facebook. It is used for making complex, interactive user interfaces. It has become very popular in the last 5 years.</p>
+<p>Why has it become so popular?</p>
+<ul>
+<li>It is fast and efficient</li>
+<li>It is easy to understand &amp; less verbose than &quot;vanilla&quot; JS api</li>
+<li>It helps separate functionality into small, understandable pieces</li>
+</ul>
+<h2 id="what-is-a-component">What is a component?</h2>
+<p>React heavily relies on a concept called &quot;components&quot;. Components are like small Lego blocks for designing and developing user interfaces. They can be stuck together in different ways to create new UI.</p>
+<p>Let&apos;s have a look at an example: the GitHub header. What are logical &quot;pieces&quot; of UI? What could be a component?</p>
+<p><img src="../assets/components.png" alt="GitHub header"></p>
+<p>Here we&apos;ve highlighted some elements that could be components:</p>
+<p><img src="../assets/components-highlighted.png" alt="GitHub header with components highlighted"></p>
+<h3 id="component-tips">Component tips</h3>
+<p>There are no hard &amp; fast rules for making components. UIs can be split up into components in many different ways, requiring judgement based on your context.</p>
+<ul>
+<li>Components should follow the Single Responsibility Principle<ul>
+<li>Each component should only have 1 &quot;responsibility&quot;</li>
+<li>Should only do 1 thing</li>
+</ul>
+</li>
+<li>Components should have good, explicit names<ul>
+<li>This helps you to remember what the component&apos;s job is</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Exercise</strong>:
+Look at the example online shopping user interface in the <a href="https://reactjs.org/docs/thinking-in-react.html" target="_blank">Thinking in React article</a> (the image at the top). Draw boxes around the components and give them names. Compare with the example components shown in the second image.</p>
+</blockquote>
+<h2 id="rendering-with-react">Rendering with React</h2>
+<p>Remember how annoying it was to manage the DOM yourself in <a href="https://codeyourfuture.github.io/syllabus-master/js-core-2/week-08/lesson.html" target="_blank">week 8</a>? The &quot;vanilla&quot; JavaScript apis for updating the DOM are quite long and difficult to remember. React makes this easier by instead of manipulating each DOM element itself. You give React a &quot;description&quot; of the DOM that you want and it will  update the DOM for you. React &quot;abstracts&quot; away the management of the DOM.</p>
+<p>Let&apos;s take a look at an example. We are going to walk through how to render a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span></code> with the text &quot;Hello World&quot; within it.</p>
+<p>First, lets recap how we could do this using &quot;vanilla&quot; JS (<a href="http://jsbin.com/motorexehu/edit?html,output" target="_blank">interactive version</a>):</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>root<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    var divNode = document.createElement(&apos;div&apos;);
+    var textNode = document.createTextNode(&apos;Hello World&apos;);
+    divNode.appendChild(textNode);
+
+    var rootElement = document.getElementById(&apos;root&apos;);
+    rootElement.appendChild(divNode);
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>Now let&apos;s convert to using React (<a href="http://jsbin.com/recegadexu/edit?html,output" target="_blank">interactive version</a>):</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- Load React &amp; ReactDOM scripts --&gt;</span>
+<span class="token comment">&lt;!-- Don&apos;t worry about how we&apos;re doing this yet! --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://unpkg.com/react@16.0.0/umd/react.development.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- Root element --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>root<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    const element = React.createElement(&apos;div&apos;, {
+        children: &apos;Hello World&apos;
+    })
+
+    const rootElement = document.getElementById(&apos;root&apos;)
+    ReactDOM.render(element, rootElement)
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h2 id="jsx">JSX</h2>
+<p>As you can see, React is already helping us a bit by cleaning up some of the verbose vanilla JS APIs. However in a typical React application you would still use a <em>lot</em> of the <code>React.createElement</code> function. To improve the developer experience the React team developed <strong>JSX</strong>.</p>
+<p>JSX is a simple syntax &quot;sugar&quot; that <em>looks</em> like HTML, but is actually converted to the <code>React.createElement</code> function when you run it.</p>
+<p>Using JSX (<a href="http://jsbin.com/gekahexige/edit?html,output" target="_blank">interactive version</a>):</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://unpkg.com/react@16.0.0/umd/react.development.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- Add Babel script, which compiles JSX to React.createElement --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://unpkg.com/babel-standalone@6.26.0/babel.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>root<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/babel<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    const element = <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Hello World<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+    const rootElement = document.getElementById(&apos;root&apos;)
+    ReactDOM.render(element, rootElement)
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>As you can see, this is much easier to read than both the straight <code>React.createElement</code> API and the vanilla JS API. Most people using React use JSX to write their components.</p>
+<blockquote>
+<p><strong>Exercises</strong></p>
+<ol>
+<li>Change the <a href="http://jsbin.com/gekahexige/edit?html,output" target="_blank">JSX example from above</a> to instead render a <code>h1</code> with an id of <code>&quot;main-header&quot;</code> and the text &quot;Hello Ali&quot;</li>
+<li>Visit the <a href="https://babeljs.io/repl/#?babili=false&amp;browsers=&amp;build=&amp;builtIns=false&amp;code_lz=DwEwlgbgfAEgpgGwQewAQHVkCcEmAenGiA&amp;debug=false&amp;forceAllTransforms=false&amp;shippedProposals=false&amp;circleciRepo=&amp;evaluate=true&amp;fileSize=false&amp;lineWrap=false&amp;presets=es2015%2Creact%2Cstage-2&amp;prettier=false&amp;targets=&amp;version=6.26.0&amp;envVersion=" target="_blank">Babel REPL</a> and copy/paste the <code>h1</code> that you just created</li>
+</ol>
+</blockquote>
+<h2 id="lets-create-a-react-app">Let&apos;s Create A React App</h2>
+<p>The Facebook team behind React have created a tool to help you create and set up React projects. It is called <a href="https://github.com/facebook/create-react-app" target="_blank">Create React App</a>. We will use it for the rest of the module.</p>
+<blockquote>
+<p><strong>Exercise</strong>: Install &amp; set up a Create React App by following the steps below</p>
+</blockquote>
+<pre class="language-"><code>npm install -g create-react-app
+
+create-react-app my-hotel
+cd my-hotel/
+npm start
+</code></pre><p>Notice that create-react-app has created a bunch of folders for you in the <code>my-hotel</code> directory.</p>
+<h2 id="react-components">React Components</h2>
+<p>We looked at the beginning of the lesson at the concept of components. Now let&apos;s look at how components are made in React.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">&apos;react-dom&apos;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>Hello World<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>HelloWorld <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;root&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Components get more powerful when you combine (or &quot;compose&quot;) several components together (<a href="https://stackblitz.com/edit/react-nxhe2q" target="_blank">interactive example</a>):</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Greeting</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>Hello<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Mentor</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>Ali<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Greeting <span class="token operator">/</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Mentor <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Notice how the components that we write (<code>HelloWorld</code>, <code>Greeting</code>, <code>Mentor</code>) are <code>camelCased</code> and always start with an uppercase letter? And &quot;regular DOM&quot; components (<code>div</code>, <code>span</code>) are always lowercase? This the convention to let you know whether you are using a &quot;regular DOM component&quot; or something that you have written.</p>
+<h2 id="embedding-js-into-jsx">Embedding JS into JSX</h2>
+<p>Like Handlebars, you can insert variables (and some other things) into React components. Anything that is inside curly braces (<code>{</code> and <code>}</code>) is interpreted as a regular JavaScript &quot;expression&quot;. That means you can use every object or function from JavaScript that we have learned so far. Let&apos;s look at an example (<a href="https://stackblitz.com/edit/react-byupse" target="_blank">interactive example</a>):</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Mentor</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> mentors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;Ali&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Kash&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Davide&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;German&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Gerald&apos;</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span><span class="token punctuation">{</span>mentors<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&apos;, &apos;</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Now we have modified the <code>Mentor</code> component to use the <code>Array.join</code> method so that it lists several mentor&apos;s names. This also works with other JS types:</p>
+<pre class="language-"><code class="lang-js"><span class="token operator">&lt;</span>span<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+</code></pre>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> weather <span class="token operator">=</span> <span class="token punctuation">{</span>
+    temperature<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+    location<span class="token punctuation">:</span> <span class="token string">&apos;London&apos;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>The temperature <span class="token keyword">in</span> <span class="token punctuation">{</span>weather<span class="token punctuation">.</span>location<span class="token punctuation">}</span> is <span class="token punctuation">{</span>weather<span class="token punctuation">.</span>temperature<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+</code></pre>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">formatName</span><span class="token punctuation">(</span><span class="token parameter">user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> user<span class="token punctuation">.</span>firstName <span class="token operator">+</span> <span class="token string">&apos; &apos;</span> <span class="token operator">+</span> user<span class="token punctuation">.</span>lastName
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>span<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token function">formatName</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+</code></pre>
+<p>A common pattern in React is to use <code>Array.map</code> to loop through a list of items and render a component for each one (<a href="https://stackblitz.com/edit/react-z51fpz" target="_blank">interactive example</a>):</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> mentors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;Ali&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Kash&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Davide&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;German&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Gerald&apos;</span><span class="token punctuation">]</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Item</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">List</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>items<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+          <span class="token operator">&lt;</span>Item name<span class="token operator">=</span><span class="token punctuation">{</span>item<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Here we are using <code>Array.map</code> to turn an array of strings into an array of components. We are using a &quot;real&quot; map function, not just special syntax like <code>{{&gt; each}}</code> from Handlebars.</p>
+<p>An (<a href="https://stackblitz.com/edit/react-cwryrk" target="_blank">interactive example</a>) of separating the 2 components in the example above in 2 files.</p>
+<blockquote>
+<p><strong>Exercise</strong>:
+Using the <code>my-hotel</code> React app that you created earlier, edit <code>src/App.js</code> to create a hotel welcome page.</p>
+<ol>
+<li>Change the title to say &quot;Welcome to CYF Hotel&quot; and change the <code>img</code> to have <code>src=&quot;https://codeyourfuture.io/static/media/cyf_brand.fbcea877.png&quot;</code></li>
+<li>Copy the content of the <code>header</code> to a new component called <code>Logo</code></li>
+<li>Replace the <code>header</code> with a usage of the new <code>Logo</code> component</li>
+<li>Replace the <code>p</code> with a message saying that there are bookings available for today&apos;s date (hint <code>new Date().toLocaleDateString()</code>)</li>
+<li>Extract the <code>p</code> to a component named <code>BookingsMessage</code></li>
+<li>Create a new component <code>SpecialDeals</code> and render an empty <code>div</code></li>
+<li>Within the <code>SpecialDeals</code> components, use an array containing some special deal strings and render each one as a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span></code> within the <code>div</code></li>
+</ol>
+</blockquote>
+<h2 id="importingexporting-components">Importing/Exporting Components</h2>
+<p>To help organise your code, components can be imported and exported just like any other JavaScript code (<a href="https://stackblitz.com/edit/react-jnkuqk" target="_blank">interactive example</a>):</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> Greeting <span class="token keyword">from</span> <span class="token string">&apos;./Greeting&apos;</span>
+<span class="token keyword">import</span> Mentor <span class="token keyword">from</span> <span class="token string">&apos;./Mentor&apos;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">HelloMentor</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Greeting <span class="token operator">/</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Mentor <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><strong>Exercise</strong>:
+Using the <code>my-hotel</code> app, edit <code>src/App.js</code> to extract the <code>Logo</code>, <code>BookingsMessage</code> and <code>SpecialDeals</code> components to new files <code>src/Logo.js</code> and <code>src/SpecialDeals.js</code>
+Hint: you will need to import React</p>
+</blockquote>
+<h4 id="credits">Credits</h4>
+<p>Inspiration &amp; examples for this module were taken from <a href="https://twitter.com/kentcdodds" target="_blank">Kent C. Dodd&apos;s</a> <a href="https://egghead.io/courses/the-beginner-s-guide-to-reactjs" target="_blank">Beginner&apos;s Guide to ReactJS</a> course on Egghead.io. It&apos;s a free course, so check it out :)</p>
+<h1 id="homework">Homework</h1>
+<p>Complete user stories 1, 2 and 3 from the <a href="https://github.com/CodeYourFuture/cyf-hotel-react" target="_blank">cyf-hotel-react</a> project</p>
+<h3 id="prepare-for-the-next-class">Prepare for the next class</h3>
+<ol>
+<li>Follow the official <a href="https://reactjs.org/tutorial/tutorial.html" target="_blank">React tutorial</a></li>
+<li>Watch the <a href="https://egghead.io/courses/the-beginner-s-guide-to-reactjs" target="_blank">Beginner&apos;s Guide to ReactJS</a> on Egghead.io</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: React">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../week-20/lesson.html" class="navigation navigation-next " aria-label="Next page: Week 20 - State">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Week 19 - React 101","level":"1.9.1","depth":2,"next":{"title":"Week 20 - State","level":"1.9.2","depth":2,"path":"react/week-20/lesson.md","ref":"react/week-20/lesson.md","articles":[]},"previous":{"title":"React","level":"1.9","depth":1,"path":"react/index.md","ref":"react/index.md","articles":[{"title":"Week 19 - React 101","level":"1.9.1","depth":2,"path":"react/week-19/lesson.md","ref":"react/week-19/lesson.md","articles":[]},{"title":"Week 20 - State","level":"1.9.2","depth":2,"path":"react/week-20/lesson.md","ref":"react/week-20/lesson.md","articles":[]},{"title":"Week 21 - React-router & Recap","level":"1.9.3","depth":2,"path":"react/week-21/lesson.md","ref":"react/week-21/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-19/lesson.md","mtime":"2019-09-10T19:21:16.590Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-10T19:22:26.297Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-scripts/865192367b808254b99cb0ba7092e452-checkboxRemember.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

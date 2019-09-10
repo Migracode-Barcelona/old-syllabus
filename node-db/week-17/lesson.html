@@ -1,0 +1,1096 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Week 17 - SQL with Node · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../week-18/lesson.html" />
+    
+    
+    <link rel="prev" href="../week-16/lesson.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Course</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Before you start
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../others/lesson0.html">
+            
+                <a href="../../others/lesson0.html">
+            
+                    
+                    Week 0 - Introduction and basic setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../house-rules.md">
+            
+                <span>
+            
+                    
+                    House Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../html-css/">
+            
+                <a href="../../html-css/">
+            
+                    
+                    HTML/CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../html-css/week-01/lesson.html">
+            
+                <a href="../../html-css/week-01/lesson.html">
+            
+                    
+                    Week 1 - Semantic HTML and CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../html-css/week-02/lesson.html">
+            
+                <a href="../../html-css/week-02/lesson.html">
+            
+                    
+                    Week 2 - Responsive Web, Layout and Flexbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../html-css/week-03/lesson.html">
+            
+                <a href="../../html-css/week-03/lesson.html">
+            
+                    
+                    Week 3 - HTML Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../js-core/">
+            
+                <a href="../../js-core/">
+            
+                    
+                    JavaScript I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../js-core/week-04/lesson.html">
+            
+                <a href="../../js-core/week-04/lesson.html">
+            
+                    
+                    Week 4 - Hello JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../js-core/week-05/lesson.html">
+            
+                <a href="../../js-core/week-05/lesson.html">
+            
+                    
+                    Week 5 - Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../js-core/week-06/lesson.html">
+            
+                <a href="../../js-core/week-06/lesson.html">
+            
+                    
+                    Week 6 - More Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../js-core-2/">
+            
+                <a href="../../js-core-2/">
+            
+                    
+                    JavaScript II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../js-core-2/week-07/lesson.html">
+            
+                <a href="../../js-core-2/week-07/lesson.html">
+            
+                    
+                    Week 7 - Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../js-core-2/week-08/lesson.html">
+            
+                <a href="../../js-core-2/week-08/lesson.html">
+            
+                    
+                    Week 8 - JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../js-core-2/week-09/lesson.html">
+            
+                <a href="../../js-core-2/week-09/lesson.html">
+            
+                    
+                    Week 9 - More JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../js-core-3/">
+            
+                <a href="../../js-core-3/">
+            
+                    
+                    JavaScript III
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../js-core-3/week-10/lesson.html">
+            
+                <a href="../../js-core-3/week-10/lesson.html">
+            
+                    
+                    Week 10 - Unit Tests and TDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../js-core-3/week-11/lesson.html">
+            
+                <a href="../../js-core-3/week-11/lesson.html">
+            
+                    
+                    Week 11 - More TDD, ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../js-core-3/week-12/lesson.html">
+            
+                <a href="../../js-core-3/week-12/lesson.html">
+            
+                    
+                    Week 12 - Recap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Node/DB I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../week-13/lesson.html">
+            
+                <a href="../week-13/lesson.html">
+            
+                    
+                    Week 13 - Node and Express 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../week-14/lesson.html">
+            
+                <a href="../week-14/lesson.html">
+            
+                    
+                    Week 14 - Middleware, Templating and APIs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../week-15/lesson.html">
+            
+                <a href="../week-15/lesson.html">
+            
+                    
+                    Week 15 - Advanced Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Node/DB II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../week-16/lesson.html">
+            
+                <a href="../week-16/lesson.html">
+            
+                    
+                    Week 16 - Basic SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.2" data-path="lesson.html">
+            
+                <a href="lesson.html">
+            
+                    
+                    Week 17 - SQL with Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../week-18/lesson.html">
+            
+                <a href="../week-18/lesson.html">
+            
+                    
+                    Week 18 - Data Integrity & Analytics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../react/">
+            
+                <a href="../../react/">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../react/week-19/lesson.html">
+            
+                <a href="../../react/week-19/lesson.html">
+            
+                    
+                    Week 19 - React 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../react/week-20/lesson.html">
+            
+                <a href="../../react/week-20/lesson.html">
+            
+                    
+                    Week 20 - State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../react/week-21/lesson.html">
+            
+                <a href="../../react/week-21/lesson.html">
+            
+                    
+                    Week 21 - React-router & Recap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Useful information</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../CODE_OF_CONDUCT.html">
+            
+                <a href="../../CODE_OF_CONDUCT.html">
+            
+                    
+                    Code of Conduct
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../others/useful-links.html">
+            
+                <a href="../../others/useful-links.html">
+            
+                    
+                    Useful links
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../others/PRACTICES.html">
+            
+                <a href="../../others/PRACTICES.html">
+            
+                    
+                    Coding Standards and Best Practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../others/making-a-pull-request.html">
+            
+                <a href="../../others/making-a-pull-request.html">
+            
+                    
+                    Making a Pull Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../others/career-development.html">
+            
+                <a href="../../others/career-development.html">
+            
+                    
+                    Career Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Workshops and other resources</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../others/coding-101.html">
+            
+                <a href="../../others/coding-101.html">
+            
+                    
+                    Coding 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../html-css/compile-scss-instructions.html">
+            
+                <a href="../../html-css/compile-scss-instructions.html">
+            
+                    
+                    Compiling SCSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../week-13/workshop.html">
+            
+                <a href="../week-13/workshop.html">
+            
+                    
+                    Express Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../week-15/workshop.html">
+            
+                <a href="../week-15/workshop.html">
+            
+                    
+                    Hotel Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../others/aws-workshop-2.html">
+            
+                <a href="../../others/aws-workshop-2.html">
+            
+                    
+                    AWS - DynamoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" >
+            
+                <a target="_blank" href="https://github.com/Thomas-Stewart/syllabus/tree/master/java">
+            
+                    
+                    Java module
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">For Mentors</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../CONTRIBUTING.html">
+            
+                <a href="../../CONTRIBUTING.html">
+            
+                    
+                    Contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../others/lesson-template.html">
+            
+                <a href="../../others/lesson-template.html">
+            
+                    
+                    Lesson Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    JavaScript I
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../../js-core/week-04/mentors.md">
+            
+                <span>
+            
+                    
+                    Week 4 - Hello JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Week 17 - SQL with Node</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="lesson-2-linking-javascript-and-sql">LESSON 2: LINKING JAVASCRIPT AND SQL</h1>
+<p><strong>Review of last lesson</strong></p>
+<p>What we did last lesson:</p>
+<ul>
+<li>Why we need databases</li>
+<li>Installing SQLite</li>
+<li>Creating a database with SQL and storing data in it.</li>
+<li>Inserting data into a database using SQL.</li>
+<li>Retrieving data from a database using SQL.</li>
+<li>Escaping (who figured out how to insert my real name into the database?)</li>
+</ul>
+<p>Homework from last lesson:</p>
+<p><img src="hotel-er-diagram.png" alt="Hotel ER diagram" title="Hotel ER diagram"></p>
+<ul>
+<li>Did you do update?</li>
+<li>Did everybody finish hotel.sql so that it looks like the above diagram?</li>
+<li>About those foreign key constraints that weren&apos;t being enforced on SQLite -- enforce PRAGMA and version</li>
+<li>Did we understand foreign keys?</li>
+<li>Does everybody have enough data in their database? Between 5 and 10 rows per table.</li>
+</ul>
+<p><strong>What we will learn today?</strong></p>
+<ul>
+<li>Checking out a project and adding hotel.sql to the repo</li>
+<li>How to run SQLite <em>with node</em> on your machine - setting up a development environment.</li>
+<li>How to run a database query that retrieves tabular data in node express to an endpoint.</li>
+<li>Inserting data from an endpoint.</li>
+<li>Updating data from an endpoint.</li>
+<li>Dealing with unclear user stories. There is a TRAP in one of these user stories we will be giving you today.</li>
+<li>What is the difference between user story, use case and user acceptance test. </li>
+</ul>
+<h3 id="setting-up-the-environment">Setting up the environment</h3>
+<p><strong>Task</strong> Clone the <a href="ADD%20THE%20LINK%20!!!">repo</a>, and follow the instructions to set the environment up.</p>
+<p>You have already worked with back end servers using Express. This is just another yet another one, that we will be connecting to a database.</p>
+<p>In order for us to interact with the server, we are going to use <a href="https://www.getpostman.com/" target="_blank">Postman</a>, which will accurately mimic API calls made from react. In the last three lessons you&apos;re going to make react do to this back end what postman is going to do today.</p>
+<p>We&apos;re going to use it for debugging. Can anybody tell me what debugging is?</p>
+<p><img src="debugging.jpg" alt="Debugging" title="Debugging"></p>
+<p><img src="client-postman-server.jpg" alt="postman-get-1"></p>
+<p><strong>Task</strong> Download and install <a href="https://www.getpostman.com/" target="_blank">Postman</a>.</p>
+<p>Now let us all try Postman by GETting from <code>http://localhost:8080/api/customers</code>, as is shown next.</p>
+<p><img src="postman-get-1.png" alt="postman-get-1"></p>
+<h3 id="lesson-1-select-all-the-things">LESSON 1: SELECT ALL THE THINGS!</h3>
+<p><strong>User Story:</strong> As a staff member, I want to be able to view a list of customers so that I can see who has visited our hotel.</p>
+<p><strong>Use case</strong> When a user does a GET request to /customers it should return customer titles, first names, surnames.</p>
+<p><strong>User acceptance test</strong>: Do a GET request and get back [{&quot;title&quot;: &quot;mr&quot;, &quot;firstname&quot;: &quot;Donald&quot;, &quot;surname&quot;: &quot;Trump&quot;}, {&quot;title&quot;: &quot;Mrs&quot;, &quot;firstname&quot;: &quot;Hillary&quot;, &quot;surname&quot;: &quot;Clinton&quot;}]</p>
+<p>Remove the code that is returning a JSON object on end point <code>/customers</code>, and use what you have learned about to SQL to fill in the query that fetches all the customers from the database.</p>
+<p>You will need to install a package to deal with sqlite <code>npm install --save sqlite3</code> then add this code before the routes in <code>class2.js</code></p>
+<pre class="language-"><code class="lang-javascript"><span class="token comment">// Add these lines before the routes definition</span>
+<span class="token keyword">const</span> filename <span class="token operator">=</span> <span class="token string">&apos;./database/database.sqlite&apos;</span>
+<span class="token keyword">const</span> knex <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;knex&apos;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  client<span class="token punctuation">:</span> <span class="token string">&apos;sqlite3&apos;</span><span class="token punctuation">,</span>
+  connection<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    filename
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>select everything</li>
+</ul>
+<pre class="language-"><code class="lang-javascript">
+<span class="token comment">// This is the route we will need to update</span>
+router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&apos;/customers&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    customers<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      title<span class="token punctuation">:</span> <span class="token string">&apos;Mr&apos;</span><span class="token punctuation">,</span>
+      firstname<span class="token punctuation">:</span> <span class="token string">&apos;Laurie&apos;</span><span class="token punctuation">,</span>
+      surname<span class="token punctuation">:</span> <span class="token string">&apos;Ainley&apos;</span><span class="token punctuation">,</span>
+      email<span class="token punctuation">:</span> <span class="token string">&apos;laurie@ainley.com&apos;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Who can tell me what this is currently doing? What do we need to make it do?</p>
+<p>So, the answer is here:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">const</span> sqlStatement <span class="token operator">=</span> <span class="token string">&apos;select * from customers&apos;</span><span class="token punctuation">;</span>
+knex<span class="token punctuation">.</span><span class="token function">raw</span><span class="token punctuation">(</span>sqlStatement<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>This is <a href="https://knexjs.org/" target="_blank">the library</a> we will use for building queries. <code>Knex</code> provides helpers for creating queries so we normally won&apos;t use <code>knex.raw</code> in real applications, but we will use it today to practice SQL more, and write &quot;raw&quot; SQL statements.</p>
+<h3 id="exercise-1">Exercise 1</h3>
+<p><strong>User Story:</strong> As a staff member I need to check the details of a given customer given its id.</p>
+<p><strong>User Acceptance test</strong>: Complete the end-point <code>/customers/:id</code>, so that it extracts that customer information from the database, and replies back with that information as JSON.</p>
+<ul>
+<li>select and filter by id</li>
+<li>hint: simple select and filter by ID</li>
+</ul>
+<p>STRETCH GOAL (OPTIONAL) : If you get a request of /customers/notanumber (anything that isn&apos;t a number) it should return an HTTP 400 bad request.</p>
+<h3 id="lesson-2--like-whatever">LESSON 2 : LIKE, WHATEVER</h3>
+<p>So, now we&apos;re going to deal with one of the most common issues with hotel databases: the guest&apos;s name being misspelled.</p>
+<p>So, &quot;Hilary Clinten&quot; is added to the database. She calls up on the phone asking about her reservation and spells her name correctly on the phone. The hotel staff knows what <em>some of her name</em> sounds like but not all of it and they want to find her as a customer on the system.</p>
+<p>For this problem where we want to search in <em>part</em> of a string we use the LIKE command:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> customers <span class="token keyword">where</span> surname <span class="token operator">like</span> <span class="token string">&apos;%lint%&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>This returns all of the customers who have the name &apos;lint&apos; in their names.</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> customers <span class="token keyword">where</span> surname <span class="token operator">like</span> <span class="token string">&apos;%clint%&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>This won&apos;t return anything at all. Why not?</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> customers <span class="token keyword">where</span> surname ilike <span class="token string">&apos;%clint%&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>This will. Why?</p>
+<h3 id="exercise-2a">EXERCISE 2A</h3>
+<p><strong>User Story:</strong> As a staff member I want to search for a customer through its <code>surname</code>, but we don&apos;t know that it might be misspelled.</p>
+<p><strong>User Acceptance test</strong>: Complete the end-point <code>/customers/:surname</code>, so that it extracts that customer information from the database, and replies back with that information as JSON.</p>
+<ul>
+<li>select and filter through like</li>
+</ul>
+<h3 id="exercise-3">EXERCISE 3</h3>
+<p><strong>User Story:</strong> As a guest, I want to register my details in the system so that I can check availability for my stay.</p>
+<p><strong>User Acceptance test</strong>: Take the data being POSTed to the <code>/customers</code> endpoint check it is inserted into the database.</p>
+<p>STRETCH GOAL (OPTIONAL): If a bad request is made to customers - first name is missing, for instance, return an HTTP 400 Bad reqest.</p>
+<h3 id="homework-4">HOMEWORK 4</h3>
+<p><strong>Notes on Postman</strong></p>
+<p>In the next image you can see Postman doing a POST request. Highlighed areas indicate the fields that need to be changed and/or information that needs to be added. The arrow points to a tab where you will need to set the type of content of this request. As denoted by the arrow legend, you will need to set <code>Content-Type</code> to <code>application/json</code>.
+<img src="postman-post-1.png" alt="postman-get-1"></p>
+<p><strong>User Story:</strong> As a guest, I noticed that there is a typo on my details and wish to correct it.</p>
+<p><strong>Use Case</strong>: I go to &apos;/customers/:id&apos; endpoint and send updated data for each customer parameter: title, firstname, surname.</p>
+<p><strong>User acceptance test</strong>: PUT title=mr, firstname=donald, surname=trump on /customers/:id and check that the database was updated.</p>
+<ul>
+<li>update table</li>
+<li>remember your previous lesson</li>
+<li>hint: in the javascript code, instead of db.all() you will need ... what?</li>
+</ul>
+<h3 id="homework-4--stretch-goal-optional">HOMEWORK 4 : STRETCH GOAL (OPTIONAL)</h3>
+<p>The end point should properly detect which customer properties are being updated, and generate the appropriate SQL update statement.</p>
+<h3 id="homework-5">HOMEWORK 5</h3>
+<p><strong>User Story:</strong> As a staff member, I want to create a new reservation.</p>
+<p>Create and end-point to post a new reservation to <code>/reservations/</code>.</p>
+<ul>
+<li>insert into</li>
+<li>create the endpoint from scratch</li>
+<li>which HTTP method should you use?</li>
+</ul>
+<p>STRETCH GOAL (OPTIONAL) : Return {&quot;status&quot;: &quot;error&quot;: &quot;reason&quot;: &quot;reason...&quot;} if <em>anything</em> was wrong with the request.</p>
+<h3 id="lesson-6--i-wish-i-could-delete-him-in-real-life">LESSON 6 : I WISH I COULD DELETE HIM IN REAL LIFE</h3>
+<p>We&apos;ve currently done inserting data and updating data, but sometimes inserting data was just a mistake
+and it needs to go.</p>
+<p>It&apos;s a fairly simple command that looks like select, you just specify the table and a predicate and it wipes:</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">delete</span> <span class="token keyword">from</span> customers <span class="token keyword">where</span> surname ilike <span class="token string">&apos;%trump%&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>There are several things you need to worry about when you delete data and what you do about them will depend entirely upon what it is you are trying to do:</p>
+<ul>
+<li><p>What happens to the data that depends upon the data you deleted?
+-- What if Trump had a reservation? Either a) delete the reservation as well? or b) raise an error and force the user to delete the data manually if they really want him gone.</p>
+</li>
+<li><p>What if you want to undo the deletion?</p>
+</li>
+<li><p>What if you want to mark some data as deleted but you might still want to refer to it?</p>
+</li>
+<li><p>Often it&apos;s a good idea to give data the &apos;status&apos; deleted instead of actually deleting it.</p>
+</li>
+</ul>
+<h3 id="homework-6">HOMEWORK 6</h3>
+<p><strong>User Story:</strong> As a staff member, I want to delete a canceled reservation from the database.</p>
+<p><strong>Notes on Postman</strong>
+The delete request is actually pretty straight forward. We only need to select the type and provide the url:
+<img src="postman-delete-1.png" alt="postman-get-1"></p>
+<p>Create an end-point to delete a given reservation from <code>/reservation/:id/</code>.</p>
+<ul>
+<li>delete</li>
+</ul>
+<h3 id="homework-7">HOMEWORK 7</h3>
+<p><strong>User Story:</strong> As a staff member, I want to get a list of all the existing reservations.</p>
+<p>Create an end-point to get from <code>/reservations</code> all existing reservations.</p>
+<ul>
+<li>create the endpoint from scratch</li>
+</ul>
+<h3 id="homework-8">HOMEWORK 8</h3>
+<p><strong>User Story:</strong> As a customer, I want to check the details of a reservation.</p>
+<p>Create and end-point to get from <code>/reservations/:id</code> the details of a resrevation through its <code>id</code>.</p>
+<ul>
+<li>simple filtering</li>
+<li>create the enpoint from scratch</li>
+</ul>
+<h3 id="homework-9">HOMEWORK 9</h3>
+<p><strong>User Story:</strong> As a staff member, I want to get a list of all the reservations that start at a given date.</p>
+<p>Create and end-point to get from <code>/reservations/starting-on/:startDate</code> all the reservations that start at a given date.</p>
+<ul>
+<li>simple filtering</li>
+<li>create the enpoint from scratch</li>
+</ul>
+<h3 id="homework-10">HOMEWORK 10</h3>
+<p><strong>User Story:</strong> As a staff member, i want to get a list of all the reservations that are active at a given date.</p>
+<p>Create and end-point to get from <code>/reservations/active-on/:date</code> all the reservations that are active on a given date - some customer has a room reserved on that day.</p>
+<ul>
+<li>multiple filtering.</li>
+<li>create the enpoint from scratch</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../week-16/lesson.html" class="navigation navigation-prev " aria-label="Previous page: Week 16 - Basic SQL">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../week-18/lesson.html" class="navigation navigation-next " aria-label="Next page: Week 18 - Data Integrity & Analytics">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Week 17 - SQL with Node","level":"1.8.2","depth":2,"next":{"title":"Week 18 - Data Integrity & Analytics","level":"1.8.3","depth":2,"path":"node-db/week-18/lesson.md","ref":"node-db/week-18/lesson.md","articles":[]},"previous":{"title":"Week 16 - Basic SQL","level":"1.8.1","depth":2,"path":"node-db/week-16/lesson.md","ref":"node-db/week-16/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node-db/week-17/lesson.md","mtime":"2019-09-10T19:21:16.554Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-10T19:22:26.297Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-scripts/865192367b808254b99cb0ba7092e452-checkboxRemember.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

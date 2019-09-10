@@ -1,0 +1,1243 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>AWS - DynamoDB · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../node-db/week-15/workshop.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Course</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Before you start
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="lesson0.html">
+            
+                <a href="lesson0.html">
+            
+                    
+                    Week 0 - Introduction and basic setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../house-rules.md">
+            
+                <span>
+            
+                    
+                    House Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../html-css/">
+            
+                <a href="../html-css/">
+            
+                    
+                    HTML/CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../html-css/week-01/lesson.html">
+            
+                <a href="../html-css/week-01/lesson.html">
+            
+                    
+                    Week 1 - Semantic HTML and CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../html-css/week-02/lesson.html">
+            
+                <a href="../html-css/week-02/lesson.html">
+            
+                    
+                    Week 2 - Responsive Web, Layout and Flexbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../html-css/week-03/lesson.html">
+            
+                <a href="../html-css/week-03/lesson.html">
+            
+                    
+                    Week 3 - HTML Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../js-core/">
+            
+                <a href="../js-core/">
+            
+                    
+                    JavaScript I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../js-core/week-04/lesson.html">
+            
+                <a href="../js-core/week-04/lesson.html">
+            
+                    
+                    Week 4 - Hello JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../js-core/week-05/lesson.html">
+            
+                <a href="../js-core/week-05/lesson.html">
+            
+                    
+                    Week 5 - Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../js-core/week-06/lesson.html">
+            
+                <a href="../js-core/week-06/lesson.html">
+            
+                    
+                    Week 6 - More Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../js-core-2/">
+            
+                <a href="../js-core-2/">
+            
+                    
+                    JavaScript II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../js-core-2/week-07/lesson.html">
+            
+                <a href="../js-core-2/week-07/lesson.html">
+            
+                    
+                    Week 7 - Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../js-core-2/week-08/lesson.html">
+            
+                <a href="../js-core-2/week-08/lesson.html">
+            
+                    
+                    Week 8 - JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../js-core-2/week-09/lesson.html">
+            
+                <a href="../js-core-2/week-09/lesson.html">
+            
+                    
+                    Week 9 - More JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../js-core-3/">
+            
+                <a href="../js-core-3/">
+            
+                    
+                    JavaScript III
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../js-core-3/week-10/lesson.html">
+            
+                <a href="../js-core-3/week-10/lesson.html">
+            
+                    
+                    Week 10 - Unit Tests and TDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../js-core-3/week-11/lesson.html">
+            
+                <a href="../js-core-3/week-11/lesson.html">
+            
+                    
+                    Week 11 - More TDD, ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../js-core-3/week-12/lesson.html">
+            
+                <a href="../js-core-3/week-12/lesson.html">
+            
+                    
+                    Week 12 - Recap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../node-db/">
+            
+                <a href="../node-db/">
+            
+                    
+                    Node/DB I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../node-db/week-13/lesson.html">
+            
+                <a href="../node-db/week-13/lesson.html">
+            
+                    
+                    Week 13 - Node and Express 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../node-db/week-14/lesson.html">
+            
+                <a href="../node-db/week-14/lesson.html">
+            
+                    
+                    Week 14 - Middleware, Templating and APIs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../node-db/week-15/lesson.html">
+            
+                <a href="../node-db/week-15/lesson.html">
+            
+                    
+                    Week 15 - Advanced Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../node-db/">
+            
+                <a href="../node-db/">
+            
+                    
+                    Node/DB II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../node-db/week-16/lesson.html">
+            
+                <a href="../node-db/week-16/lesson.html">
+            
+                    
+                    Week 16 - Basic SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../node-db/week-17/lesson.html">
+            
+                <a href="../node-db/week-17/lesson.html">
+            
+                    
+                    Week 17 - SQL with Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../node-db/week-18/lesson.html">
+            
+                <a href="../node-db/week-18/lesson.html">
+            
+                    
+                    Week 18 - Data Integrity & Analytics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../react/">
+            
+                <a href="../react/">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../react/week-19/lesson.html">
+            
+                <a href="../react/week-19/lesson.html">
+            
+                    
+                    Week 19 - React 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../react/week-20/lesson.html">
+            
+                <a href="../react/week-20/lesson.html">
+            
+                    
+                    Week 20 - State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../react/week-21/lesson.html">
+            
+                <a href="../react/week-21/lesson.html">
+            
+                    
+                    Week 21 - React-router & Recap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Useful information</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../CODE_OF_CONDUCT.html">
+            
+                <a href="../CODE_OF_CONDUCT.html">
+            
+                    
+                    Code of Conduct
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="useful-links.html">
+            
+                <a href="useful-links.html">
+            
+                    
+                    Useful links
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="PRACTICES.html">
+            
+                <a href="PRACTICES.html">
+            
+                    
+                    Coding Standards and Best Practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="making-a-pull-request.html">
+            
+                <a href="making-a-pull-request.html">
+            
+                    
+                    Making a Pull Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="career-development.html">
+            
+                <a href="career-development.html">
+            
+                    
+                    Career Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Workshops and other resources</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="coding-101.html">
+            
+                <a href="coding-101.html">
+            
+                    
+                    Coding 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../html-css/compile-scss-instructions.html">
+            
+                <a href="../html-css/compile-scss-instructions.html">
+            
+                    
+                    Compiling SCSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../node-db/week-13/workshop.html">
+            
+                <a href="../node-db/week-13/workshop.html">
+            
+                    
+                    Express Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../node-db/week-15/workshop.html">
+            
+                <a href="../node-db/week-15/workshop.html">
+            
+                    
+                    Hotel Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.5" data-path="aws-workshop-2.html">
+            
+                <a href="aws-workshop-2.html">
+            
+                    
+                    AWS - DynamoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" >
+            
+                <a target="_blank" href="https://github.com/Thomas-Stewart/syllabus/tree/master/java">
+            
+                    
+                    Java module
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">For Mentors</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../CONTRIBUTING.html">
+            
+                <a href="../CONTRIBUTING.html">
+            
+                    
+                    Contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="lesson-template.html">
+            
+                <a href="lesson-template.html">
+            
+                    
+                    Lesson Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    JavaScript I
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../js-core/week-04/mentors.md">
+            
+                <span>
+            
+                    
+                    Week 4 - Hello JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >AWS - DynamoDB</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><img src="https://img.shields.io/badge/status-draft-darkred.svg" alt=""></p>
+<h1 id="node-4">Node 4</h1>
+<p><strong>What we will learn today?</strong></p>
+<ul>
+<li>Databases overview</li>
+<li>MongoDB</li>
+<li>Mongo Shell</li>
+<li>Mongo with Node</li>
+</ul>
+<hr>
+<h1 id="before-we-start">Before we start</h1>
+<p>Download and install MongoDb from
+<a href="https://www.mongodb.com/download-center#community" target="_blank">https://www.mongodb.com/download-center#community</a> . Follow the instructions for
+your platform (Windows, Linux or OS X).</p>
+<p>Also download and install <em>RoboMongo</em> from <a href="https://robomongo.org/download" target="_blank">https://robomongo.org/download</a>.</p>
+<p>Open two instances of terminal. Run <code>mongod</code> - this will start MongoDB then run
+<code>mongo</code> on the other window.</p>
+<p><img src="assets/mongo.png" alt=""></p>
+<p>In the <code>mongo</code> shell (terminal) - run the command <code>version()</code> and you should get
+the version of Mongo printed on the terminal</p>
+<h1 id="databases-overview">Databases overview</h1>
+<blockquote>
+<p>Discussion:</p>
+<ul>
+<li>What is a database role?</li>
+<li>Why do we need a database? Why not just use the file system?</li>
+<li>What would make a good database?</li>
+</ul>
+</blockquote>
+<h2 id="why-a-database">Why a database?</h2>
+<ul>
+<li>Databases can store very large numbers of records efficiently (they take up
+little space).</li>
+<li>You can have strucutre on your data</li>
+<li>You can query for data in a database, you can sort data, add/edit/delete data</li>
+<li>You can optimise a database to make searches (queries) quicker</li>
+<li>You can relate pieces of data to each other to avoid duplication which makes
+your information more reliable and less prone to errors</li>
+<li>ACID<blockquote>
+<p>In computer science, ACID (Atomicity, Consistency, Isolation, Durability) is
+a set of properties of database transactions intended to guarantee validity
+even in the event of errors, power failures, etc.</p>
+</blockquote>
+</li>
+<li>Databases can handle very large data sets.</li>
+<li>Databases are concurrent; multiple users can use them at the same time without
+corrupting the data.</li>
+<li>Databases scale well</li>
+</ul>
+<h2 id="relational-and-non-relational-databases">Relational and non-relational databases</h2>
+<p>There are mainly two flavours of databases used commercially these days.
+<strong>Relational</strong> (SQL) and <strong>non-relational</strong> (NoSQL) databases.</p>
+<p>Relational databases include MySQL, Postgres, Microsoft SQL Server, Oracle
+Database and many others. They&apos;ve been around for a long time and they&apos;re used
+for all kind of applications.</p>
+<p>Non-relational databases are relatively new and they include the likes of
+MongoDB, Casandra, Neo4j etc...</p>
+<h1 id="mongo">Mongo</h1>
+<blockquote>
+<p>MongoDB is a free and open-source cross-platform document-oriented database
+program. Classified as a NoSQL database program, MongoDB uses JSON-like
+documents.</p>
+</blockquote>
+<h2 id="bson-json-like-document">BSON (JSON-like document)</h2>
+<p>In a Relational database, information is organised in <em>rows</em> in <em>tables</em> with
+predefined <em>columns</em>.</p>
+<p>In a non-relational database, information is organised in <em>documents</em>. MongoDB
+stores data records in a format similar to JSON called BSON. BSON is a binary
+representation of JSON documents, though it contains more data types than JSON.</p>
+<p><img src="https://docs.mongodb.com/manual/_images/crud-annotated-document.bakedsvg.svg" alt=""></p>
+<p>Let&apos;s look at this database table <em>Students</em> containing information about
+students participating in a course <img src="assets/table-example.png" alt=""></p>
+<blockquote>
+<p>Exercise: What are the columns, rows and tables?</p>
+</blockquote>
+<p><img src="assets/SQL-MongoDB-Correspondence.png" alt=""></p>
+<blockquote>
+<p>Exercise: Open <a href="https://jsonlint.com/" target="_blank">https://jsonlint.com/</a> and write a JSON representation of two
+rows in the Students table example. Click <em>Validate JSON</em> and make sure the
+document is valid.</p>
+<ul>
+<li>Are there any alternative representations you can think of?</li>
+</ul>
+</blockquote>
+<p><strong>BSON</strong> is very similar to JSON. It contains more data types than JSON, it also
+allows the field names to not be quoted. Read more information about the
+format - <a href="https://docs.mongodb.com/manual/core/document/" target="_blank">https://docs.mongodb.com/manual/core/document/</a>.</p>
+<h1 id="mongo-shell">Mongo Shell</h1>
+<p>Let&apos;s go to <code>mongo</code> shell and start interacting with our database system.</p>
+<h2 id="1-create-a-database">1. create a database</h2>
+<p>On the shell, type the command <code>use profile</code> The shell should respond with
+<strong>switched to db profile</strong>. At this stage, the database does not necessarily
+exist once we start adding information (collections) then the database will be
+created and the collection added to them.</p>
+<p>To check the current database, run <code>db</code>.</p>
+<h2 id="2-create-a-collection">2. create a collection</h2>
+<p>Now let&apos;s create our first collection. Make sure you&apos;re using the <strong>profile</strong>
+database. Run <code>db</code> and it should print <strong>profile</strong> on the terminal.</p>
+<p>We will insert a simple document representing a student.</p>
+<blockquote>
+<p><code>db.students.insertOne({ name: &apos;Habiiba&apos;, country: &apos;Somalia&apos;, assignedMentors:
+[&apos;Ashleigh&apos;] })</code></p>
+</blockquote>
+<p>You should get a confirmation with the number of records inserted.</p>
+<p>You can also insert more than one document at a time. Run this command</p>
+<blockquote>
+<p><code>db.students.insertMany([{ name: &apos;Khalid&apos;, country: &apos;Yemen&apos; }, { name:
+&apos;Yohannes&apos;, country: &apos;Ethiopia&apos;, assignedMentors: [&apos;Michael&apos;] }])</code></p>
+</blockquote>
+<p>run the command <code>db.students.count()</code> and you should get that you have 3
+documents.</p>
+<h2 id="3-querying-data">3. Querying data</h2>
+<p>Querying is one of the most important reasons that we use databases. SQL is the
+language used for querying relational databases, In MongoDB, we can use the
+method <code>db.collection.find</code>, passing a query in the form of a JSON object as a
+first parameter.</p>
+<p>Let&apos;s try few queries:</p>
+<p>Get all the students from Ethiopia.</p>
+<blockquote>
+<p><code>db.students.find({country: &apos;Ethiopia&apos;})</code></p>
+</blockquote>
+<p>We can also provide an extra parameter <code>projection</code> to define what fields we
+want back from the query.</p>
+<p>For example, if we&apos;re only interested in the name</p>
+<pre class="language-"><code class="lang-js">db<span class="token punctuation">.</span>students<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span> country<span class="token punctuation">:</span> <span class="token string">&quot;Ethiopia&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// you can also use { name: true }</span>
+</code></pre>
+<p>Let&apos;s add another two students to the collection</p>
+<p><code>db.students.insertOne({ name: &apos;Mohamed&apos;, country: &apos;Sudan&apos;, assignedMentors:
+[&apos;Michael&apos;] })</code></p>
+<p>and</p>
+<p><code>db.students.insertOne({ name: &apos;Mohamed&apos;, country: &apos;Syria&apos;, assignedMentors:
+[&apos;Michael&apos;, &apos;Ashleigh&apos;] })</code></p>
+<p>Now let&apos;s query for all the students that have <strong>Michael</strong> as mentor.</p>
+<pre class="language-"><code class="lang-js">db<span class="token punctuation">.</span>students<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span> assignedMentors<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;Michael&quot;</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>What if we want to find any student whose name is &quot;Mohamed&quot; AND whose country is
+&quot;Sudan&quot;. You can then use the <strong>logical query operator $and</strong>.</p>
+<pre class="language-"><code class="lang-js">db<span class="token punctuation">.</span>students<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  $and<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&quot;Mohamed&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> country<span class="token punctuation">:</span> <span class="token string">&quot;Sudan&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Notice that name and country are case-sensitive.</p>
+<h3 id="exercise">Exercise:</h3>
+<ol>
+<li>Find all students for whom <strong>Ashleigh</strong> is an assigned mentor.</li>
+<li>Find all students that have <strong>Michael</strong> as their only mentor</li>
+<li>Find students whose name is <strong>Mohamed</strong> OR <strong>Michael</strong> is their only mentor</li>
+<li>Read about the
+<a href="https://docs.mongodb.com/manual/reference/operator/query/in/#op._S_in" target="_blank">$in operator</a>
+and use it to find students whose country is either Sudan or Ethiopia.</li>
+<li>Look at the other
+<a href="https://docs.mongodb.com/manual/reference/operator/query-comparison/" target="_blank">Comparison Query Operators</a>
+and the
+<a href="https://docs.mongodb.com/manual/reference/operator/query-logical/" target="_blank">Logical Query Operators</a>
+and use few of them.</li>
+</ol>
+<h2 id="key-concepts-so-far">Key Concepts so far</h2>
+<p>In Mongo, a <strong>database</strong> contains <strong>collections</strong> that contain <strong>BSON
+documents</strong>. We can use the <strong>mongo shell</strong> to interact with our Mongo
+databases. The <strong>query documents</strong> are used to specify a selection filter using
+<a href="https://docs.mongodb.com/manual/reference/operator/query/" target="_blank"><strong>query operators</strong></a>
+to search for documents in the collections.</p>
+<blockquote>
+<p>Checkpoint: Do you understand all the words highlighed in the last paragraph?</p>
+</blockquote>
+<h1 id="node-with-mongo">Node with Mongo</h1>
+<p>So far we&apos;ve been connecting to Mongo using the Mongo shell. Mongo has drivers
+for most major programming languages but it&apos;s especially popular with NodeJS
+applications as its API and Query model is very close to JavaScript syntax and
+patterns.</p>
+<p>Let&apos;s start wiring Node with MongoDB as a datastore.</p>
+<ol>
+<li><p>Fork and Clone the project
+<a href="https://github.com/CodeYourFuture/mongo-node-workshop" target="_blank">https://github.com/CodeYourFuture/mongo-node-workshop</a>.
+run <code>npm install</code> then <code>npm run dev</code> to run the application with autoreload -
+Go to the browser and make sure it&apos;s up and running.</p>
+</li>
+<li><p>Install the MongoDB Node.js Driver <code>npm install mongodb --save</code></p>
+</li>
+<li><p>Let&apos;s add an endpoint <code>api/students</code> that returns a <code>json</code> containing all the
+students that we&apos;ve been saving to the database from the shell.</p>
+</li>
+</ol>
+<p>Go to the file <code>controllers/apiController</code>, on top of the file, require the
+module</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> MongoClient <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;mongodb&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>MongoClient<span class="token punctuation">;</span>
+</code></pre>
+<p>then add an endpoint for <code>/students</code></p>
+<pre class="language-"><code class="lang-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/students&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> mongoConnection <span class="token operator">=</span> <span class="token string">&quot;mongodb://localhost:27017/profile&quot;</span><span class="token punctuation">;</span>
+
+  MongoClient<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>mongoConnection<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> db</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> cursor <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">collection</span><span class="token punctuation">(</span><span class="token string">&quot;students&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cursor<span class="token punctuation">.</span><span class="token function">toArray</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> students</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      db<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>students<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Go to your browser <code>/api/students</code> and you should see a JSON containing the
+documents we&apos;ve added to the <em>students</em> collection earlier.</p>
+<blockquote>
+<p>Exercise: Let&apos;s step through the previous code and understand it line by line.</p>
+<ul>
+<li>What is a Mongo conection string?</li>
+</ul>
+</blockquote>
+<pre class="language-"><code>[Connection String documentation](https://docs.mongodb.com/manual/reference/connection-string/) - The connection string follows this format: `mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[database][?options]]` - what parts do you have in our connection string right now?
+</code></pre><h2 id="exercise">Exercise</h2>
+<p>Now let&apos;s change the <code>api/posts</code> to also use the mongo database instead of the
+json file under /data.</p>
+<ol>
+<li><p>First step is to save the <em>posts</em> in the database. Similar to what we did
+with <em>students</em> collection, use the Mongo shell to create a new collection
+called <em>posts</em> and use <strong>insertMany</strong> to insert all the documents.</p>
+</li>
+<li><p>Change the endpoint <code>/api/posts</code> to read its contents from the database (very
+similar code to what we wrote in <code>/api/students</code> endpoint). Go to
+<code>http://localhost:3000/api/posts</code> and make sure you see the posts. Update a
+document in the database (either check the documentation for
+<a href="https://docs.mongodb.com/manual/reference/operator/update/set/#set-top-level-fields" target="_blank">update</a>
+or use RoboMongo) and see if it gets reflected.</p>
+</li>
+<li><p>Once you have the endpoint running, delete the json <code>data/posts.json</code>.</p>
+</li>
+<li><p>Now if you go to the root of your application <code>http://localhost:3000</code>, you
+will encounter an error as it will still try to read from the file system but
+we deleted the file. Update the <code>/</code> endpoint to also get the Posts from the
+database.</p>
+</li>
+</ol>
+<h2 id="exercise-part-2-refactor-the-code">Exercise Part 2: Refactor the code</h2>
+<p>Even though our code does what&apos;s supposed to do, it has several issues. We have
+a lot of duplicate code - both endpoints GET <code>/api/posts</code> and GET <code>/</code> do the
+same call to the database and then do <em>something</em> with it. It&apos;s only that
+<em>something</em> (the callback) that is different so let&apos;s refactor the code to
+eliminate duplication (DRY).</p>
+<ol>
+<li><p>The variable <code>mongoConnection</code> is declared multiple times, that means that if
+the connection string changes then we need to change multiple places causing
+possibilities of missing one instance and causing errors. Let&apos;s declare it
+once and use it in the rest of the app.</p>
+</li>
+<li><p>Why is it bad to have duplicate code?</p>
+</li>
+<li><p>Extract the Mongo calls to seperate functions. Extract the route for
+<code>/api/students</code> into a function named <code>getStudents</code></p>
+</li>
+<li><p>What will the function signature be?</p>
+</li>
+<li><p>Remember the <strong>Single Responsibility Principle</strong> - the route handlers have
+multiple responsibilities right now: Connecting to Mongo, getting the data
+then sending it back as a response.</p>
+</li>
+<li><p>Move the new function to a new file called <code>helpers/db-client.js</code>, export the
+functions and use them in the original file.</p>
+</li>
+<li><p>Do you remember how we create modules and use them? <code>module.exports</code> and
+<code>require</code>.</p>
+</li>
+<li><p>Do the same for the <code>/posts</code></p>
+</li>
+</ol>
+<h2 id="exercise-part-3-deploy-our-app">Exercise Part 3: Deploy our app</h2>
+<p>Let&apos;s deploy our Database-Driven Application to Heroku. If you don&apos;t remember
+the steps, refresh your memory from
+<a href="https://codeyourfuture.github.io/syllabus-scotland/node-db/lesson2.html#deploying-to-heroku" target="_blank">the previous lesson</a>.</p>
+<p>Once you&apos;re finsihed, Go to your application on heroku and see if it is working
+properly.</p>
+<p><em>It should not be working.</em></p>
+<p>Can you have a guess on what went wrong? To see what&apos;s happening on the heroku
+server, run <code>heroku logs</code> from the terminal and check the logs.</p>
+<h1 id="mongo-on-heroku">Mongo on Heroku</h1>
+<p>Heroku, AWS and other cloud services allows us to use databases and other
+services on the cloud without having to maintain physical servers making it easy
+to scale, monitor costs and build good solutions in general.</p>
+<p>We&apos;ve already used <strong>DynamoDB</strong> on AWS. This week, we&apos;ll do <strong>MongoDB</strong>.</p>
+<ol>
+<li><p>Go to Heroku dashboard
+<a href="https://dashboard.heroku.com" target="_blank">https://dashboard.heroku.com</a></p>
+</li>
+<li><p>Click on your app name in the dashboard. Go to <em>Resources</em>, under <em>addons</em>,
+search for <em>mLab MongoDB</em> and choose it. When you&apos;re prompted with this
+screen - click on <strong>Provision</strong>.</p>
+</li>
+</ol>
+<p><img src="assets/heroku-mongo.png" alt=""></p>
+<p>The new MongoDB service will appear under Resources - you can click on it and it
+will take you to a web interface to administer your MongoDB instance.</p>
+<ol>
+<li>Go to the <em>Settings</em> and click on <strong>Reveal Config Vars</strong>. You should see the
+a variable called MongoDB_URI - that is the connection string for the MongoDB
+instance on Heroku (on mLab used by Heroku).</li>
+</ol>
+<blockquote>
+<p>So how can we use this connection string instead of our local one?</p>
+</blockquote>
+<h2 id="environment-variables">Environment variables</h2>
+<p>In NodeJS, The <code>process.env</code> property returns an object containing the user
+environment. Environment variables allow us to configure different aspects of
+our application based on the environment where it&apos;s running - so for instance,
+when we run our application locally, we want to connect to the local MongoDB but
+on Heroku, we want to connect to a different one.</p>
+<p>Connection strings are typically saved and used as Environment variables, other
+typical uses are with passwords, secrets, URLs of other services etc... Anything
+that is environment specific and that shouldn&apos;t live in the source code.</p>
+<blockquote>
+<p><strong>Security tip</strong>: Never add passwords, connection strings or any sensitive
+information in your source code, always use an Environment variable.</p>
+</blockquote>
+<p>Services like Heroku and AWS can then use these environment variables to
+configure aspects of the application.</p>
+<blockquote>
+<p>We&apos;ve already used one Environment variable for Heroku before - what was it?</p>
+<p>Exercise: Use the environment <code>MongoDB_URI</code> to connect to MongoDB on Heroku,
+but fallback to <strong>localhost connection string</strong> if there is no environment
+variable provided.</p>
+</blockquote>
+<ul>
+<li>Commit and push the changes to Heroku and see if it works.</li>
+</ul>
+<h1 id="homework">Homework</h1>
+<p>Refer to the MongoDB/Node workshop for the Homework tasks -
+<a href="https://github.com/CodeYourFuture/mongo-node-workshop" target="_blank">https://github.com/CodeYourFuture/mongo-node-workshop</a></p>
+<ul>
+<li>Read <a href="https://www.upguard.com/articles/mysql-vs-mongodb" target="_blank">https://www.upguard.com/articles/mysql-vs-mongodb</a></li>
+</ul>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://softwareengineering.stackexchange.com/questions/190482/why-use-a-database-instead-of-just-saving-your-data-to-disk" target="_blank">Why use a database</a></li>
+<li>Databases and Collections
+<a href="https://docs.mongodb.com/manual/core/databases-and-collections/" target="_blank">https://docs.mongodb.com/manual/core/databases-and-collections/</a></li>
+<li>Documents in MongoDB - <a href="https://docs.mongodb.com/manual/core/document/" target="_blank">https://docs.mongodb.com/manual/core/document/</a></li>
+<li>Practice on a web Mongo shell
+<a href="https://www.tutorialspoint.com/mongodb_terminal_online.php" target="_blank">https://www.tutorialspoint.com/mongodb_terminal_online.php</a></li>
+<li>Environment Variables -
+<a href="https://www.twilio.com/blog/2017/08/working-with-environment-variables-in-node-js.html" target="_blank">https://www.twilio.com/blog/2017/08/working-with-environment-variables-in-node-js.html</a></li>
+<li><a href="https://docs.mongodb.com/manual/reference/sql-comparison/" target="_blank">https://docs.mongodb.com/manual/reference/sql-comparison/</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../node-db/week-15/workshop.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Hotel Workshop">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"AWS - DynamoDB","level":"3.5","depth":1,"next":{"title":"Java module","level":"3.6","depth":1,"url":"https://github.com/Thomas-Stewart/syllabus/tree/master/java","ref":"https://github.com/Thomas-Stewart/syllabus/tree/master/java","articles":[]},"previous":{"title":"Hotel Workshop","level":"3.4","depth":1,"path":"node-db/week-15/workshop.md","ref":"node-db/week-15/workshop.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/aws-workshop-2.md","mtime":"2019-09-10T19:21:16.582Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-10T19:22:26.297Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-scripts/865192367b808254b99cb0ba7092e452-checkboxRemember.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

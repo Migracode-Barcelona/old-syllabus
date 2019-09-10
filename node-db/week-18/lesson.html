@@ -1,0 +1,1093 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Week 18 - Data Integrity & Analytics · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../react/" />
+    
+    
+    <link rel="prev" href="../week-17/lesson.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Course</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Before you start
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../others/lesson0.html">
+            
+                <a href="../../others/lesson0.html">
+            
+                    
+                    Week 0 - Introduction and basic setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../house-rules.md">
+            
+                <span>
+            
+                    
+                    House Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../html-css/">
+            
+                <a href="../../html-css/">
+            
+                    
+                    HTML/CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../html-css/week-01/lesson.html">
+            
+                <a href="../../html-css/week-01/lesson.html">
+            
+                    
+                    Week 1 - Semantic HTML and CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../html-css/week-02/lesson.html">
+            
+                <a href="../../html-css/week-02/lesson.html">
+            
+                    
+                    Week 2 - Responsive Web, Layout and Flexbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../html-css/week-03/lesson.html">
+            
+                <a href="../../html-css/week-03/lesson.html">
+            
+                    
+                    Week 3 - HTML Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../js-core/">
+            
+                <a href="../../js-core/">
+            
+                    
+                    JavaScript I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../js-core/week-04/lesson.html">
+            
+                <a href="../../js-core/week-04/lesson.html">
+            
+                    
+                    Week 4 - Hello JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../js-core/week-05/lesson.html">
+            
+                <a href="../../js-core/week-05/lesson.html">
+            
+                    
+                    Week 5 - Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../js-core/week-06/lesson.html">
+            
+                <a href="../../js-core/week-06/lesson.html">
+            
+                    
+                    Week 6 - More Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../js-core-2/">
+            
+                <a href="../../js-core-2/">
+            
+                    
+                    JavaScript II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../js-core-2/week-07/lesson.html">
+            
+                <a href="../../js-core-2/week-07/lesson.html">
+            
+                    
+                    Week 7 - Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../js-core-2/week-08/lesson.html">
+            
+                <a href="../../js-core-2/week-08/lesson.html">
+            
+                    
+                    Week 8 - JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../js-core-2/week-09/lesson.html">
+            
+                <a href="../../js-core-2/week-09/lesson.html">
+            
+                    
+                    Week 9 - More JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../js-core-3/">
+            
+                <a href="../../js-core-3/">
+            
+                    
+                    JavaScript III
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../js-core-3/week-10/lesson.html">
+            
+                <a href="../../js-core-3/week-10/lesson.html">
+            
+                    
+                    Week 10 - Unit Tests and TDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../js-core-3/week-11/lesson.html">
+            
+                <a href="../../js-core-3/week-11/lesson.html">
+            
+                    
+                    Week 11 - More TDD, ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../js-core-3/week-12/lesson.html">
+            
+                <a href="../../js-core-3/week-12/lesson.html">
+            
+                    
+                    Week 12 - Recap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Node/DB I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../week-13/lesson.html">
+            
+                <a href="../week-13/lesson.html">
+            
+                    
+                    Week 13 - Node and Express 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../week-14/lesson.html">
+            
+                <a href="../week-14/lesson.html">
+            
+                    
+                    Week 14 - Middleware, Templating and APIs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../week-15/lesson.html">
+            
+                <a href="../week-15/lesson.html">
+            
+                    
+                    Week 15 - Advanced Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Node/DB II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../week-16/lesson.html">
+            
+                <a href="../week-16/lesson.html">
+            
+                    
+                    Week 16 - Basic SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../week-17/lesson.html">
+            
+                <a href="../week-17/lesson.html">
+            
+                    
+                    Week 17 - SQL with Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.3" data-path="lesson.html">
+            
+                <a href="lesson.html">
+            
+                    
+                    Week 18 - Data Integrity & Analytics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../react/">
+            
+                <a href="../../react/">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../react/week-19/lesson.html">
+            
+                <a href="../../react/week-19/lesson.html">
+            
+                    
+                    Week 19 - React 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../react/week-20/lesson.html">
+            
+                <a href="../../react/week-20/lesson.html">
+            
+                    
+                    Week 20 - State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../react/week-21/lesson.html">
+            
+                <a href="../../react/week-21/lesson.html">
+            
+                    
+                    Week 21 - React-router & Recap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Useful information</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../CODE_OF_CONDUCT.html">
+            
+                <a href="../../CODE_OF_CONDUCT.html">
+            
+                    
+                    Code of Conduct
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../others/useful-links.html">
+            
+                <a href="../../others/useful-links.html">
+            
+                    
+                    Useful links
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../others/PRACTICES.html">
+            
+                <a href="../../others/PRACTICES.html">
+            
+                    
+                    Coding Standards and Best Practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../others/making-a-pull-request.html">
+            
+                <a href="../../others/making-a-pull-request.html">
+            
+                    
+                    Making a Pull Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../others/career-development.html">
+            
+                <a href="../../others/career-development.html">
+            
+                    
+                    Career Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Workshops and other resources</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../others/coding-101.html">
+            
+                <a href="../../others/coding-101.html">
+            
+                    
+                    Coding 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../html-css/compile-scss-instructions.html">
+            
+                <a href="../../html-css/compile-scss-instructions.html">
+            
+                    
+                    Compiling SCSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../week-13/workshop.html">
+            
+                <a href="../week-13/workshop.html">
+            
+                    
+                    Express Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../week-15/workshop.html">
+            
+                <a href="../week-15/workshop.html">
+            
+                    
+                    Hotel Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../others/aws-workshop-2.html">
+            
+                <a href="../../others/aws-workshop-2.html">
+            
+                    
+                    AWS - DynamoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" >
+            
+                <a target="_blank" href="https://github.com/Thomas-Stewart/syllabus/tree/master/java">
+            
+                    
+                    Java module
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">For Mentors</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../CONTRIBUTING.html">
+            
+                <a href="../../CONTRIBUTING.html">
+            
+                    
+                    Contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../others/lesson-template.html">
+            
+                <a href="../../others/lesson-template.html">
+            
+                    
+                    Lesson Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    JavaScript I
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../../js-core/week-04/mentors.md">
+            
+                <span>
+            
+                    
+                    Week 4 - Hello JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Week 18 - Data Integrity & Analytics</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="lesson-3-data-integrity-and-analytics">LESSON 3: DATA INTEGRITY AND ANALYTICS</h1>
+<p><strong>What we will learn today?</strong></p>
+<ul>
+<li>How to add invalid relational data to a database</li>
+<li>How to prevent invalid relational data with foreign keys</li>
+<li>Database nulls</li>
+<li>Predicates</li>
+<li>Combining SQL predicates with AND and OR</li>
+<li>SQL - Order by</li>
+<li>SQL - Count / Sum / Avg</li>
+<li>SQL - Group by</li>
+<li>SQL - HAVING</li>
+<li>SQL - LIMIT</li>
+<li>SQL - like</li>
+<li>SQL - DISTINCT</li>
+<li>SQL - &apos;IN&apos;</li>
+</ul>
+<h3 id="lesson-7--join-me-and-together-we-can-rule-the-internet-as-father-and-son">LESSON 7 : JOIN ME, AND TOGETHER WE CAN RULE THE INTERNET AS FATHER AND SON!</h3>
+<p>Now let&apos;s say we want to get the <em>names</em> of customers who have a reservation <em>today</em>.</p>
+<p>From what we know now, we <em>could</em> do it like this:</p>
+<ul>
+<li>select customer_id from reservations where date_started = &apos;01/01/2018&apos;</li>
+<li>write down the list of customer ids on paper (e.g. 3, 5, 7)</li>
+<li>select * from customers where id = 3 or id = 5 or id = 7</li>
+</ul>
+<p>However, that&apos;s stupid. We want the computer to figure that out. That&apos;s where a database &quot;join&quot; comes in handy. In real life, if you work with databases, you will be using this thing <em>all</em> of the time.</p>
+<p>Now, we have data that spans two tables - we have reservations with a &quot;customer_id&quot; column that refers to the id column in the &quot;customers&quot; table.</p>
+<pre class="language-"><code>SELECT reservations.date_started, customers.firstname, customers.surname
+from reservations join customers on reservations.customer_id = customer.id
+where reservation.date_started = &apos;01/01/2018&apos;;
+</code></pre><h3 id="exercise-7">EXERCISE 7</h3>
+<p><strong>User Story:</strong> As a staff member, I want to get the list of all the invoices, and the details of the referring reservations.</p>
+<p>Create and endpoint <code>/detailed-invoices</code> from where we can get the list of invoices, together with the details for the reservation that they refer to.</p>
+<ul>
+<li>join</li>
+</ul>
+<h3 id="exercise-8">EXERCISE 8</h3>
+<p><strong>User Story:</strong> As a staff member, I want to consult reservations, but including the room and customer information.</p>
+<p>Update the exercies 5.* to retreieve the information of the rooms and customers as well.</p>
+<h3 id="exercise-8-stretch-goal">EXERCISE 8: STRETCH GOAL</h3>
+<p><strong>User story:</strong> As a staff member, I want ot retrieve the reservations and details for rooms and customers, that happened between a given date range.</p>
+<p>Create and endpoint to get from <code>/reservations/details-between/:from_day/:to_day</code> all the reservations and details about customer and room, between a given date range.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>sqlite temp.sqlite</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>sqlite&gt; create table rooms (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  type_name varchar(50),
+  original_price integer,
+  current_price int,
+);</p>
+<p>sqlite&gt; insert into rooms (1, &apos;seaview&apos;, 50.0, 55.0);</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>sqlite temp.sqlite &lt; example.sql</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="exercise-1-recreate-the-hotel-database-and-add-some-entries">EXERCISE 1: Recreate the hotel database and add some entries</h1>
+<ul>
+<li>Recreate customer, room and reservation tables</li>
+<li>Insert some example data making sure that the IDs match</li>
+</ul>
+<h1 id="lesson-2-data-integrity">LESSON 2: Data integrity</h1>
+<p>Try this in your database:</p>
+<p>INSERT INTO Invoices (reservation_id, total, surcharges, invoice_date_time, paid) values (9999, 35.0, 0, &apos;01/01/2018&apos;, 0);</p>
+<h1 id="questions-for-class">QUESTIONS FOR CLASS:</h1>
+<ul>
+<li><p>What&apos;s the problem with the above SQL statement?</p>
+</li>
+<li><p>What happens to the application and the end user if you accidentally do this?</p>
+</li>
+<li><p>How can you deal with a problem like this? There are 2/3 answers to this question - what are they?</p>
+</li>
+</ul>
+<p>A1: Delete data</p>
+<p>A2: Make it impossible to add invalid data in the first place in the code.</p>
+<p>A3: Make it impossible to add invalid data in the first place in the database.</p>
+<h1 id="lesson-deleting-records-from-a-table">LESSON: Deleting records from a table</h1>
+<p>To fix the invalid data we can first delete the data from the database. This is as
+good a time as any to tell you about deleting, so here goes:</p>
+<p>  DELETE FROM [ TABLE ] WHERE id = [ ID ];</p>
+<h1 id="exercise-first-find-the-row-with-select-then-delete-it">EXERCISE: First find the row with select, then delete it</h1>
+<p>Start with the <code>SELECT</code>:</p>
+<pre class="language-"><code>SELECT * FROM customers WHERE <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>...</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>Then the delete.</p>
+<pre class="language-"><code>DELETE FROM customers WHERE <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>...</span><span class="token punctuation">&gt;</span></span>
+</code></pre><h3 id="lesson--foreign-keys">LESSON : Foreign Keys</h3>
+<p>Ex</p>
+<p>CREATE TABLE customers (
+    id        INTEGER       PRIMARY KEY AUTOINCREMENT,
+    title     VARCHAR(10),
+    firstname VARCHAR (50),
+    surname   VARCHAR (50),
+    email     VARCHAR (255) 
+);</p>
+<p>CREATE TABLE reservations (
+  ID INTEGER PRIMARY KEY AUTOINCREMENT,
+  customer_id INTEGER,
+  room_id INTEGER,
+  check_in_date DATETIME NOT NULL,
+  checkout_out_date DATETIME,
+  room_price_per_night REAL,
+  FOREIGN KEY (customer_id) REFERENCES customers(id)
+);</p>
+<p>Now, try running this again:</p>
+<p>INSERT INTO reservations (9999, 35, &apos;01/01/2018&apos;, &apos;01/01/2018&apos;, invoice_date_time, paid) values (9999, 35.0, 0, &apos;01/01/2018&apos;, 0);</p>
+<p>A foreign key is a <em>constraint</em>.</p>
+<h3 id="exercise-add-foreign-key-for-invoices">EXERCISE: Add foreign key for invoices</h3>
+<h4 id="deal-with-imcomplete-data---foreign-keys">Deal with imcomplete data - foreign keys</h4>
+<ul>
+<li>Add reservations without either costumer or room</li>
+<li>Try to get the information for given reservation<ul>
+<li>things should break because there is missing data on the reservation</li>
+</ul>
+</li>
+<li>Fix the table with the foreign keys</li>
+</ul>
+<p>Alter the table to have contrains on the room and customer ids..</p>
+<pre class="language-"><code>ALTER TABLE Reservation (for room)
+</code></pre><h4 id="deal-with-incomplete-data---not-null">Deal with incomplete data - not null</h4>
+<p>Use checkin date as an example</p>
+<ul>
+<li>Add reservations with no check-in date</li>
+<li>Bring up the scenario where the client comes up to the hotel and the reservation is missing the checking date, so the room is being used, because another customer extended the stay.</li>
+<li>Fix table with NOT NULL on all the required columns</li>
+</ul>
+<pre class="language-"><code>ALTER TABLE Reservation (for room)
+</code></pre><h3 id="go-over-analysis-through-querying">Go over analysis through querying</h3>
+<ul>
+<li><p>get all the reservations we have</p>
+</li>
+<li><p>get all the reservations we have for room with number 3 - <code>where</code></p>
+</li>
+<li><p>get all the reservations we have by date - <code>order by</code></p>
+</li>
+<li><p>number of reservations for room number 3 - <code>count</code></p>
+</li>
+<li><p>number of reservations per room number - <code>group by</code></p>
+</li>
+<li><p>rooms that have more than 10 reservations - <code>having</code></p>
+</li>
+<li><p>3 most reserver rooms on the database - <code>limit</code></p>
+</li>
+<li><p>search for onn wich is probably misspelled - <code>like</code> &apos;%onn%&apos;</p>
+</li>
+<li><p>list dates we have check-ins on - <code>distinct</code></p>
+</li>
+<li><p>clients with surnames in [<code>O\&apos;Connor</code>, <code>Silva</code>] - <code>in</code></p>
+</li>
+<li><p>list reservations for clients with surnames in [<code>O\&apos;Connor</code>, <code>Silva</code>] - joining in addition to what we already have</p>
+</li>
+<li><p>list all reservations for non deluxe rooms - <code>!= 2</code></p>
+</li>
+<li><p>number of reservations for room number 3 on the summer of 2017 - <code>date &gt;= &apos;21-06-2017&apos; and date &lt; &apos;21-09-2017&apos;</code></p>
+</li>
+<li><p>list reservations for clients with surnames not like [<code>O\&apos;Connor</code>, <code>Silva</code>] - <code>NOT in</code></p>
+</li>
+<li><p>number of reservations for room number 3 on the summer and winter of 2017 - <code>date &gt;= &apos;21-06-2017&apos; and date &lt; &apos;21-09-2017&apos; or date &gt;= &apos;21-12-2017&apos; and date &lt; &apos;21-04-2018&apos;</code></p>
+</li>
+</ul>
+<h1 id="notes-for-next-steps">Notes for next steps</h1>
+<ul>
+<li><p><code>&lt;</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;=</code> ---- what are all the reservations after tomorrow?</p>
+</li>
+<li><p>combining predicates (<code>AND</code>, <code>OR</code>, <code>NOT</code>)</p>
+</li>
+<li><code>ORDER BY</code></li>
+<li><code>LIMIT</code></li>
+<li>add <code>LIKE</code></li>
+<li>include <code>DISTINCT</code></li>
+<li><code>GROUP BY</code>, <code>HAVING</code></li>
+<li><code>COUNT(*)</code>, <code>SUM</code>, <code>AVG</code>, <code>MIN</code>, <code>MAX</code></li>
+<li><code>IN</code></li>
+</ul>
+<ul>
+<li>sub-selects</li>
+<li><code>!=</code></li>
+<li><code>IS NULL</code></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../week-17/lesson.html" class="navigation navigation-prev " aria-label="Previous page: Week 17 - SQL with Node">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../react/" class="navigation navigation-next " aria-label="Next page: React">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Week 18 - Data Integrity & Analytics","level":"1.8.3","depth":2,"next":{"title":"React","level":"1.9","depth":1,"path":"react/index.md","ref":"react/index.md","articles":[{"title":"Week 19 - React 101","level":"1.9.1","depth":2,"path":"react/week-19/lesson.md","ref":"react/week-19/lesson.md","articles":[]},{"title":"Week 20 - State","level":"1.9.2","depth":2,"path":"react/week-20/lesson.md","ref":"react/week-20/lesson.md","articles":[]},{"title":"Week 21 - React-router & Recap","level":"1.9.3","depth":2,"path":"react/week-21/lesson.md","ref":"react/week-21/lesson.md","articles":[]}]},"previous":{"title":"Week 17 - SQL with Node","level":"1.8.2","depth":2,"path":"node-db/week-17/lesson.md","ref":"node-db/week-17/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node-db/week-18/lesson.md","mtime":"2019-09-10T19:21:16.558Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-10T19:22:26.297Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-scripts/865192367b808254b99cb0ba7092e452-checkboxRemember.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

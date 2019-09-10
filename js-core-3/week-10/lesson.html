@@ -1,0 +1,1227 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Week 10 - Unit Tests and TDD · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../week-11/lesson.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Course</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Before you start
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../others/lesson0.html">
+            
+                <a href="../../others/lesson0.html">
+            
+                    
+                    Week 0 - Introduction and basic setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../house-rules.md">
+            
+                <span>
+            
+                    
+                    House Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../html-css/">
+            
+                <a href="../../html-css/">
+            
+                    
+                    HTML/CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../html-css/week-01/lesson.html">
+            
+                <a href="../../html-css/week-01/lesson.html">
+            
+                    
+                    Week 1 - Semantic HTML and CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../html-css/week-02/lesson.html">
+            
+                <a href="../../html-css/week-02/lesson.html">
+            
+                    
+                    Week 2 - Responsive Web, Layout and Flexbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../html-css/week-03/lesson.html">
+            
+                <a href="../../html-css/week-03/lesson.html">
+            
+                    
+                    Week 3 - HTML Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../js-core/">
+            
+                <a href="../../js-core/">
+            
+                    
+                    JavaScript I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../js-core/week-04/lesson.html">
+            
+                <a href="../../js-core/week-04/lesson.html">
+            
+                    
+                    Week 4 - Hello JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../js-core/week-05/lesson.html">
+            
+                <a href="../../js-core/week-05/lesson.html">
+            
+                    
+                    Week 5 - Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../js-core/week-06/lesson.html">
+            
+                <a href="../../js-core/week-06/lesson.html">
+            
+                    
+                    Week 6 - More Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../js-core-2/">
+            
+                <a href="../../js-core-2/">
+            
+                    
+                    JavaScript II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../js-core-2/week-07/lesson.html">
+            
+                <a href="../../js-core-2/week-07/lesson.html">
+            
+                    
+                    Week 7 - Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../js-core-2/week-08/lesson.html">
+            
+                <a href="../../js-core-2/week-08/lesson.html">
+            
+                    
+                    Week 8 - JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../js-core-2/week-09/lesson.html">
+            
+                <a href="../../js-core-2/week-09/lesson.html">
+            
+                    
+                    Week 9 - More JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    JavaScript III
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.6.1" data-path="lesson.html">
+            
+                <a href="lesson.html">
+            
+                    
+                    Week 10 - Unit Tests and TDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../week-11/lesson.html">
+            
+                <a href="../week-11/lesson.html">
+            
+                    
+                    Week 11 - More TDD, ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../week-12/lesson.html">
+            
+                <a href="../week-12/lesson.html">
+            
+                    
+                    Week 12 - Recap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../node-db/">
+            
+                <a href="../../node-db/">
+            
+                    
+                    Node/DB I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../node-db/week-13/lesson.html">
+            
+                <a href="../../node-db/week-13/lesson.html">
+            
+                    
+                    Week 13 - Node and Express 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../node-db/week-14/lesson.html">
+            
+                <a href="../../node-db/week-14/lesson.html">
+            
+                    
+                    Week 14 - Middleware, Templating and APIs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../node-db/week-15/lesson.html">
+            
+                <a href="../../node-db/week-15/lesson.html">
+            
+                    
+                    Week 15 - Advanced Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../node-db/">
+            
+                <a href="../../node-db/">
+            
+                    
+                    Node/DB II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../node-db/week-16/lesson.html">
+            
+                <a href="../../node-db/week-16/lesson.html">
+            
+                    
+                    Week 16 - Basic SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../node-db/week-17/lesson.html">
+            
+                <a href="../../node-db/week-17/lesson.html">
+            
+                    
+                    Week 17 - SQL with Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../node-db/week-18/lesson.html">
+            
+                <a href="../../node-db/week-18/lesson.html">
+            
+                    
+                    Week 18 - Data Integrity & Analytics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../react/">
+            
+                <a href="../../react/">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../react/week-19/lesson.html">
+            
+                <a href="../../react/week-19/lesson.html">
+            
+                    
+                    Week 19 - React 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../react/week-20/lesson.html">
+            
+                <a href="../../react/week-20/lesson.html">
+            
+                    
+                    Week 20 - State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../react/week-21/lesson.html">
+            
+                <a href="../../react/week-21/lesson.html">
+            
+                    
+                    Week 21 - React-router & Recap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Useful information</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../CODE_OF_CONDUCT.html">
+            
+                <a href="../../CODE_OF_CONDUCT.html">
+            
+                    
+                    Code of Conduct
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../others/useful-links.html">
+            
+                <a href="../../others/useful-links.html">
+            
+                    
+                    Useful links
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../others/PRACTICES.html">
+            
+                <a href="../../others/PRACTICES.html">
+            
+                    
+                    Coding Standards and Best Practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../others/making-a-pull-request.html">
+            
+                <a href="../../others/making-a-pull-request.html">
+            
+                    
+                    Making a Pull Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../others/career-development.html">
+            
+                <a href="../../others/career-development.html">
+            
+                    
+                    Career Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Workshops and other resources</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../others/coding-101.html">
+            
+                <a href="../../others/coding-101.html">
+            
+                    
+                    Coding 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../html-css/compile-scss-instructions.html">
+            
+                <a href="../../html-css/compile-scss-instructions.html">
+            
+                    
+                    Compiling SCSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../node-db/week-13/workshop.html">
+            
+                <a href="../../node-db/week-13/workshop.html">
+            
+                    
+                    Express Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../node-db/week-15/workshop.html">
+            
+                <a href="../../node-db/week-15/workshop.html">
+            
+                    
+                    Hotel Workshop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../others/aws-workshop-2.html">
+            
+                <a href="../../others/aws-workshop-2.html">
+            
+                    
+                    AWS - DynamoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" >
+            
+                <a target="_blank" href="https://github.com/Thomas-Stewart/syllabus/tree/master/java">
+            
+                    
+                    Java module
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">For Mentors</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../CONTRIBUTING.html">
+            
+                <a href="../../CONTRIBUTING.html">
+            
+                    
+                    Contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../others/lesson-template.html">
+            
+                <a href="../../others/lesson-template.html">
+            
+                    
+                    Lesson Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    JavaScript I
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../../js-core/week-04/mentors.md">
+            
+                <span>
+            
+                    
+                    Week 4 - Hello JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Week 10 - Unit Tests and TDD</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><img src="https://img.shields.io/badge/status-review-orange.svg" alt=""></p>
+<h1 id="js-core-iii---1">JS Core III - 1</h1>
+<p><strong>What will we learn today?</strong></p>
+<ul>
+<li><a href="#tracing-code">Tracing Code</a></li>
+<li><a href="#testing-our-code">Testing</a></li>
+<li><a href="#unit-testing">Unit Testing</a></li>
+<li><a href="#jest">Unit Testing Frameworks - JEST</a></li>
+<li><a href="#test-driven-development">Test-driven Development</a></li>
+<li>More on Testing<ul>
+<li><a href="#test-coverage">Test coverage</a></li>
+<li><a href="#refactoring">Refactoring</a></li>
+<li><a href="#modules">Modules</a></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Fork and Clone the <a href="https://github.com/CodeYourFuture/js-exercises-tdd" target="_blank">js-exercises-tdd repo</a></p>
+</blockquote>
+<h2 id="tracing-code">Tracing Code</h2>
+<p>What is Code? Computer code is a <strong>set of rules or instructions</strong>. It is made up of words and numbers and when you put them in the <strong>right order</strong> it will tell your computer what you want it to do. </p>
+<p>Let&apos;s trace these code samples together:</p>
+<ul>
+<li><p><a href="https://github.com/CodeYourFuture/js-exercises-tdd/blob/master/I.write-tests/01-greet-people/greet-people.js" target="_blank">Sample 1</a> </p>
+</li>
+<li><p><a href="https://github.com/CodeYourFuture/js-exercises-tdd/blob/master/I.write-tests/02-remove-vowels/remove-vowels.js" target="_blank">Sample 2</a> </p>
+</li>
+<li><p><a href="https://github.com/CodeYourFuture/js-exercises-tdd/blob/master/I.write-tests/03-remove-vowels-from-array/remove-vowels-in-array.js" target="_blank">Sample 3</a> </p>
+</li>
+</ul>
+<h2 id="testing-our-code">Testing our code</h2>
+<p>We have just traced the output of some code on paper, but how do ensure that the code actually does what it is supposed to do when we run it.</p>
+<blockquote>
+<p>Discussion: How have we been testing our code so far? How do ensure it is <em>correct</em>. What is &quot;<em>correct</em>&quot; anyhow?</p>
+</blockquote>
+<p>In many organisations, there are full teams dedicated to <strong>testing</strong> and ensuring that the code written behaves correctly, to report <strong>bugs</strong> and make sure that they are fixed on time. In general, <strong>Quality Assurance</strong> is a responsibility of everyone in a team starting from Project Manager, Scrum Masters, Developers and Testers.</p>
+<p>There are typically several levels of testing when working on a project:</p>
+<ul>
+<li>Unit testing</li>
+<li>Integration testing</li>
+<li>Functional, End to End testing and User Acceptance Testing (UAT)</li>
+</ul>
+<p><a href="https://stackoverflow.com/a/4904533" target="_blank">This answer from Stack OverFlow</a> has a good explanation of types of testing. The defintions for Functional, e2e and UAT are often mean different things in different teams, the responisibility for them also falls on different individuals depending on the team.</p>
+<p><em>Unit testing</em> though is always the responsibility of the Developer, and it is a very important skill for any professional developer to be able to write tests, and also write code that is testable.</p>
+<blockquote>
+<p>Discussion: What is testable code?</p>
+</blockquote>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> result<span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">getMentorInfo</span><span class="token punctuation">(</span><span class="token parameter">mentors<span class="token punctuation">,</span> name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> greeting <span class="token operator">=</span> <span class="token string">&apos;Hello &apos;</span><span class="token punctuation">;</span>
+
+    result <span class="token operator">=</span> mentors<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">person</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> person<span class="token punctuation">.</span>name <span class="token operator">===</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">var</span> mentorTitle <span class="token operator">=</span> <span class="token string">&apos;Junior Developer&apos;</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>yearsOfExp <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        mentorTitle <span class="token operator">=</span> <span class="token string">&apos;Senior Developer&apos;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>yearsOfExp <span class="token operator">&gt;</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        mentorTitle <span class="token operator">=</span> <span class="token string">&apos;Very Senior Developer&apos;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    result<span class="token punctuation">.</span>jobTitle <span class="token operator">=</span> mentorTitle<span class="token punctuation">;</span>
+    result<span class="token punctuation">.</span>fullName <span class="token operator">=</span> result<span class="token punctuation">.</span>title <span class="token operator">+</span> <span class="token string">&apos; &apos;</span> <span class="token operator">+</span> result<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*
+  var mentors = [
+      {
+          name: &apos;Irina&apos;,
+          title: &apos;Dr.&apos;,
+          yearsOfExperience: 10
+      }, {
+          name: &apos;Ashleigh&apos;,
+          title: &apos;Dame&apos;,
+          yearsOfExperience: 20
+      }, {
+          name: &apos;Etza&apos;,
+          title: &apos;Professor&apos;,
+          yearsOfExperience: 30
+      }
+  ];
+
+  var result = getMentorInfo(mentors, &apos;Etza&apos;)
+  Trace the value of &quot;result&quot;
+*/</span>
+</code></pre>
+<h2 id="unit-testing">Unit Testing</h2>
+<p>Testing is a key skill for any software programmer. We need to make sure our
+software is thoroughly tested, otherwise bad things happen. Testing makes sure
+our programs behave like we intend them to do - <strong>if we don&apos;t test, we can cause
+severe bugs</strong>. Bad software can make planes crash, companies bankrupt, and users
+of your software really frustrated.</p>
+<p>There are different levels on which we can test software, for example
+integration testing, end-to-end testing, and unit testing. Today we will deal
+with unit testing, which is probably the most universal testing discipline.</p>
+<p>A unit test is exactly that - it tests a <em>unit</em> of code. &quot;Unit&quot; can mean
+different things, but in JavaScript it usually refers to a single function.</p>
+<p>Remember when we talked about functions? Functions take <em>input</em> (as arguments),
+do something with it (in the function body), and return <em>output</em> (using the
+<code>return</code> statement). Ideally, a function should always return the same output if
+the same input is given. It makes it predictable and testable - and that&apos;s what
+we want!</p>
+<pre class="language-"><code>         |-----------------|
+input =&gt; | doing something | =&gt; output
+         |-----------------|
+</code></pre><p>So, when unit testing a function, we want to make sure that <em>for a certain
+input, we get the expected output</em>. For this we need to make sure that the
+output matches our expectations. In the simplest form that means we do an
+equality check:</p>
+<pre class="language-"><code class="lang-js"><span class="token function">myFunction</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span> <span class="token operator">===</span> expectedOutput<span class="token punctuation">;</span>
+</code></pre>
+<p>We can formalise this using another function that compares two values and
+complains when they do not match. Such a function is prepared in
+<code>unit-testing/equals.js</code>.</p>
+<p>We can use this function to simply compare to values:</p>
+<pre class="language-"><code class="lang-js"><span class="token function">equals</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// This should pass</span>
+<span class="token function">equals</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// This should fail</span>
+<span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">&quot;Hello&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Hello&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// This should pass</span>
+</code></pre>
+<p>Now we can use this <code>equals()</code> function to test our own code by comparing a
+function result to an expected value.</p>
+<p>Remember that one function can be used as an argument when a second function is called. In this instance, the function we are testing would represent our first function, and our <code>equals()</code> function would represent the second, like so...</p>
+<pre class="language-"><code class="lang-js"><span class="token function">equals</span><span class="token punctuation">(</span><span class="token function">myNewFunction</span><span class="token punctuation">(</span>arg1<span class="token punctuation">,</span> arg2<span class="token punctuation">,</span> etc<span class="token punctuation">)</span><span class="token punctuation">,</span> expectedOutput<span class="token punctuation">)</span>
+</code></pre>
+<p>As you can see in this example, instead of using a number as the first argument to the <code>equals()</code> function, we have used a function instead; the one we wish to test.</p>
+<blockquote>
+<p>Exercise: Write tests for the the exercises under <code>I.write-tests</code></p>
+</blockquote>
+<h3 id="unit-testing-frameworks">Unit testing frameworks</h3>
+<p>There are lots of other things you might want to test for than two things being
+equal. You might want to test if a number is smaller or greater than another, if
+a function was called, if an error happened, or if one thing happened before
+another thing, or how long a function call took to execute.</p>
+<p>We don&apos;t have to build all these things ourselves. Instead there are <em>unit
+testing frameworks</em> that take all that work off our shoulders. All we need to do
+is provide the code and the tests.</p>
+<h3 id="jest">Jest</h3>
+<p>The unit testing framework we are trying to day is called
+<a href="https://facebook.github.io/jest/" target="_blank">Jest</a>. It&apos;s created by Facebook and useful
+for all kinds of unit testing (especially testing React, which we will do in a
+later lesson).</p>
+<p>Look into your <code>jest/</code> folder. You will find a file there, <code>sum.test.js</code>. The
+suffix <code>.test.js</code> tells Jest that this file contains tests it should execute. To
+execute the test, run the following command in your terminal:</p>
+<pre class="language-"><code class="lang-sh"><span class="token function">npm</span> <span class="token builtin class-name">test</span>
+</code></pre>
+<p>This command runs the test in <code>sum.test.js</code>, which tests the <code>sum()</code> function.
+You can see the test output and the fact that the test passed.</p>
+<p>Tests cases in Jest have the following structure:</p>
+<pre class="language-"><code class="lang-js"><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">&quot;test description&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Test instructions</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Jest provides a set of functions that you can use to write your actual tests.
+They are created in a way that imitates natural language, for example:</p>
+<pre class="language-"><code>_Expect_ sum of 1 and 2 _to be_ 3
+</code></pre><p>becomes</p>
+<pre class="language-"><code class="lang-js"><span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>You can add multiple test statements in the same test case (a test case is one
+call of the <code>test</code> function, but you can also create multiple test cases in one
+file. It is important that you give all your test cases meaningful descriptions.</p>
+<blockquote>
+<p><em>Exercise:</em> Add another test case to <code>sum.test.js</code>. Is the sum of 10 and -10
+really zero? Run the tests using Jest.</p>
+<p><em>Exercise:</em> Take the <code>findNeedle</code> function you have tested previously, copy it
+into the <code>jest/</code> folder and call it <code>findNeedle.test.js</code>. Then write a test to
+be used with Jest, similar to <code>sum.test.js</code>. Make sure you cover multiple
+inputs and give all tests meaningful descriptions! Run the tests using Jest.</p>
+</blockquote>
+<h2 id="test-driven-development">Test Driven Development</h2>
+<p>Test-driven development (TDD) is a software development process that relies on the repetition of a very short development cycle: requirements are turned into very specific test cases, then the software is improved to pass the new tests, only. This is opposed to software development that allows software to be added that is not proven to meet requirements. [Wikipedia]</p>
+<p>When developing following TDD, you normally follow this sequence:</p>
+<ol>
+<li>Add a test</li>
+<li>Run all tests and see if the new test fails (Red)</li>
+<li>Write the simplest code to make the test pass (Green)</li>
+<li>Refactor</li>
+<li>Repeat</li>
+</ol>
+<p>Read more on the <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank">Wikipedia article</a> and the resources at the end.</p>
+<p><a href="https://www.codecademy.com/articles/tdd-red-green-refactor" target="_blank">Red Green Refactor</a></p>
+<blockquote>
+<p>Exercise: Two mentors pair on a problem doing &quot;ping pong&quot; TDD. One writing the test, the other writing the implementation.</p>
+</blockquote>
+<h2 id="more-on-testing">More on Testing</h2>
+<h3 id="test-coverage">Test coverage</h3>
+<p>Test coverage describes the extent to which a code base is tested. When Jest
+runs your tests, it generates a so-called <em>coverage report</em>. This report tells
+you how many of your <em>lines of code</em> are covered by tests, how many functions,
+statements, and branches.</p>
+<blockquote>
+<p>A branch is one of multiple ways a code control flow can go. For example, if
+you have an <code>if() ... else ...</code>, both the &quot;if&quot; and the &quot;else&quot; branch must be
+covered by tests.</p>
+</blockquote>
+<p>We want to keep our code coverage as high as possible. Jest allows us to
+generate a coverage report when we run the following command in the terminal:</p>
+<pre class="language-"><code class="lang-sh"><span class="token function">npm</span> <span class="token builtin class-name">test</span> -- --coverage
+</code></pre>
+<blockquote>
+<p><em>Exercise:</em> Check your code coverage for the tests you wrote. Is any of the
+numbers below 100%? If so, try and bring it up to 100%!</p>
+</blockquote>
+<h3 id="refactoring">Refactoring</h3>
+<p>There are times when we want to make our code better without changing any
+functionality, for example because we just learnt about a better way to solve a
+certain problem (like, finding needles in haystacks). This is called
+<em>refactoring</em>.</p>
+<p>When previously <strong>GREEN</strong> code - working code! - suddenly does not work anymore,
+we call this a <em>regression</em>. Our existing tests can make sure that when we
+refactor, the functionality of our code actually stays the same, and does not
+regress.</p>
+<blockquote>
+<p>Exercise: Refactor some of the exercise we&apos;ve written tests for.</p>
+</blockquote>
+<h2 id="modules">Modules</h2>
+<p>So far, all our programs have been in their own single files. But Node programs
+can become really large, and having all our code in only one file will not be
+maintainable.</p>
+<p>We can therefore split our code into so-called <em>modules</em>. A module is basically
+a JavaScript file that makes its functionality available to other modules and
+programs.</p>
+<h3 id="creating-modules-exporting-code">Creating modules, exporting code</h3>
+<p>It is really simple to take existing JavaScript code and turn it into a module
+by exporting its functionality:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">printName</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;My name is &quot;</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> printName<span class="token punctuation">;</span>
+</code></pre>
+<p>The key here is the line containing <code>module.exports</code>. As you see, this is an
+assignment, and whatever is assigned to <code>module.exports</code> will be made available
+to other modules and program when this file is imported.</p>
+<h3 id="using-modules-importing-code">Using modules, importing code</h3>
+<p>But how do we make use of another module in our program? We need to <em>import</em> it,
+and this is done using a function called <code>require()</code>.</p>
+<blockquote>
+<p>There are different module formats for JavaScript. The one we are using here,
+which is natively supported by Node, is called <strong>CommonJS</strong>.</p>
+</blockquote>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> printName <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;./printName.js&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p>The string passed to the <code>require()</code> function is a <em>path</em> to the file you are
+importing. <code>./</code> signifies the current directory, so the above command will
+import a file called &quot;printName.js&quot; that is in the same directory as our
+program.</p>
+</blockquote>
+<p>Assuming our program is in the same folder as <code>printName.js</code>, we can use the
+above code to import the functionality provided by that module and store it in
+the <code>printName</code> variable.</p>
+<p>We can then continue to use the <code>printName</code> function as if it we defined it in
+our own program!</p>
+<pre class="language-"><code>var printName = require(&apos;./printName.js&apos;);
+
+printName();
+</code></pre><blockquote>
+<p>Modules can not only export functions, but all variable types you already
+learned about. Most commonly, they export a function or an object containing
+multiple functions.</p>
+<p><em>Together:</em> Edit the file <code>modules/main.js</code> and follow the instructions.</p>
+</blockquote>
+<h3 id="separating-code-and-tests">Separating code and tests</h3>
+<p>Exporting and importing modules is really useful for testing, too.</p>
+<p>As a rule of thumb, we never want to mix our actual code with our tests. It is
+therefore common to put them in separate files. We are going to call the file
+containing the tests after the file containing the code to be tested, just
+appending <code>.test</code> at the end of the filename. Like so:</p>
+<pre class="language-"><code>main.js               # Our main program
+main.test.js          # Tests for our main program
+someOtherCode.js      # A module called &quot;someOtherCode&quot;
+someOtherCode.test.js # Tests for the &quot;someOtherCode&quot; module
+</code></pre><blockquote>
+<p>The naming is really up to convention - you can even put your tests in a
+different folder! However, for Jest it is important to call test files
+&quot;*.test.js&quot;.</p>
+</blockquote>
+<h1 id="glossary">Glossary</h1>
+<p>You should know these terms by the end of this class: Testing, Quality Assurance, Unit Tests, Integration Tests, Refactoring, Regression Tests .. any more?</p>
+<h1 id="resources">Resources</h1>
+<ol>
+<li><a href="http://bdcampbell.net/javascript/book/javascript_the_good_parts.pdf" target="_blank">JavaScript: The Good Parts by Douglas Crockford, chapter 4 - Functions</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics" target="_blank">MDN Objects basics</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS" target="_blank">MDN OOP in JS</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank">Test-driven development</a></li>
+<li><a href="https://facebook.github.io/jest/" target="_blank">Jest</a></li>
+<li><a href="https://nodejs.org/api/modules.html" target="_blank">Modules</a></li>
+<li><a href="https://medium.com/software-developer/debugging-facebooks-jest-for-react-in-visual-studio-code-9059223e1e71" target="_blank">Setup VS Code for Debugging</a></li>
+</ol>
+<h2 id="tracing-code-resources">Tracing code resources</h2>
+<p>Check out these videos. They contain code that is not JavaScript being traced on paper.</p>
+<p><a href="https://www.youtube.com/watch?v=TZss5ukwN8s" target="_blank">Hand Tracing - Intro to Java Programming</a></p>
+<p><a href="https://www.youtube.com/watch?v=tJGrie7k97c" target="_blank">Tracing code by hand</a></p>
+<p><a href="https://www.youtube.com/watch?v=SEtNBShckCg" target="_blank">Tracing a flowchart</a></p>
+<p><a href="https://www.youtube.com/watch?v=niwBxBUzDu4" target="_blank">Java Tracing Arrays Worksheet 1</a></p>
+<p><a href="https://www.youtube.com/watch?v=5mxT9x5rgCg" target="_blank">Nested loops</a></p>
+<h1 id="homework">Homework</h1>
+<ol>
+<li><p>Finish the Katas and exercises in the project we&apos;ve worked on <a href="https://github.com/CodeYourFuture/js-exercises-tdd" target="_blank">today</a></p>
+</li>
+<li><p>Follow this tutorial about <a href="https://developers.google.com/web/tools/chrome-devtools/javascript/" target="_blank">Debugging with Chrome</a></p>
+</li>
+<li><p>Register yourself on the Marc Littlemore&apos;s free <a href="https://www.marclittlemore.com/courses/javascript-testing-beginners-course/?signup=cyf-course" target="_blank">JavaScript Testing for Beginners</a> course and work your way through the 7 lessons, which are delivered via a daily email. The course uses a Mocha/Chai framework, which is in common use within the web development industry. This will give you more TDD practice using a different approach to Jest, as well as more exposure to ES2015/ES6 JavaScript.</p>
+</li>
+</ol>
+<h2 id="research">Research</h2>
+<ol>
+<li>Research other module formats than CommonJS. What is AMD? What are ES6
+modules and how do their differ from CommonJS?</li>
+<li>What are other test frameworks for JavaScript?</li>
+<li>More parts of the Jest (Jasmine) DSL than just <code>.toBe()</code></li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: JavaScript III">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../week-11/lesson.html" class="navigation navigation-next " aria-label="Next page: Week 11 - More TDD, ES6">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Week 10 - Unit Tests and TDD","level":"1.6.1","depth":2,"next":{"title":"Week 11 - More TDD, ES6","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},"previous":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - Unit Tests and TDD","level":"1.6.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},{"title":"Week 11 - More TDD, ES6","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},{"title":"Week 12 - Recap","level":"1.6.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-10/lesson.md","mtime":"2019-09-10T19:21:16.494Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-10T19:22:26.297Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-scripts/865192367b808254b99cb0ba7092e452-checkboxRemember.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
