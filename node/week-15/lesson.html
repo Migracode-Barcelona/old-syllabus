@@ -1,0 +1,962 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Week 18 - Advanced Node · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../db/" />
+    
+    
+    <link rel="prev" href="../week-14/lesson.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Course</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Before you start
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../others/lesson0.html">
+            
+                <a href="../../others/lesson0.html">
+            
+                    
+                    Week 0 - Introduction and basic setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../others/house-rules.html">
+            
+                <a href="../../others/house-rules.html">
+            
+                    
+                    House Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../CODE_OF_CONDUCT.html">
+            
+                <a href="../../CODE_OF_CONDUCT.html">
+            
+                    
+                    Code of Conduct
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../html-css/">
+            
+                <a href="../../html-css/">
+            
+                    
+                    HTML/CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../html-css/week-01/lesson.html">
+            
+                <a href="../../html-css/week-01/lesson.html">
+            
+                    
+                    Week 1 - Semantic HTML and CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../html-css/week-02/lesson.html">
+            
+                <a href="../../html-css/week-02/lesson.html">
+            
+                    
+                    Week 2 - Responsive Web, Layout and Flexbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../html-css/week-03/lesson.html">
+            
+                <a href="../../html-css/week-03/lesson.html">
+            
+                    
+                    Week 3 - HTML Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../js-core/">
+            
+                <a href="../../js-core/">
+            
+                    
+                    JavaScript I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../js-core/week-04/lesson.html">
+            
+                <a href="../../js-core/week-04/lesson.html">
+            
+                    
+                    Week 4 - Hello JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../js-core/week-05/lesson.html">
+            
+                <a href="../../js-core/week-05/lesson.html">
+            
+                    
+                    Week 5 - Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../js-core/week-06/lesson.html">
+            
+                <a href="../../js-core/week-06/lesson.html">
+            
+                    
+                    Week 6 - More Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../js-core-2/">
+            
+                <a href="../../js-core-2/">
+            
+                    
+                    JavaScript II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../js-core-2/week-07/lesson.html">
+            
+                <a href="../../js-core-2/week-07/lesson.html">
+            
+                    
+                    Week 7 - Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../js-core-2/week-08/lesson.html">
+            
+                <a href="../../js-core-2/week-08/lesson.html">
+            
+                    
+                    Week 8 - JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../js-core-2/week-09/lesson.html">
+            
+                <a href="../../js-core-2/week-09/lesson.html">
+            
+                    
+                    Week 9 - More JS in the Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../js-core-3/">
+            
+                <a href="../../js-core-3/">
+            
+                    
+                    JavaScript III
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../js-core-3/week-10/lesson.html">
+            
+                <a href="../../js-core-3/week-10/lesson.html">
+            
+                    
+                    Week 10 - Unit Tests and TDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../js-core-3/week-11/lesson.html">
+            
+                <a href="../../js-core-3/week-11/lesson.html">
+            
+                    
+                    Week 11 - More TDD, ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../js-core-3/week-12/lesson.html">
+            
+                <a href="../../js-core-3/week-12/lesson.html">
+            
+                    
+                    Week 12 - Recap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../react/">
+            
+                <a href="../../react/">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../react/week-1/lesson.html">
+            
+                <a href="../../react/week-1/lesson.html">
+            
+                    
+                    Week 13 - React 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../react/week-2/lesson.html">
+            
+                <a href="../../react/week-2/lesson.html">
+            
+                    
+                    Week 14 - Reacting to Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../react/week-3/lesson.html">
+            
+                <a href="../../react/week-3/lesson.html">
+            
+                    
+                    Week 15 - Fetching Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../react/week-4/lesson.html">
+            
+                <a href="../../react/week-4/lesson.html">
+            
+                    
+                    Routing (optional)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Node/DB I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../week-13/lesson.html">
+            
+                <a href="../week-13/lesson.html">
+            
+                    
+                    Week 16 - Node and Express 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../week-14/lesson.html">
+            
+                <a href="../week-14/lesson.html">
+            
+                    
+                    Week 17 - More APIs in Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.3" data-path="lesson.html">
+            
+                <a href="lesson.html">
+            
+                    
+                    Week 18 - Advanced Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../db/">
+            
+                <a href="../../db/">
+            
+                    
+                    Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../db/week-1/lesson.html">
+            
+                <a href="../../db/week-1/lesson.html">
+            
+                    
+                    Week 19 - Introduction to SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../db/week-2/lesson.html">
+            
+                <a href="../../db/week-2/lesson.html">
+            
+                    
+                    Week 20 - More SQL and integration with NodeJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../db/week-3/lesson.html">
+            
+                <a href="../../db/week-3/lesson.html">
+            
+                    
+                    Week 21 - More integration with NodeJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Useful information</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../others/useful-links.html">
+            
+                <a href="../../others/useful-links.html">
+            
+                    
+                    Useful links
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../others/PRACTICES.html">
+            
+                <a href="../../others/PRACTICES.html">
+            
+                    
+                    Coding Standards and Best Practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../others/making-a-pull-request.html">
+            
+                <a href="../../others/making-a-pull-request.html">
+            
+                    
+                    Making a Pull Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../others/career-development.html">
+            
+                <a href="../../others/career-development.html">
+            
+                    
+                    Career Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Other resources</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../others/coding-101.html">
+            
+                <a href="../../others/coding-101.html">
+            
+                    
+                    Coding 101
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../others/aws-workshop-2.html">
+            
+                <a href="../../others/aws-workshop-2.html">
+            
+                    
+                    AWS - DynamoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <a target="_blank" href="https://github.com/Thomas-Stewart/syllabus/tree/master/java">
+            
+                    
+                    Java module
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">For Mentors</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../CONTRIBUTING.html">
+            
+                <a href="../../CONTRIBUTING.html">
+            
+                    
+                    Contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../others/lesson-template.html">
+            
+                <a href="../../others/lesson-template.html">
+            
+                    
+                    Lesson Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Week 18 - Advanced Node</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><img src="https://img.shields.io/badge/status-draft-darkred.svg" alt=""></p>
+<h1 id="node-3">Node 3</h1>
+<p><strong> What we will learn today?</strong></p>
+<ul>
+<li><a href="#node-recap">Node Recap</a></li>
+<li><a href="#best-practices">Best Practices</a></li>
+<li><a href="#node-process-managers">Node Process Managers</a></li>
+<li><a href="#rest">REST</a></li>
+<li><a href="#security">Security</a></li>
+<li><a href="#authentication">Authentication</a></li>
+<li><a href="#hotel-workshop">Hotel Workshop</a></li>
+</ul>
+<hr>
+<h2 id="node-recap">Node Recap</h2>
+<p>Javascript has evolved from the browser to be used in the backend. It does not need a framework as we saw in <a href="../week-13/lesson.html">week-13</a>, however a framework like Express allows us to develop faster.</p>
+<h3 id="documentation">Documentation</h3>
+<p>When you are working with frameworks it is always helpful to use their documentation.</p>
+<ul>
+<li><a href="https://expressjs.com" target="_blank">Express Documentation</a></li>
+<li><a href="https://nodejs.org/api/http.html" target="_blank">Node.js Documentation</a></li>
+</ul>
+<h3 id="middleware">Middleware</h3>
+<p>Middleware allow us to process requests to add functionalities that are not built in to Express, for example logging, authentication, etc.</p>
+<blockquote>
+<ul>
+<li>Express Documentation: <a href="https://expressjs.com/en/guide/using-middleware.html" target="_blank">Using Middleware</a></li>
+<li>Video: <a href="https://www.youtube.com/watch?v=vKlybue_yMQ" target="_blank">body-parser</a> which makes it easier to work with POST requests and forms.</li>
+</ul>
+</blockquote>
+<h3 id="routing">Routing</h3>
+<p>Routing refers to how an application&#x2019;s endpoints (URIs) respond to the client requests. These are configured differently for each framework, and can range from basic configuration to very extensive for more complex use cases.</p>
+<p>Simple example</p>
+<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>More complicated example using <code>Passport.js</code> middleware for authentication</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">ensureAuthenticated</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span><span class="token function">isAuthenticated</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">else</span> res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">&quot;/login&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/account&quot;</span><span class="token punctuation">,</span> ensureAuthenticated<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;welcome user!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<ul>
+<li>Express Documentation: <a href="https://expressjs.com/en/guide/routing.html" target="_blank">Routing</a></li>
+</ul>
+</blockquote>
+<h2 id="best-practices">Best Practices</h2>
+<p>Express have their own recommended <a href="https://expressjs.com/en/advanced/best-practice-performance.html" target="_blank">best practices page</a></p>
+<h2 id="node-process-managers">Node Process Managers</h2>
+<p>These process managers monitor for any changes in your node.js application and automatically restart the server, perfect for development and production.</p>
+<blockquote>
+<p>Popular PMs include:</p>
+<ul>
+<li><a href="http://nodemon.io/" target="_blank">nodemon</a></li>
+<li><a href="https://expressjs.com/en/advanced/pm.html#pm2" target="_blank">pm2</a></li>
+</ul>
+</blockquote>
+<h2 id="rest">REST</h2>
+<p>REST is a convention of how to design your API, whether it is for your own frontend, or other frontends and clients.</p>
+<blockquote>
+<ul>
+<li>Read: Resource naming in <a href="http://www.restapitutorial.com/lessons/restfulresourcenaming.html" target="_blank">REST</a> convention</li>
+</ul>
+</blockquote>
+<h2 id="security">Security</h2>
+<p>When you take your website to production there is a whole range of things to consider.</p>
+<p><img src="../assets/http-vs-https.png" alt="HTTP vs HTTPS"></p>
+<p>Node has built in support for HTTPS, and once you have your own certificates you can use this feature. However sometimes when you deploy to <code>cloud</code> Platform Platform as a Service (PaaS) providers such as Heroku, they provide SSL and configure it for you automatically.</p>
+<blockquote>
+<ul>
+<li>Read: <a href="https://nodejs.org/api/https.html" target="_blank">Node: HTTPS</a></li>
+<li>Read/Watch: <a href="https://www.globalsign.com/en/ssl-information-center/what-is-an-ssl-certificate/" target="_blank">What is an SSL Certificate?</a></li>
+<li>Read: <a href="https://devcenter.heroku.com/articles/ssl" target="_blank">Heroku SSL</a></li>
+</ul>
+</blockquote>
+<h2 id="authentication">Authentication</h2>
+<p>Sometimes you need to add user functionality for your website. To do this you can make use of external libraries like <a href="www.passportjs.org">passport</a> to add authentication to your website.</p>
+<blockquote>
+<p>For more information read:</p>
+<ul>
+<li><a href="https://tools.ietf.org/html/rfc6750" target="_blank">OAuth 2.0 Authorization Framework: Bearer Token Usage</a></li>
+<li><a href="https://github.com/jaredhanson/passport-http-bearer" target="_blank">Bearer Strategy</a></li>
+</ul>
+</blockquote>
+<h2 id="hotel-workshop">Hotel Workshop</h2>
+<p>Get in to groups of 3/4 and checkout the <a href="workshop.html">workshop brief</a>.</p>
+<blockquote>
+<p><strong>Exercise</strong>: Please fork and clone <a href="https://github.com/CodeYourFuture/cyf-hotel" target="_blank">CYF-Hotel</a> repository and follow the exercises in the <code>README.MD</code>.</p>
+</blockquote>
+<h1 id="homework">Homework</h1>
+<ol>
+<li>Finish the <a href="https://github.com/CodeYourFuture/cyf-hotel" target="_blank">hotel workshop</a> with your team, assigning trello tickets in your team trello page</li>
+</ol>
+<h2 id="prepare-for-the-next-class">Prepare for the next class</h2>
+<ol>
+<li>Read: <a href="https://en.wikipedia.org/wiki/Persistence_(computer_science)" target="_blank">Persistence (computer science)</a></li>
+<li>Watch: <a href="https://www.youtube.com/watch?v=FR4QIeZaPeM" target="_blank">What is Database &amp; SQL?</a></li>
+<li>Learn some basic SQL with <a href="https://www.khanacademy.org/computing/computer-programming/sql" target="_blank">khanacademy</a> or <a href="https://www.codecademy.com/learn/learn-sql" target="_blank">codecademy</a> and ask any questions in the channel</li>
+</ol>
+<h1 id="escalation-policy">Escalation policy</h1>
+<p>When you get stuck during the homework you should follow the
+following:</p>
+<ol>
+<li>First, search for answers on Google and Stack Overflow. If you have an error message, copy and paste it into Google.</li>
+<li>When you are stuck for longer than 20 minutes - no longer! - write a question to your fellow students in your class channel on slack. Take a while to think carefully about the question. This is an important skill. There is a great guide to writing good questions <a href="http://stackoverflow.com/help/how-to-ask" target="_blank">here</a></li>
+<li>If you cannot get an answer from your fellow students, post your question in your class public channel, @ the mentor for the class that covered the topic and we will reply as soon as we can.</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../week-14/lesson.html" class="navigation navigation-prev " aria-label="Previous page: Week 17 - More APIs in Node">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../db/" class="navigation navigation-next " aria-label="Next page: Databases">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Week 18 - Advanced Node","level":"1.8.3","depth":2,"next":{"title":"Databases","level":"1.9","depth":1,"path":"db/index.md","ref":"db/index.md","articles":[{"title":"Week 19 - Introduction to SQL","level":"1.9.1","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},{"title":"Week 20 - More SQL and integration with NodeJS","level":"1.9.2","depth":2,"path":"db/week-2/lesson.md","ref":"db/week-2/lesson.md","articles":[]},{"title":"Week 21 - More integration with NodeJS","level":"1.9.3","depth":2,"path":"db/week-3/lesson.md","ref":"db/week-3/lesson.md","articles":[]}]},"previous":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-15/lesson.md","mtime":"2019-09-15T12:26:46.934Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-15T12:27:46.149Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-scripts/865192367b808254b99cb0ba7092e452-checkboxRemember.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
