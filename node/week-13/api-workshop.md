@@ -1,8 +1,28 @@
 ![](https://img.shields.io/badge/status-review-orange.svg)
 
-# Where we used APIs?
+# What did we build so far?
 
-When we called the Github _API_ to get the number of Repos associated to a user:
+So far, we've been writing JavaScript in the _client_. For the _front-end_.
+Remember in our React applications, when we write code like this:
+
+```js
+// Part of React Component that gets Beyonce albums data
+class BeyonceApp extends React.Component {
+  componentDidMount() {
+    fetch(
+      "https://rawgit.com/rarmatei/f5ae92ac93d9716affab822a3f54f95b/raw/e62641b3f5ddd12c4fe34aa0912488224594e5a7/beyonce-albums.json"
+    )
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        this.setState({ songs: data });
+      });
+  }
+}
+```
+
+Or when we called the Github _API_ to get the number of Repos associated to a user:
 
 ```js
 var url = "https://api.github.com/users/CodeYourFuture/repos";
@@ -240,7 +260,7 @@ tries to access the webpage.
 
 ## 1. Create your own handler function.
 
-Let us add a handler function to send back a message to the client. To do that,
+Let us add a handler handler function to send back a message to the client. To do that,
 we're going to use the Express `send()`
 [method](http://expressjs.com/en/api.html#res.send). This will update the
 response object with the message.
@@ -252,7 +272,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", function(req, res) {
-  res.send("Hello CYF class 3!");
+  res.send("Yay Node Girls!");
 });
 
 app.listen(3000, function() {
@@ -293,7 +313,7 @@ congratulations! You just sent your first response from the server.
 # Step 5 - Routing
 
 At the moment our server only does one thing. When it receives a request from
-the `/` endpoint, it sends back the same response: "Hello CYF class 3!".
+the `/` endpoint, it sends back the same response: "Yay Node Girls!".
 
 > Try typing http://localhost:3000/nodegirls and see what happens.
 
