@@ -492,14 +492,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" >
+        <li class="chapter " data-level="1.8.2" data-path="../../node/week-14/lesson.html">
             
                 <span>
             
                     
                     Week 17 - More APIs in Node
             
-                </span>
+                </a>
             
 
             
@@ -910,7 +910,7 @@ Open the <code>pokedex</code> React application</p>
 
 <span class="token keyword">const</span> <span class="token function-variable function">Counter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
   <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
-    Count<span class="token punctuation">:</span> <span class="token punctuation">{</span>props<span class="token punctuation">.</span>count<span class="token punctuation">}</span>
+    Count<span class="token operator">:</span> <span class="token punctuation">{</span>props<span class="token punctuation">.</span>count<span class="token punctuation">}</span>
     <span class="token operator">&lt;</span>button id<span class="token operator">=</span><span class="token string">&quot;click-me&quot;</span><span class="token operator">&gt;</span>Click me<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -959,7 +959,7 @@ document<span class="token punctuation">.</span><span class="token function">get
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">Counter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
     <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
-      Count<span class="token punctuation">:</span> <span class="token punctuation">{</span>props<span class="token punctuation">.</span>count<span class="token punctuation">}</span>
+      Count<span class="token operator">:</span> <span class="token punctuation">{</span>props<span class="token punctuation">.</span>count<span class="token punctuation">}</span>
       <span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>Click me<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
   <span class="token punctuation">)</span>
@@ -972,7 +972,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>
       <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
-        Count<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>count<span class="token punctuation">}</span>
+        Count<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>count<span class="token punctuation">}</span>
         <span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>Click me<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
       <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -984,7 +984,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>
       <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
-        Count<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span>
+        Count<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span>
         <span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>Click me<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
       <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -996,7 +996,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
-      count<span class="token punctuation">:</span> props<span class="token punctuation">.</span>count
+      count<span class="token operator">:</span> props<span class="token punctuation">.</span>count
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
@@ -1013,14 +1013,14 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 
   <span class="token function-variable function">increment</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-      count<span class="token punctuation">:</span> <span class="token number">1</span>
+      count<span class="token operator">:</span> <span class="token number">1</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
   <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>
       <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
-        Count<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span>
+        Count<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">}</span>
         <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>increment<span class="token punctuation">}</span><span class="token operator">&gt;</span>Click me<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
       <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1049,7 +1049,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   <span class="token function-variable function">increment</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token parameter">previousState</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
       <span class="token keyword">return</span> <span class="token punctuation">{</span>
-        count<span class="token punctuation">:</span> previousState<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span>
+        count<span class="token operator">:</span> previousState<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span>
       <span class="token punctuation">}</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
@@ -1168,7 +1168,7 @@ Complete the FreeCodeCamp <a href="https://learn.freecodecamp.org/front-end-libr
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"next":{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-3/lesson.md","ref":"react/week-3/lesson.md","articles":[]},"previous":{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"path":"react/week-1/lesson.md","ref":"react/week-1/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-2/lesson.md","mtime":"2019-12-19T09:47:03.889Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-19T09:47:53.602Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 14 - Reacting to Changes","level":"1.7.2","depth":2,"next":{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-3/lesson.md","ref":"react/week-3/lesson.md","articles":[]},"previous":{"title":"Week 13 - React 101","level":"1.7.1","depth":2,"path":"react/week-1/lesson.md","ref":"react/week-1/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-2/lesson.md","mtime":"2020-02-05T15:08:44.100Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-05T15:09:34.087Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

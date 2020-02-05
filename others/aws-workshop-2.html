@@ -490,14 +490,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" >
+        <li class="chapter " data-level="1.8.2" data-path="../node/week-14/lesson.html">
             
                 <span>
             
                     
                     Week 17 - More APIs in Node
             
-                </span>
+                </a>
             
 
             
@@ -867,7 +867,7 @@ first parameter.</p>
 <p>We can also provide an extra parameter <code>projection</code> to define what fields we
 want back from the query.</p>
 <p>For example, if we&apos;re only interested in the name</p>
-<pre class="language-"><code class="lang-js">db<span class="token punctuation">.</span>students<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span> country<span class="token punctuation">:</span> <span class="token string">&quot;Ethiopia&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-js">db<span class="token punctuation">.</span>students<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span> country<span class="token operator">:</span> <span class="token string">&quot;Ethiopia&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// you can also use { name: true }</span>
 </code></pre>
 <p>Let&apos;s add another two students to the collection</p>
@@ -877,12 +877,12 @@ want back from the query.</p>
 <p><code>db.students.insertOne({ name: &apos;Mohamed&apos;, country: &apos;Syria&apos;, assignedMentors:
 [&apos;Michael&apos;, &apos;Ashleigh&apos;] })</code></p>
 <p>Now let&apos;s query for all the students that have <strong>Michael</strong> as mentor.</p>
-<pre class="language-"><code class="lang-js">db<span class="token punctuation">.</span>students<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span> assignedMentors<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;Michael&quot;</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-js">db<span class="token punctuation">.</span>students<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span> assignedMentors<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;Michael&quot;</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>What if we want to find any student whose name is &quot;Mohamed&quot; AND whose country is
 &quot;Sudan&quot;. You can then use the <strong>logical query operator $and</strong>.</p>
 <pre class="language-"><code class="lang-js">db<span class="token punctuation">.</span>students<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  $and<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&quot;Mohamed&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> country<span class="token punctuation">:</span> <span class="token string">&quot;Sudan&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">]</span>
+  $and<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">&quot;Mohamed&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> country<span class="token operator">:</span> <span class="token string">&quot;Sudan&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Notice that name and country are case-sensitive.</p>
@@ -1123,7 +1123,7 @@ variable provided.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"AWS - DynamoDB","level":"3.2","depth":1,"next":{"title":"Java module","level":"3.3","depth":1,"url":"https://github.com/Thomas-Stewart/syllabus/tree/master/java","ref":"https://github.com/Thomas-Stewart/syllabus/tree/master/java","articles":[]},"previous":{"title":"Coding 101","level":"3.1","depth":1,"path":"others/coding-101.md","ref":"others/coding-101.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/aws-workshop-2.md","mtime":"2019-12-19T09:47:03.877Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-19T09:47:53.602Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"AWS - DynamoDB","level":"3.2","depth":1,"next":{"title":"Java module","level":"3.3","depth":1,"url":"https://github.com/Thomas-Stewart/syllabus/tree/master/java","ref":"https://github.com/Thomas-Stewart/syllabus/tree/master/java","articles":[]},"previous":{"title":"Coding 101","level":"3.1","depth":1,"path":"others/coding-101.md","ref":"others/coding-101.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/aws-workshop-2.md","mtime":"2020-02-05T15:08:44.092Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-05T15:09:34.087Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
