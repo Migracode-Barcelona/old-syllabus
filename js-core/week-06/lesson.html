@@ -749,100 +749,135 @@
 <h1 id="javascript-core-i---3">JavaScript Core I - 3</h1>
 <p><strong>What we will learn today?</strong></p>
 <ul>
-<li><a href="#array-find">Array Find</a></li>
-<li><a href="#array-some">Array Some</a></li>
-<li><a href="#array-every">Array Every</a></li>
-<li><a href="#array-every">Array Filter</a></li>
-<li><a href="#array-map">Array Map</a></li>
-<li><a href="#array-foreach">Array ForEach</a></li>
+<li><a href="#control-flow">Control Flow</a><ul>
+<li><a href="#conditional-execution">Conditional Execution</a></li>
+<li><a href="#while-loops">While loops</a></li>
+<li><a href="#for-loops">For loops</a></li>
+<li><a href="#break-a-loop">Break a loop</a></li>
+<li><a href="#switch-statement">Switch statement</a></li>
+<li><a href="#other-ways-of-looping">Other ways of looping</a></li>
 </ul>
-<hr>
+</li>
+<li><a href="#callback-functions">Callback functions</a><ul>
+<li><a href="#arrow-functions">Arrow functions</a></li>
+<li><a href="#chaining">Chaining</a></li>
+</ul>
+</li>
+</ul>
 <blockquote>
 <p>Please make sure you&apos;re working on the <a href="https://github.com/Migracode-Barcelona/js-exercises" target="_blank">js-exercises repo</a> <strong>Week 3</strong> during this class.</p>
 </blockquote>
-<h2 id="array-find">Array find</h2>
-<p>Imagine you have an array of names:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Daniel&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;James&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Irina&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Mozafar&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Ashleigh&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<h2 id="control-flow">Control Flow</h2>
+<p>When we wrote our first lines of code we saw that the execution of the program was linear, the expressions executed in a determined order, from top to the bottom of the script.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">24</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;John is &quot;</span> <span class="token operator">+</span> age <span class="token operator">+</span> <span class="token string">&quot;years old.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// John is 24 years old.</span>
 </code></pre>
-<p>How would you find the first name that&apos;s longer than 6 characters?</p>
-<p>You can write a predicate function that checks if a string is longer than 6 characters:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">isLongName</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> name<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">6</span><span class="token punctuation">;</span>
+<h3 id="conditional-execution">Conditional execution</h3>
+<p>By introducing the <code>if</code> statement, a branch is created in the execution of the program. This is called <strong>conditional execution</strong>, where the logic is split into different branches:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">24</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>age <span class="token operator">&gt;</span> <span class="token number">18</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;John is an adult.&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;John is a young boy.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span class="token punctuation">}</span>
 </code></pre>
-<p>To find the first item that satisfies the predicate you would have to go through each array item, and pass it into <code>isLongName</code>. Once it returns true, we can stop going through the array and grab the item that passed the predicate&apos;s test. Sounds complicated! Thankfully there is an array method that does just this!</p>
-<h3 id="find"><code>.find()</code></h3>
-<p><em>Searches through the array and returns the value of the first item that satisfies a predicate function.</em></p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> longName <span class="token operator">=</span> names<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>isLongName<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>longName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// logs Mozafar</span>
+<p>The statements inside of each <code>{ }</code> represent each branch on the logic.</p>
+<h3 id="while-loops">While loops</h3>
+<p>Programs are very efficient when executing recurring tasks, but now imagine you are asked to log numbers from 1 to 100:</p>
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is 1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is 2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is 3&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is 4&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is 5&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// ...</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is 100&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h2 id="array-some">Array some</h2>
-<p>Imagine you have an array of numbers:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-</code></pre>
-<p>You know that the array is supposed to contain positive numbers, but you want to check if it also contains any negative numbers.</p>
-<p>We can write a function that checks this:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">isNegative</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> number <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<p>Although this would work you would need to write 100 lines of code to achieve the desired output. A better solution for this problem would require that we could execute a block of code multiple times. This form of control is what we call a loop.</p>
+<p>There are many ways to create a loop in a program, the first we will study is the <code>while</code> loop:</p>
+<h3 id="while-----"><code>while ( ) { //... }</code></h3>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is: &quot;</span> <span class="token operator">+</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  count <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>To check your array of numbers, you&apos;d have to run this function against every number in the array. Thankfully there is an array method that does just this!</p>
-<h3 id="some"><code>.some()</code></h3>
-<p><em>Searches through an array and returns true if at least one array item satisifies the predicate function you provided.</em></p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> containsNegative <span class="token operator">=</span> ages<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span>isNegative<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>containsNegative<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// logs true</span>
-</code></pre>
-<h2 id="array-every">Array every</h2>
-<p>Imagine you have an array of people&apos;s names:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> students <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Omar&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Austine&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Dany&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Swathi&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Lesley&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-</code></pre>
-<p>You want to check that every student in the array has a name longer than 3 characters. How do you do that for every value in the array?</p>
-<p>We can write a function that returns true or false:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">isAboveThreshold</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> name<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<p>The <code>while</code> statement creates a loop. The syntax is somehow similar to the <code>if</code> statement, it evaluates a condition inside the parentheses <code>(true|false)</code> and then it executes the code inside the <code>{ }</code> block only if that condition evaluates to <code>true</code>. </p>
+<h3 id="exercise">Exercise</h3>
+<p>Head over to <code>exercise.js</code> and follow the instructions in the comments.</p>
+<h3 id="for-loops">For loops</h3>
+<p>Alternatively we could use a <code>for loop</code>, which will do the same as the <code>while do</code> but in a shorter way:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> count <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span> count <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is: &quot;</span> <span class="token operator">+</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>To check that each name is longer than 3 characters, you&apos;d have to run this function against every name in the array and return false if someone&apos;s name is 3 or fewer characters. Thankfully there is an array method that does just this!</p>
-<h3 id="every"><code>.every()</code></h3>
-<p><em>Searches through an array and returns true if every item satisifies the predicate function you provided. Otherwise, it returns false</em>.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> studentNameLength <span class="token operator">=</span> students<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span>isAboveThreshold<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>studentNameLength<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// logs true</span>
-</code></pre>
-<h2 id="array-filter">Array Filter</h2>
-<p>Imagine you have an array of students&apos; test scores:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> testScores <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">66</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">81</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-</code></pre>
-<p>You want to show only the test scores that are higher than 80. How do you do that for every value in the array?</p>
-<p>We can write a function that checks if one score is greater than 80:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">isHighScore</span><span class="token punctuation">(</span><span class="token parameter">score</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> score <span class="token operator">&gt;</span> <span class="token number">80</span><span class="token punctuation">;</span>
+<p>This <code>for</code> loop it prints the same output as the <code>while</code> we study previously, the main difference is that the initialization, the condition, and the final-expression are grouped.</p>
+<h3 id="for-initialization-condition-final-expression---"><code>for (initialization; condition; final-expression) { //... }</code></h3>
+<p>The initialization is <code>var count = 1</code>, the condition is <code>count &lt;= 100</code> and the final-expression is <code>count += 1</code>. Those blocks can be seen inside the parentheses after the <code>for</code> keyword and separated by semicolons <code>;</code>, in the following order <code>(initialization; condition; final-expression)</code>.</p>
+<h3 id="exercise">Exercise</h3>
+<p>Head over to <code>exercise.js</code> and follow the instructions in the comments.</p>
+<h3 id="break-a-loop">Break a loop</h3>
+<p>There might be cases where you would need to stop a loop from continuing its execution, and waiting for the defined condition to evaluate to <code>false</code> is not the only solution. To stop a loop we can use the keyword <code>break</code>, let see how:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token punctuation">;</span> count <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is: &quot;</span> <span class="token operator">+</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>To find out which scores were greater than 80, you&apos;d have to run this function against every score in the array, and push the 80+ scores into a new array. Thankfully there is an array method that does just this!</p>
-<h3 id="filter"><code>.filter()</code></h3>
-<p><em>Runs every item in the array through a condition that we set, and returns a new array with the values that match the condition</em>.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> highTestScores <span class="token operator">=</span> testScores<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>isHighScore<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>highTestScores<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// logs [90, 100, 81]</span>
+<p>The provided code will output the same we saw on previous examples. This time the condition was moved to the body of the <code>for</code> loop to illustrate that:</p>
+<ol>
+<li>Use <code>break</code> to stop a loop execution.</li>
+<li>The condition in the <code>for</code> loop can be omitted.</li>
+</ol>
+<h3 id="exercise">Exercise</h3>
+<p>Head over to <code>exercise.js</code> and follow the instructions in the comments.</p>
+<h3 id="switch-statement">Switch statement</h3>
+<p>It&apos;s a common pattern to see code that looks like:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>os <span class="token operator">===</span> <span class="token string">&quot;windows&quot;</span><span class="token punctuation">)</span> <span class="token function">startWindows</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>os <span class="token operator">==</span> <span class="token string">&quot;linux&quot;</span><span class="token punctuation">)</span> <span class="token function">startLinux</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>os <span class="token operator">==</span> <span class="token string">&quot;osx&quot;</span><span class="token punctuation">)</span> <span class="token function">startOSX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span> <span class="token function">askForOS</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h2 id="array-map">Array Map</h2>
-<p>We learnt about the <code>.map()</code> method in the previous week. This week we&apos;ll study how it works in more depth.</p>
-<p>You might remember this example:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> number <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<p>The <code>switch</code> statement is an alternative method to solve this same problem, see the following example:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">switch</span> <span class="token punctuation">(</span>os<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> <span class="token string">&quot;windows&quot;</span><span class="token operator">:</span>
+    <span class="token function">startWindows</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token keyword">case</span> <span class="token string">&quot;linux&quot;</span><span class="token operator">:</span>
+    <span class="token function">startLinux</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token keyword">case</span> <span class="token string">&quot;osx&quot;</span><span class="token operator">:</span>
+    <span class="token function">startOSX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token keyword">default</span><span class="token operator">:</span>
+    <span class="token function">askForOS</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">break</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-
-<span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> numbersDoubled <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>double<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>The <code>map()</code> method runs the function we provided (<code>double</code>) on each item in the array and uses the return values to create a new array. In the example <code>numbersDoubled</code> is a new array containing <code>[2, 4, 6]</code>.</p>
+<p>The program will evaluate the condition inside the parentheses <code>( )</code> and run the matching <code>case</code> statement. Note that after each statement there is a <code>break</code>, this ensures that the <code>switch</code> block exits, if omitted it will continue executing and might run code that was not intended to be run. </p>
+<h3 id="exercise">Exercise</h3>
+<p>Head over to <code>exercise.js</code> and follow the instructions in the comments.</p>
+<h3 id="other-ways-of-looping">Other ways of looping</h3>
+<p>As studied in the previous class some array methods will loop through the items in the array and call a function. For example: </p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Daniel&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Mozafar&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Irina&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The name &quot;</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">&quot; is at index &quot;</span> <span class="token operator">+</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+names<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>loop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Just like <code>forEach</code> there are many others that will also loop the items of an array, here are some examples:</p>
+<ul>
+<li><code>.every()</code></li>
+<li><code>.some()</code></li>
+<li><code>.map()</code></li>
+<li><code>.filter()</code></li>
+</ul>
+<p>Notice that those methods return an array when executed, on contrary to <code>forEach()</code> that returns <code>undefined</code>. This makes them ideal when you need to modify data contained on the array.</p>
 <h3 id="callback-functions">Callback functions</h3>
 <p>A function that we provide to a method is commonly called a <em>callback</em> function. The term highlights that although we <em>provide</em> the <code>double</code> function, the <code>.map()</code> method <em>calls</em> it. (Notice how we never write <code>double()</code> to call the function).</p>
 <p>We&apos;ll see callback functions used a lot more in the coming weeks. </p>
-<p>Often, when a function is only needed for a map operation, developers will declare the callback function inside of the method call. Let&apos;s try copying and pasting the function declaration inside of the <code>.map()</code> method call.</p>
+<p>Often, when a function is only needed for a map operation, it can be declared <em>inline</em>. Let&apos;s try copying and pasting the function declaration inside of the <code>.map()</code> method call.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> numbersDoubled <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> number <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
@@ -854,49 +889,21 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token keyword">return</span> number <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>We can make this code even shorter still. In the latest versions of JavaScript a way of declaring functions was introduced called <em>arrow functions</em>. </p>
+<h3 id="arrow-functions">Arrow functions</h3>
+<p>There is an alternative syntax to write a function that was introduced in newer versions of JavaScript (since ES6). It&apos;s called <em>arrow function</em>, lets see an example:</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> numbersDoubled <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">number</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<span class="token keyword">var</span> numbersDoubled <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> number <span class="token operator">*</span> <span class="token number">2</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>The arrow function syntax lets you declare a function without the <code>function</code> keyword. (There are some other subtle differences between arrow functions and regular functions that you will learn about at a much later stage).</p>
+<p>The arrow function syntax lets you declare a function without the <code>function</code> keyword. (There are some other subtle differences between arrow functions and regular functions that you will learn later).</p>
 <p>There is one last thing you can do to make your code shorter. If you remove the braces (<code>{}</code>) from an arrow function, the body of the function will be returned without needing to write the <code>return</code> keyword.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> numbersDoubled <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">number</span> <span class="token operator">=&gt;</span> number <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>In the example above, the expression <code>number * 2</code> is automatically returned because it comes directly after the <code>=&gt;</code> arrow (instead of coming after curly braces). This is called an <code>implicit return</code>.</p>
-<h2 id="array-foreach">Array Foreach</h2>
-<p>The <code>.forEach()</code> method is similar to <code>.map()</code> except it does not return a new array. Therefore <code>.forEach()</code> is only useful if you want to perform <em>side effects</em>.</p>
-<h3 id="side-effects">Side effects</h3>
-<p>Generally, functions should take an input and return an output (based on that input), and not do anything else.</p>
-<p>When functions meet this criteria they can be called <em>pure functions</em>.</p>
-<p>A pure function does not:</p>
-<ul>
-<li>access any data unless it was passed in as a parameter</li>
-<li>change data declared outside the function</li>
-<li>interacts with anything outside of the function (e.g. logs a message to the console, shows a message on a website, saves data to disk)</li>
-</ul>
-<p>These are all example of <em>side effects</em>. Of course, from time to time, we will need to perform side effects, but we should try to avoid side effects inside of functions and only have them when absolutely necessary.</p>
-<h3 id="example">Example</h3>
-<p>Say we want to log to the console a list of names.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Daniel&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;mozafar&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;irina&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-</code></pre>
-<p>We can use <code>.forEach()</code> to go through the array, item by item, and call a function we provide.</p>
-<pre class="language-"><code class="lang-js">names<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index <span class="token operator">+</span> <span class="token string">&quot;: &quot;</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>This logs each name to the console as hoped, but we notice that the names are not formatted correctly. You might be tempted to format the name inside of the <code>forEach</code> function.</p>
-<p>However, it is good practise to write small functions with a single responsibility. So instead, we can write a <code>formatName</code> function (which we can re-use in other places) and pass it to <code>.map()</code> before calling <code>.forEach()</code>.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">formatName</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> name<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> name<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-names<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>formatName<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index <span class="token operator">+</span> <span class="token string">&quot;: &quot;</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<h3 id="exercise">Exercise</h3>
+<p>Head over to <code>exercise.js</code> and follow the instructions in the comments.</p>
 <h3 id="chaining">Chaining</h3>
 <p>Notice how we were able to write one method after another e.g. <code>names.map(formatName).forEach(log)</code>? This is called <em>method chaining</em>.</p>
 <p>You can call <code>.forEach()</code> after <code>.map()</code> because <code>.map()</code> returns a new array.</p>
@@ -910,7 +917,7 @@ namesFormatted<span class="token punctuation">.</span><span class="token functio
 <p>Be careful though! You can not call <code>.map()</code> after <code>.forEach</code>.</p>
 <pre class="language-"><code class="lang-js">names<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>log<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>formatName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ERROR</span>
 </code></pre>
-<p>This code does not work because <code>forEach()</code> does not return a new array (it returns <code>undefined</code>). The code is therefore attempting to call <code>.map()</code> on <code>undefined</code>, and <code>undefined</code> does not have a <code>.map()</code> method.</p>
+<p>This code does not work because <code>forEach()</code> does not return a new array (it returns <code>undefined</code>). The code is, therefore, attempting to call <code>.map()</code> on <code>undefined</code>, and <code>undefined</code> does not have a <code>.map()</code> method.</p>
 <h1 id="homework">Homework</h1>
 <ol>
 <li><p>Make sure you finish all the pending exercies in <a href="https://github.com/Migracode-Barcelona/js-exercises" target="_blank">The repo</a>.</p>
@@ -987,7 +994,7 @@ namesFormatted<span class="token punctuation">.</span><span class="token functio
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 6 - More Arrays","level":"1.4.3","depth":2,"next":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]}]},"previous":{"title":"Week 5 - Arrays","level":"1.4.2","depth":2,"path":"js-core/week-05/lesson.md","ref":"js-core/week-05/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/week-06/lesson.md","mtime":"2020-04-14T15:29:45.964Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T15:30:35.056Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 6 - More Arrays","level":"1.4.3","depth":2,"next":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]}]},"previous":{"title":"Week 5 - Arrays","level":"1.4.2","depth":2,"path":"js-core/week-05/lesson.md","ref":"js-core/week-05/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/week-06/lesson.md","mtime":"2020-04-14T16:55:05.196Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T16:55:55.673Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
