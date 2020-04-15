@@ -748,6 +748,10 @@
                                 <p><img src="https://img.shields.io/badge/status-draft-darkred.svg" alt="Draft lesson"></p>
 <h1 id="javascript-core-i---3">JavaScript Core I - 3</h1>
 <p><strong>What we will learn today?</strong></p>
+<p>In this class you will learn when and how use loops in a programming language, one of the most important utility of computers, that is repeat tasks in a very short time very easy.
+To solve repetitive problems you will use loops <code>while</code> and <code>for</code> 
+In addition, you will learn how to use <code>callback functions</code>   </p>
+<h2 id="index">Index</h2>
 <ul>
 <li><a href="#control-flow">Control Flow</a><ul>
 <li><a href="#conditional-execution">Conditional Execution</a></li>
@@ -764,9 +768,6 @@
 </ul>
 </li>
 </ul>
-<blockquote>
-<p>Please make sure you&apos;re working on the <a href="https://github.com/Migracode-Barcelona/js-exercises" target="_blank">js-exercises repo</a> <strong>Week 3</strong> during this class.</p>
-</blockquote>
 <h2 id="control-flow">Control Flow</h2>
 <p>When we wrote our first lines of code we saw that the execution of the program was linear, the expressions executed in a determined order, from top to the bottom of the script.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">24</span><span class="token punctuation">;</span>
@@ -803,7 +804,25 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </code></pre>
 <p>The <code>while</code> statement creates a loop. The syntax is somehow similar to the <code>if</code> statement, it evaluates a condition inside the parentheses <code>(true|false)</code> and then it executes the code inside the <code>{ }</code> block only if that condition evaluates to <code>true</code>. </p>
 <h3 id="exercise">Exercise</h3>
-<p>Head over to <code>exercise.js</code> and follow the instructions in the comments.</p>
+<p>Log the Apollo 11 countdown, use the message provided as the last output.
+It starts from 8 till 0!</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> apolloCountdownMessage <span class="token operator">=</span> <span class="token string">&quot;all engine running... LIFT-OFF!&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> countdown <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>apolloCountdownMessage<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Expected output</p>
+<pre class="language-"><code class="lang-js"><span class="token number">8</span>
+<span class="token number">7</span>
+<span class="token number">6</span>
+<span class="token number">5</span>
+<span class="token number">4</span>
+<span class="token number">3</span>
+<span class="token number">2</span>
+<span class="token number">1</span>
+<span class="token number">0</span>
+all engine running<span class="token operator">...</span> <span class="token constant">LIFT</span><span class="token operator">-</span><span class="token constant">OFF</span><span class="token operator">!</span>
+</code></pre>
 <h3 id="for-loops">For loops</h3>
 <p>Alternatively we could use a <code>for loop</code>, which will do the same as the <code>while do</code> but in a shorter way:</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> count <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span> count <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -814,7 +833,25 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h3 id="for-initialization-condition-final-expression---"><code>for (initialization; condition; final-expression) { //... }</code></h3>
 <p>The initialization is <code>var count = 1</code>, the condition is <code>count &lt;= 100</code> and the final-expression is <code>count += 1</code>. Those blocks can be seen inside the parentheses after the <code>for</code> keyword and separated by semicolons <code>;</code>, in the following order <code>(initialization; condition; final-expression)</code>.</p>
 <h3 id="exercise">Exercise</h3>
-<p>Head over to <code>exercise.js</code> and follow the instructions in the comments.</p>
+<p>Calculate the exponential of the even numbers from 5 to 20
+Using a for loop and the helper functions provided.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">exponential</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> number <span class="token operator">*</span> number<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">isEven</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> number <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Expected output</p>
+<pre class="language-"><code class="lang-js">The exponential <span class="token keyword">of</span> <span class="token number">6</span> is <span class="token number">36</span>
+The exponential <span class="token keyword">of</span> <span class="token number">8</span> is <span class="token number">64</span>
+The exponential <span class="token keyword">of</span> <span class="token number">10</span> is <span class="token number">100</span>
+The exponential <span class="token keyword">of</span> <span class="token number">12</span> is <span class="token number">144</span>
+The exponential <span class="token keyword">of</span> <span class="token number">14</span> is <span class="token number">196</span>
+The exponential <span class="token keyword">of</span> <span class="token number">16</span> is <span class="token number">256</span>
+The exponential <span class="token keyword">of</span> <span class="token number">18</span> is <span class="token number">324</span>
+</code></pre>
 <h3 id="break-a-loop">Break a loop</h3>
 <p>There might be cases where you would need to stop a loop from continuing its execution, and waiting for the defined condition to evaluate to <code>false</code> is not the only solution. To stop a loop we can use the keyword <code>break</code>, let see how:</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token punctuation">;</span> count <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -857,7 +894,40 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </code></pre>
 <p>The program will evaluate the condition inside the parentheses <code>( )</code> and run the matching <code>case</code> statement. Note that after each statement there is a <code>break</code>, this ensures that the <code>switch</code> block exits, if omitted it will continue executing and might run code that was not intended to be run. </p>
 <h3 id="exercise">Exercise</h3>
-<p>Head over to <code>exercise.js</code> and follow the instructions in the comments.</p>
+<p>Using a switch statement call the matching operative system function for each system:</p>
+<ul>
+<li>windows</li>
+<li>linux</li>
+<li>osx</li>
+</ul>
+<p>Consider also the case where other values can be passed to the init function,
+if the system is not supported call the function prompt</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">startWindows</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Windows has started&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">startLinux</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Linux has started&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">startOSX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;OSX has started&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The OS provided is not supported&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token parameter">os</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// write your code here</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">init</span><span class="token punctuation">(</span><span class="token string">&quot;linux&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">init</span><span class="token punctuation">(</span><span class="token string">&quot;osx&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">init</span><span class="token punctuation">(</span><span class="token string">&quot;other&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Expected output</p>
+<pre class="language-"><code class="lang-js">Linux has started
+<span class="token constant">OSX</span> has started
+The <span class="token constant">OS</span> provided is not supported
+</code></pre>
 <h3 id="other-ways-of-looping">Other ways of looping</h3>
 <p>As studied in the previous class some array methods will loop through the items in the array and call a function. For example: </p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">var</span> names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Daniel&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Mozafar&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Irina&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -920,26 +990,22 @@ namesFormatted<span class="token punctuation">.</span><span class="token functio
 <p>This code does not work because <code>forEach()</code> does not return a new array (it returns <code>undefined</code>). The code is, therefore, attempting to call <code>.map()</code> on <code>undefined</code>, and <code>undefined</code> does not have a <code>.map()</code> method.</p>
 <h1 id="homework">Homework</h1>
 <ol>
-<li>Review all exercises explained during the class in folder week-3 <a href="https://github.com/Migracode-Barcelona/js-exercises" target="_blank">Module2-JS1 Repo</a></li>
-<li>Do all exercises in folder week-3-practise <a href="https://github.com/Migracode-Barcelona/js-exercises" target="_blank">Module2-JS1 Repo</a></li>
-<li>(Delivery) Push the week-3-practise results to your GitHub account and send a notification using <a href="https://form.jotformeu.com/93377027809365" target="_blank">Homework Form</a>, use the form to notify your comments and questions about the exercises</li>
-<li><p>Go to <a href="https://javascript.info" target="_blank">The Modern JavaScript Tutorial</a> and widen your knowledge on:</p>
-</li>
-<li><p><a href="https://javascript.info/while-for" target="_blank">2.12 Loops: while and for</a></p>
-</li>
+<li>Review all exercises explained during the class</li>
+<li>(Delivery) Fork to your GitHub account the repository <a href="https://github.com/Migracode-Barcelona/homework-js1-week3" target="_blank">Homework JS1-Week3</a> and do all exercises</li>
+<li>Push them tou your GitHub account and complete the <a href="https://form.jotformeu.com/93377027809365" target="_blank">Homework Form</a>, use the form to notify your comments and questions about the exercises</li>
+<li>Go to <a href="https://javascript.info" target="_blank">The Modern JavaScript Tutorial</a> and widen your knowledge on:<ol>
+<li><a href="https://javascript.info/while-for" target="_blank">2.12 Loops: while and for</a></li>
 <li><a href="https://javascript.info/switch" target="_blank">2.13 Switch</a></li>
-<li><p><a href="https://javascript.info/array-methods" target="_blank">5.5 Array methods</a></p>
+<li><a href="https://javascript.info/array-methods" target="_blank">5.5 Array methods</a></li>
+</ol>
 </li>
-<li><p>Go to <a href="https://www.codecademy.com/learn/introduction-to-javascript" target="_blank">Codecademy&#x2019;s JS Course</a> and do all the exercises for part 5 and 6.</p>
-</li>
+<li>Go to <a href="https://www.codecademy.com/learn/introduction-to-javascript" target="_blank">Codecademy&#x2019;s JS Course</a> and do all the exercises for part 5 and 6.</li>
 </ol>
 <h1 id="practice-class">Practice class</h1>
 <ol>
 <li>Solve together the most difficult homework exercises</li>
-<li><p>Go to <a href="https://codewars.com" target="_blank">CodeWars</a> and solve as many katas as you can:</p>
-</li>
-<li><p><a href="https://www.codewars.com/kata/reversed-strings/javascript" target="_blank">Reversed Strings</a></p>
-</li>
+<li>Go to <a href="https://codewars.com" target="_blank">CodeWars</a> and solve as many katas as you can:<ol>
+<li><a href="https://www.codewars.com/kata/reversed-strings/javascript" target="_blank">Reversed Strings</a></li>
 <li><a href="https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0" target="_blank">Remove First and Last Character</a></li>
 <li><a href="https://www.codewars.com/kata/5715eaedb436cf5606000381" target="_blank">Stats: Sum of positive</a></li>
 <li><a href="https://www.codewars.com/kata/find-the-smallest-integer-in-the-array/javascript" target="_blank">Find the smallest integer in the array</a></li>
@@ -952,6 +1018,8 @@ namesFormatted<span class="token punctuation">.</span><span class="token functio
 <li><a href="https://www.codewars.com/kata/5648b12ce68d9daa6b000099/javascript" target="_blank">Number of People in the Bus</a></li>
 <li><a href="https://www.codewars.com/kata/sum-without-highest-and-lowest-number/train/javascript" target="_blank">Sum without highest and lowest number</a></li>
 <li><a href="https://www.codewars.com/kata/count-of-positives-slash-sum-of-negatives/train/javascript" target="_blank">Count of positives / sum of negatives</a></li>
+</ol>
+</li>
 </ol>
 
                                 
@@ -996,7 +1064,7 @@ namesFormatted<span class="token punctuation">.</span><span class="token functio
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 6 - More Arrays","level":"1.4.3","depth":2,"next":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]}]},"previous":{"title":"Week 5 - Arrays","level":"1.4.2","depth":2,"path":"js-core/week-05/lesson.md","ref":"js-core/week-05/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/week-06/lesson.md","mtime":"2020-04-15T09:48:47.096Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-15T09:49:32.093Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 6 - More Arrays","level":"1.4.3","depth":2,"next":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]}]},"previous":{"title":"Week 5 - Arrays","level":"1.4.2","depth":2,"path":"js-core/week-05/lesson.md","ref":"js-core/week-05/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/week-06/lesson.md","mtime":"2020-04-15T13:06:58.587Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-15T13:07:43.793Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
