@@ -1,8 +1,7 @@
 # Homework
 
 1. Review all exercises explained during the class
-1. (Delivery) Fork to your GitHub account the repository [Homework JS1-Week3](https://github.com/Migracode-Barcelona/homework-js1-week3) and do all exercises
-1. Push them tou your GitHub account and complete the [Homework Form](https://form.jotformeu.com/93377027809365), use the form to notify your comments and questions about the exercises
+1. (Delivery) Fork to your GitHub account the repository [Homework JS1-Week3](https://github.com/Migracode-Barcelona/homework-js1-week3) and do all exercises. Push them tou your GitHub account and complete the [Homework Form](https://form.jotformeu.com/93377027809365), use the form to notify your comments and questions about the exercises
 1. Go to [The Modern JavaScript Tutorial](https://javascript.info) and widen your knowledge on:
     1. [2.12 Loops: while and for](https://javascript.info/while-for)
     1. [2.13 Switch](https://javascript.info/switch)
@@ -23,6 +22,5 @@
     1. [Invert values](https://www.codewars.com/kata/invert-values/train/javascript)
     1. [A Needle in the Haystack](https://www.codewars.com/kata/56676e8fabd2d1ff3000000c/javascript)
     1. [Sum of positive](https://www.codewars.com/kata/sum-of-positive/train/javascript)
-    1. [Number of People in the Bus](https://www.codewars.com/kata/5648b12ce68d9daa6b000099/javascript)
     1. [Sum without highest and lowest number](https://www.codewars.com/kata/sum-without-highest-and-lowest-number/train/javascript)
     1. [Count of positives / sum of negatives](https://www.codewars.com/kata/count-of-positives-slash-sum-of-negatives/train/javascript)

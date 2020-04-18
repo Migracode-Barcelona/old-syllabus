@@ -748,6 +748,10 @@
                                 <p><img src="https://img.shields.io/badge/status-draft-darkred.svg" alt="Draft lesson"></p>
 <h1 id="javascript-core-ii---1">JavaScript Core II - 1</h1>
 <p><strong>What we will learn today?</strong></p>
+<p>When you look at the world around you, what do you see? You see objects. In programming, objects are nothing more than representations of things. 
+In this class you will learn how to manage objects, and arrays of objects.
+At the end you will be able to manage a shopping cart of an e-commerce</p>
+<h2 id="index">Index</h2>
 <ul>
 <li><a href="#objects">Objects</a></li>
 <li><a href="#objects-get-and-set">Objects Get and Set</a></li>
@@ -758,7 +762,7 @@
 </ul>
 <hr>
 <blockquote>
-<p>Please make sure you&apos;re working on the <a href="https://github.com/Migracode-Barcelona/js-exercises" target="_blank">js-exercises repo</a> <strong>Week 4</strong> during this class.</p>
+<p>Please before start the class fork and clone <a href="https://github.com/Migracode-Barcelona/exercises-js2-week1" target="_blank">exercises-js2-week1 repo</a></p>
 </blockquote>
 <h2 id="objects">Objects</h2>
 <p>Objects in the real world have properties that describe how they are unique. Your laptop, for example, has a brand (Lenovo/Apple etc.), a screen size (13/15 inch), RAM (8/16GB) etc.</p>
@@ -775,6 +779,8 @@
 <li><strong>property</strong> or <strong>key</strong>: <code>brand</code>, <code>screenSize</code> and <code>isTouchScreen</code> are properties/keys of the object</li>
 <li><strong>values</strong>: <code>&quot;Lenovo&quot;</code>, <code>13</code> and <code>true</code> are values of the object&apos;s properties</li>
 </ul>
+<h3 id="exercises">Exercises</h3>
+<p>Do all exercises in <a href="https://github.com/Migracode-Barcelona/exercises-js2-week1" target="_blank">exercises-js2-week1 repo</a> in folder <strong>class/A-objects-intro/</strong></p>
 <h2 id="objects-get-and-set">Objects Get and Set</h2>
 <h3 id="getting-the-value-of-an-objects-property">Getting the value of an object&apos;s property</h3>
 <p>Let&apos;s take one of the objects we looked at earlier..</p>
@@ -810,6 +816,8 @@ laptop<span class="token punctuation">.</span>screenSize <span class="token oper
 <span class="token comment">// OK TO DO</span>
 laptop<span class="token punctuation">.</span>screenSize <span class="token operator">=</span> <span class="token number">15</span><span class="token punctuation">;</span>
 </code></pre>
+<h3 id="exercises">Exercises</h3>
+<p>Do all exercises in <a href="https://github.com/Migracode-Barcelona/exercises-js2-week1" target="_blank">exercises-js2-week1 repo</a> in folder <strong>class/B-objects-get-set/</strong></p>
 <h2 id="more-complex-objects">More Complex Objects</h2>
 <p> Object properties can even be assigned other objects or variables too. The example below shows an object with keys that have been assigned a variable, an array, and an object.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">var</span> kittenName <span class="token operator">=</span> <span class="token string">&quot;Feathers&quot;</span><span class="token punctuation">;</span>
@@ -824,6 +832,8 @@ laptop<span class="token punctuation">.</span>screenSize <span class="token oper
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
+<h3 id="exercises">Exercises</h3>
+<p>Do all exercises in <a href="https://github.com/Migracode-Barcelona/exercises-js2-week1" target="_blank">exercises-js2-week1 repo</a> in folder <strong>class/C-more-complex-objects/</strong></p>
 <h2 id="object-methods">Object Methods</h2>
 <p>Besides having specific properties, objects in the real world can also do things. For example, a computer can display something on the screen, a person can say their names etc... In Javascript, we do this using &apos;methods&apos;. A method is a function attached to a particular object. You have already used some predefined methods before, for example <em>toUpperCase()</em> on a string or <em>filter()</em> on an array.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">var</span> athlete <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -878,6 +888,8 @@ athlete<span class="token punctuation">.</span><span class="token function">winN
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>athlete<span class="token punctuation">.</span>goldMedals<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// prints &quot;25&quot;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>athlete<span class="token punctuation">.</span>silverMedals<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// prints &quot;8&quot;</span>
 </code></pre>
+<h3 id="exercises">Exercises</h3>
+<p>Do all exercises in <a href="https://github.com/Migracode-Barcelona/exercises-js2-week1" target="_blank">exercises-js2-week1 repo</a> in folder <strong>class/D-methods/</strong></p>
 <h2 id="arrays-of-objects">Arrays of objects</h2>
 <p>In the past weeks, you&apos;ve learned about using arrays of numbers, arrays of string etc... In the following, we will learn how to use arrays of objects.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">var</span> kitten1 <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -911,6 +923,37 @@ kittens<span class="token punctuation">.</span><span class="token function">filt
 
 kittens<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>getName<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// returns [&quot;Fluffy&quot;, &quot;Megatron&quot;, &quot;Billy&quot;]</span>
 </code></pre>
+<p>The push method adds values to the end of an array, and the pop method does the opposite, removing the last value in the array and returning it.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> sequence <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+sequence<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+sequence<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sequence<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x2192; [1, 2, 3, 4, 5]</span>
+</code></pre>
+<p>The splice method removes elements in an array, first parameter is the index of the array starting with 0, and second parameter is the number of elements to remove. 
+More info in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank">How to use splice</a></p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> myFish <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;angel&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;clown&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;drum&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;mandarin&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;sturgeon&apos;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> removed <span class="token operator">=</span> myFish<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// removed is [&quot;mandarin&quot;]</span>
+<span class="token comment">// myFish is [&quot;angel&quot;, &quot;clown&quot;, &quot;drum&quot;, &quot;sturgeon&quot;]</span>
+</code></pre>
+<p>We can also use push and splice in arrays with objects</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> animals <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> animal1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;dog&quot;</span><span class="token punctuation">,</span>
+    legs<span class="token operator">:</span> <span class="token number">4</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> animal2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;chicken&quot;</span><span class="token punctuation">,</span>
+    legs<span class="token operator">:</span> <span class="token number">2</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+animals<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>animal1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+animals<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>animal2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Name of animals = &quot;</span> <span class="token operator">+</span> animals<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token operator">=&gt;</span>a<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="exercises">Exercises</h3>
+<p>Do all exercises in <a href="https://github.com/Migracode-Barcelona/exercises-js2-week1" target="_blank">exercises-js2-week1 repo</a> in folder <strong>class/E-arrays-of-objects/</strong></p>
 <h2 id="objectkeys">Object.Keys()</h2>
 <p>Since we started JavaScript, we have used <code>console.log</code> to print things to our console.</p>
 <p>In week 2 and 3, you learned about array methods like <code>.map()</code>, <code>.length()</code>.</p>
@@ -926,9 +969,17 @@ kittens<span class="token punctuation">.</span><span class="token function">map<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>footballClubs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// prints [ &apos;chelsea_fc&apos;, &apos;fc_barcelona&apos;, &apos;ac_milan&apos; ]</span>
 </code></pre>
+<h3 id="exercises">Exercises</h3>
+<p>Do all exercises in <a href="https://github.com/Migracode-Barcelona/exercises-js2-week1" target="_blank">exercises-js2-week1 repo</a> in folder <strong>class/F-object-keys/</strong></p>
 <h1 id="homework">Homework</h1>
 <ol>
-<li><a href="https://github.com/Migracode-Barcelona/js-exercises" target="_blank">The repo</a> contains few challenges - solve all the pending exercises in <code>week-4</code> and <code>week-4-practise</code>.</li>
+<li>Finish all exercises in <a href="https://github.com/Migracode-Barcelona/exercises-js2-week1" target="_blank">exercises-js2-week1</a> in the <code>class</code> folder if are not finished</li>
+<li>(Delivery) Do exercises 1 to 6 in <a href="https://github.com/Migracode-Barcelona/exercises-js2-week1" target="_blank">exercises-js2-week1</a> in the <code>homework</code> folder. Push them tou your GitHub account and complete the <a href="https://form.jotformeu.com/93377027809365" target="_blank">Homework Form</a>, use the form to notify your comments and questions about the exercises</li>
+</ol>
+<h1 id="practice-class">Practice class</h1>
+<ol>
+<li>Solve together the most difficult homework exercises</li>
+<li>Finish exercises 7 to 9 in <a href="https://github.com/Migracode-Barcelona/exercises-js2-week1" target="_blank">exercises-js2-week1</a> in the <code>homework</code> folder.</li>
 </ol>
 
                                 
@@ -973,7 +1024,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"next":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},"previous":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-07/lesson.md","mtime":"2020-04-15T13:17:33.024Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-15T13:18:22.243Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"next":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},"previous":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-07/lesson.md","mtime":"2020-04-18T17:39:42.391Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-18T17:40:27.053Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
