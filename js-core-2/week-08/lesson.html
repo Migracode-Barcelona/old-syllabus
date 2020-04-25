@@ -774,24 +774,10 @@ with HTML and CSS in a browser, changing elements dynamically from user actions.
 <h2 id="index">Index</h2>
 <ul>
 <li><a href="#the-dom">The DOM</a></li>
-<li><a href="#access-dom-elements">Access DOM elements</a><ul>
-<li><a href="#preparation-for-exercises">Preparation for exercises</a></li>
-<li><a href="#exercise-1">Exercise (1)</a></li>
-</ul>
-</li>
-<li><a href="#attach-events-to-dom-elements">Attach events to DOM elements</a><ul>
-<li><a href="#exercise-2">Exercise (2)</a></li>
-<li><a href="#exercise-3">Exercise (3)</a></li>
-</ul>
-</li>
-<li><a href="#create-dom-elements">Create DOM elements</a><ul>
-<li><a href="#exercise-4">Exercise (4)</a></li>
-</ul>
-</li>
-<li><a href="#manipulate-dom-elements">Manipulate DOM elements</a><ul>
-<li><a href="#exercise-5">Exercise (5)</a></li>
-</ul>
-</li>
+<li><a href="#access-dom-elements">Access DOM elements</a></li>
+<li><a href="#attach-events-to-dom-elements">Attach events to DOM elements</a></li>
+<li><a href="#create-dom-elements">Create DOM elements</a></li>
+<li><a href="#manipulate-dom-elements">Manipulate DOM elements</a></li>
 </ul>
 <hr>
 <h3 id="the-dom">The DOM</h3>
@@ -821,25 +807,8 @@ document<span class="token punctuation">.</span><span class="token function">que
 </code></pre>
 <p>Both <code>.querySelector</code> and <code>querySelectorAll</code> accept a CSS selector as an input.
 <code>.querySelector</code> selects only the first element it finds, <code>querySelectorAll</code> selects all elements (it returns an array).</p>
-<h4 id="exercise-1">Exercise (1)</h4>
-<pre class="language-"><code class="lang-js"><span class="token comment">/*
-Task 1
-=======
-Write JavaScript below that logs:
-    1. all the &quot;p&quot; element nodes of the document,
-    --&gt; should log a list of nodes with a length of 6
-
-    2. the first div element node
-    --&gt; should log the &quot;.site-header&quot; node
-
-    3. the element with id &quot;jumbotron-text&quot;
-    --&gt; should log the &quot;#jumbotron-text&quot; node
-
-    4. all the &quot;p&quot; elements contained inside  the .primary-content element node
-    --&gt; should log a list of nodes with a length of 3
-
-*/</span>
-</code></pre>
+<h4 id="exercises">Exercises</h4>
+<p>From <a href="https://github.com/Migracode-Barcelona/exercises-js2-week2" target="_blank">exercises-js2-week2 repo</a> in folder <strong>InClass/A-dom-manipulation</strong> do Task1 in exercise.js</p>
 <h3 id="attach-events-to-dom-elements">Attach events to DOM elements</h3>
 <p>Once you retrieve an element using <code>.querySelector</code>, you can attach an <strong>event</strong> to it. An event is any action that can be performed on that element. For now, we will just use the <strong>click</strong> event:</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">var</span> myButton <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&quot;#myButton&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -850,40 +819,22 @@ myButton<span class="token punctuation">.</span><span class="token function">add
 <span class="token punctuation">}</span>
 </code></pre>
 <p>You will notice in the example that we passed a second argument to <code>addEventListener</code>. That second argument is the <strong>function</strong> that we want to invoke when that event has happened.</p>
-<h4 id="exercise-2">Exercise (2)</h4>
-<pre class="language-"><code class="lang-js"><span class="token comment">/*
-Task 2
-======
-
-When a user clicks the &quot;ALERT&quot; button, an alert box should pop up with the text &quot;Thanks for visiting Bikes for Refugees!&quot;
-*/</span>
-</code></pre>
+<h4 id="exercises">Exercises</h4>
+<p>From <a href="https://github.com/Migracode-Barcelona/exercises-js2-week2" target="_blank">exercises-js2-week2 repo</a> in folder <strong>InClass/A-dom-manipulation</strong> do Task2 in exercise.js</p>
 <p>The elements returned by <code>document.querySelector</code> have the same properties as a normal HTML element: for example, you can get access to their css <strong>styles</strong>.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">var</span> myElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&quot;#myElement&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 myElement<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token string">&quot;red&quot;</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise-3">Exercise (3)</h4>
-<pre class="language-"><code class="lang-js"><span class="token comment">/*
-Task 3
-=======
-
-Write JavaScript below that changes the background colour of the page when the &quot;Change colour&quot; button is clicked.
-*/</span>
-</code></pre>
+<h4 id="exercises">Exercises</h4>
+<p>From <a href="https://github.com/Migracode-Barcelona/exercises-js2-week2" target="_blank">exercises-js2-week2 repo</a> in folder <strong>InClass/A-dom-manipulation</strong> do Task3 in exercise.js</p>
 <h3 id="create-dom-elements">Create DOM elements</h3>
 <p>Using the <code>document</code>, you can also create new elements. These elements will not appear until you append them as a child of another element though:</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">var</span> paragraph <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;p&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// here we&apos;re just creating it, element is not visible yet</span>
 myElement<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>paragraph<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// now the element is added to our view, but it&apos;s empty</span>
 </code></pre>
 <p><code>document.createElement</code> accepts as an input any element type. So for example <code>document.createElement(&quot;article&quot;)</code> will create a new article element.</p>
-<h4 id="exercise-4">Exercise (4)</h4>
-<pre class="language-"><code class="lang-js"><span class="token comment">/*
-Task 4
-======
-
-When a user clicks the &quot;Add some text&quot; button, a new paragraph should be added below the buttons that says &quot;Read more below.&quot;
-*/</span>
-</code></pre>
+<h4 id="exercises">Exercises</h4>
+<p>From <a href="https://github.com/Migracode-Barcelona/exercises-js2-week2" target="_blank">exercises-js2-week2 repo</a> in folder <strong>InClass/A-dom-manipulation</strong> do Task4 in exercise.js</p>
 <h3 id="manipulate-dom-elements">Manipulate DOM elements</h3>
 <p>You can then change the text displayed inside elements using the <code>innerText</code> property:</p>
 <pre class="language-"><code class="lang-js">paragraph<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">&quot;How are you?&quot;</span><span class="token punctuation">;</span> <span class="token comment">// now we can see the text displaying on the screen</span>
@@ -917,18 +868,12 @@ updateTitleBtn<span class="token punctuation">.</span><span class="token functio
 </code></pre>
 <p>The above waits for click on a button. When the button is clicked, it gets the input box element (<code>inputBox</code> variable).
 To get the entered text from it, we use the <code>value</code> property: <code>var title = inputBox.value</code>.</p>
-<h4 id="exercise-5">Exercise (5)</h4>
-<pre class="language-"><code class="lang-js"><span class="token comment">/*
-Task 5
-======
-
-When the &quot;Larger links!&quot; button is clicked, the text of all links on the page should increase.
-*/</span>
-</code></pre>
+<h4 id="exercises">Exercises</h4>
+<p>From <a href="https://github.com/Migracode-Barcelona/exercises-js2-week2" target="_blank">exercises-js2-week2 repo</a> in folder <strong>InClass/A-dom-manipulation</strong> do Task5 in exercise.js</p>
 <h1 id="homework">Homework</h1>
 <ol>
-<li>Finish all exercises in <a href="https://github.com/Migracode-Barcelona/exercises-js2-week2" target="_blank">exercises-js2-week2</a> in the <code>InClass</code> folder if are not finished</li>
-<li>(Delivery) Do exercises <a href="https://github.com/Migracode-Barcelona/exercises-js2-week1" target="_blank">exercises-js2-week2</a> in the <code>Homework</code> folder. Push them to your GitHub account and complete the <a href="https://form.jotformeu.com/93377027809365" target="_blank">Homework Form</a>, use the form to notify your comments and questions about the exercises</li>
+<li>In <a href="https://github.com/Migracode-Barcelona/exercises-js2-week2" target="_blank">exercises-js2-week2 repo</a> in the <code>InClass</code> folder finish all exercises if are not finished</li>
+<li>(Delivery) In <a href="https://github.com/Migracode-Barcelona/exercises-js2-week1" target="_blank">exercises-js2-week2 repo</a> in the <code>Homework/mandatory</code> folder do all exercises. Push them to your GitHub account and complete the <a href="https://form.jotformeu.com/93377027809365" target="_blank">Homework Form</a>, use the form to notify your comments and questions about the exercises</li>
 </ol>
 
                                 
@@ -973,7 +918,7 @@ When the &quot;Larger links!&quot; button is clicked, the text of all links on t
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"next":{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]},"previous":{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-08/lesson.md","mtime":"2020-04-25T15:13:47.804Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-25T15:14:37.131Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"next":{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]},"previous":{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-08/lesson.md","mtime":"2020-04-25T16:08:34.165Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-25T16:09:20.257Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
