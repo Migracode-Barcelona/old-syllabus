@@ -805,6 +805,27 @@ document<span class="token punctuation">.</span><span class="token function">que
 </code></pre>
 <p>Both <code>.querySelector</code> and <code>querySelectorAll</code> accept a CSS selector as an input.
 <code>.querySelector</code> selects only the first element it finds, <code>querySelectorAll</code> selects all elements (it returns an array).</p>
+<p>We can use a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span></code> tag to add JavaScript code to an HTML page.
+You should put it in the last lines of the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span></code></p>
+<pre class="language-"><code class="lang-js"><span class="token operator">&lt;</span>html<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>h1 id<span class="token operator">=</span><span class="token string">&quot;title&quot;</span><span class="token operator">&gt;</span>Hello <span class="token constant">HTML</span><span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;myfirstscript.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre>
+<p>If the script is not in the same folder, in the src attribute you can lead the html to find the javascript file. The type and language attributes are not required. But use <code>type=&quot;text/javascript&quot;</code> to define a javascript</p>
+<pre class="language-"><code class="lang-js"><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">&quot;text/javascript&quot;</span> src<span class="token operator">=</span><span class="token string">&quot;/js/myfirstscript.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre>
+<p>And, how do we use the console.log() in the browser? Using the element panel, it is available in all browsers.</p>
+<p>Accessing element panel from Google Chrome is quite easy. All you do is head to the upper right side of your screen and click on the Menu bar -&gt; More tools -&gt; Developer tools.</p>
+<p><a href="https://developers.google.com/web/tools/chrome-devtools/open" target="_blank">https://developers.google.com/web/tools/chrome-devtools/open</a></p>
+<p>When you access to it, you&#x2019;ll see that it&#x2019;s divided into different parts. Here&#x2019;s a little breakdown of the most important parts:</p>
+<p>Elements: DOM panel is a tool used to change the page layout. You&#x2019;ll have full control of HTML and CSS files and can modify them freely. 
+Console: panel will show you what&#x2019;s new in developer tools. here is where you will see the output of console.log().</p>
 <h4 id="exercises">Exercises</h4>
 <p>From <a href="https://github.com/Migracode-Barcelona/exercises-js2-week2" target="_blank">exercises-js2-week2 repo</a> in folder <strong>InClass/A-dom-manipulation</strong> do Task1 in exercise.js</p>
 <h3 id="attach-events-to-dom-elements">Attach events to DOM elements</h3>
@@ -865,7 +886,7 @@ updateTitleBtn<span class="token punctuation">.</span><span class="token functio
 <p>The above waits for click on a button. When the button is clicked, it gets the input box element (<code>inputBox</code> variable).
 To get the entered text from it, we use the <code>value</code> property: <code>var title = inputBox.value</code>.</p>
 <h4 id="exercises">Exercises</h4>
-<p>From <a href="https://github.com/Migracode-Barcelona/exercises-js2-week2" target="_blank">exercises-js2-week2 repo</a> in folder <strong>InClass/A-dom-manipulation</strong> do Task4 and Task5 in exercise.js</p>
+<p>From <a href="https://github.com/Migracode-Barcelona/exercises-js2-week2" target="_blank">exercises-js2-week2 repo</a> in folder <strong>InClass/A-dom-manipulation</strong> do Task4, Task5 and Task6 in exercise.js</p>
 <h1 id="homework">Homework</h1>
 <ol>
 <li>In <a href="https://github.com/Migracode-Barcelona/exercises-js2-week2" target="_blank">exercises-js2-week2 repo</a> in the <code>InClass</code> folder finish all exercises if are not finished</li>
@@ -914,7 +935,7 @@ To get the entered text from it, we use the <code>value</code> property: <code>v
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"next":{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]},"previous":{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-08/lesson.md","mtime":"2020-04-29T15:20:03.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-29T15:20:57.881Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"next":{"title":"Week 9 - More JS in the Browser","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]},"previous":{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-08/lesson.md","mtime":"2020-05-06T15:24:39.448Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-06T15:25:30.058Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
