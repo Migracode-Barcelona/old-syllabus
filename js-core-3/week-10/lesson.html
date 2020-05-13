@@ -759,7 +759,7 @@
 </li>
 </ul>
 <blockquote>
-<p>Fork and Clone the <a href="https://github.com/CodeYourFuture/js-exercises-tdd" target="_blank">js-exercises-tdd repo</a></p>
+<p>Fork and Clone the <a href="https://github.com/Migracode-Barcelona/exercises-js3-week1" target="_blank">exercises-js3-week1 repo</a></p>
 </blockquote>
 <h1 id="intro-to-es6">Intro to ES6</h1>
 <p>ECMAScript 2015 (or ES6) is a significant update to JavaScript that introduces
@@ -891,20 +891,62 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token keyword">const</span> <span class="token punctuation">[</span>firstNumber<span class="token punctuation">,</span> secondNumber<span class="token punctuation">]</span> <span class="token operator">=</span> numbers<span class="token punctuation">;</span>
 </code></pre>
-<h1 id="resources">Resources</h1>
+<p>Resources:</p>
 <ul>
-<li><a href="http://es6-features.org/" target="_blank">ES6 features</a></li>
 <li><a href="http://wesbos.com/let-vs-const/" target="_blank">Let and const</a></li>
+<li><a href="http://es6-features.org/" target="_blank">ES6 features</a></li>
 </ul>
+<h4 id="exercise">Exercise</h4>
+<p>From <a href="https://github.com/Migracode-Barcelona/exercises-js3-week1" target="_blank">exercises-js3-week1 repo</a> in folder <strong>InClass/A-ES6</strong> do exercise1.js</p>
+<h2 id="classes">Classes</h2>
+<p>Objects in programming languages provide us with an easy way to model data. Let&#x2019;s say we have an object called polygon. The polygon object has properties: values that contain data about the polygon, and methods: functions that define actions that the polygon can perform. This focus on &#x201C;objects&#x201D; and &#x201C;actions&#x201D; is the basis of Object Oriented Programming.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Polygon</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">height<span class="token punctuation">,</span> width</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;Polygon&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>height <span class="token operator">=</span> height<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>width <span class="token operator">=</span> width<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Hi, I am a &apos;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Polygon</span><span class="token punctuation">(</span><span class="token string">&apos;Polygon&apos;</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;The area of this polygon is &apos;</span> <span class="token operator">+</span> p<span class="token punctuation">.</span>area<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Rectangle</span> <span class="token keyword">extends</span> <span class="token class-name">Polygon</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">height<span class="token punctuation">,</span> width</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>height<span class="token punctuation">,</span> width<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;Rectangle&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>sides <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    <span class="token comment">//this.area = this.height * this.width;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">get</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>width <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>height<span class="token punctuation">;</span><span class="token punctuation">}</span>
+  <span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Hi I am a polygon and my name is &apos;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> r <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Rectangle</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+r<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//r.area = 3;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;The area of this polygon is &apos;</span> <span class="token operator">+</span> r<span class="token punctuation">.</span>area<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Resources:</p>
+<ul>
+<li><a href="https://medium.com/@luke_smaki/javascript-es6-classes-8a34b0a6720a" target="_blank">Classes differences in ES5 and ES6</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank">Explanation of Classes</a></li>
+</ul>
+<h4 id="exercise">Exercise</h4>
+<p>From <a href="https://github.com/Migracode-Barcelona/exercises-js3-week1" target="_blank">exercises-js3-week1 repo</a> in folder <strong>InClass/A-ES6</strong> do exercise2.js</p>
 <h2 id="tracing-code">Tracing Code</h2>
 <p>What is Code? Computer code is a <strong>set of rules or instructions</strong>. It is made up of words and numbers and when you put them in the <strong>right order</strong> it will tell your computer what you want it to do. </p>
 <p>Let&apos;s trace these code samples together:</p>
 <ul>
-<li><p><a href="https://github.com/CodeYourFuture/js-exercises-tdd/blob/master/II.write-tests/01-greet-people/greet-people.js" target="_blank">Sample 1</a> </p>
+<li><p><a href="https://github.com/Migracode-Barcelona/exercises-js3-week1/blob/master/InClass/B-Tracing%20code/exercise1.js" target="_blank">Exercise 1</a> </p>
 </li>
-<li><p><a href="https://github.com/CodeYourFuture/js-exercises-tdd/blob/master/II.write-tests/02-remove-vowels/remove-vowels.js" target="_blank">Sample 2</a> </p>
-</li>
-<li><p><a href="https://github.com/CodeYourFuture/js-exercises-tdd/blob/master/II.write-tests/03-remove-vowels-from-array/remove-vowels-in-array.js" target="_blank">Sample 3</a> </p>
+<li><p><a href="https://github.com/Migracode-Barcelona/exercises-js3-week1/blob/master/InClass/B-Tracing%20code/exercise2.js" target="_blank">Exercise 2</a> </p>
 </li>
 </ul>
 <h1 id="debugging">Debugging</h1>
@@ -913,11 +955,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>A syntax bug is an error caused by something the programmer has typed &#x2013; it could be a spelling mistake or a command that the computer doesn&#x2019;t understand.</p>
 <h2 id="logical-bugs">Logical bugs</h2>
 <p>A logical bug is an error which means that even though the computer is able to carry out its instructions, it doesn&#x2019;t act as the programmer intended or the user expects.</p>
-<blockquote>
-<p>Exercise: This website (<a href="https://kabaros.github.io/dom-ajax-repo-solution" target="_blank">https://kabaros.github.io/dom-ajax-repo-solution</a>) has <em>bugs</em>. Use Chrome Developer Tools to find out what is causing these issues.</p>
+<h2 id="debugging-with-chrome">Debugging with Chrome</h2>
 <p>Follow this tutorial about <a href="https://developers.google.com/web/tools/chrome-devtools/javascript/" target="_blank">Debugging with Chrome</a></p>
-<p>The terms &quot;bug&quot; and &quot;debugging&quot; are popularly attributed to Admiral Grace Hopper in the 1940s.[1] While she was working on a Mark II computer at Harvard University, her associates discovered a moth stuck in a relay and thereby impeding operation, whereupon she remarked that they were &quot;debugging&quot; the system</p>
-</blockquote>
+<p>Go back to the last Tracing Code exercises, put a breakpoint in the first line of code and debug line by line.</p>
 <h1 id="good-design">Good Design</h1>
 <p>Design is important if we want our code to be understandable (both to other
 humans, but also to us in the future), to be easy to use and easy to expand.</p>
@@ -983,48 +1023,9 @@ three.</p>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token number">28000</span><span class="token punctuation">,</span> <span class="token string">&quot;1150L&quot;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">580</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>What is wrong with this function?</p>
-<ol>
-<li><p>Naming: the function has a bad name, myFunction() tells you nothing about
-what the function does. It&apos;s also considered bad practice to name variables
-vaguely by separating them through numbers (incomeTax1, incomeTax2, etc). If
-you find yourself doing this then you should either use an array (such as
-incomeTax[]).</p>
-</li>
-<li><p>Commenting: the function isn&apos;t documented at all. It&apos;s very difficult to
-understand what the function&apos;s purpose is and how each part of the code
-contributes to it. By writing comments, the coder communicates their
-reasoning and helps the function be human readable.</p>
-</li>
-<li><p>Layout/formatting: unnecessary spacing between the if and else statement.</p>
-</li>
-<li><p>Single responsibility: the function doesn&apos;t have a single purpose. It
-calculates national insurance and salary deductions. Maybe the national
-insurance calculation could be moved to a separate function.</p>
-</li>
-<li><p>Input variable being overwritten: the function requires gross salary (before
-deductions) and net salary (after deductions) the <code>salary</code> input variable is
-therefore copied into an <code>originalSalary</code> variable so that it can be changed.
-It would be much clearer to create a new <code>netSalary</code> variable and leave
-<code>salary</code> unmodified.</p>
-</li>
-<li><p>DRY principle: the function validates the DRY (Don&apos;t Repeat Yourself) rule.
-The line where a deduction is taken from the salary is repeated 3 times with
-different indices. This can be replaced with a <code>for</code> loop.</p>
-</li>
-<li><p>Magic numbers. The code contains a lot of magic numbers, including <code>17775</code>,
-<code>0.09</code> and <code>0.1</code>.</p>
-</li>
-<li><p>Useless parameters: the code contains a variable which isn&apos;t used. They
-should be removed because they are confusing. It is tempting when you&apos;re
-starting to code a function to add more parameters thinking that you might
-need them, but it&apos;s important to remove them if you don&apos;t end up using them.</p>
-</li>
-</ol>
-<blockquote>
-<p>Exercise: Working in pairs, go through all of these issues and make
-appropriate improvements to the code.</p>
-</blockquote>
+<p>Comment together what is wrong with this function?</p>
+<h4 id="exercise">Exercise</h4>
+<p>From <a href="https://github.com/Migracode-Barcelona/exercises-js3-week1" target="_blank">exercises-js3-week1 repo</a> in folder <strong>InClass/C-Good Design</strong> do exercise1.js</p>
 <h3 id="refactoring">Refactoring</h3>
 <p>There are times when we want to make our code better without changing any
 functionality, for example because we just learnt about a better way to solve a
@@ -1034,9 +1035,6 @@ certain problem (like, finding needles in haystacks). This is called
 we call this a <em>regression</em>. Our existing tests can make sure that when we
 refactor, the functionality of our code actually stays the same, and does not
 regress.</p>
-<blockquote>
-<p>Exercise: Refactor some of the exercise we&apos;ve written tests for.</p>
-</blockquote>
 <h2 id="modules">Modules</h2>
 <p>So far, all our programs have been in their own single files. But Node programs
 can become really large, and having all our code in only one file will not be
@@ -1085,15 +1083,11 @@ learned about. Most commonly, they export a function or an object containing
 multiple functions.</p>
 <p><em>Together:</em> Edit the file <code>modules/main.js</code> and follow the instructions.</p>
 </blockquote>
-<h1 id="glossary">Glossary</h1>
-<p>You should know these terms by the end of this class: Testing, Quality Assurance, Unit Tests, Integration Tests, Refactoring, Regression Tests .. any more?</p>
 <h1 id="resources">Resources</h1>
 <ol>
 <li><a href="http://bdcampbell.net/javascript/book/javascript_the_good_parts.pdf" target="_blank">JavaScript: The Good Parts by Douglas Crockford, chapter 4 - Functions</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics" target="_blank">MDN Objects basics</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS" target="_blank">MDN OOP in JS</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank">Test-driven development</a></li>
-<li><a href="https://facebook.github.io/jest/" target="_blank">Jest</a></li>
 <li><a href="https://nodejs.org/api/modules.html" target="_blank">Modules</a></li>
 <li><a href="https://medium.com/software-developer/debugging-facebooks-jest-for-react-in-visual-studio-code-9059223e1e71" target="_blank">Setup VS Code for Debugging</a></li>
 </ol>
@@ -1163,7 +1157,7 @@ modules and how do their differ from CommonJS?</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 10 - Unit Tests and TDD","level":"1.6.1","depth":2,"next":{"title":"Week 11 - More TDD, ES6","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},"previous":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - Unit Tests and TDD","level":"1.6.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},{"title":"Week 11 - More TDD, ES6","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},{"title":"Week 12 - Recap","level":"1.6.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-10/lesson.md","mtime":"2020-05-12T15:32:49.571Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T15:33:36.209Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 10 - Unit Tests and TDD","level":"1.6.1","depth":2,"next":{"title":"Week 11 - More TDD, ES6","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},"previous":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - Unit Tests and TDD","level":"1.6.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},{"title":"Week 11 - More TDD, ES6","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},{"title":"Week 12 - Recap","level":"1.6.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-10/lesson.md","mtime":"2020-05-13T15:05:38.307Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-13T15:06:33.515Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
