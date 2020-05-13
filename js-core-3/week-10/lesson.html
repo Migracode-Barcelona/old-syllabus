@@ -770,7 +770,7 @@ The <code>let</code> and <code>const</code> keywords are also used for variable 
 variables created using these keywords have different scope. Var has &quot;function
 scope&quot;, whereas let and const have &quot;block scope&quot;.</p>
 <blockquote>
-<p>Exercise: This <strong>badly designed</strong> function will throw the error <code>message is
+<p>This <strong>badly designed</strong> function will throw the error <code>message is
 not defined</code>. What is the problem, and how could we fix it?</p>
 </blockquote>
 <pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">compareNumbers</span><span class="token punctuation">(</span><span class="token parameter">m<span class="token punctuation">,</span> n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -786,10 +786,10 @@ not defined</code>. What is the problem, and how could we fix it?</p>
 <p>The <code>const</code> keyword is similar to <code>let</code>, the only difference is that a variable
 declared using <code>const</code> can&apos;t be changed after it is assigned.</p>
 <blockquote>
-<p>Exercise: What advantages might a block scope variable have over a function
+<p>What advantages might a block scope variable have over a function
 scope variable? In what situation might you want to use <code>const</code> instead of a
 variable that can be re-assigned?</p>
-<p>Exercise: Let&apos;s update this code to use <code>let</code> and <code>const</code> instead of <code>var</code></p>
+<p>How can we update this code to use <code>let</code> and <code>const</code> instead of <code>var</code>?</p>
 </blockquote>
 <pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">getCircleArea</span><span class="token punctuation">(</span><span class="token parameter">radius</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> pi <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span><span class="token punctuation">;</span>
@@ -837,11 +837,6 @@ elegant way of accomplishing the same.</p>
 are optional and we can write the whole function in one line. </p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">sum</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
 </code></pre>
-<blockquote>
-<p>Exercise: Refactor the previous code to have a separate function that checks
-if gender is &apos;female&apos; or not, and use it in sayGreeting. Let&apos;s try and make
-the code as compact as possible together using ES6 features.</p>
-</blockquote>
 <h2 id="default-parameters">Default parameters</h2>
 <p>ES6 allows us to declare defaults for function arguments. The default value is 
 used when the argument/parameter is either missing or <code>undefined</code>. </p>
@@ -900,6 +895,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>From <a href="https://github.com/Migracode-Barcelona/exercises-js3-week1" target="_blank">exercises-js3-week1 repo</a> in folder <strong>InClass/A-ES6</strong> do exercise1.js</p>
 <h2 id="classes">Classes</h2>
 <p>Objects in programming languages provide us with an easy way to model data. Let&#x2019;s say we have an object called polygon. The polygon object has properties: values that contain data about the polygon, and methods: functions that define actions that the polygon can perform. This focus on &#x201C;objects&#x201D; and &#x201C;actions&#x201D; is the basis of Object Oriented Programming.</p>
+<p>Analyze the following code, what is a constructor?</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Polygon</span> <span class="token punctuation">{</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">height<span class="token punctuation">,</span> width</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;Polygon&quot;</span><span class="token punctuation">;</span>
@@ -911,11 +907,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Polygon</span><span class="token punctuation">(</span><span class="token string">&apos;Polygon&apos;</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Polygon</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 p<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;The area of this polygon is &apos;</span> <span class="token operator">+</span> p<span class="token punctuation">.</span>area<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Rectangle</span> <span class="token keyword">extends</span> <span class="token class-name">Polygon</span> <span class="token punctuation">{</span>
+</code></pre>
+<p>The extends keyword is used in class declarations or class expressions to create a class as a child of another class.
+Why do you think are two lines commented? </p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">class</span> <span class="token class-name">Rectangle</span> <span class="token keyword">extends</span> <span class="token class-name">Polygon</span> <span class="token punctuation">{</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">height<span class="token punctuation">,</span> width</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>height<span class="token punctuation">,</span> width<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;Rectangle&quot;</span><span class="token punctuation">;</span>
@@ -944,11 +941,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>What is Code? Computer code is a <strong>set of rules or instructions</strong>. It is made up of words and numbers and when you put them in the <strong>right order</strong> it will tell your computer what you want it to do. </p>
 <p>Let&apos;s trace these code samples together:</p>
 <ul>
-<li><p><a href="https://github.com/Migracode-Barcelona/exercises-js3-week1/blob/master/InClass/B-Tracing%20code/exercise1.js" target="_blank">Exercise 1</a> </p>
+<li><p><a href="https://github.com/Migracode-Barcelona/exercises-js3-week1/blob/master/InClass/B-Tracing%20code/exercise1/" target="_blank">Exercise 1</a> </p>
 </li>
-<li><p><a href="https://github.com/Migracode-Barcelona/exercises-js3-week1/blob/master/InClass/B-Tracing%20code/exercise2.js" target="_blank">Exercise 2</a> </p>
+<li><p><a href="https://github.com/Migracode-Barcelona/exercises-js3-week1/blob/master/InClass/B-Tracing%20code/exercise2/" target="_blank">Exercise 2</a> </p>
+</li>
+<li><p><a href="https://github.com/Migracode-Barcelona/exercises-js3-week1/blob/master/InClass/B-Tracing%20code/exercise3/" target="_blank">Exercise 3</a> </p>
 </li>
 </ul>
+<p>What is happening in exercise 3? Do you remember asynchronous programming from last lesson? How can we fix it? </p>
 <h1 id="debugging">Debugging</h1>
 <p>Debugging is the process of finding and resolving defects or problems within a computer program that prevent correct operation of computer software or a system.</p>
 <h2 id="syntax-bugs">Syntax bugs</h2>
@@ -1157,7 +1157,7 @@ modules and how do their differ from CommonJS?</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 10 - Unit Tests and TDD","level":"1.6.1","depth":2,"next":{"title":"Week 11 - More TDD, ES6","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},"previous":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - Unit Tests and TDD","level":"1.6.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},{"title":"Week 11 - More TDD, ES6","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},{"title":"Week 12 - Recap","level":"1.6.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-10/lesson.md","mtime":"2020-05-13T15:05:38.307Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-13T15:06:33.515Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 10 - Unit Tests and TDD","level":"1.6.1","depth":2,"next":{"title":"Week 11 - More TDD, ES6","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},"previous":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - Unit Tests and TDD","level":"1.6.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},{"title":"Week 11 - More TDD, ES6","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},{"title":"Week 12 - Recap","level":"1.6.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-10/lesson.md","mtime":"2020-05-13T15:54:20.987Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-13T15:55:08.456Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
