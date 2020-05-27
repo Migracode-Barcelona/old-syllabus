@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Week 11 - More TDD, ES6 · GitBook</title>
+        <title>Week 11 - Unit tests and TDD · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -252,7 +252,7 @@
                 <a href="../../js-core/week-05/lesson.html">
             
                     
-                    Week 5 - Arrays
+                    Week 5 - Expressions and Arrays
             
                 </a>
             
@@ -265,7 +265,7 @@
                 <a href="../../js-core/week-06/lesson.html">
             
                     
-                    Week 6 - More Arrays
+                    Week 6 - Loops and callbacks
             
                 </a>
             
@@ -323,7 +323,7 @@
                 <a href="../../js-core-2/week-09/lesson.html">
             
                     
-                    Week 9 - More JS in the Browser
+                    Week 9 - More JS in the Browser 
             
                 </a>
             
@@ -355,7 +355,7 @@
                 <a href="../week-10/lesson.html">
             
                     
-                    Week 10 - Unit Tests and TDD
+                    Week 10 - ES6 and debugging
             
                 </a>
             
@@ -368,7 +368,7 @@
                 <a href="lesson.html">
             
                     
-                    Week 11 - More TDD, ES6
+                    Week 11 - Unit tests and TDD
             
                 </a>
             
@@ -730,7 +730,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Week 11 - More TDD, ES6</a>
+        <a href="../.." >Week 11 - Unit tests and TDD</a>
     </h1>
 </div>
 
@@ -747,23 +747,25 @@
                                 
                                 <p><img src="https://img.shields.io/badge/status-draft-darkred.svg" alt=""></p>
 <h1 id="js-core-iii---2">JS Core III - 2</h1>
+<p><strong>What we will learn today?</strong></p>
+<p>What is Testing, Unit Testing and TDD, and when and why use them.</p>
+<p><strong>Before the class</strong></p>
+<blockquote>
+<ol>
+<li>Clone the <a href="https://github.com/CodeYourFuture/js-exercises-tdd" target="_blank">js-exercises-tdd repo</a></li>
+<li>Install Jest, using the command npm install --save-dev jest</li>
+</ol>
+</blockquote>
 <p><strong> What we will learn today?</strong></p>
 <ul>
 <li><a href="#testing-our-code">Testing</a></li>
 <li><a href="#unit-testing">Unit Testing</a></li>
 <li><a href="#jest">Unit Testing Frameworks - JEST</a></li>
 <li><a href="#test-driven-development">Test-driven Development</a></li>
-<li>More on Testing<ul>
-<li><a href="#test-coverage">Test coverage</a></li>
-</ul>
-</li>
 </ul>
 <hr>
 <h2 id="testing-our-code">Testing our code</h2>
 <p>We have just traced the output of some code on paper, but how do ensure that the code actually does what it is supposed to do when we run it.</p>
-<blockquote>
-<p>Discussion: How have we been testing our code so far? How do ensure it is <em>correct</em>. What is &quot;<em>correct</em>&quot; anyhow?</p>
-</blockquote>
 <p>In many organisations, there are full teams dedicated to <strong>testing</strong> and ensuring that the code written behaves correctly, to report <strong>bugs</strong> and make sure that they are fixed on time. In general, <strong>Quality Assurance</strong> is a responsibility of everyone in a team starting from Project Manager, Scrum Masters, Developers and Testers.</p>
 <p>There are typically several levels of testing when working on a project:</p>
 <ul>
@@ -771,7 +773,7 @@
 <li>Integration testing</li>
 <li>Functional, End to End testing and User Acceptance Testing (UAT)</li>
 </ul>
-<p><a href="https://stackoverflow.com/a/4904533" target="_blank">This answer from Stack OverFlow</a> has a good explanation of types of testing. The defintions for Functional, e2e and UAT are often mean different things in different teams, the responisibility for them also falls on different individuals depending on the team.</p>
+<p><a href="https://stackoverflow.com/a/4904533" target="_blank">This answer from Stack OverFlow</a> has a good explanation of types of testing.</p>
 <p><em>Unit testing</em> though is always the responsibility of the Developer, and it is a very important skill for any professional developer to be able to write tests, and also write code that is testable.</p>
 <blockquote>
 <p>Discussion: What is testable code?</p>
@@ -845,23 +847,6 @@ output matches our expectations. In the simplest form that means we do an
 equality check:</p>
 <pre class="language-"><code class="lang-js"><span class="token function">myFunction</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span> <span class="token operator">===</span> expectedOutput<span class="token punctuation">;</span>
 </code></pre>
-<p>We can formalise this using another function that compares two values and
-complains when they do not match. Such a function is prepared in
-<code>unit-testing/equals.js</code>.</p>
-<p>We can use this function to simply compare to values:</p>
-<pre class="language-"><code class="lang-js"><span class="token function">equals</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// This should pass</span>
-<span class="token function">equals</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// This should fail</span>
-<span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">&quot;Hello&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Hello&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// This should pass</span>
-</code></pre>
-<p>Now we can use this <code>equals()</code> function to test our own code by comparing a
-function result to an expected value.</p>
-<p>Remember that one function can be used as an argument when a second function is called. In this instance, the function we are testing would represent our first function, and our <code>equals()</code> function would represent the second, like so...</p>
-<pre class="language-"><code class="lang-js"><span class="token function">equals</span><span class="token punctuation">(</span><span class="token function">myNewFunction</span><span class="token punctuation">(</span>arg1<span class="token punctuation">,</span> arg2<span class="token punctuation">,</span> etc<span class="token punctuation">)</span><span class="token punctuation">,</span> expectedOutput<span class="token punctuation">)</span>
-</code></pre>
-<p>As you can see in this example, instead of using a number as the first argument to the <code>equals()</code> function, we have used a function instead; the one we wish to test.</p>
-<blockquote>
-<p>Exercise: Write tests for the the exercises under <code>II.write-tests</code></p>
-</blockquote>
 <h3 id="unit-testing-frameworks">Unit testing frameworks</h3>
 <p>There are lots of other things you might want to test for than two things being
 equal. You might want to test if a number is smaller or greater than another, if
@@ -875,10 +860,9 @@ is provide the code and the tests.</p>
 <a href="https://facebook.github.io/jest/" target="_blank">Jest</a>. It&apos;s created by Facebook and useful
 for all kinds of unit testing (especially testing React, which we will do in a
 later lesson).</p>
-<p>Look into your <code>jest/</code> folder. You will find a file there, <code>sum.test.js</code>. The
-suffix <code>.test.js</code> tells Jest that this file contains tests it should execute. To
+<p>The suffix <code>.test.js</code> tells Jest that this file contains tests it should execute. To
 execute the test, run the following command in your terminal:</p>
-<pre class="language-"><code class="lang-sh"><span class="token function">npm</span> <span class="token builtin class-name">test</span>
+<pre class="language-"><code class="lang-sh"><span class="token function">npm</span> <span class="token builtin class-name">test</span> sum.test.js
 </code></pre>
 <p>This command runs the test in <code>sum.test.js</code>, which tests the <code>sum()</code> function.
 You can see the test output and the fact that the test passed.</p>
@@ -896,13 +880,10 @@ They are created in a way that imitates natural language, for example:</p>
 <p>You can add multiple test statements in the same test case (a test case is one
 call of the <code>test</code> function, but you can also create multiple test cases in one
 file. It is important that you give all your test cases meaningful descriptions.</p>
+<p>Read some information about <a href="https://jestjs.io/docs/en/getting-started" target="_blank">Jest</a></p>
 <blockquote>
-<p><em>Exercise:</em> Add another test case to <code>sum.test.js</code>. Is the sum of 10 and -10
-really zero? Run the tests using Jest.</p>
-<p><em>Exercise:</em> Take the <code>findNeedle</code> function you have tested previously, copy it
-into the <code>jest/</code> folder and call it <code>findNeedle.test.js</code>. Then write a test to
-be used with Jest, similar to <code>sum.test.js</code>. Make sure you cover multiple
-inputs and give all tests meaningful descriptions! Run the tests using Jest.</p>
+<p><em>Exercise:</em> From the repo do some exercises in the folder I.pass-test, like in the <a href="https://www.codewars.com/kata/5168bb5dfe9a00b126000018/train/javascript" target="_blank">CodeWars katas</a>, you have to write to code to pass the test</p>
+<p><em>Exercise:</em> From the repo try to write some tests in the folder II.write-tests, to test the functions are already implemented</p>
 </blockquote>
 <h2 id="test-driven-development">Test Driven Development</h2>
 <p>Test-driven development (TDD) is a software development process that relies on the repetition of a very short development cycle: requirements are turned into very specific test cases, then the software is improved to pass the new tests, only. This is opposed to software development that allows software to be added that is not proven to meet requirements. [Wikipedia]</p>
@@ -915,54 +896,10 @@ inputs and give all tests meaningful descriptions! Run the tests using Jest.</p>
 <li>Repeat</li>
 </ol>
 <p>Read more on the <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank">Wikipedia article</a> and the resources at the end.</p>
-<p><a href="https://www.codecademy.com/articles/tdd-red-green-refactor" target="_blank">Red Green Refactor</a></p>
 <blockquote>
-<p>Exercise: Two mentors pair on a problem doing &quot;ping pong&quot; TDD. One writing the test, the other writing the implementation.</p>
-</blockquote>
-<h2 id="more-on-testing">More on Testing</h2>
-<h3 id="test-coverage">Test coverage</h3>
-<p>Test coverage describes the extent to which a code base is tested. When Jest
-runs your tests, it generates a so-called <em>coverage report</em>. This report tells
-you how many of your <em>lines of code</em> are covered by tests, how many functions,
-statements, and branches.</p>
-<blockquote>
-<p>A branch is one of multiple ways a code control flow can go. For example, if
-you have an <code>if() ... else ...</code>, both the &quot;if&quot; and the &quot;else&quot; branch must be
-covered by tests.</p>
-</blockquote>
-<p>We want to keep our code coverage as high as possible. Jest allows us to
-generate a coverage report when we run the following command in the terminal:</p>
-<pre class="language-"><code class="lang-sh"><span class="token function">npm</span> <span class="token builtin class-name">test</span> -- --coverage
-</code></pre>
-<blockquote>
-<p><em>Exercise:</em> Check your code coverage for the tests you wrote. Is any of the
-numbers below 100%? If so, try and bring it up to 100%!</p>
-</blockquote>
-<h3 id="separating-code-and-tests">Separating code and tests</h3>
-<p>Exporting and importing modules is really useful for testing, too.</p>
-<p>As a rule of thumb, we never want to mix our actual code with our tests. It is
-therefore common to put them in separate files. We are going to call the file
-containing the tests after the file containing the code to be tested, just
-appending <code>.test</code> at the end of the filename. Like so:</p>
-<pre class="language-"><code>main.js               # Our main program
-main.test.js          # Tests for our main program
-someOtherCode.js      # A module called &quot;someOtherCode&quot;
-someOtherCode.test.js # Tests for the &quot;someOtherCode&quot; module
-</code></pre><blockquote>
-<p>The naming is really up to convention - you can even put your tests in a
-different folder! However, for Jest it is important to call test files
-&quot;*.test.js&quot;.</p>
+<p><em>Exercise:</em> From the repo try do just the exercise III.tdd-katas/fizz-buzz/</p>
 </blockquote>
 <h1 id="homework">Homework</h1>
-<ol>
-<li><p>Finish the Katas in <a href="https://github.com/CodeYourFuture/js-exercises-tdd" target="_blank">js-exercises-tdd</a></p>
-</li>
-<li><p>[Optional] Clone the repo of the
-<a href="https://github.com/codeyourfuture/cyf-election" target="_blank">election project</a> and work on the tasks in the instructions.</p>
-</li>
-<li><p>Prepare for the exam and finish all pending homework: <a href="https://github.com/CodeYourFuture/js-exercises" target="_blank">js-exercises</a>, <a href="https://github.com/CodeYourFuture/js-exercises-tdd" target="_blank">js-exercises-tdd</a> and <a href="https://github.com/CodeYourFuture/dom-ajax-repo" target="_blank">dom-ajax</a></p>
-</li>
-</ol>
 
                                 
                                 </section>
@@ -990,7 +927,7 @@ different folder! However, for Jest it is important to call test files
 
             
                 
-                <a href="../week-10/lesson.html" class="navigation navigation-prev " aria-label="Previous page: Week 10 - Unit Tests and TDD">
+                <a href="../week-10/lesson.html" class="navigation navigation-prev " aria-label="Previous page: Week 10 - ES6 and debugging">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1006,7 +943,7 @@ different folder! However, for Jest it is important to call test files
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 11 - More TDD, ES6","level":"1.6.2","depth":2,"next":{"title":"Week 12 - Recap","level":"1.6.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]},"previous":{"title":"Week 10 - Unit Tests and TDD","level":"1.6.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-11/lesson.md","mtime":"2020-05-13T17:53:06.742Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-13T17:53:58.492Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 11 - Unit tests and TDD","level":"1.6.2","depth":2,"next":{"title":"Week 12 - Recap","level":"1.6.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]},"previous":{"title":"Week 10 - ES6 and debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-11/lesson.md","mtime":"2020-05-27T15:33:34.526Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-27T15:34:21.785Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
