@@ -801,16 +801,47 @@ IBM, etc.</li>
 <li>JavaScript everywhere (used to be PHP, Python, JavaScript, MySQL, Apache, now
 JavaScript full stack)</li>
 </ul>
+<h2 id="what-is-the-difference-between-javascript-in-a-browser-and-node">What is the difference between javascript in a browser and Node?</h2>
+<ul>
+<li>Javascript is a popular programming language and it runs in any web browser with a good web browser.</li>
+<li>JavaScript is mainly used for the client-side activity for one particular web application. Some of these activities can be dynamic page display in some schedule time interval, addressing business validation or basic Ajax call kind of task.</li>
+<li>Node.js is an interpreter and environment for the JavaScript with some specific useful libraries which JS programming can be used separately.</li>
+<li>Node.js is mainly used for running or accessing any operating system for the non-blocking operation. Like:</li>
+<li>executing or creating a shell script</li>
+<li>access to the hardware, for example the hard disk</li>
+</ul>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;fs&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span><span class="token string">&apos;hello.txt&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Hey!!&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p>Exercise: create a Javascript and run the last code, what happens?</p>
+</blockquote>
+<h2 id="a-simple-nodejs-server">A simple Node.js server</h2>
+<p>This app starts a server and listens on port 3000 for connections. The app responds with &#x201C;Hello World!&#x201D; for requests,
+set a <strong>port</strong> for our server to listen to. Think of a port as a door number; any requests that come to the server will come via
+that door. Setting a port will allow us to find where our server is running.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;http&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">&quot;Hello World!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Node.js web server at port 3000 is running..&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The example above is actually a working server: Go ahead and click on the URL shown. You&#x2019;ll get a response, with real-time logs on the page, and any changes you make will be reflected in real time.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;http&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Main page requested at &quot;</span> <span class="token operator">+</span> <span class="token function">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">&quot;Hello World&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">&quot;/weather&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Migracode page requested at &quot;</span> <span class="token operator">+</span> <span class="token function">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">&quot;The weather is 24.5!&quot;</span><span class="token punctuation">)</span>
+</code></pre>
 <h2 id="express">Express</h2>
 <p><a href="http://expressjs.com/" target="_blank">Express</a> is one of the most widely-used frameworks for
 Node.js. It simplifies base features of Node.js, making it easier and faster to
 build your application&apos;s backend. Learning Express gives you a great foundation
 for becoming a Node.js developer.</p>
-<p>In the next steps, we will building a <strong>CMS (Content Management System)</strong> - a
-system to write, publish and save blog posts. Even though we could use core
-libraries like <code>http</code> to build this system, this becomes very complicated and
-non-maintainable very quickly. That is why we use frameworks like <code>Express</code>.</p>
-<h2 id="a-simple-nodejs-server">A simple Node.js server</h2>
 <h3 id="hello-world-example">Hello world example</h3>
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;express&apos;</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -824,12 +855,8 @@ app<span class="token punctuation">.</span><span class="token function">get</spa
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <p>This app starts a server and listens on port 3000 for connections. The app responds with &#x201C;Hello World!&#x201D; for requests to the root URL (/) or route. For every other path, it will respond with a 404 Not Found.</p>
-<p>The example above is actually a working server: Go ahead and click on the URL shown. You&#x2019;ll get a response, with real-time logs on the page, and any changes you make will be reflected in real time. </p>
 <p>To initialise our server, we just need to call the <code>express()</code> function. This
 will create an Express application for us to work with.</p>
-<p>One more step left, we need to set a <strong>port</strong> for our server to listen to. Think
-of a port as a door number; any requests that come to the server will come via
-that door. Setting a port will allow us to find where our server is running.</p>
 <p>We use the <strong><code>app.listen</code></strong> method to do this. This method takes two arguments:
 a <strong>port</strong> and a <strong>callback function</strong> telling it what to do once the server is
 running. Need clarification? Read more about the <code>app.listen</code> method in the
@@ -840,22 +867,15 @@ requests and handles them, hence the name.</p>
 <p>The handler function always takes a <code>request</code> and <code>response</code> object, and sends
 the response back to the client along with some information. You can decide what
 to send back in your response.</p>
-<p>We&apos;re going to run our server on port <code>3000</code>, and run a simple <code>console.log</code> as
-our callback function. Update your <code>server.js</code> file, calling the <code>app.listen</code>
-method:</p>
 <blockquote>
 <p>Exercise A: Running a Server locally</p>
-<ol>
-<li>First create a directory named myapp to hold your application, and make that your working directory:</li>
-</ol>
+<p>[1] First create a directory named myapp to hold your application, and make that your working directory:</p>
 </blockquote>
 <pre class="language-"><code class="lang-js">$ mkdir myapp
 $ cd myapp
 </code></pre>
 <blockquote>
-<ol>
-<li>Make a package.json file. The package.json file is easy to create from the command line. Type the following command into your terminal to get started:</li>
-</ol>
+<p>[2] Make a package.json file. The package.json file is easy to create from the command line. Type the following command into your terminal to get started:</p>
 </blockquote>
 <pre class="language-"><code class="lang-js">$ npm init
 </code></pre>
@@ -1055,7 +1075,7 @@ following:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"next":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},"previous":{"title":"Node/DB","level":"1.8","depth":1,"path":"node/index.md","ref":"node/index.md","articles":[{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-13/lesson.md","ref":"node/week-13/lesson.md","articles":[]},{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},{"title":"Week 19 - More SQL and integration with NodeJS","level":"1.8.4","depth":2,"path":"db/week-2/lesson.md","ref":"db/week-2/lesson.md","articles":[]},{"title":"Week 20 - SQL with NodeJS","level":"1.8.5","depth":2,"path":"db/week-3/lesson.md","ref":"db/week-3/lesson.md","articles":[]},{"title":"Week 21 - NodeJS Workshop","level":"1.8.6","depth":2,"path":"db/week-4/lesson.md","ref":"db/week-4/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-13/lesson.md","mtime":"2020-06-29T16:02:40.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-29T16:03:30.196Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"next":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},"previous":{"title":"Node/DB","level":"1.8","depth":1,"path":"node/index.md","ref":"node/index.md","articles":[{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-13/lesson.md","ref":"node/week-13/lesson.md","articles":[]},{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},{"title":"Week 19 - More SQL and integration with NodeJS","level":"1.8.4","depth":2,"path":"db/week-2/lesson.md","ref":"db/week-2/lesson.md","articles":[]},{"title":"Week 20 - SQL with NodeJS","level":"1.8.5","depth":2,"path":"db/week-3/lesson.md","ref":"db/week-3/lesson.md","articles":[]},{"title":"Week 21 - NodeJS Workshop","level":"1.8.6","depth":2,"path":"db/week-4/lesson.md","ref":"db/week-4/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-13/lesson.md","mtime":"2020-06-29T19:35:56.591Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-29T19:36:46.141Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -838,19 +838,14 @@ performed on those resources.</p>
 <p>Postman is a platform for API development. We can use the API Client to check and test our API, simplifying each step of building.</p>
 <p><a href="https://www.postman.com/product/api-client/" target="_blank">https://www.postman.com/product/api-client/</a></p>
 <p>Add postman as a Chrome extension</p>
-<h1 id="workshop---post">Workshop - Post</h1>
+<h1 id="workshop---blog">Workshop - Blog</h1>
+<p>In the next steps, we will building a <strong>CMS (Content Management System)</strong> - a
+system to write, publish and save blog posts. Even though we could use core
+libraries like <code>http</code> to build this system, this becomes very complicated and
+non-maintainable very quickly. That is why we use frameworks like <code>Express</code>.</p>
 <h3 id="step-1-create-a-node-project">Step 1: Create a node project</h3>
 <h3 id="step-2">Step 2:</h3>
-<p>All requests use one of the <code>HTTP methods</code>. The main ones are: <code>GET, POST, PUT, DELETE</code>.</p>
-<p><code>app.get</code> deals with requests that use the <code>GET</code> HTTP method.</p>
-<blockquote>
-<p>We will go into these Methods into more details, but for now, think of <code>GET</code>
-as a method for Getting data. <code>POST</code> is for POSTing/inserting new data. <code>PUT</code>
-is for updating. <code>DELETE</code> is for deleting data.</p>
-</blockquote>
 <h3 id="the-post-http-request-method">The <code>POST</code> http request method</h3>
-<p>When sending data to the server, we use the <code>POST</code> http request method, instead
-of <code>GET</code>.</p>
 <p>Let&apos;s try <code>POST</code>ing some text to the server.</p>
 <p>We&apos;re going to add a form to the <code>index.html</code> page, so that you can write your
 blogposts from there.</p>
@@ -875,10 +870,6 @@ should see this:</p>
 <p>When you hit Send, the form will send a <code>POST</code> request to the server, using
 whatever is in the <code>action</code> attribute as the endpoint. In our case it&apos;s
 <code>/create-post</code>.</p>
-<blockquote>
-<p><strong>Exercise:</strong> Open Chrome Developers tool, click the button and see what
-happens.</p>
-</blockquote>
 <h3 id="receiving-the-blog-post-on-the-server">Receiving the blog post on the server</h3>
 <ul>
 <li><p>Data doesn&apos;t come through the server in one go; it flows to the server in a
@@ -1113,7 +1104,7 @@ following:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"next":{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},"previous":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-13/lesson.md","ref":"node/week-13/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-14/lesson.md","mtime":"2020-06-29T16:02:40.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-29T16:03:30.196Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"next":{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},"previous":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-13/lesson.md","ref":"node/week-13/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-14/lesson.md","mtime":"2020-06-29T19:35:56.591Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-29T19:36:46.141Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
