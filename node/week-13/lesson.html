@@ -770,7 +770,6 @@
 <li><a href="#node-and-its-ecosystem">Node and its ecosystem</a></li>
 <li><a href="#express">Express</a></li>
 <li><a href="#Routing">Routing</a></li>
-<li><a href="#workshop">Workshop</a></li>
 </ul>
 <hr>
 <h2 id="what-is-a-server">What is a server?</h2>
@@ -783,7 +782,7 @@ software resources.</p>
 files, images, maybe some javascript files. When you type a website address in
 your browser&apos;s address bar, the browser (client) sends a <strong>request</strong> to the
 server that lives at that address. The browser asks the server to give it the
-files it needs to display the website properly.</p>
+files it needs to display the website properly. Another client can be a mobile application.</p>
 <p><img src="https://files.gitter.im/heron2014/FiiK/server.png" alt="Server flow"></p>
 <h2 id="node-and-its-ecosystem">Node and its ecosystem</h2>
 <blockquote>
@@ -798,14 +797,13 @@ Chrome&apos;s <strong>V8 JavaScript engine</strong>. Node.js uses an <strong>eve
 <li>easier to build desktop applications with Electron: Slack, Visual Code, Atom</li>
 <li>some of the biggest companies use Node.js in production: Netflix, Walmart,
 IBM, etc.</li>
-<li>JavaScript everywhere (used to be PHP, Python, JavaScript, MySQL, Apache, now
-JavaScript full stack)</li>
 </ul>
 <h3 id="what-is-the-difference-between-javascript-in-a-browser-and-node">What is the difference between javascript in a browser and Node?</h3>
 <ul>
 <li>Javascript is a popular programming language and it runs in any web browser with a good web browser.</li>
 <li>JavaScript is mainly used for the client-side activity for one particular web application. Some of these activities can be dynamic page display in some schedule time interval, addressing business validation or basic Ajax call kind of task.</li>
 <li>Node.js is an interpreter and environment for the JavaScript with some specific useful libraries which JS programming can be used separately.</li>
+<li>Node.js can connect to other Internet Services: send emails, create communications in other protocols, etc.</li>
 <li>Node.js is mainly used for running or accessing any operating system for the non-blocking operation. Like:</li>
 <li>executing or creating a shell script</li>
 <li>access to the hardware, for example the hard disk</li>
@@ -837,6 +835,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">&quot;/weather&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Migracode page requested at &quot;</span> <span class="token operator">+</span> <span class="token function">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">&quot;The weather is 24.5!&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="express">Express</h2>
 <p><a href="http://expressjs.com/" target="_blank">Express</a> is one of the most widely-used frameworks for
@@ -848,12 +848,12 @@ for becoming a Node.js developer.</p>
 <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token number">3000</span>
 
-app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Example app listening at http://localhost:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
 app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&apos;/&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;a client connected to the endpoint /&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;Hello World!&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Example app listening at http://localhost:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
 <p>This app starts a server and listens on port 3000 for connections. The app responds with &#x201C;Hello World!&#x201D; for requests to the root URL (/) or route. For every other path, it will respond with a 404 Not Found.</p>
 <p>To initialise our server, we just need to call the <code>express()</code> function. This
@@ -917,7 +917,7 @@ has been added as a dependency. It will look like this:</p>
 <p>Routing refers to determining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, and so on).</p>
 <h3 id="what-is-an-endpoint">What is an endpoint?</h3>
 <p>An endpoint is the part of the URL which comes after <code>/</code>. For example:
-<code>/chocolate</code> is the &quot;chocolate&quot; endpoint. It&apos;s the URL to which you send a
+<code>/products</code> is the &quot;products&quot; endpoint. It&apos;s the URL to which you send a
 request.</p>
 <h3 id="what-is-url">What is URL?</h3>
 <p><img src="../assets/http1-url-structure.png" alt="URL structure" title="URL"></p>
@@ -930,8 +930,6 @@ this method with different endpoints.</p>
 <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token number">3000</span>
 
-app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Example app listening at http://localhost:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
 app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&apos;/&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;a client connected to the endpoint /&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;Hello World!&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -940,7 +938,9 @@ app<span class="token punctuation">.</span><span class="token function">get</spa
 app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&apos;/weather&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;a client requested the weather&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;The weather is 24.5!&apos;</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span> 
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Example app listening at http://localhost:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
 <p>Each route can have one or more handler functions, which are executed when the route is matched.</p>
 <p>Route definition takes the following structure:</p>
@@ -1005,6 +1005,10 @@ endpoint is <code>/cities</code>.</p>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>myLogger<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
+<h4 id="exercise-use-logger">Exercise: Use logger</h4>
+<blockquote>
+<p>Put the logger in your server and see the results</p>
+</blockquote>
 <h1 id="homework">Homework</h1>
 <p>Add this array of objects to your server</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> myCities <span class="token operator">=</span> <span class="token punctuation">[</span>
@@ -1068,7 +1072,7 @@ app<span class="token punctuation">.</span><span class="token function">use</spa
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"next":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},"previous":{"title":"Node/DB","level":"1.8","depth":1,"path":"node/index.md","ref":"node/index.md","articles":[{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-13/lesson.md","ref":"node/week-13/lesson.md","articles":[]},{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},{"title":"Week 19 - More SQL and integration with NodeJS","level":"1.8.4","depth":2,"path":"db/week-2/lesson.md","ref":"db/week-2/lesson.md","articles":[]},{"title":"Week 20 - SQL with NodeJS","level":"1.8.5","depth":2,"path":"db/week-3/lesson.md","ref":"db/week-3/lesson.md","articles":[]},{"title":"Week 21 - NodeJS Workshop","level":"1.8.6","depth":2,"path":"db/week-4/lesson.md","ref":"db/week-4/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-13/lesson.md","mtime":"2020-07-01T13:49:57.708Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-01T13:50:47.602Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"next":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},"previous":{"title":"Node/DB","level":"1.8","depth":1,"path":"node/index.md","ref":"node/index.md","articles":[{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-13/lesson.md","ref":"node/week-13/lesson.md","articles":[]},{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},{"title":"Week 19 - More SQL and integration with NodeJS","level":"1.8.4","depth":2,"path":"db/week-2/lesson.md","ref":"db/week-2/lesson.md","articles":[]},{"title":"Week 20 - SQL with NodeJS","level":"1.8.5","depth":2,"path":"db/week-3/lesson.md","ref":"db/week-3/lesson.md","articles":[]},{"title":"Week 21 - NodeJS Workshop","level":"1.8.6","depth":2,"path":"db/week-4/lesson.md","ref":"db/week-4/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-13/lesson.md","mtime":"2020-07-01T15:40:20.208Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-01T15:41:12.898Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
