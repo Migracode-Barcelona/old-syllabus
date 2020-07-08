@@ -796,9 +796,11 @@
   res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;Got a DELETE request at /user&apos;</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
-<p>Read more on Mozilla&apos;s
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview" target="_blank">An overview of HTTP</a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#HTTP_Messages" target="_blank">HTTP messages</a></p>
+<p>Read more on Mozilla&apos;s:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview" target="_blank">An overview of HTTP</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#HTTP_Messages" target="_blank">HTTP messages</a></li>
+</ul>
 <h1 id="apis">APIs</h1>
 <p>APIs (Application Programming Interfaces) provide a way for applications to
 communicate with each other. We already consumed an API earlier in the day:
@@ -809,8 +811,6 @@ Mobile Application, or a TV setbox etc...</p>
 <blockquote>
 <p><strong>Let&apos;s</strong> watch this video about APIs -
 <a href="https://www.youtube.com/watch?v=s7wmiS2mSXY" target="_blank">What is an API</a></p>
-<p><strong>Exercise</strong>: Let&apos;s expose the <code>posts.json</code> as an API for other clients to
-consume through the url <code>/api/get-posts</code>. Hint: make use <code>res.sendFile</code></p>
 </blockquote>
 <h2 id="rest-api">REST API</h2>
 <p><a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> (REpresentational State Transfer) and RESTful APIs provide a convention and architecture for building APIs that is simple and scalable.</p>
@@ -821,11 +821,9 @@ Methods (GET, POST, PUT, DELETE etc..)</p>
 URL is redundant as the HTTP Method <code>GET</code> already tells that we are <em>GETting</em> a
 <em>Resource</em>. The Resource in this case is called <strong>posts</strong>.</p>
 <blockquote>
-<p>Exercise: Let&apos;s rename our endpoint to <code>/posts</code> so that it follows RESTful
-architecture.</p>
-<p><strong>What would the endpoint for creating posts be called?</strong></p>
 <p><strong>Watch</strong>: <a href="https://www.youtube.com/watch?v=7YcW25PHnAA" target="_blank">What is a REST API</a>
 (up to 3 minutes)</p>
+<p>Analyze the <a href="https://developer.typeform.com/create/reference/create-form/" target="_blank">TypeForm REST API</a></p>
 </blockquote>
 <p>REST is a big topic that we will revisit again. The table below from Wikipedia
 shows how a typical RESTful API would look like.</p>
@@ -838,216 +836,39 @@ performed on those resources.</p>
 <p>Postman is a platform for API development. We can use the API Client to check and test our API, simplifying each step of building.</p>
 <p><a href="https://www.postman.com/product/api-client/" target="_blank">https://www.postman.com/product/api-client/</a></p>
 <p>Add postman as a Chrome extension</p>
-<h1 id="workshop---blog">Workshop - Blog</h1>
-<p>In the next steps, we will building a <strong>CMS (Content Management System)</strong> - a
-system to write, publish and save blog posts. Even though we could use core
-libraries like <code>http</code> to build this system, this becomes very complicated and
-non-maintainable very quickly. That is why we use frameworks like <code>Express</code>.</p>
-<h3 id="step-1-create-a-node-project">Step 1: Create a node project</h3>
-<h3 id="step-2">Step 2:</h3>
-<h3 id="the-post-http-request-method">The <code>POST</code> http request method</h3>
-<p>Let&apos;s try <code>POST</code>ing some text to the server.</p>
-<p>We&apos;re going to add a form to the <code>index.html</code> page, so that you can write your
-blogposts from there.</p>
-<p>Open up the <code>index.html</code> file in your text editor. If you have a look, you
-should see this:</p>
-<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>entry-container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token comment">&lt;!--PASTE YOUR CODE HERE!! --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<h1 id="nodemon">Nodemon</h1>
+<p>It is a bit annoying that we have to kill and restart our server every time we want to test our changes. There is a handy npm package that can help us with that task.</p>
+<pre class="language-"><code class="lang-js">$ npm install <span class="token operator">--</span>save<span class="token operator">-</span>dev nodemon
 </code></pre>
-<p><strong>Replace the greyed-out comment with this code snippet:</strong></p>
-<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Create a blog post<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/create-post<span class="token punctuation">&quot;</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>POST<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>blogpost<span class="token punctuation">&quot;</span></span> <span class="token attr-name">rows</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>10<span class="token punctuation">&quot;</span></span> <span class="token attr-name">cols</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>14<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>submit<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Send<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-<ul>
-<li>This form has a text area and a Send button.</li>
-<li>The <code>action</code> attribute is the endpoint form data will be sent to.</li>
-<li>The <code>name</code> attribute will be used later to reference the data.</li>
-</ul>
-<p>When you hit Send, the form will send a <code>POST</code> request to the server, using
-whatever is in the <code>action</code> attribute as the endpoint. In our case it&apos;s
-<code>/create-post</code>.</p>
-<h3 id="receiving-the-blog-post-on-the-server">Receiving the blog post on the server</h3>
-<ul>
-<li><p>Data doesn&apos;t come through the server in one go; it flows to the server in a
-<strong>stream</strong>. Think of a stream as water flowing from a tap into a bucket. Your
-job is to collect this water in the server.</p>
-</li>
-<li><p>If we were writing a pure Node server, we would have to think about how to
-collect the stream of data properly. But luckily for us, Express handles all
-of that stuff under the hood.</p>
-</li>
-<li><p>All you need to do is define a route to deal with requests that come through
-on the <code>/create-post</code> endpoint.</p>
-</li>
-</ul>
-<p>Let&apos;s remind ourselves of a simple <code>GET</code> route in Express:</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/hello-world&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;Hello there!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<blockquote>
-<p><strong>Exercise:</strong> This time we want to define a route to deal with a <code>POST</code>
-request not a <code>GET</code>. What do you think you would need to do differently?
-Experiment and see if you can define a route for the <code>/create-post</code> endpoint!</p>
-<p>For now, make your <code>/create-post</code> handler simply do this: <code>console.log(&apos;I am /create-post endpoint&apos;)</code>.</p>
-</blockquote>
-<hr>
-<h3 id="extracting-the-blog-post">Extracting the blog post</h3>
-<p>Now the contents of your blogpost is hidden in your <code>req</code> object somewhere.
-Normally you would extract it using <code>req.body</code>. Try to console.log <code>req.body</code>
-now.</p>
-<p>Getting <code>undefined</code>? Not to worry, that&apos;s normal. When data has been <code>POST</code>ed to
-the server as <code>FormData</code>, we need to do things slightly differently to access
-the data that&apos;s come through in the request.</p>
-<p>We need another middleware function. Something that can get extract the contents
-out of the special <code>FormData</code> object. For this we will use <code>express-formidable</code>.
-<code>express-formidable</code> is another Express middleware. It will extract the form
-data from the request and make it available to you when you do <code>req.fields</code>.</p>
-<p>This time though, <code>express-formidable</code> is not built-in, we need to explicitly
-install it.</p>
-<p><strong>In your terminal, install express-formidable</strong></p>
-<pre class="language-"><code class="lang-bash"><span class="token function">npm</span> <span class="token function">install</span> express-formidable --save
-</code></pre>
-<p><code>require</code> <code>express-formidable</code> so you can use it in your code. You can&apos;t use
-dashes in JavaScript variable names, so just call it <code>const formidable</code>.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> formidable <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;express-formidable&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>Now add this towards the top of your server, after your <code>require</code>s and
-<code>app.use(express.static(&apos;public&apos;))</code>, but before your <code>/create-post</code> endpoint:</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">formidable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>Now inside your <code>/create-post</code> function, add:</p>
-<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>fields<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>Refresh your server and have another go at writing a blogpost.</p>
-<p>You should now see an object in the console. The key should be <code>blogpost</code>, just
-like the name attribute in the form on the HTML page. The value of <code>blogpost</code>
-will be your message!</p>
-<blockquote>
-<p><strong>Exercise</strong>: Try putting <code>app.use(formidable());</code> at the end of the file
-(after the <code>create-post</code> but before starting the server)</p>
-<p><strong>What is a middleware in Express?</strong> Middleware functions are functions that
-have access to the request object (req), the response object (res), and the
-next function in the application&#x2019;s request-response cycle. The next function
-is a function in the Express router which, when invoked, executes the
-middleware succeeding the current middleware. Read more on
-<a href="https://expressjs.com/en/guide/writing-middleware.html" target="_blank">the Express documentation</a></p>
-</blockquote>
-<h3 id="step-8---saving-your-blog-post">Step 8 - Saving your blog post</h3>
-<p>Right now, your precious blog posts aren&apos;t being saved anywhere, which is a bit
-of a shame. Let&apos;s do something about that.</p>
-<p>You&apos;ll note that in the data folder there&apos;s a new file called <code>posts.json</code>.</p>
-<p>If you look at <code>posts.json</code> will see there&apos;s already one blog post there. The
-format is:</p>
-<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
-    <span class="token punctuation">[</span>timestamp<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">[</span>blog post message<span class="token punctuation">]</span>
+<p>Make sure the package is added to your package.json, add this line to the script:</p>
+<pre class="language-"><code class="lang-js">scripts<span class="token operator">:</span> <span class="token punctuation">{</span>
+  start<span class="token operator">:</span> <span class="token string">&quot;node server.js&quot;</span><span class="token punctuation">,</span>
+  dev<span class="token operator">:</span> <span class="token string">&apos;nodemon server.js&apos;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>We&apos;ve used a timestamp as the key so that the blog posts are listed in
-chronological order. Also, it&apos;s a record of when the blog post was created.</p>
-<h3 id="writing-to-your-hard-drive">Writing to your hard drive</h3>
-<p>Anytime a blog post comes through to the server, we want to save the data on
-your computer&apos;s hard drive. To do this, we need to use a built-in Node module:
-<code>fs</code>, which stands for &apos;file-system&apos;.</p>
-<p>Built-in Node modules - <strong>core Node modules</strong> - are rather like the built-in
-Express middleware functions. Only difference is that where you need to have
-installed Express to use Express middleware functions, the core Node modules
-come automatically with Node itself.</p>
-<p>To use <code>fs</code>, you&apos;ll need to require it at the top of your server file:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;fs&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>The method we need to write to your hard drive is <code>fs.writeFile</code>.</p>
-<pre class="language-"><code class="lang-js">fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span><span class="token string">&quot;path/to/file&quot;</span><span class="token punctuation">,</span> yourData<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment">// do something</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<p>now from your terminal, use the command npm run dev and that will run the server with nodemon which is a package that makes the server listen to code changes and automatically restart.</p>
+<h1 id="exercise-crud">Exercise: CRUD</h1>
+<p>So what will we build? we will build a CRUD API. CRUD stands for Create, Retrieve, Update, Delete. If you think about it, this is what most applications do:</p>
 <ul>
-<li>Argument 1: the location of the file you want to write to</li>
-<li>Argument 2: the data you want to write</li>
-<li>Argument 3: the callback function</li>
+<li>Create some &quot;resources&quot;</li>
+<li>Retrieve them (GET them)</li>
+<li>Update them</li>
+<li>Delete them</li>
 </ul>
-<p>The &apos;path/to/file&apos; will be replaced with the actual path to the file you want to
-write to. If it doesn&apos;t exist, <code>fs.writeFile</code> cleverly creates one for you. But
-we already have <code>posts.json</code>, so not to worry.</p>
-<h3 id="reading-from-your-hard-drive">Reading from your hard drive</h3>
-<p>To read data that&apos;s already there, you would use <code>fs.readFile</code>. The way to use
-<code>fs.readFile</code> is very similar to <code>fs.writeFile</code>:</p>
-<pre class="language-"><code class="lang-js">fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">&quot;path/to/file&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> file</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment">// do something</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<ul>
-<li>Argument 1: the location of the file you want to read from</li>
-<li>Argument 2: the callback function</li>
-</ul>
-<p>You&apos;ll notice that <code>fs.readFile</code>&apos;s callback function takes a second argument.
-That argument would be the file you&apos;re reading.</p>
-<p>Let&apos;s read the data from the <code>posts.json</code> file. Make sure you&apos;ve <code>require</code>d the
-<code>fs</code> core Node module at the top of your server file somewhere.</p>
-<p>Add this code to your server (put it anywhere after the <code>require</code>s for now):</p>
-<pre class="language-"><code class="lang-js">fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>__dirname <span class="token operator">+</span> <span class="token string">&quot;/data/posts.json&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> file</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>(<code>__dirname</code> is a Node global object that gives you a path to current working
-directory. It&apos;s handy if we want to avoid writing the whole path out in full.)</p>
-<p>If you restart the server, you&apos;ll probably see something like this:</p>
-<pre class="language-"><code class="lang-bash"><span class="token operator">&lt;</span>Buffer 7b 0a <span class="token number">20</span> <span class="token number">20</span> <span class="token number">20</span> <span class="token number">20</span> <span class="token number">22</span> <span class="token number">31</span> <span class="token number">34</span> <span class="token number">36</span> <span class="token number">37</span> <span class="token number">33</span> <span class="token number">39</span> <span class="token number">30</span> <span class="token number">33</span> <span class="token number">35</span> <span class="token number">36</span> <span class="token number">32</span> <span class="token number">39</span> <span class="token number">31</span> <span class="token number">22</span> 3a <span class="token number">20</span> <span class="token number">22</span> <span class="token number">54</span> <span class="token number">68</span> <span class="token number">69</span> <span class="token number">73</span> <span class="token number">20</span> <span class="token number">69</span> <span class="token number">73</span> <span class="token number">20</span> 6d <span class="token number">79</span> <span class="token number">20</span> <span class="token number">76</span> <span class="token number">65</span> <span class="token number">72</span> <span class="token number">79</span> <span class="token number">20</span> <span class="token number">66</span> <span class="token number">69</span> <span class="token number">72</span> <span class="token number">73</span> <span class="token number">74</span> <span class="token number">20</span> <span class="token number">62</span> 6c 6f <span class="token number">67</span> <span class="token punctuation">..</span>. <span class="token operator">&gt;</span>
-</code></pre>
-<p>This is actually the contents of your <code>posts.json</code> file, but in a format called
-a <strong>buffer</strong>. To make it a bit more human-readable, you can console.log the file
-to a string, like this:</p>
-<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p><code>file</code> is in JSON format right now. If we want to access the blog post message
-inside <code>file</code>, we need to parse it from JSON back to a JavaScipt object.</p>
-<p>Add this next bit of code to your <code>fs.readFile</code>&apos;s callback function:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> parsedFile <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>Now <code>parsedFile</code> is a normal JavaScript object, and we can access the data
-inside it.</p>
-<p>Ok, so we&apos;ve talked about JSON and we&apos;ve talked about reading and writing files.
-You now have the power to save new blog post data to your hard drive! Work with
-your partner and your mentor to see if you can figure the next steps out on your
-own.</p>
-<p>Here&apos;s a breakdown of what you want to achieve:</p>
-<ul>
-<li>When new blog post data comes through, read from <code>posts.json</code> to access its
-contents</li>
-<li>Add your new blog post data to the old ones.</li>
-<li>Write your new combined data back to the <code>posts.json</code> file.</li>
-</ul>
-<h3 id="things-to-remember">Things to remember</h3>
-<ul>
-<li><p><code>fs.writeFile()</code> normally overwrites the target file you&apos;ve given it. Chances
-are you don&apos;t want to lose all your old blog posts every time you get a new
-one, so think about how you can combine <code>fs.readFile()</code> and <code>fs.writeFile()</code>
-to prevent overwriting.</p>
-</li>
-<li><p>You will need to convert between JSON and a JavaScript object several times.
-<code>JSON.parse()</code> and <code>JSON.stringify()</code> are what you need.</p>
-</li>
-</ul>
-<p>Oh by the way, if you want to get the current timestamp, use the JavaScript
-<code>Date.now()</code> method.</p>
-<h3 id="step-9---displaying-your-blog-posts">Step 9 - Displaying your blog posts</h3>
-<p>So now we&apos;re saving the blog posts to the server. Time to get them and display
-them on the page!</p>
-<p>If you look inside <code>public/script.js</code>, there&apos;s a whole bunch of JavaScript code
-in there. Don&apos;t worry about what all the code means, just know that it&apos;s
-responsible for sending a request to GET old blog posts and display them on the
-page underneath &quot;Recent Posts&quot;.</p>
-<p><code>script.js</code> is trying to load existing posts by making a GET request. Look
-inside <code>script.js</code> and see if you can find any useful endpoints.</p>
-<p>Your <code>script.js</code> file will want to receive the JSON containing your blog posts.
-Your job is to make that happen!</p>
-<p>Express has a handy method called <code>res.sendFile()</code> that makes it easy to send
-files back to the client. Feel free to use this with your JSON.</p>
-<p>If all goes well, you should have a fully functional CMS!</p>
+<p>Taking the exercise from the last week:</p>
+<ol>
+<li>Add an endpoint to the API server to allow GETting a vity according to the given ID. The id should be given in the URL structure like this: /citycrud/2</li>
+<li>Add an endpoint to allow POST new cities, the new cities should be added to your cities list, which is just an array in memory. The route should use the HTTP method POST and should use the URL: /citycrud</li>
+<li>Add an endpoint to the API server to allow update (PUT) a city according to the given ID. The id should be given in the URL structure like this:
+/citycrud/2</li>
+<li>Add an endpoint to the API server to allow delete a city according to the given ID. The id should be given in the URL structure like this:
+/citycrud/2</li>
+</ol>
+<p>Check all the endpoints using Postman</p>
+<h1 id="workshop---blog">Workshop - Blog</h1>
+<p>In the next steps, we will building a <strong>CMS (Content Management System)</strong> - a
+system to write, publish and save blog posts. </p>
+<p>Fork and Clone the <a href="https://github.com/node-girls/express-workshop" target="_blank">Node Girls Repo</a>, follow the instructions in this <a href="https://node-girls.gitbook.io/intro-to-express/" target="_blank">link</a></p>
 <h2 id="resources">Resources</h2>
 <p>More about HTTP:
 <a href="https://code.tutsplus.com/tutorials/http-headers-for-dummies--net-8039" target="_blank">Tutsplus tutorial</a></p>
@@ -1067,14 +888,6 @@ files back to the client. Feel free to use this with your JSON.</p>
 <h2 id="submission">Submission</h2>
 <p>You should fork the <a href="https://github.com/CodeYourFuture/NodeJS-Homework" target="_blank">NodeJS-Homework</a> repository, complete all of your work in those folders.</p>
 <p>Make sure you create a branch named <code>[YOUR_NAME]/Week2</code> to separate your work for each week.</p>
-<h1 id="escalation-policy">Escalation policy</h1>
-<p>When you get stuck during the homework you should follow the
-following:</p>
-<ol>
-<li>First, search for answers on Google and Stack Overflow. If you have an error message, copy and paste it into Google.</li>
-<li>When you are stuck for longer than 20 minutes - no longer! - write a question to your fellow students in your class channel on slack. Take a while to think carefully about the question. This is an important skill. There is a great guide to writing good questions <a href="http://stackoverflow.com/help/how-to-ask" target="_blank">here</a></li>
-<li>If you cannot get an answer from your fellow students, post your question in your class public channel, @ the mentor for the class that covered the topic and we will reply as soon as we can.</li>
-</ol>
 
                                 
                                 </section>
@@ -1118,7 +931,7 @@ following:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"next":{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},"previous":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-13/lesson.md","ref":"node/week-13/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-14/lesson.md","mtime":"2020-07-01T15:40:20.208Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-01T15:41:12.898Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"next":{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},"previous":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-13/lesson.md","ref":"node/week-13/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-14/lesson.md","mtime":"2020-07-08T14:14:28.720Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-08T14:15:22.949Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
