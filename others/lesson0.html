@@ -761,10 +761,14 @@
 <p><strong>What we will learn today?</strong></p>
 <ul>
 <li><a href="#migracode">MigraCode</a></li>
-<li><a href="#welcome">Welcome task</a></li>
-<li><a href="#terminal-basics">Terminal</a></li>
+<li><a href="#Your-new-working-environment">Environment</a></li>
+<li><a href="#Development-Tools">Development Tools</a><ul>
+<li><a href="#Visual-Studio-Code">Visual Studio Code</a></li>
+<li><a href="#terminal">Terminal</a></li>
 <li><a href="#git">Git</a></li>
-<li><a href="#ide">IDEs</a></li>
+</ul>
+</li>
+<li><a href="#Your-first-Migracode-Github-project">First Project</a></li>
 <li><a href="#homework">Homework</a></li>
 </ul>
 <hr>
@@ -773,9 +777,9 @@
 <li>Who we are?</li>
 <li>What we learn?<ul>
 <li>Read this Technology Survey from
-<a href="http://stackoverflow.com/insights/survey/2017" target="_blank">StackOverflow</a>. Pay
+<a href="http://stackoverflow.com/insights/survey/2019" target="_blank">StackOverflow 2019</a>. Pay
 particular attention to the technologies we&apos;ll be teaching you (JavaScript,
-React, NodeJS)</li>
+React, NodeJS) and the evolution in the last years</li>
 </ul>
 </li>
 <li><a href="house-rules.html">House Rules</a><ul>
@@ -783,63 +787,55 @@ React, NodeJS)</li>
 <li>How we treat each other?</li>
 </ul>
 </li>
-<li>Standup</li>
 </ul>
-<h2 id="welcome">Welcome!</h2>
-<p>Welcome to MigraCode and to the world of Web Development! Now that you have
-built a website in CodePen and learned the basics of HTML and CSS, it&apos;s time to
-learn about the tools that web developers use in their everyday job. These tools
-will be used during the course, so it is important that you become familiarised
-with them.</p>
-<p>In order to get started, we would like you to try to complete a task at home:
-move your CodePen website to a web address under
-<code>https://your-username.github.io/your-site-name</code>.</p>
-<p>In the process, you will learn how to store your code outside CodePen&apos;s website,
-in a location where other developers can make changes to it and view a history
-of all the updates that you have made.</p>
-<p>If you wish to learn more about the concepts behind the steps we are suggesting
-below, please read the rest of this document.</p>
-<p>And remember: it&apos;s ok if you are stuck and don&apos;t know how to continue. At any
-point, please ask for a mentor&apos;s help. We will cover these steps again in the
-lesson, and will explain them in more detail.</p>
-<h3 id="how-to-move-your-website-to-githubio">How to move your website to Github.io</h3>
-<ol>
-<li>Export your website as a zip from CodePen.
-<a href="https://blog.codepen.io/documentation/features/exporting-pens/" target="_blank">Help &gt;</a></li>
-<li>Extract the contents of the zip file to a folder in your computer. Keep note
-of the location of this folder.</li>
-<li>Read about the <a href="#terminal-basics">terminal</a>.</li>
-<li>Read about <a href="#git">git</a>.</li>
-<li>Install <a href="https://git-scm.com/download/" target="_blank">Git</a>.</li>
-<li>Put the contents of the zip folder in a Gitub repository.
-<a href="https://www.youtube.com/watch?v=E8TXME3bzNs" target="_blank">How does Github work? (30min) &gt;</a></li>
-<li>You should now have a page with your code under
-<code>http://github.com/your-username/your-repository-name</code>. This is a view of
-your code, and you should see a list of your files, including an
-<code>index.html</code>.</li>
-<li>Now all that remains is to publish your website! Still under
-<code>http://github.com/your-username/your-repository-name</code>, find the settings
-icon in the top right corner.</li>
-</ol>
+<h2 id="your-new-working-environment">Your new working environment</h2>
+<p>Welcome to MigraCode and to the world of Web Development! </p>
+<p>If you are the ones that are using <a href="https://ubuntu.com/" target="_blank">Ubuntu</a>, an open-source operating system, you will see this sreen:</p>
 <div style="text-align: center;">
-  <img src="assets/lesson-0/repo-settings.png" width="200" alt="Repo settings">
+  <img src="assets/lesson-0/ubuntu.png" width="400" alt="Ubuntu">
 </div>
 
-<ol>
-<li>Find the section named &quot;Github Pages&quot; and select &quot;master branch&quot; in source,
-then hit &quot;Save&quot;.</li>
-</ol>
+<p>These are the tools that should be installed (in the computers we gave you everything is already installed):</p>
+<ul>
+<li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+<li><a href="https://git-scm.com/" target="_blank">Git</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Google_Chrome" target="_blank">Google Chrome</a></li>
+</ul>
+<h2 id="development-tools">Development Tools</h2>
+<h3 id="visual-studio-code">Visual Studio Code</h3>
+<p>Visual Studio Code or VS Code is an IDE, 
+IDE stands for &quot;Integrated Development Environment&quot;. It is the software that you
+will be using to write most of your code. It is designed to help you develop
+your apps quickly, focusing on the problems that you need to solve instead of
+having to search Google for minor details.</p>
+<h4 id="auto-complete">Auto-complete</h4>
+<p>One of the most important features of an IDE is that it provides
+&quot;auto-completion&quot;. This means that it will give you suggestions of what you can
+can write next, while you are typing something.</p>
+<p>For example, when writing a CSS property, it will tell you what values you can
+assign it to.</p>
 <div style="text-align: center;">
-  <img src="assets/lesson-0/repo-settings-pages.png" width="200" alt="Repo settings - Github pages">
+  <img src="assets/lesson-0/ide-auto-complete.png" width="300" alt="IDE - Auto complete">
 </div>
 
-<ol>
-<li>Wait a few minutes, then refresh the page and come back to the Github Pages
-section. You should see a green bar saying &quot;Your site is published at
-<code>http://github.com/your-username/your-repository-name</code>&quot;. Click the link,
-verify that your website is there, then share it with your CYF class!</li>
-</ol>
-<h2 id="terminal-basics">Terminal basics</h2>
+<h4 id="file-tree-view">File tree view</h4>
+<p>The reason why we call it &quot;Integrated&quot; is that you almost don&apos;t need to leave
+the window to write your app. For example, creating, renaming and moving files
+can be done directly from the IDE. This functionality can be achieved from
+something called a &quot;Tree view&quot;, which you can usually find on the left side of
+your IDE.</p>
+<div style="text-align: center;">
+  <img src="assets/lesson-0/file-tree.png" width="200" alt="IDE - File tree">
+</div>
+
+<h4 id="finding-files">Finding files</h4>
+<p>When working with big projects, you will often need to find a file quickly,
+without having to go through the tree view manually.</p>
+<div style="text-align: center;">
+  <img src="assets/lesson-0/find-file.gif" width="500" alt="IDE - Find file">
+</div>
+
+<h3 id="terminal">Terminal</h3>
 <p>During your course journey and onwards, the <strong>terminal</strong> (also known as
 <strong>command line</strong>) will be one of your most valuable tools. It will help you to
 interact with you computer faster, by helping you to:</p>
@@ -874,19 +870,7 @@ will see something like this:</p>
 <li><code>rm [file_name]</code> - remove a file</li>
 <li><code>rm -r [directory_name]</code> - remove a directory (<strong>and all files inside that directory</strong>)</li>
 </ul>
-<h4 id="linux">Linux</h4>
-<p>The Terminal is already installed. It should be in the list of applications
-available in your computer.
-<a href="http://www.wikihow.com/Open-a-Terminal-Window-in-Ubuntu" target="_blank">More instructions &gt;</a></p>
-<h4 id="macos-apple">macOS (Apple)</h4>
-<p>The Terminal is already installed. It should be in the list of applications
-available in your computer.
-<a href="http://www.wikihow.com/Get-to-the-Command-Line-on-a-Mac" target="_blank">More instructions &gt;</a></p>
-<h4 id="windows">Windows</h4>
-<p>Install <a href="https://git-scm.com/download/" target="_blank">Git</a>. It will bring with it a tool
-called &quot;Git Bash&quot;. When the mentors ask you to open a terminal or command line,
-please open &quot;Git Bash&quot;.</p>
-<h2 id="git">Git</h2>
+<h3 id="git">Git</h3>
 <p>We will use Git as our Version Control System (also known as Source Control).
 It&apos;s like Dropbox for developers. But much better!</p>
 <blockquote>
@@ -910,14 +894,14 @@ and by far
 <a href="http://stackoverflow.com/insights/survey/2015#tech-sourcecontrol" target="_blank">the most popular</a>.</p>
 <p>What is <strong>Github</strong>? Github is a very popular site where you can publish and
 share your Git repositories, share and collaborate with other people.</p>
-<h3 id="get-started">Get Started</h3>
+<h4 id="get-started">Get Started</h4>
 <p>Follow this tutorial from Github to setup Git
 <a href="https://help.github.com/articles/set-up-git/" target="_blank">https://help.github.com/articles/set-up-git/</a></p>
 <p>Then
 <a href="https://www.codecademy.com/learn/learn-git" target="_blank">learn how to use git from the Terminal &gt;</a></p>
 <p>Try completing <a href="https://try.github.io/" target="_blank">this tutorial &gt;</a> as well to learn more
 intermediate features, like branching.</p>
-<h3 id="a-typical-workflow">A typical workflow</h3>
+<h4 id="a-typical-workflow">A typical workflow</h4>
 <ul>
 <li><p>If you&apos;re basing your work from another project, the first step is typically
 to <strong>fork</strong> their repo. Read this guide for instructions
@@ -927,7 +911,7 @@ to <strong>fork</strong> their repo. Read this guide for instructions
 <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/" target="_blank">https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/</a></p>
 </li>
 </ul>
-<h3 id="using-git-through-the-terminal">Using Git through the Terminal</h3>
+<h4 id="using-git-through-the-terminal">Using Git through the Terminal</h4>
 <ul>
 <li><code>git init</code> <strong><em>if it is a new project</em></strong>, i.e. a project not <strong>cloned</strong> from a
 repo (or a fork of a repo)</li>
@@ -943,22 +927,14 @@ our case)</li>
 <p>You will also typically need to set up your email and name once when you install
 Git <code>git config --global user.name <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span></code> and `git config --global user.email</p>
 <p><email>`.</email></p>
-<h3 id="using-git-through-a-graphical-interface">Using Git through a graphical interface</h3>
-<p>If you don&apos;t feel comfortable with the terminal just yet, download the
-<a href="https://desktop.github.com/" target="_blank">Github client</a>. If possible, however, <strong>we
-recommend becoming comfortable with the Terminal commands and understanding the
-steps for the different workflows before moving on to visual Git clients.</strong></p>
-<p><a href="https://help.github.com/desktop/guides/contributing/" target="_blank">Github client guides &gt;</a></p>
-<h3 id="pull-requests">Pull Requests</h3>
-<p>You should also learn how to create and work with
-<a href="https://help.github.com/articles/about-pull-requests/" target="_blank">Pull Requests</a>.</p>
-<h3 id="github">Github</h3>
+<h4 id="github">Github</h4>
 <p>During our course, we will be using <a href="https://github.com" target="_blank">Github</a> to store our
 code. Github is the most popular Git service around, and is used by many large
 companies, like Facebook, Airbnb and The Guardian.</p>
 <p><a href="https://github.com/Code-Your-Future" target="_blank">MigraCode&apos;s Github page &gt;</a></p>
-<h3 id="more-resources">More Resources</h3>
+<h4 id="more-resources">More Resources</h4>
 <ul>
+<li><a href="https://www.youtube.com/watch?v=E8TXME3bzNs" target="_blank">How does Github work? (30min) &gt;</a></li>
 <li>Follow this tutorial to learn the basic Git commands
 <a href="https://www.codeschool.com/courses/try-git" target="_blank">https://www.codeschool.com/courses/try-git</a></li>
 <li>Another good resource: Git - the simple guide
@@ -971,52 +947,58 @@ do: <a href="http://ndpsoftware.com/git-cheatsheet.html#loc=workspace" target="_
 <li>This Glossary has definitions of the terms normally used with Git:
 <a href="https://help.github.com/articles/github-glossary/" target="_blank">https://help.github.com/articles/github-glossary/</a></li>
 </ul>
-<h2 id="ide">IDE</h2>
-<p>IDE stands for &quot;Integrated Development Environment&quot;. It is the software that you
-will be using to write most of your code. It is designed to help you develop
-your apps quickly, focusing on the problems that you need to solve instead of
-having to search Google for minor details.</p>
-<h3 id="auto-complete">Auto-complete</h3>
-<p>One of the most important features of an IDE is that it provides
-&quot;auto-completion&quot;. This means that it will give you suggestions of what you can
-can write next, while you are typing something.</p>
-<p>For example, when writing a CSS property, it will tell you what values you can
-assign it to.</p>
+<h2 id="your-first-migracode-github-project">Your first Migracode Github project</h2>
+<p>Now that you have built a website in CodePen and learned the basics of HTML and CSS, it&apos;s time to
+learn about the tools that web developers use in their everyday job. These tools
+will be used during the course, so it is important that you become familiarised
+with them.</p>
+<p>In order to get started, we would like you to try to complete a task:
+move your CodePen website to a web address under
+<code>https://your-username.github.io/your-site-name</code>.</p>
+<p>In the process, you will learn how to store your code outside CodePen&apos;s website,
+in a location where other developers can make changes to it and view a history
+of all the updates that you have made.</p>
+<p>If you wish to learn more about the concepts behind the steps we are suggesting
+below, please read the rest of this document.</p>
+<p>And remember: it&apos;s ok if you are stuck and don&apos;t know how to continue. At any
+point, please ask for a mentor&apos;s help. We will cover these steps again in the
+lesson, and will explain them in more detail.</p>
+<h3 id="how-to-move-your-code-to-github">How to move your code to Github</h3>
+<ol>
+<li>Export your website as a zip from CodePen.
+<a href="https://blog.codepen.io/documentation/features/exporting-pens/" target="_blank">Help &gt;</a></li>
+<li>Extract the contents of the zip file to a folder in your computer. Keep note
+of the location of this folder.</li>
+<li>Put the contents of the zip folder in a Github repository.</li>
+<li>You should now have a page with your code under
+<code>http://github.com/your-username/your-repository-name</code>. This is a view of
+your code, and you should see a list of your files, including an
+<code>index.html</code>.</li>
+</ol>
+<h3 id="how-to-publish-your-website-in-githubio">How to publish your website in Github.io</h3>
+<ol>
+<li>Now all that remains is to publish your website! Still under
+<code>http://github.com/your-username/your-repository-name</code>, find the settings
+icon in the top right corner.</li>
+</ol>
 <div style="text-align: center;">
-  <img src="assets/lesson-0/ide-auto-complete.png" width="300" alt="IDE - Auto complete">
+  <img src="assets/lesson-0/repo-settings.png" width="200" alt="Repo settings">
 </div>
 
-<h3 id="file-tree-view">File tree view</h3>
-<p>The reason why we call it &quot;Integrated&quot; is that you almost don&apos;t need to leave
-the window to write your app. For example, creating, renaming and moving files
-can be done directly from the IDE. This functionality can be achieved from
-something called a &quot;Tree view&quot;, which you can usually find on the left side of
-your IDE.</p>
+<ol>
+<li>Find the section named &quot;Github Pages&quot; and select &quot;master branch&quot; in source,
+ then hit &quot;Save&quot;.</li>
+</ol>
 <div style="text-align: center;">
-  <img src="assets/lesson-0/file-tree.png" width="200" alt="IDE - File tree">
+  <img src="assets/lesson-0/repo-settings-pages.png" width="200" alt="Repo settings - Github pages">
 </div>
 
-<h3 id="finding-files">Finding files</h3>
-<p>When working with big projects, you will often need to find a file quickly,
-without having to go through the tree view manually.</p>
-<div style="text-align: center;">
-  <img src="assets/lesson-0/find-file.gif" width="500" alt="IDE - Find file">
-</div>
-
-<p>Most IDEs will allow you to do this with a sequence of keys.</p>
-<p>VSCode sequence: <strong>Windows/Linux</strong> Ctrl + P | <strong>Mac</strong> Cmd + P</p>
-<h3 id="install-an-ide">Install an IDE</h3>
-<p>For this course, we recommend the usage of
-<a href="https://code.visualstudio.com/" target="_blank">VS Code</a>. Please go ahead and install it, then
-try opening an HTML file with it via File &gt; Open.</p>
-<p><a href="https://code.visualstudio.com/" target="_blank">Install VS Code &gt;</a></p>
-<h4 id="other-ides">Other IDEs</h4>
-<p>Besides VS Code, the IDEs below are also popular with web developers. Feel free
-to check out their websites and see the differences between them and VS Code.</p>
-<ul>
-<li><a href="https://atom.io/" target="_blank">Atom</a></li>
-<li><a href="https://www.jetbrains.com/webstorm/" target="_blank">Webstorm</a></li>
-</ul>
+<ol>
+<li>Wait a few minutes, then refresh the page and come back to the Github Pages
+ section. You should see a green bar saying &quot;Your site is published at
+ <code>http://github.com/your-username/your-repository-name</code>&quot;. Click the link,
+ verify that your website is there, then share it with your CYF class!</li>
+</ol>
 <h2 id="homework">Homework</h2>
 <ul>
 <li>If you have not yet moved your website from CodePen to Github, do it now.
@@ -1024,10 +1006,10 @@ Please use the information in this section to complete it.</li>
 <li>When your website is live at <code>https://your-username.github.io/your-site-name</code>,
 please send a link to the slack channel of your class.</li>
 <li>Learn how to navigate your computer using a Terminal (view files, copy files).</li>
-<li>Install <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>.</li>
 <li>Open your website with VS Code and add something to it: text, images, update
 CSS. Commit your changes to Github and verify that
 <code>https://your-username.github.io/your-site-name</code> has been updated!</li>
+<li>Add, commit and push your changes to Github and check that the changes are applied in the published version</li>
 </ul>
 <p>It&apos;s alright if you are getting stuck or if something doesn&apos;t look right! When
 it happens, please ask your mentors or classmates for help in Slack.</p>
@@ -1070,7 +1052,7 @@ it happens, please ask your mentors or classmates for help in Slack.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"next":{"title":"House Rules","level":"1.2.2","depth":2,"path":"others/house-rules.md","ref":"others/house-rules.md","articles":[]},"previous":{"title":"Before you start","level":"1.2","depth":1,"ref":"","articles":[{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"path":"others/lesson0.md","ref":"others/lesson0.md","articles":[]},{"title":"House Rules","level":"1.2.2","depth":2,"path":"others/house-rules.md","ref":"others/house-rules.md","articles":[]},{"title":"Code of Conduct","level":"1.2.3","depth":2,"path":"CODE_OF_CONDUCT.md","ref":"CODE_OF_CONDUCT.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/lesson0.md","mtime":"2020-07-09T16:25:23.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-09T16:26:13.274Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"next":{"title":"House Rules","level":"1.2.2","depth":2,"path":"others/house-rules.md","ref":"others/house-rules.md","articles":[]},"previous":{"title":"Before you start","level":"1.2","depth":1,"ref":"","articles":[{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"path":"others/lesson0.md","ref":"others/lesson0.md","articles":[]},{"title":"House Rules","level":"1.2.2","depth":2,"path":"others/house-rules.md","ref":"others/house-rules.md","articles":[]},{"title":"Code of Conduct","level":"1.2.3","depth":2,"path":"CODE_OF_CONDUCT.md","ref":"CODE_OF_CONDUCT.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/lesson0.md","mtime":"2020-07-09T22:30:43.216Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-09T22:31:43.891Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
