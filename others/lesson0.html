@@ -761,14 +761,14 @@
 <p><strong>What we will learn today?</strong></p>
 <ul>
 <li><a href="#migracode">MigraCode</a></li>
-<li><a href="#Your-new-working-environment">Environment</a></li>
-<li><a href="#Development-Tools">Development Tools</a><ul>
-<li><a href="#Visual-Studio-Code">Visual Studio Code</a></li>
+<li><a href="#your-new-working-environment">Environment</a></li>
+<li><a href="#development-tools">Development Tools</a><ul>
+<li><a href="#visual-studio-code">Visual Studio Code</a></li>
 <li><a href="#terminal">Terminal</a></li>
 <li><a href="#git">Git</a></li>
 </ul>
 </li>
-<li><a href="#Your-first-Migracode-Github-project">First Project</a></li>
+<li><a href="#your-first-migracode-github-project">First Project</a></li>
 <li><a href="#homework">Homework</a></li>
 </ul>
 <hr>
@@ -850,7 +850,7 @@ you to get familiar with it by following this tutorial:</p>
 <ul>
 <li><a href="https://www.codecademy.com/learn/learn-the-command-line" target="_blank">Learn the command line &gt;</a></li>
 </ul>
-<h3 id="how-do-i-use-it-on-my-computer">How do I use it on my computer?</h3>
+<h4 id="how-do-i-use-it-on-my-computer">How do I use it on my computer?</h4>
 <p>So now that you know what the terminal can do for you, how do you use it? Please
 find instructions for your operating system below. After you have followed the
 instructions, open a terminal and write <code>ls</code>, then press the <code>Enter</code> key. You
@@ -859,7 +859,7 @@ will see something like this:</p>
   <img src="assets/lesson-0/terminal.png" width="300" alt="Terminal">
 </div>
 
-<h3 id="commonly-used-commands">Commonly used commands</h3>
+<h4 id="commonly-used-commands">Commonly used commands</h4>
 <p>There&apos;s a set of commands you should become comfortable with during the course to allow you to effectively move around the filesystem and write software on your laptop.</p>
 <ul>
 <li><code>cd</code> - change directory. To move up into the parent directory use: <code>cd ..</code></li>
@@ -894,6 +894,11 @@ and by far
 <a href="http://stackoverflow.com/insights/survey/2015#tech-sourcecontrol" target="_blank">the most popular</a>.</p>
 <p>What is <strong>Github</strong>? Github is a very popular site where you can publish and
 share your Git repositories, share and collaborate with other people.</p>
+<div style="text-align: center;">
+  <img src="assets/lesson-0/githubdiagram.png" width="300" alt="Github">
+</div>
+
+
 <h4 id="get-started">Get Started</h4>
 <p>Follow this tutorial from Github to setup Git
 <a href="https://help.github.com/articles/set-up-git/" target="_blank">https://help.github.com/articles/set-up-git/</a></p>
@@ -911,6 +916,11 @@ to <strong>fork</strong> their repo. Read this guide for instructions
 <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/" target="_blank">https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/</a></p>
 </li>
 </ul>
+<h4 id="github">Github</h4>
+<p>During our course, we will be using <a href="https://github.com" target="_blank">Github</a> to store our
+code. Github is the most popular Git service around, and is used by many large
+companies, like Facebook, Airbnb and The Guardian.</p>
+<p><a href="https://github.com/Code-Your-Future" target="_blank">MigraCode&apos;s Github page &gt;</a></p>
 <h4 id="using-git-through-the-terminal">Using Git through the Terminal</h4>
 <ul>
 <li><code>git init</code> <strong><em>if it is a new project</em></strong>, i.e. a project not <strong>cloned</strong> from a
@@ -927,11 +937,13 @@ our case)</li>
 <p>You will also typically need to set up your email and name once when you install
 Git <code>git config --global user.name <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span></code> and `git config --global user.email</p>
 <p><email>`.</email></p>
-<h4 id="github">Github</h4>
-<p>During our course, we will be using <a href="https://github.com" target="_blank">Github</a> to store our
-code. Github is the most popular Git service around, and is used by many large
-companies, like Facebook, Airbnb and The Guardian.</p>
-<p><a href="https://github.com/Code-Your-Future" target="_blank">MigraCode&apos;s Github page &gt;</a></p>
+<p>Ok ok, let&apos;s draw this...</p>
+<div style="text-align: center;">
+  <img src="assets/lesson-0/gitdraw.png" width="300" alt="Github">
+</div>
+
+<p>The commands <code>git add .</code> and <code>git commit -m &quot;change explanation&quot;</code> are used to index and save the files in our computer repository, and we will use <code>git push</code> to send the changes to Github</p>
+<p>Find in this link the complete <a href="https://davidgv.com/wp-content/uploads/2018/08/git-cheat-sheet.png" target="_blank">Git Cheat Sheet</a>, a very useful resource</p>
 <h4 id="more-resources">More Resources</h4>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=E8TXME3bzNs" target="_blank">How does Github work? (30min) &gt;</a></li>
@@ -1052,7 +1064,7 @@ it happens, please ask your mentors or classmates for help in Slack.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"next":{"title":"House Rules","level":"1.2.2","depth":2,"path":"others/house-rules.md","ref":"others/house-rules.md","articles":[]},"previous":{"title":"Before you start","level":"1.2","depth":1,"ref":"","articles":[{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"path":"others/lesson0.md","ref":"others/lesson0.md","articles":[]},{"title":"House Rules","level":"1.2.2","depth":2,"path":"others/house-rules.md","ref":"others/house-rules.md","articles":[]},{"title":"Code of Conduct","level":"1.2.3","depth":2,"path":"CODE_OF_CONDUCT.md","ref":"CODE_OF_CONDUCT.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/lesson0.md","mtime":"2020-07-09T22:30:43.216Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-09T22:31:43.891Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"next":{"title":"House Rules","level":"1.2.2","depth":2,"path":"others/house-rules.md","ref":"others/house-rules.md","articles":[]},"previous":{"title":"Before you start","level":"1.2","depth":1,"ref":"","articles":[{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"path":"others/lesson0.md","ref":"others/lesson0.md","articles":[]},{"title":"House Rules","level":"1.2.2","depth":2,"path":"others/house-rules.md","ref":"others/house-rules.md","articles":[]},{"title":"Code of Conduct","level":"1.2.3","depth":2,"path":"CODE_OF_CONDUCT.md","ref":"CODE_OF_CONDUCT.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/lesson0.md","mtime":"2020-07-09T22:58:49.872Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-09T22:59:41.091Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
