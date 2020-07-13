@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Week 21 - NodeJS Workshop · GitBook</title>
+        <title>Week 2 - Responsive Web and layout · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../../others/useful-links.html" />
+    <link rel="next" href="../week-3/lesson.html" />
     
     
-    <link rel="prev" href="../week-3/lesson.html" />
+    <link rel="prev" href="../week-1/lesson.html" />
     
 
     </head>
@@ -162,9 +162,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../../html-css/">
+        <li class="chapter " data-level="1.3" data-path="../">
             
-                <a href="../../html-css/">
+                <a href="../">
             
                     
                     HTML/CSS
@@ -176,9 +176,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../../html-css/week-1/lesson.html">
+        <li class="chapter " data-level="1.3.1" data-path="../week-1/lesson.html">
             
-                <a href="../../html-css/week-1/lesson.html">
+                <a href="../week-1/lesson.html">
             
                     
                     Week 1 - Semantic HTML and CSS
@@ -189,9 +189,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../../html-css/week-2/lesson.html">
+        <li class="chapter active" data-level="1.3.2" data-path="lesson.html">
             
-                <a href="../../html-css/week-2/lesson.html">
+                <a href="lesson.html">
             
                     
                     Week 2 - Responsive Web and layout
@@ -202,9 +202,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../../html-css/week-3/lesson.html">
+        <li class="chapter " data-level="1.3.3" data-path="../week-3/lesson.html">
             
-                <a href="../../html-css/week-3/lesson.html">
+                <a href="../week-3/lesson.html">
             
                     
                     Week 3 - Bootstrap
@@ -518,9 +518,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="../week-1/lesson.html">
+        <li class="chapter " data-level="1.8.3" data-path="../../db/week-1/lesson.html">
             
-                <a href="../week-1/lesson.html">
+                <a href="../../db/week-1/lesson.html">
             
                     
                     Week 18 - Introduction to SQL
@@ -531,9 +531,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.4" data-path="../week-2/lesson.html">
+        <li class="chapter " data-level="1.8.4" data-path="../../db/week-2/lesson.html">
             
-                <a href="../week-2/lesson.html">
+                <a href="../../db/week-2/lesson.html">
             
                     
                     Week 19 - More SQL and integration with NodeJS
@@ -544,9 +544,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.5" data-path="../week-3/lesson.html">
+        <li class="chapter " data-level="1.8.5" data-path="../../db/week-3/lesson.html">
             
-                <a href="../week-3/lesson.html">
+                <a href="../../db/week-3/lesson.html">
             
                     
                     Week 20 - SQL with NodeJS
@@ -557,9 +557,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8.6" data-path="lesson.html">
+        <li class="chapter " data-level="1.8.6" data-path="../../db/week-4/lesson.html">
             
-                <a href="lesson.html">
+                <a href="../../db/week-4/lesson.html">
             
                     
                     Week 21 - NodeJS Workshop
@@ -756,7 +756,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Week 21 - NodeJS Workshop</a>
+        <a href="../.." >Week 2 - Responsive Web and layout</a>
     </h1>
 </div>
 
@@ -771,168 +771,79 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><img src="https://img.shields.io/badge/status-draft-darkred.svg" alt=""></p>
-<h1 id="node---week-3">Node - Week 3</h1>
+                                <p><img src="https://img.shields.io/badge/status-ready-green.svg" alt="Lesson Ready"></p>
+<h1 id="htmlcss-2">HTML/CSS 2</h1>
 <hr>
 <p><strong>Teaching this lesson?</strong></p>
 <p>Read the Mentors Notes <a href="mentors.md">here</a></p>
 <hr>
-<h2 id="contents">Contents</h2>
+<h2 id="what-will-we-learn-today">What will we learn today?</h2>
 <ul>
-<li><a href="#node-recap">Node Recap</a></li>
-<li><a href="#best-practices">Best Practices</a></li>
-<li><a href="#node-process-managers">Node Process Managers</a></li>
-<li><a href="#rest">REST</a></li>
-<li><a href="#security">Security</a></li>
-<li><a href="#authentication">Authentication</a></li>
-<li><a href="#Deploying-to-Heroku">Deploying to Heroku</a></li>
-<li><a href="#hotel-workshop">Hotel Workshop</a></li>
+<li><a href="#responsive-web-design">Responsive web design</a></li>
+<li><a href="#media-queries">Media queries</a></li>
+<li><a href="#flexbox">Flexbox</a></li>
+<li>(Optional) Content layout: floats</li>
+<li>(Optional) Content layout: relative and absolute positioning</li>
 </ul>
 <hr>
-<h2 id="node-recap">Node Recap</h2>
-<p>Javascript has evolved from the browser to be used in the backend. It does not need a framework as we saw in <a href="../week-13/lesson.md">week-13</a>, however a framework like Express allows us to develop faster.</p>
-<h3 id="documentation">Documentation</h3>
-<p>When you are working with frameworks it is always helpful to use their documentation.</p>
-<ul>
-<li><a href="https://expressjs.com" target="_blank">Express Documentation</a></li>
-<li><a href="https://nodejs.org/api/http.html" target="_blank">Node.js Documentation</a></li>
-</ul>
-<h3 id="middleware">Middleware</h3>
-<p>Middleware allow us to process requests to add functionalities that are not built in to Express, for example logging, authentication, etc.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>Learning objectives for this lesson can be found <a href="learning-objectives.md">here</a></p>
+<h2 id="responsive-web-design">Responsive Web Design</h2>
+<p>When we build for the web, we&apos;re making websites that can be viewed in a phone, a laptop, a tablet and more. To ensure we&apos;re presenting a website that&apos;s easy to use on any device, we use Responsive Web Design techniques to modify how content is displayed depending on the viewport.</p>
 <blockquote>
-<ul>
-<li>Express Documentation: <a href="https://expressjs.com/en/guide/using-middleware.html" target="_blank">Using Middleware</a></li>
-<li>Video: <a href="https://www.youtube.com/watch?v=vKlybue_yMQ" target="_blank">body-parser</a> which makes it easier to work with POST requests and forms.</li>
-</ul>
+<p><strong>Exercise:</strong> As a group, let&apos;s brainstorm as many devices as we can think of which might access the websites we build.</p>
 </blockquote>
-<h3 id="routing">Routing</h3>
-<p>Routing refers to how an application&#x2019;s endpoints (URIs) respond to the client requests. These are configured differently for each framework, and can range from basic configuration to very extensive for more complex use cases.</p>
-<p>Simple example</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>More complicated example using <code>Passport.js</code> middleware for authentication</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">ensureAuthenticated</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span><span class="token function">isAuthenticated</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">else</span> res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">&quot;/login&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>See how much variety there is in <a href="https://decadecity.net/blog/2014/08/19/a-device-agnostic-approach-to-inlining-css" target="_blank">viewport sizes</a>.</p>
+<h2 id="media-queries">Media Queries</h2>
+<p>As you learned in your homework assignment, media queries help us change the display of our content depending on the size of the viewport. Let&apos;s review what you learned and break down a media query:</p>
+<pre class="language-"><code class="lang-css"><span class="token atrule"><span class="token rule">@media</span> screen and <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 900px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">body</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-
-app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/account&quot;</span><span class="token punctuation">,</span> ensureAuthenticated<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;welcome user!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<blockquote>
+<p>In this media query, we&apos;re assigning a red background color to the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span></code> element whenever the viewport is larger than <code>900px</code>, and we&apos;re viewing on a screen.</p>
 <ul>
-<li>Express Documentation: <a href="https://expressjs.com/en/guide/routing.html" target="_blank">Routing</a></li>
+<li><code>@media</code> starts the media query</li>
+<li><code>screen</code> tells it to apply these styles to screen displays. Other displays
+might be <code>print</code>, for when a webpage is being printed.</li>
+<li><code>(min-width: 900px)</code> tells it to apply these styles when the viewport is
+larger than <code>900px</code></li>
 </ul>
-</blockquote>
-<h2 id="best-practices">Best Practices</h2>
-<p>Express have their own recommended <a href="https://expressjs.com/en/advanced/best-practice-performance.html" target="_blank">best practices page</a></p>
-<h2 id="node-process-managers">Node Process Managers</h2>
-<p>These process managers monitor for any changes in your node.js application and automatically restart the server, perfect for development and production.</p>
+<p>Finally, we wrap all of our styles for this media query in brackets (<code>{</code> and <code>}</code>), just like a CSS rule.</p>
 <blockquote>
-<p>Popular PMs include:</p>
-<ul>
-<li><a href="http://nodemon.io/" target="_blank">nodemon</a></li>
-<li><a href="https://expressjs.com/en/advanced/pm.html#pm2" target="_blank">pm2</a></li>
-</ul>
+<p><strong>Exercise:</strong> Working in pairs, reduce the size of the &quot;Bikes for Refugees&quot; text so that it fits on a small screen (<code>320px</code>). But make sure it increases in size on larger screens.</p>
+<p><strong>Exercise:</strong> The two buttons in the jumbotron don&apos;t fit on the same line on small screens around <code>320px</code> wide. Can you adjust their size so that they fit on the same line?</p>
 </blockquote>
-<h2 id="rest">REST</h2>
-<p>REST is a convention of how to design your API, whether it is for your own frontend, or other frontends and clients.</p>
+<h2 id="flexbox">Flexbox</h2>
+<p>Flexbox is a name for a set of CSS layout rules which are supported in newer browsers. They allow you to apply rules to elements to place them side-by-side and re-arrange them. You just specify how you want your elements arranged and the browser will scale this arrangement depending on the screen size and device used for viewing.</p>
+<p>Most flexbox rules are applied to the container, to tell it how to arrange its children. However, there are some rules that can be applied to children as well.</p>
+<p>You can see all the rules that can be applied to both the container and the children here:
+<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></p>
 <blockquote>
-<ul>
-<li>Read: Resource naming in <a href="http://www.restapitutorial.com/lessons/restfulresourcenaming.html" target="_blank">REST</a> convention</li>
-</ul>
+<p><strong>Exercise:</strong> Continue editing the &quot;Bike for refugees&quot; website by adding 3 boxes below Jumbotron, and using Flexbox, make sure they are arranged like in the sketch below:
+<img src="../assets/flexbox_practice.png"></p>
 </blockquote>
-<h2 id="security">Security</h2>
-<p>When you take your website to production there is a whole range of things to consider.</p>
-<p><img src="../assets/http-vs-https.png" alt="HTTP vs HTTPS"></p>
-<p>Node has built in support for HTTPS, and once you have your own certificates you can use this feature. However sometimes when you deploy to <code>cloud</code> Platform Platform as a Service (PaaS) providers such as Heroku, they provide SSL and configure it for you automatically.</p>
-<blockquote>
-<ul>
-<li>Read: <a href="https://nodejs.org/api/https.html" target="_blank">Node: HTTPS</a></li>
-<li>Read/Watch: <a href="https://www.globalsign.com/en/ssl-information-center/what-is-an-ssl-certificate/" target="_blank">What is an SSL Certificate?</a></li>
-<li>Read: <a href="https://devcenter.heroku.com/articles/ssl" target="_blank">Heroku SSL</a></li>
-</ul>
-</blockquote>
-<h2 id="authentication">Authentication</h2>
-<p>Sometimes you need to add user functionality for your website. To do this you can make use of external libraries like <a href="www.passportjs.org">passport</a> to add authentication to your website.</p>
-<blockquote>
-<p>For more information read:</p>
-<ul>
-<li><a href="https://tools.ietf.org/html/rfc6750" target="_blank">OAuth 2.0 Authorization Framework: Bearer Token Usage</a></li>
-<li><a href="https://github.com/jaredhanson/passport-http-bearer" target="_blank">Bearer Strategy</a></li>
-</ul>
-</blockquote>
-<h1 id="deploying-to-heroku">Deploying to Heroku</h1>
-<p>Heroku is a cloud platform as a service (PaaS) that lets companies build,
-deliver, monitor, and scale apps. Developers use Heroku to deploy, manage, and
-scale modern apps. Heroku is fully managed, giving developers the freedom to
-focus on their core product without the distraction of maintaining servers,
-hardware, or infrastructure.</p>
-<ol>
-<li><a href="https://signup.heroku.com/" target="_blank">Signup for an account</a> on Heroku<ul>
-<li>It will send a verification to your email so make sure you&apos;ve entered a
-valid email</li>
-</ul>
-</li>
-<li>Download the <a href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install" target="_blank">Heroku CLI</a></li>
-<li>We need to do a small tweak to our app to be ready to be deployed on Heroku.</li>
-</ol>
-<p>On server.js, add the <code>process.env.PORT</code> bit of code</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PORT</span> <span class="token operator">||</span> <span class="token number">3000</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Server is listening on port 3000. Ready to accept requests!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>You can start with something like the below, by just adding a container, and the 3 text pieces within it. Try to use flexbox to position the text elements within the container to match the picture:</p>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- CONTAINER START --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Check availability<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Donate bikes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Volunteer with us<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">&lt;!-- CONTAINER END --&gt;</span>
 </code></pre>
-<p>This tells our server to look for an <strong>environment variable</strong> called <code>PORT</code> and
-use it to run the server, otherwise use Port 3000. When the server runs on
-heroku, then Heroku sets the <code>PORT</code> to the correct value.</p>
-<p><code>git add</code> and <code>commit</code> your change.</p>
-<ol>
-<li>Now open the command line in the folder where you have your
-<strong>express-workshop</strong> repo running. If you run the command <code>git remote -v</code>,
-you should see one remote <strong>origin</strong> pointing to your repo.</li>
-</ol>
-<p>Run these commands:</p>
-<p><code>heroku login</code></p>
+<p>Once that&apos;s done you can move on to creating boxes for each individual text piece, and again, using flexbox to position the text piece in the middle of its box.</p>
+<hr>
+<p>Let&apos;s take a break from flexbox for a minute. Do you remember the <code>:first-child</code> psuedo class? There&apos;s a <code>:last-child</code> psuedo class as well.</p>
 <blockquote>
-<p>This will ask you for your heroku email and password that you used to
-register.</p>
-</blockquote>
-<p>Once you&apos;re logged in:</p>
-<p><code>heroku create</code></p>
-<blockquote>
-<p>The heroku create command creates a new application on Heroku &#x2013; along with a
-git remote that must be used to receive your application source.</p>
-</blockquote>
-<p>If you check <code>git remote -v</code>, you should see a second remote called <strong>heroku</strong>.</p>
-<p>Now push your code to heroku <code>git push heroku master</code>. The push will run few
-commands from Heroku, then you should see a url similar to
-<code>https://some-random-name-XXXX.herokuapp.com</code> - go to the URL and if all goes
-well, your app should be up and running.</p>
-<p>To read more about Heroku and deploying Node Apps to Heroku, check:</p>
-<ol>
-<li><a href="https://devcenter.heroku.com/articles/git" target="_blank">Deploying with Git</a></li>
-<li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up" target="_blank">Getting Started on Heroku with Node.js</a></li>
-</ol>
-<h2 id="hotel-workshop">Hotel Workshop</h2>
-<p>Get in to groups of 3/4 and checkout the <a href="workshop.html">workshop brief</a>.</p>
-<blockquote>
-<p><strong>Exercise</strong>: Please fork and clone <a href="https://github.com/CodeYourFuture/cyf-hotel" target="_blank">CYF-Hotel</a> repository and follow the exercises in the <code>README.MD</code>.</p>
+<p><strong>Exercise:</strong> See if you can use these psuedo classes to give the left box a grey background (<code>#ddd</code>) and the right box a grey border (<code>1px solid #ddd</code>). Use <a href="../assets/screenshot-complete.png">this screenshot</a> to guide you.</p>
 </blockquote>
 <h1 id="homework">Homework</h1>
-<p>All of the homework for this week can be found in the Node Homework repository <a href="https://github.com/CodeYourFuture/NodeJS-Homework" target="_blank">here</a> under the Week 3 folder</p>
-<h2 id="submission">Submission</h2>
-<p>You should fork the <a href="https://github.com/CodeYourFuture/NodeJS-Homework" target="_blank">NodeJS-Homework</a> repository, complete all of your work in those folders.</p>
-<p>Make sure you create a branch named <code>[YOUR_NAME]/Week3</code> to separate your work for each week.</p>
-<h1 id="escalation-policy">Escalation policy</h1>
-<p>When you get stuck during the homework you should follow the
-following:</p>
+<p>You can find the homework for this week <a href="https://github.com/CodeYourFuture/HTML-CSS-Homework" target="_blank">here</a></p>
+<h1 id="prepare-for-the-next-class">Prepare for the next class</h1>
 <ol>
-<li>First, search for answers on Google and Stack Overflow. If you have an error message, copy and paste it into Google.</li>
-<li>When you are stuck for longer than 20 minutes - no longer! - write a question to your fellow students in your class channel on slack. Take a while to think carefully about the question. This is an important skill. There is a great guide to writing good questions <a href="http://stackoverflow.com/help/how-to-ask" target="_blank">here</a></li>
-<li>If you cannot get an answer from your fellow students, post your question in your class public channel, @ the mentor for the class that covered the topic and we will reply as soon as we can.</li>
+<li>(Est. 1 hour) You may remember Bootstrap from your application process. Look at the <a href="https://getbootstrap.com/docs/4.4/getting-started/introduction/" target="_blank">documentation for Bootstrap 4</a> and look at their examples to see how they are building components.</li>
 </ol>
 
                                 
@@ -961,12 +872,12 @@ following:</p>
 
             
                 
-                <a href="../week-3/lesson.html" class="navigation navigation-prev " aria-label="Previous page: Week 20 - SQL with NodeJS">
+                <a href="../week-1/lesson.html" class="navigation navigation-prev " aria-label="Previous page: Week 1 - Semantic HTML and CSS">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../../others/useful-links.html" class="navigation navigation-next " aria-label="Next page: Useful links">
+                <a href="../week-3/lesson.html" class="navigation navigation-next " aria-label="Next page: Week 3 - Bootstrap">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -977,7 +888,7 @@ following:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 21 - NodeJS Workshop","level":"1.8.6","depth":2,"next":{"title":"Useful links","level":"2.1","depth":1,"path":"others/useful-links.md","ref":"others/useful-links.md","articles":[]},"previous":{"title":"Week 20 - SQL with NodeJS","level":"1.8.5","depth":2,"path":"db/week-3/lesson.md","ref":"db/week-3/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"db/week-4/lesson.md","mtime":"2020-07-13T15:50:19.863Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-13T15:51:10.227Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 2 - Responsive Web and layout","level":"1.3.2","depth":2,"next":{"title":"Week 3 - Bootstrap","level":"1.3.3","depth":2,"path":"html-css/week-3/lesson.md","ref":"html-css/week-3/lesson.md","articles":[]},"previous":{"title":"Week 1 - Semantic HTML and CSS","level":"1.3.1","depth":2,"path":"html-css/week-1/lesson.md","ref":"html-css/week-1/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"html-css/week-2/lesson.md","mtime":"2020-07-13T15:50:19.879Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-13T15:51:10.227Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
