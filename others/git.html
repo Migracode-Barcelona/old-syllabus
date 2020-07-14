@@ -745,14 +745,25 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="github">Github</h1>
+                                <h1 id="github-a-complete-guide-under-construction">Github: a complete guide (under construction)</h1>
 <ul>
-<li><a href="#Create-a-new-project-in-Github">Create a new project in Github</a></li>
-<li><a href="#what-is-a-remote">What is a remote?</a></li>
-<li><a href="#how-to-fork-a-github-repo">How to fork a GitHub repo</a></li>
-<li><a href="#adding-a-remote">Adding a remote</a></li>
-<li><a href="#creating-a-pr">Creating a PR</a></li>
+<li><a href="#github-basics">Github Basics</a><ul>
+<li><a href="#create-a-new-project-in-github">Create a new project in Github</a></li>
+<li><a href="#fork-and-clone-an-existing-project-from-github">Fork and Clone an existing project from Github</a></li>
+<li><a href="#commit-and-push-your-changes-to-github">Commit and push your changes to Github</a></li>
+<li><a href="#how-to-publish-your-website-in-github.io">How to publish your website in Github.io</a></li>
+<li><a href="#basic-git-commands">Basic Git Commands</a></li>
 </ul>
+</li>
+<li>[Advanced]<ul>
+<li><a href="#what-is-a-remote">What is a remote?</a></li>
+<li><a href="#adding-a-remote">Adding a remote</a></li>
+<li><a href="#branches">Branches</a></li>
+<li><a href="#creating-a-pr">Creating a Pull Request (PR)</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="github-basics">Github Basics</h1>
 <h2 id="create-a-new-project-in-github">Create a new project in Github</h2>
 <p>See the comlete tutorial on <a href="https://docs.github.com/en/github/getting-started-with-github/create-a-repo" target="_blank">Github: Create a repo</a></p>
 <p>Instead of cloning the repo that you created in Github, you can also initiallize the repo using the command line/terminal by followint the <a href="https://docs.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line" target="_blank">Add a project using the command line</a></p>
@@ -771,14 +782,62 @@ If we don&apos;t fork first, for sure we can clone any repository from others, b
 <p><img src="assets/making-a-pull-request/clone-fork.png" alt="Clone from fork"></p>
 <p>The command to clone is:</p>
 <pre class="language-"><code>git clone URL_YOU_JUST_COPIED
-</code></pre><h2 id="how-to-publish-your-website-in-githubio">How to publish your website in Github.io</h2>
+</code></pre><h2 id="commit-and-push-your-changes-to-github">Commit and push your changes to Github</h2>
+<p>Once you have your repository</p>
+<ul>
+<li><code>git add .</code> // track changes on files (create, remove, modify)</li>
+<li><code>git commit -m &#x201C;message&#x201D;</code> // save changes</li>
+<li><code>git push</code>  // upload your commits from origin (your laptop) to the remote (Github) in branch master (the default)</li>
+</ul>
+<h2 id="how-to-publish-your-website-in-githubio">How to publish your website in Github.io</h2>
+<ol>
+<li>Now all that remains is to publish your website! Still under
+<code>http://github.com/your-username/your-repository-name</code>, find the settings
+icon in the top right corner.</li>
+</ol>
+<div style="text-align: center;">
+  <img src="assets/lesson-0/repo-settings.png" width="200" alt="Repo settings">
+</div>
+
+<ol>
+<li>Find the section named &quot;Github Pages&quot; and select &quot;master branch&quot; in source,
+ then hit &quot;Save&quot;.</li>
+</ol>
+<div style="text-align: center;">
+  <img src="assets/lesson-0/repo-settings-pages.png" width="200" alt="Repo settings - Github pages">
+</div>
+
+<ol>
+<li>Wait a few minutes, then refresh the page and come back to the Github Pages
+ section. You should see a green bar saying &quot;Your site is published at
+ <code>http://github.com/your-username/your-repository-name</code>&quot;. Click the link,
+ verify that your website is there, then share it with your CYF class!</li>
+</ol>
 <h2 id="remote">Remote</h2>
 <p>Git has a concept of a &quot;remote&quot;. These are other git repositories that can be connected to over the internet. You can push or pull code changes from them. Remotes have a <em>name</em> and a <em>URL</em>. </p>
 <p>All the remotes that you will use at Migracode are hosted on GitHub, so have a github.com URL.</p>
 <p>When you clone a repo from GitHub, the default remote is named <code>origin</code> and the URL is set to that of the GitHub repo.</p>
 <p>You can view the remotes you have set up with:</p>
 <pre class="language-"><code>git remote -v
-</code></pre><h1 id="git-branching-and-merging">Git Branching and merging</h1>
+</code></pre><h2 id="basic-git-commands">Basic Git commands</h2>
+<p>Configuration commands:</p>
+<ul>
+<li><code>git config --global user.name &quot;John Doe&quot;</code></li>
+<li><code>git config --global user.email johndoe@example.com</code></li>
+<li><code>git config --list</code></li>
+</ul>
+<p>Commands to create a project:</p>
+<ul>
+<li><code>git init *project name*</code>  //initialize GIT repository in an empty directory (locally)</li>
+<li><code>git add .</code> //track changes on files (create, remove, modify)</li>
+<li><code>git commit -m &#x201C;message&#x201D;</code> //save changes</li>
+<li><code>git remote add origin *https://github.com/yourusername/yourrepo*</code></li>
+<li><code>git push -u origin master</code> //upload origin (my laptop) to the server in branch </li>
+<li><code>git status</code> //show current status</li>
+<li><code>git clone *url*</code> //download files from URL with a file .git</li>
+</ul>
+<h1 id="advanced">Advanced</h1>
+<h1 id="git-branching-and-merging">Git Branching and merging</h1>
 <h2 id="git-branching">Git Branching</h2>
 <p>You have been using git to track the changes you make to your exercises project. Each time you commit, you save a copy of your files.</p>
 <p><img src="../assets/git-branch-1.png" alt="Visualization of git commits"></p>
@@ -868,9 +927,24 @@ If we don&apos;t fork first, for sure we can clone any repository from others, b
 <p>Exercise: Try to do the pull requests again, but this time switch the pull requests so that the other student must manage the merge conflict.</p>
 </blockquote>
 <p>If you&apos;re feeling confused, don&apos;t worry. Version control is one of the most difficult things you&apos;ll learn and we&apos;ll be going over it again and again and again.</p>
+<h2 id="merging-and-advanced-git-commands">Merging and advanced Git commands</h2>
+<ul>
+<li><code>git fetch</code> //fetch latest changes from origin and all branches (no merge)</li>
+<li><code>git pull</code>  //fetch latest changes from origin and all branches (with merge)</li>
+<li><code>git merge</code></li>
+</ul>
+<p>Branches:</p>
+<ul>
+<li><code>git branch test</code> //creates a new local branch</li>
+<li><code>git checkout test</code> //move to branch test</li>
+<li><code>git checkout master</code> //move to branch master</li>
+<li><code>git checkout -b test</code> //create a new local branch and move into it</li>
+<li><code>git push origin test</code> //push the branch and all commits to the server</li>
+<li><code>git branch -d test</code> //remove a local branch</li>
+<li><code>git checkout -b test origin/test</code></li>
+<li><code>git fetch --all</code>   //to get all branches from server</li>
+</ul>
 <h1 id="making-a-pull-request">Making a Pull Request</h1>
-<p><img src="https://img.shields.io/badge/status-draft-darkred.svg" alt=""></p>
-<h2 id="how-to-fork-a-github-repo">How to fork a GitHub repo</h2>
 <h2 id="adding-a-remote">Adding a Remote</h2>
 <p>Follow these instructions if you are getting an permission error when pushing your changes. If you have cloned the original repo <em>before</em> forking, you&apos;ll need to follow these instructions. You can check this by running <code>git remote -v</code>. If the output looks something like:</p>
 <pre class="language-"><code>origin git@github.com:CodeYourFuture/css-skin.git (fetch)
@@ -953,7 +1027,7 @@ origin git@github.com:CodeYourFuture/css-skin.git (push)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"3.1","depth":1,"next":{"title":"Coding 101","level":"3.2","depth":1,"path":"others/coding-101.md","ref":"others/coding-101.md","articles":[]},"previous":{"title":"Career Development","level":"2.3","depth":1,"path":"others/career-development.md","ref":"others/career-development.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/git.md","mtime":"2020-07-14T11:05:56.895Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T11:06:47.272Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Git","level":"3.1","depth":1,"next":{"title":"Coding 101","level":"3.2","depth":1,"path":"others/coding-101.md","ref":"others/coding-101.md","articles":[]},"previous":{"title":"Career Development","level":"2.3","depth":1,"path":"others/career-development.md","ref":"others/career-development.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/git.md","mtime":"2020-07-14T14:27:10.992Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T14:28:03.386Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
