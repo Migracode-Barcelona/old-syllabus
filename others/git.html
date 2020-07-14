@@ -773,13 +773,13 @@ We use clone to copy an existing Github repository into our laptop
 If we don&apos;t fork first, for sure we can clone any repository from others, but if they don&apos;t give privileges we will not be able to push the changes, that&apos;s why we always fork the repositories</p>
 <p>To fork a repo:</p>
 <p>Firstly you need to click the &quot;Fork&quot; button:</p>
-<p><img src="assets/making-a-pull-request/fork-button.png" alt="Fork Button"></p>
+<p><img src="assets/git/fork-button.png" alt="Fork Button"></p>
 <p>Then you should be brought to your new fork (notice how the repo title changes):</p>
-<p><img src="assets/making-a-pull-request/forked.png" alt="Forked repo"></p>
-<p><a href="https://docs.github.com/en/github/getting-started-with-github/fork-a-repo" target="_blank">Github:Fork a repo</a></p>
+<p><img src="assets/git/forked.png" alt="Forked repo"></p>
+<p><a href="assets/git/fork-a-repo">Github:Fork a repo</a></p>
 <p>To clone a repo:</p>
 <p>Now you can clone from your fork by copying the URL here:</p>
-<p><img src="assets/making-a-pull-request/clone-fork.png" alt="Clone from fork"></p>
+<p><img src="assets/git/clone-fork.png" alt="Clone from fork"></p>
 <p>The command to clone is:</p>
 <pre class="language-"><code>git clone URL_YOU_JUST_COPIED
 </code></pre><h2 id="commit-and-push-your-changes-to-github">Commit and push your changes to Github</h2>
@@ -820,6 +820,7 @@ icon in the top right corner.</li>
 <p>You can view the remotes you have set up with:</p>
 <pre class="language-"><code>git remote -v
 </code></pre><h2 id="basic-git-commands">Basic Git commands</h2>
+<p>If you are working with the terminal, before execute the commands, are you in the right repository folder? We can have different folders, each one for a different repository.</p>
 <p>Configuration commands:</p>
 <ul>
 <li><code>git config --global user.name &quot;John Doe&quot;</code></li>
@@ -840,26 +841,26 @@ icon in the top right corner.</li>
 <h1 id="git-branching-and-merging">Git Branching and merging</h1>
 <h2 id="git-branching">Git Branching</h2>
 <p>You have been using git to track the changes you make to your exercises project. Each time you commit, you save a copy of your files.</p>
-<p><img src="../assets/git-branch-1.png" alt="Visualization of git commits"></p>
+<p><img src="assets/git/git-branch-1.png" alt="Visualization of git commits"></p>
 <p>When you create a new branch, you create a separate line of commits.</p>
-<p><img src="../assets/git-branch-2.png" alt="Visualization of a git branch"></p>
+<p><img src="assets/git/git-branch-2.png" alt="Visualization of a git branch"></p>
 <p>With branches, you can work on two copies of your project and switch back and forth.</p>
-<p><img src="../assets/git-branch-3.png" alt="Visualization of commits in two git branches"></p>
+<p><img src="assets/git/git-branch-3.png" alt="Visualization of commits in two git branches"></p>
 <p>Complete exercise 9 from the <a href="https://github.com/Migracode-Barcelona/html-css-git-exercises" target="_blank">exercise project</a> to learn how to use git branches.</p>
 <blockquote>
 <p>If you want to go deeper, read this article on <a href="https://www.atlassian.com/git/tutorials/using-branches" target="_blank">how git branching works</a>.</p>
 </blockquote>
 <h2 id="git-merging">Git Merging</h2>
 <p>Last week you used Git to create a branch so that you could work on two different copies of your project at the same time.</p>
-<p><img src="../assets/git-branch-3.png" alt="Visualization of commits in two git branches"></p>
+<p><img src="assets/git/git-branch-3.png" alt="Visualization of commits in two git branches"></p>
 <p>This week you will learn how to merge your changes in one branch back to your master branch.</p>
-<p><img src="../assets/git-merge.png" alt="Visualization of merging one branch into another"></p>
+<p><img src="assets/git/git-merge.png" alt="Visualization of merging one branch into another"></p>
 <p>Complete exercise 18 from the <a href="https://github.com/Migracode-Barcelona/html-css-git-exercises" target="_blank">exercise project</a>.</p>
 <h2 id="git-merge-conflicts">Git Merge Conflicts</h2>
 <p>Last week you used Git to merge your changes from one branch back into your master branch.</p>
-<p><img src="../assets/git-merge.png" alt="Visualization of merging one branch into another"></p>
+<p><img src="assets/git/git-merge.png" alt="Visualization of merging one branch into another"></p>
 <p>Sometimes Git can not automatically merge one branch into another, because each branch has modified the same line of code. Git does not know which version of the line is the correct one. When this happens, we have a &quot;merge conflict&quot;.</p>
-<p><img src="../assets/git-merge-conflict.png" alt="Visualization of a merge conflict"></p>
+<p><img src="assets/git/git-merge-conflict.png" alt="Visualization of a merge conflict"></p>
 <p>As a developer, you have to tell Git which version of the line of code is correct.</p>
 <p>Complete exercise 28 from week 3 of the <a href="https://github.com/Migracode-Barcelona/html-css-git-exercises" target="_blank">HTML, CSS and Git Exercises</a> to learn how to resolve a merge conflict.</p>
 <h2 id="git-conflicts">Git Conflicts</h2>
@@ -963,23 +964,23 @@ origin git@github.com:CodeYourFuture/css-skin.git (push)
 <p>At this point you should have followed the instructions either to <a href="#how-to-fork-a-github-repo">fork the original repo</a> or <a href="#adding-a-remote">added a remote to your fork</a>. If you haven&apos;t make sure you read those sections first.</p>
 <p>You will need to push to your fork. If you forked and then cloned (as in the <a href="#how-to-fork-a-github-repo">how to fork instructions</a>) then you just need to run <code>git push</code>. If you <a href="#adding-a-remote">added a remote to your fork</a>, then you will need to run <code>git push fork</code>.</p>
 <p>Next you need to go the original repo in your browser (probably starting with <a href="https://github.com/CodeYourFuture" target="_blank">https://github.com/CodeYourFuture</a>). Next click the Pull Requests tab:</p>
-<p><img src="assets/making-a-pull-request/pr-tab.png" alt="PR tab"></p>
+<p><img src="assets/git/pr-tab.png" alt="PR tab"></p>
 <p>Then click the New pull request button:</p>
-<p><img src="assets/making-a-pull-request/new-pr-button.png" alt="New PR button"></p>
+<p><img src="assets/git/new-pr-button.png" alt="New PR button"></p>
 <p>Then click the &quot;compare across forks&quot; link:</p>
-<p><img src="assets/making-a-pull-request/compare-across-forks.png" alt="Compare across forks"></p>
+<p><img src="assets/git/compare-across-forks.png" alt="Compare across forks"></p>
 <p>Then click the &quot;head fork&quot; dropdown button:</p>
-<p><img src="assets/making-a-pull-request/head-fork-dropdown.png" alt="Head fork dropdown button"></p>
+<p><img src="assets/git/head-fork-dropdown.png" alt="Head fork dropdown button"></p>
 <p>Then find your fork in the list and click it:</p>
-<p><img src="assets/making-a-pull-request/found-head-fork.png" alt="Found head fork"></p>
+<p><img src="assets/git/found-head-fork.png" alt="Found head fork"></p>
 <p>Then click the Create pull request button:</p>
-<p><img src="assets/making-a-pull-request/create-pull-request-1.png" alt="Create PR"></p>
+<p><img src="assets/git/create-pull-request-1.png" alt="Create PR"></p>
 <p>Almost there! Now fill out the PR form. Give it a sensible title and an (optional) description:</p>
-<p><img src="assets/making-a-pull-request/pr-form.png" alt="PR form"></p>
+<p><img src="assets/git/pr-form.png" alt="PR form"></p>
 <p>And finally click the Create pull request button at the bottom of the form:</p>
-<p><img src="assets/making-a-pull-request/create-pull-request-2.png" alt="Create pull request"></p>
+<p><img src="assets/git/create-pull-request-2.png" alt="Create pull request"></p>
 <p>That&apos;s it! You created your PR!</p>
-<p><img src="assets/making-a-pull-request/created-pr.png" alt="Created PR"></p>
+<p><img src="assets/git/created-pr.png" alt="Created PR"></p>
 <h2 id="resources">Resources</h2>
 <ol>
 <li><a href="https://help.github.com/articles/creating-a-pull-request-from-a-fork/" target="_blank">Creating a pull request from a fork</a></li>
@@ -1027,7 +1028,7 @@ origin git@github.com:CodeYourFuture/css-skin.git (push)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"3.1","depth":1,"next":{"title":"Coding 101","level":"3.2","depth":1,"path":"others/coding-101.md","ref":"others/coding-101.md","articles":[]},"previous":{"title":"Career Development","level":"2.3","depth":1,"path":"others/career-development.md","ref":"others/career-development.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/git.md","mtime":"2020-07-14T14:27:10.992Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T14:28:03.386Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Git","level":"3.1","depth":1,"next":{"title":"Coding 101","level":"3.2","depth":1,"path":"others/coding-101.md","ref":"others/coding-101.md","articles":[]},"previous":{"title":"Career Development","level":"2.3","depth":1,"path":"others/career-development.md","ref":"others/career-development.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/git.md","mtime":"2020-07-14T14:47:13.028Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T14:48:06.898Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
