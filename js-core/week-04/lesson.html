@@ -778,6 +778,45 @@
             
         </li>
     
+        <li class="chapter " data-level="4.8" data-path="mentors.html">
+            
+                <a href="mentors.html">
+            
+                    
+                    Mentors Info Week4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../week-05/mentors.html">
+            
+                <a href="../week-05/mentors.html">
+            
+                    
+                    Mentors Info Week5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../week-06/mentors.html">
+            
+                <a href="../week-06/mentors.html">
+            
+                    
+                    Mentors Info Week6
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -823,31 +862,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><img src="https://img.shields.io/badge/status-ready-green.svg" alt="Lesson Ready"></p>
-<h1 id="javascript-core-i---1">JavaScript Core I - 1</h1>
-<p><strong>What we will learn today?</strong></p>
+                                <h1 id="javascript-core-i---1">JavaScript Core I - 1</h1>
+<h2 id="before-the-class">Before the class</h2>
 <ul>
-<li><a href="#install-node">Install Node</a></li>
-<li><a href="#setup-ide">Setup IDE</a></li>
-<li><a href="#hello-world">Hello World</a></li>
-<li><a href="#variables">Variables</a></li>
-<li><a href="#strings">Strings</a></li>
-<li><a href="#string-concatenation">String concatenation</a></li>
-<li><a href="#numbers">Numbers</a></li>
-<li><a href="#floats">Floats</a></li>
-<li><a href="#functions">Functions</a></li>
-<li><a href="#function-parameters">Function Parameters</a></li>
-<li><a href="#functions-nested">Nested Functions</a></li>
+<li>Please make sure you&apos;ve forked <a href="https://github.com/Migracode-Barcelona/js-exercises" target="_blank">the js-exercises repo</a> at the start of the class. This is the repo we will use during the class, and for homework.</li>
+<li>Install Node:
+Access to a Linux console (either on Mac, Ubuntu or by using Ubuntu WSL for Windows 10) and write <code>node -v</code> in your terminal and you should see something like <code>v11.10.0</code>. If you don&apos;t see this try to install it!</li>
 </ul>
-<hr>
-<blockquote>
-<p>Please make sure you&apos;ve forked <a href="https://github.com/Migracode-Barcelona/js-exercises" target="_blank">the js-exercises repo</a> at the start of the class. This is the repo we will use during the class, and for homework.</p>
-</blockquote>
-<h2 id="install-node">Install Node</h2>
-<h3 id="windows-and-mac-users">Windows and Mac users</h3>
+<p>Windows and Mac users:</p>
 <p>Download the <em>installer</em> (.msi or .pkg) from <a href="https://nodejs.org/en/download" target="_blank">https://nodejs.org/en/download</a></p>
-<hr>
-<h3 id="linux-ubuntu-users">Linux (Ubuntu) users</h3>
+<p>Linux (Ubuntu) users:</p>
 <p>Run the following commands in your terminal:</p>
 <pre class="language-"><code class="lang-sh">  <span class="token function">curl</span> -sL https://deb.nodesource.com/setup_8.x <span class="token operator">|</span> <span class="token function">sudo</span> -E <span class="token function">bash</span> -
   <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y nodejs
@@ -856,136 +880,156 @@
 <blockquote>
 <p>A note on security: This will require you to enter a password. Don&apos;t execute a script on your terminal if you don&apos;t trust its source, especially if they use the <code>sudo</code> command to get admin access to your machine.</p>
 </blockquote>
-<h3 id="2-test-installation">2. Test installation</h3>
-<p>Go to your terminal and run the command: <code>node -v</code>.</p>
-<p>You should get the node version printed on your terminal. For example, <code>v8.9.3</code>.</p>
-<h2 id="setup-ide">Setup IDE</h2>
-<p>There are some tools that will help you to write code. One of these, <a href="https://prettier.io/" target="_blank">Prettier</a>, formats your code, making it easier for you and others to read.</p>
-<h3 id="1-install-prettier">1. Install prettier</h3>
+<h2 id="what-we-will-learn-today">What we will learn today?</h2>
 <ul>
-<li>In Visual Studio open the extensions panel (see <a href="https://code.visualstudio.com/docs/editor/extension-gallery#_browse-and-install-extensions" target="_blank">https://code.visualstudio.com/docs/editor/extension-gallery#_browse-and-install-extensions</a>)</li>
-<li>Search for <code>Prettier - Code formatter</code></li>
-<li>Click install on the top result</li>
+<li><a href="#install-node">Install Node</a></li>
+<li><a href="#hello-world">Hello World</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#string-concatenation">String concatenation</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#numbers-as-integers">Numbers as integers</a></li>
+<li><a href="#numbers-as-decimals">Numbers as decimals</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#calling-functions-inside-functions">Calling functions inside functions</a></li>
 </ul>
-<h3 id="2-enable-formatting-on-save">2. Enable formatting on save</h3>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this class, you should be able to:</p>
 <ul>
-<li>In Visual Studio open the settings file (see <a href="https://code.visualstudio.com/docs/getstarted/settings#_creating-user-and-workspace-settings" target="_blank">https://code.visualstudio.com/docs/getstarted/settings#_creating-user-and-workspace-settings</a>)</li>
-<li>Search for <code>editor format</code></li>
-<li>Set <code>editor.formatOnSave</code> and <code>editor.formatOnPaste</code> to true</li>
+<li>Use <code>console.log()</code> to print information to the console</li>
+<li>List and describe the different primitive data types in JS</li>
+<li>Use <code>typeof</code> to find the type of a variable</li>
+<li>Assign data to variables using <code>let</code> and <code>const</code></li>
+<li>Write, call and evaluate functions in JavaScript</li>
+<li>Manipulate strings with concatenation and interpolation techniques</li>
+<li>Manipulate numbers with mathematical operators using the <code>Math</code> library</li>
+<li>Define the difference between <code>console.log()</code> and <code>return</code></li>
+<li>Call functions within functions</li>
+<li>Search and read documentation to help when you are stuck</li>
 </ul>
+<hr>
 <h2 id="hello-world">Hello World</h2>
 <p>It is programming tradition that the first thing you do in any language is make it output &apos;Hello world!&apos;.</p>
-<p>We&apos;ll do this in JavaScript, using a command called <code>console.log()</code>.</p>
-<p>Inside of <code>exercise.js</code> there&apos;s a line of code that will print &quot;Hello world!&quot;.</p>
-<h3 id="1-run-the-program">1. Run the program</h3>
-<ul>
-<li>Open a terminal window</li>
-<li>Change directory to this folder (<code>cd week-1/C-hello-world</code>)</li>
-<li>Run the program using node (<code>node exercise.js</code>)</li>
-</ul>
-<h3 id="2-experiment">2. Experiment</h3>
-<ul>
-<li>Try to <code>console.log()</code> something different. For example, &apos;Hello World. I just started learning JavaScript!&apos;.</li>
-<li>Try to console.log() several things at once.</li>
-<li>What happens when you get rid of the quote marks?</li>
-<li>What happens when you console.log() just a number without quotes?</li>
-</ul>
+<p>We&apos;ll do this in JavaScript, using a command called <code>console.log()</code>. The <code>console.log()</code> method writes a message to the console.</p>
+<p>The console is a tool which is mainly used to log information - it&apos;s useful for testing purposes.</p>
+<h3 id="exercise-10-minutes">Exercise (10 minutes)</h3>
+<p>(This exercise will help you understand how to run a basic JS script and explore the different ways you can run JS code)</p>
+<ol>
+<li>Create your first <code>js1-week1.js</code> script</li>
+<li>Type <code>console.log(&quot;Hello World!&quot;)</code></li>
+<li>There are 2 ways you can run this script - one way is by pressing F5 in your VS Code application. Can you find out what the second way is? Pair up and use a search engine to find out! Choose your favourite method and use that from now on.</li>
+</ol>
+<p><strong>BONUS:</strong> there is a third way of running JS code (notice how I haven&apos;t said scipt) - do you know what that is?</p>
+<h3 id="exercise-5-minutes">Exercise (5 minutes)</h3>
+<p>(This exercise will help you expand your understanding of console.log)</p>
+<p>Write 10 statements like these, but in different languages.</p>
+<p>For example:</p>
+<pre class="language-"><code class="lang-sh">Halo, dunia<span class="token operator">!</span> // Indonesian
+Ciao, mondo<span class="token operator">!</span> // Italian
+Hola, mundo<span class="token operator">!</span> // Spanish
+</code></pre>
 <h2 id="variables">Variables</h2>
-<p>When you write code, you&apos;ll want to create shortcuts to data values so you can don&apos;t have to write out the same value every time.</p>
-<p>We can use <em>variable</em> to create a reference to a value.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Hello world&quot;</span><span class="token punctuation">;</span>
+<p>When you write code, you&apos;ll want to create shortcuts to data values so you don&apos;t have to write out the same value every time.</p>
+<p>We can use a <em>variable</em> to create a reference to a value. Variables can be thought of as named containers. You can place data into these containers and then refer to the data simply by naming the container.</p>
+<p>Before you use a variable in a JavaScript program, you must declare it. Variables are declared with <em>let</em> and <em>const</em> keywords as follows.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> greeting <span class="token operator">=</span> <span class="token string">&quot;Hello world&quot;</span><span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeting<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>The program above will print &quot;Hello world&quot; to the console. Notice how it uses the value assigned to the variable <code>greeting</code>.</p>
-<h3 id="exercise">Exercise</h3>
-<ul>
-<li>Add a variable <code>greeting</code> to exercise.js (make sure it comes <em>before</em> the console.log)</li>
-<li>Print your <code>greeting</code> to the console 3 times</li>
-</ul>
-<blockquote>
-<p>Remember: to run this exercise you must change directory to the <code>D-variables</code>. If you already have a terminal window open for the previous exercise you can do this by running the command <code>cd ../D-variables</code>.</p>
-</blockquote>
-<h4 id="expected-result">Expected result</h4>
-<pre class="language-"><code class="lang-sh">Hello world
-Hello world
-Hello world
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">&quot;Irina&quot;</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
+<p>The program above will print &quot;Hello world&quot; to the console. Notice how it uses the value assigned to the variable <code>greeting</code>.</p>
+<h3 id="exercise-5-minutes">Exercise (5 minutes)</h3>
+<ol>
+<li>Add a variable <code>greeting</code> to js1-week1.js and assign a greeting of your choice to the variable</li>
+<li>Print your <code>greeting</code> to the console 3 times. You should see your greeting 3 times on the console, one on each line.</li>
+</ol>
 <h2 id="strings">Strings</h2>
 <p>In programming there are different <em>types of</em> data. You&apos;ve used one data type already: <strong>string</strong>.</p>
 <p>Computers recognise strings as a sequence of characters but to humans, strings are simply lines of text.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> message <span class="token operator">=</span> <span class="token string">&quot;This is a string&quot;</span><span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> message <span class="token operator">=</span> <span class="token string">&quot;This is a string&quot;</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Notice that strings are always wrapped <strong>inside of quote marks</strong>. We do this so that the computer knows when the string starts and ends.</p>
 <p>You can check that the data is a string by using the <code>typeof</code> operator:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> message <span class="token operator">=</span> <span class="token string">&quot;This is a string&quot;</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> messageType <span class="token operator">=</span> <span class="token keyword">typeof</span> message<span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> message <span class="token operator">=</span> <span class="token string">&quot;This is a string&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> messageType <span class="token operator">=</span> <span class="token keyword">typeof</span> message<span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>messageType<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// logs &apos;string&apos;</span>
 </code></pre>
-<h3 id="exercise">Exercise</h3>
-<ul>
-<li>Write a program that logs a message and its type</li>
+<h3 id="exercise-5-minutes">Exercise (5 minutes)</h3>
+<ol>
+<li>Write a program that:<ul>
+<li>i. creates a variable called <code>colors</code></li>
+<li>assigns colors &quot;blue&quot; and &quot;yellow&quot; as a comma separate string to <code>colors</code></li>
+<li>logs the type <code>colors</code> using <code>typeof</code>.</li>
 </ul>
-<h4 id="expected-result">Expected result</h4>
-<pre class="language-"><code class="lang-sh">This is a string
-string
-</code></pre>
+</li>
+<li>What is the <code>typeof</code> a number?</li>
+</ol>
 <h2 id="string-concatenation">String concatenation</h2>
-<p>You can add two strings together using the plus operator (<code>+</code>):</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> greetingStart <span class="token operator">=</span> <span class="token string">&quot;Hello, my name is &quot;</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">&quot;Daniel&quot;</span><span class="token punctuation">;</span>
+<p>You can add two strings together using the plus operator (<code>+</code>) or <em>string interpolation</em>.</p>
+<p>String interpolation is a useful JavaScript feature that allows you to put variables directly into a string:</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">// Here is an example using the plus operator to concat strings</span>
+<span class="token keyword">const</span> greetingStart <span class="token operator">=</span> <span class="token string">&quot;Hello, my name is &quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">&quot;Daniel&quot;</span><span class="token punctuation">;</span>
 
-<span class="token keyword">var</span> greeting <span class="token operator">=</span> greetingStart <span class="token operator">+</span> name<span class="token punctuation">;</span>
+<span class="token keyword">const</span> greeting <span class="token operator">=</span> greetingStart <span class="token operator">+</span> name<span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeting<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Logs &quot;Hello, my name is Daniel&quot;</span>
 </code></pre>
-<h3 id="exercise">Exercise</h3>
-<ul>
-<li>Write a program that logs a message with a greeting and your name</li>
-</ul>
-<h4 id="expected-result">Expected result</h4>
-<pre class="language-"><code class="lang-sh">Hello, my name is Daniel
+<pre class="language-"><code class="lang-js"><span class="token comment">// Here is example using the String interpolation to concat strings</span>
+<span class="token keyword">const</span> greetingStart <span class="token operator">=</span> <span class="token string">&quot;Hello&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">&quot;Daniel&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> greeting <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>greetingStart<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, my name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeting<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Logs &quot;Hello, my name is Daniel&quot;</span>
 </code></pre>
-<h2 id="numbers">Numbers</h2>
+<h3 id="exercise-5-mins">Exercise (5 mins)</h3>
+<ol>
+<li>Write a program that logs a message with a greeting and your name using the two concatenation methods we used</li>
+</ol>
+<h2 id="numbers-as-integers">Numbers as integers</h2>
 <p>The next data type we will learn is <strong>number</strong>.</p>
 <p>Unlike strings, numbers do not need to be wrapped in quotes.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> age <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
 </code></pre>
-<p>You can use mathematical operators to caclulate numbers:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> sum <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 12</span>
-<span class="token keyword">var</span> product <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 20</span>
-<span class="token keyword">var</span> quotient <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 5</span>
-<span class="token keyword">var</span> difference <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 8</span>
+<p>You can use mathematical operators to calculate numbers:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> sum <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 12</span>
+<span class="token keyword">const</span> product <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 20</span>
+<span class="token keyword">const</span> quotient <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 5</span>
+<span class="token keyword">const</span> difference <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 8</span>
 </code></pre>
-<h3 id="exercise">Exercise</h3>
-<ul>
+<h3 id="exercise-10-mins">Exercise (10 mins)</h3>
+<ol>
 <li>Create two variables <code>numberOfStudents</code> and <code>numberOfMentors</code></li>
 <li>Log a message that displays the total number of students and mentors</li>
-</ul>
+</ol>
 <h4 id="expected-result">Expected result</h4>
 <pre class="language-"><code class="lang-sh">Number of students: <span class="token number">15</span>
 Number of mentors: <span class="token number">8</span>
-Total numnber of students and mentors: <span class="token number">23</span>
+Total number of students and mentors: <span class="token number">23</span>
 </code></pre>
-<h2 id="floats">Floats</h2>
+<h2 id="numbers-as-decimals">Numbers as decimals</h2>
 <p>Numbers can be integers (whole numbers) or floats (numbers with a decimal).</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> preciseAge <span class="token operator">=</span> <span class="token number">30.612437</span><span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> preciseAge <span class="token operator">=</span> <span class="token number">30.612437</span><span class="token punctuation">;</span>
 </code></pre>
-<p>Floats can be rounded to the nearest whole number using the <code>Math.round</code> function:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> preciseAge <span class="token operator">=</span> <span class="token number">30.612437</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> roughAge <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>preciseAge<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 30</span>
+<p>Numbers with decimals can be rounded to the nearest whole number using the <code>Math.round</code> function:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> preciseAge <span class="token operator">=</span> <span class="token number">30.612437</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> roughAge <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>preciseAge<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 31</span>
 </code></pre>
-<h3 id="exercise">Exercise</h3>
-<ul>
-<li>Using the variables provided in the exercise calculate the percentage of mentors and students in the group</li>
-</ul>
+<h3 id="exercise-15-mins">Exercise (15 mins)</h3>
+<ol>
+<li>Using the variables provided in the exercise calculate the percentage of mentors and students in the group (percentages must be a rounded to the nearest integer)</li>
+<li>Using online documentation, what other things can you do with the <code>Math</code> library? Pick one thing on your table that you can do other than <code>Math.round</code> and prepare an explanation for the rest of the class</li>
+</ol>
 <h4 id="expected-result">Expected result</h4>
 <pre class="language-"><code class="lang-sh">Percentage students: <span class="token number">65</span>%
 Percentage mentors: <span class="token number">35</span>%
 </code></pre>
 <h2 id="functions">Functions</h2>
-<p>Functions are blocks of code that can do a task as many times as you ask it to. They take an input and return an output.</p>
+<p>Functions are blocks of code that can do a task as many times as you ask them to. They take an input and return an output.</p>
 <p>Here&apos;s a function that doubles a number:</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> number <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
@@ -993,30 +1037,11 @@ Percentage mentors: <span class="token number">35</span>%
 </code></pre>
 <p>To use the function we need to:
 a) <em>call</em> it with an input and
-b) assign the returned value to a variable</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+b) do something with the returned value, for example assigning it to a variable</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">double</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 4</span>
 </code></pre>
-<h3 id="exercise-1">Exercise 1</h3>
-<ul>
-<li>Complete the function in exercise.js so that it halves the input</li>
-<li>Try calling the function more than once with some different numbers</li>
-</ul>
-<blockquote>
-<p>Remember to use the return keyword to get a value out of the function</p>
-</blockquote>
-<h4 id="expected-result">Expected result</h4>
-<pre class="language-"><code class="lang-sh"><span class="token number">6</span>
-</code></pre>
-<h3 id="exercise-2">Exercise 2</h3>
-<ul>
-<li>Complete the function in exercise2.js so that it triples the input</li>
-</ul>
-<h4 id="expected-result">Expected result</h4>
-<pre class="language-"><code class="lang-sh"><span class="token number">24</span>
-</code></pre>
-<h2 id="function-parameters">Function Parameters</h2>
 <p>The input given to a function is called a <strong>parameter</strong>.</p>
 <p>A function can take more than one parameter:</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1029,43 +1054,26 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token keyword">return</span> num1 <span class="token operator">+</span> num2<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="exercise-1">Exercise 1</h3>
-<ul>
-<li>Write a function that multiplies two numbers together</li>
+<h3 id="exercise-20-minutes">Exercise (20 minutes)</h3>
+<ol>
+<li>In pairs, design and create a function that:<ul>
+<li>takes in more than one input</li>
+<li>uses string concatenation</li>
+<li>this means adding two strings together</li>
+<li>performs some form of operation on a number</li>
+<li>uses <code>return</code> to return a <strong>string</strong></li>
 </ul>
-<h4 id="expected-result">Expected result</h4>
-<pre class="language-"><code class="lang-sh"><span class="token number">12</span>
-</code></pre>
-<h3 id="exercise-2">Exercise 2</h3>
-<ul>
-<li>From scratch, write a function that divides two numbers</li>
-</ul>
-<h4 id="expected-result">Expected result</h4>
-<pre class="language-"><code class="lang-sh"><span class="token number">0.75</span>
-</code></pre>
-<h3 id="exercise-3">Exercise 3</h3>
-<ul>
-<li>Write a function that takes a name (a string) and returns a greeting</li>
-</ul>
-<h4 id="expected-result">Expected result</h4>
-<pre class="language-"><code class="lang-sh">Hello, my name is Daniel
-</code></pre>
-<h3 id="exercise-4">Exercise 4</h3>
-<ul>
-<li>Write a function that adds two numbers together</li>
-<li>Call the function, passing <code>13</code> and <code>124</code> as parameters, and assigning the returned value to a variable <code>sum</code></li>
-</ul>
-<h4 id="expected-result">Expected result</h4>
-<pre class="language-"><code class="lang-js"><span class="token number">137</span>
-</code></pre>
-<h3 id="exercise-5">Exercise 5</h3>
-<ul>
-<li>Write a function that takes a name (a string) and an age (a number) and returns a greeting (a string)</li>
-</ul>
-<h4 id="expected-result">Expected result</h4>
-<pre class="language-"><code class="lang-sh">Hello, my name is Daniel and I&apos;m <span class="token number">30</span> years old
-</code></pre>
-<h2 id="nested-functions">Nested Functions</h2>
+</li>
+<li>Add a comment above your function to explain what it does</li>
+<li>Call your function and run your script</li>
+<li>What&apos;s the difference between a <code>return</code> and <code>console.log</code>?</li>
+<li>When would you choose to use functions over the way we have been scripting so far?</li>
+</ol>
+<h3 id="exercise-10-minutes">Exercise (10 minutes)</h3>
+<ol>
+<li>Swap your laptop with your neighbouring pair and review each other&apos;s code - what can be improved? Is the code readable?</li>
+</ol>
+<h2 id="calling-functions-inside-functions">Calling functions inside functions</h2>
 <p>Functions are very powerful.</p>
 <ul>
 <li>You can write more than one line of code inside of functions.</li>
@@ -1076,39 +1084,28 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token keyword">return</span> age <span class="token operator">*</span> <span class="token number">365</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">function</span> <span class="token function">createCreeting</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">var</span> ageInDays <span class="token operator">=</span> <span class="token function">getAgeInDays</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">var</span> message <span class="token operator">=</span>
+<span class="token keyword">function</span> <span class="token function">createGreeting</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> ageInDays <span class="token operator">=</span> <span class="token function">getAgeInDays</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> message <span class="token operator">=</span>
     <span class="token string">&quot;My Name is &quot;</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">&quot; and I was born over &quot;</span> <span class="token operator">+</span> ageInDays <span class="token operator">+</span> <span class="token string">&quot; days ago!&quot;</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> message<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h2 id="exercise-1">Exercise 1</h2>
+<h3 id="exercise-20-mins">Exercise (20 mins)</h3>
+<ol>
+<li>Write a function that returns the year someone is born given their age as input</li>
+<li>Using the answer from step 1, write a function that takes someone&apos;s name and age as input and returns a string that states the person&apos;s name and year they were born in a sentence</li>
+</ol>
+<h2 id="glossary">Glossary</h2>
 <ul>
-<li>In <code>exercise.js</code> write a program that displays the percentage of students and mentors in the group</li>
-<li>The percentage should be rounded to the nearest whole number (use a search engine to find out how to this with JavaScript)</li>
-<li>You should have one function that calculates the percentage, and one function that creates a message</li>
+<li>Console: a place on your computer to run scripts or commands from</li>
+<li>Command: something that you type on your computer which performs an operation that your computer does</li>
+<li>Directory: another word for &quot;folder&quot; on your computer</li>
+<li>Parameter: a placeholder for values you can pass into functions</li>
+<li>Primitive type: a built-in type in JavaScript (e.g. strings and numbers are primitive types in JavaScript)</li>
+<li>Script: a file that contains a program</li>
+<li>Terminal: another word for &quot;console&quot;</li>
 </ul>
-<blockquote>
-<p>Consider: should your percentage function do the rounding, or should it be done when the greeting is created?</p>
-</blockquote>
-<h3 id="expected-result">Expected result</h3>
-<pre class="language-"><code class="lang-sh">Percentage students: <span class="token number">65</span>%
-Percentage mentors: <span class="token number">35</span>%
-</code></pre>
-<h2 id="exercise-2">Exercise 2</h2>
-<ul>
-<li>In <code>exercise2.js</code> you have been provided with the names of some mentors. Write a program that logs a shouty greeting to each one.</li>
-<li>Your program should include a function that spells their name in uppercase, and a function that creates a shouty greeting.</li>
-<li>Log each greeting to the console.</li>
-</ul>
-<h3 id="expected-result">Expected result</h3>
-<pre class="language-"><code class="lang-sh">HELLO DANIEL
-HELLO IRINA
-HELLO MIMI
-HELLO ROB
-HELLO YOHANNES
-</code></pre>
 <h1 id="homework">Homework</h1>
 <ol>
 <li><a href="https://github.com/Migracode-Barcelona/js-exercises" target="_blank">The repo</a> that you
@@ -1158,7 +1155,7 @@ JavaScript!</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"next":{"title":"Week 5 - Expressions and Arrays","level":"1.4.2","depth":2,"path":"js-core/week-05/lesson.md","ref":"js-core/week-05/lesson.md","articles":[]},"previous":{"title":"JavaScript I","level":"1.4","depth":1,"path":"js-core/index.md","ref":"js-core/index.md","articles":[{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core/week-04/lesson.md","ref":"js-core/week-04/lesson.md","articles":[]},{"title":"Week 5 - Expressions and Arrays","level":"1.4.2","depth":2,"path":"js-core/week-05/lesson.md","ref":"js-core/week-05/lesson.md","articles":[]},{"title":"Week 6 - Loops and callbacks","level":"1.4.3","depth":2,"path":"js-core/week-06/lesson.md","ref":"js-core/week-06/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/week-04/lesson.md","mtime":"2020-07-20T10:51:33.168Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-20T10:52:22.273Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"next":{"title":"Week 5 - Expressions and Arrays","level":"1.4.2","depth":2,"path":"js-core/week-05/lesson.md","ref":"js-core/week-05/lesson.md","articles":[]},"previous":{"title":"JavaScript I","level":"1.4","depth":1,"path":"js-core/index.md","ref":"js-core/index.md","articles":[{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core/week-04/lesson.md","ref":"js-core/week-04/lesson.md","articles":[]},{"title":"Week 5 - Expressions and Arrays","level":"1.4.2","depth":2,"path":"js-core/week-05/lesson.md","ref":"js-core/week-05/lesson.md","articles":[]},{"title":"Week 6 - Loops and callbacks","level":"1.4.3","depth":2,"path":"js-core/week-06/lesson.md","ref":"js-core/week-06/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/week-04/lesson.md","mtime":"2020-08-10T11:46:28.471Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-10T11:47:16.756Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

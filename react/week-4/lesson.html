@@ -778,6 +778,45 @@
             
         </li>
     
+        <li class="chapter " data-level="4.8" data-path="../../js-core/week-04/mentors.html">
+            
+                <a href="../../js-core/week-04/mentors.html">
+            
+                    
+                    Mentors Info Week4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../../js-core/week-05/mentors.html">
+            
+                <a href="../../js-core/week-05/mentors.html">
+            
+                    
+                    Mentors Info Week5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../../js-core/week-06/mentors.html">
+            
+                <a href="../../js-core/week-06/mentors.html">
+            
+                    
+                    Mentors Info Week6
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -881,7 +920,7 @@ Open the <code>pokedex</code> React application. In this exercise, React-Router 
 <li>In the terminal, install React-Router with <code>npm install --save react-router-dom</code>.</li>
 <li>Open <code>src/App.js</code> and import BrowserRouter, Route and Link components from React-Router (hint: <code>import { BrowserRouter, Route, Link } from &quot;react-router-dom&quot;;</code>)</li>
 <li>Wrap all the components in the <code>render</code> method in the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BrowserRouter</span><span class="token punctuation">&gt;</span></span></code> component.</li>
-<li>In the following, we will have <code>CaughtPokemon</code> and <code>BestPokemon</code> displayed with different route. But first, let&apos;s create some links to navigate to different pages. Still in the <code>render</code> method of <code>src/App.js</code>, use the <code>Link</code> component to create 2 links: one to navigate to the URL <code>/best-pokemon</code> and another one to navigate to <code>/caught-pokemon</code> (hint: <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Link</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/best-pokemon<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Best Pokemon<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Link</span><span class="token punctuation">&gt;</span></span></code>).</li>
+<li>In the following, we will have <code>CaughtPokemon</code> and <code>BestPokemon</code> displayed with different route. But first, let&apos;s create some links to navigate to different pages. Still in the <code>render</code> method of <code>src/App.js</code>, use the <code>Link</code> component to create 2 links: one to navigate to the URL <code>/best-pokemon</code> and another one to navigate to <code>/caught-pokemon</code> (hint: <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Link</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/best-pokemon<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Best Pokemon<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Link</span><span class="token punctuation">&gt;</span></span></code>).</li>
 <li>Open the <code>pokedex</code> in your browser and verify that you can see 2 links on the page. When clicking on each of these links, the URL in your browser address bar should change (but nothing will change on the screen yet!).</li>
 <li>Now let&apos;s define the routes to map a path to a React component. First, create a route to map <code>/best-pokemon</code> to the <code>BestPokemon</code> component. Then, use another route to map <code>/caught-pokemon</code> to the <code>CaughtPokemon</code> component (Hint: depending on if you pass some props to <code>BestPokemon</code> or <code>CaughtPokemon</code> you will need to use either the <code>component</code> or the <code>render</code> props in the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Route</span><span class="token punctuation">&gt;</span></span></code> component).</li>
 <li>Open the <code>pokedex</code> in your browser and verify that when clicking on each link, <code>BestPokemon</code> and <code>CaughtPokemon</code> are rendered accordingly.</li>
@@ -924,7 +963,7 @@ Open the <code>pokedex</code> React application. In this exercise, React-Router 
 In the following, we will create a new component to display a Pokemon information. The Pokemon name will be passed through the URL and displayed on the screen.</p>
 <ol>
 <li>Create a new component <code>PokemonInfo</code>.</li>
-<li>In <code>src/App.js</code>, create a new route which maps the path <code>/pokemon/:name</code> to the previously created component <code>PokemonInfo</code> (hint: <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Route</span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/pokemon/:name<span class="token punctuation">&quot;</span></span> <span class="token attr-name">component</span><span class="token attr-value"><span class="token punctuation">=</span>{PokemonInfo}</span> <span class="token punctuation">/&gt;</span></span></code>).</li>
+<li>In <code>src/App.js</code>, create a new route which maps the path <code>/pokemon/:name</code> to the previously created component <code>PokemonInfo</code> (hint: <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Route</span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/pokemon/:name<span class="token punctuation">&quot;</span></span> <span class="token attr-name">component</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>{PokemonInfo}</span> <span class="token punctuation">/&gt;</span></span></code>).</li>
 <li>In the <code>render</code> method of <code>PokemonInfo</code> component, display the name of the Pokemon which is passed in the URL parameter (hint: use the props <code>match.params.name</code>).</li>
 <li>Open the <code>pokedex</code> in your browser and try several URLs (such as <code>http://localhost:3000/pokemon/Pikachu</code> and see if the Pokemon name is displayed accordingly on your screen.</li>
 <li><strong>(STRETCH GOAL)</strong> Instead of passing the name of the Pokemon in the URL parameter, now pass an ID. The ID passed correspond to the ID of the Pokemon in the Poke API. For example, the ID 1 corresponds to the Pokemon Bulbasaur (<a href="https://pokeapi.co/api/v2/pokemon-species/1/" target="_blank">https://pokeapi.co/api/v2/pokemon-species/1/</a>). In the <code>PokemonInfo</code> component, use the Pokemon ID from the URL to load the corresponding Pokemon data from the Poke API and display the following Pokemon information on the screen: name, color.name, shape.name, base_happiness and capture_rate.</li>
@@ -975,7 +1014,7 @@ In the following, we will create a new component to display a Pokemon informatio
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Routing (optional)","level":"1.7.4","depth":2,"next":{"title":"Class components (optional)","level":"1.7.5","depth":2,"path":"react/classes-optional/lesson.md","ref":"react/classes-optional/lesson.md","articles":[]},"previous":{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-3/lesson.md","ref":"react/week-3/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-4/lesson.md","mtime":"2020-07-20T10:51:33.252Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-20T10:52:22.273Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Routing (optional)","level":"1.7.4","depth":2,"next":{"title":"Class components (optional)","level":"1.7.5","depth":2,"path":"react/classes-optional/lesson.md","ref":"react/classes-optional/lesson.md","articles":[]},"previous":{"title":"Week 15 - Fetching Data","level":"1.7.3","depth":2,"path":"react/week-3/lesson.md","ref":"react/week-3/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/week-4/lesson.md","mtime":"2020-08-10T11:46:28.563Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-10T11:47:16.756Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
