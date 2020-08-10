@@ -864,14 +864,13 @@
                                 
                                 <h1 id="javascript-core-i---1">JavaScript Core I - 1</h1>
 <h2 id="before-the-class">Before the class</h2>
-<ul>
-<li>Please make sure you&apos;ve forked <a href="https://github.com/Migracode-Barcelona/js-exercises" target="_blank">the js-exercises repo</a> at the start of the class. This is the repo we will use during the class, and for homework.</li>
-<li>Install Node:
-Access to a Linux console (either on Mac, Ubuntu or by using Ubuntu WSL for Windows 10) and write <code>node -v</code> in your terminal and you should see something like <code>v11.10.0</code>. If you don&apos;t see this try to install it!</li>
-</ul>
-<p>Windows and Mac users:</p>
+<h3 id="fork-the-exercises-module-repo">Fork the exercises module repo</h3>
+<p>Fork the <a href="https://github.com/Migracode-Barcelona/exercises-js1" target="_blank">Javascript/Core Module 1 repository</a> to your personal account and clone it. Find help in the <a href="../../others/git.html#fork-and-clone-an-existing-project-from-github">Migracode GIT Guide</a>. This is the repo we will use during the first Javascript module, and for homework.</p>
+<h3 id="install-node">Install Node</h3>
+<p>Access to a Linux console (either on Mac, Ubuntu or by using Ubuntu WSL for Windows 10) and write <code>node -v</code> in your terminal and you should see something like <code>v11.10.0</code>. If you don&apos;t see this try to install it!</p>
+<p><strong>Windows and Mac users:</strong></p>
 <p>Download the <em>installer</em> (.msi or .pkg) from <a href="https://nodejs.org/en/download" target="_blank">https://nodejs.org/en/download</a></p>
-<p>Linux (Ubuntu) users:</p>
+<p><strong>Linux (Ubuntu) users:</strong></p>
 <p>Run the following commands in your terminal:</p>
 <pre class="language-"><code class="lang-sh">  <span class="token function">curl</span> -sL https://deb.nodesource.com/setup_8.x <span class="token operator">|</span> <span class="token function">sudo</span> -E <span class="token function">bash</span> -
   <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y nodejs
@@ -882,7 +881,6 @@ Access to a Linux console (either on Mac, Ubuntu or by using Ubuntu WSL for Wind
 </blockquote>
 <h2 id="what-we-will-learn-today">What we will learn today?</h2>
 <ul>
-<li><a href="#install-node">Install Node</a></li>
 <li><a href="#hello-world">Hello World</a></li>
 <li><a href="#variables">Variables</a></li>
 <li><a href="#string-concatenation">String concatenation</a></li>
@@ -911,17 +909,19 @@ Access to a Linux console (either on Mac, Ubuntu or by using Ubuntu WSL for Wind
 <p>It is programming tradition that the first thing you do in any language is make it output &apos;Hello world!&apos;.</p>
 <p>We&apos;ll do this in JavaScript, using a command called <code>console.log()</code>. The <code>console.log()</code> method writes a message to the console.</p>
 <p>The console is a tool which is mainly used to log information - it&apos;s useful for testing purposes.</p>
-<h3 id="exercise-10-minutes">Exercise (10 minutes)</h3>
+<h3 id="exercise-a-10-minutes">Exercise A (10 minutes)</h3>
 <p>(This exercise will help you understand how to run a basic JS script and explore the different ways you can run JS code)</p>
 <ol>
-<li>Create your first <code>js1-week1.js</code> script</li>
+<li>Create your first <code>exercise-A.js</code> script in the folder <code>week-1/InClass</code> in the <a href="https://github.com/Migracode-Barcelona/exercises-js1" target="_blank">Javascript/Core Module 1 repository</a> you forked before</li>
 <li>Type <code>console.log(&quot;Hello World!&quot;)</code></li>
 <li>There are 2 ways you can run this script - one way is by pressing F5 in your VS Code application. Can you find out what the second way is? Pair up and use a search engine to find out! Choose your favourite method and use that from now on.</li>
 </ol>
-<p><strong>BONUS:</strong> there is a third way of running JS code (notice how I haven&apos;t said scipt) - do you know what that is?</p>
-<h3 id="exercise-5-minutes">Exercise (5 minutes)</h3>
+<h3 id="exercise-b-5-minutes">Exercise B (5 minutes)</h3>
 <p>(This exercise will help you expand your understanding of console.log)</p>
-<p>Write 10 statements like these, but in different languages.</p>
+<ol>
+<li>Create the file <code>exercise-B.js</code> script in the folder <code>week-1/InClass</code></li>
+<li>Write 10 statements like these, but in different languages.</li>
+</ol>
 <p>For example:</p>
 <pre class="language-"><code class="lang-sh">Halo, dunia<span class="token operator">!</span> // Indonesian
 Ciao, mondo<span class="token operator">!</span> // Italian
@@ -940,8 +940,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>The program above will print &quot;Hello world&quot; to the console. Notice how it uses the value assigned to the variable <code>greeting</code>.</p>
-<h3 id="exercise-5-minutes">Exercise (5 minutes)</h3>
+<h3 id="exercise-c-5-minutes">Exercise C (5 minutes)</h3>
 <ol>
+<li>Create the file <code>exercise-C.js</code> script in the folder <code>week-1/InClass</code></li>
 <li>Add a variable <code>greeting</code> to js1-week1.js and assign a greeting of your choice to the variable</li>
 <li>Print your <code>greeting</code> to the console 3 times. You should see your greeting 3 times on the console, one on each line.</li>
 </ol>
@@ -957,10 +958,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>messageType<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// logs &apos;string&apos;</span>
 </code></pre>
-<h3 id="exercise-5-minutes">Exercise (5 minutes)</h3>
+<h3 id="exercise-d-5-minutes">Exercise D (5 minutes)</h3>
 <ol>
+<li>Create the file <code>exercise-D.js</code> script in the folder <code>week-1/InClass</code></li>
 <li>Write a program that:<ul>
-<li>i. creates a variable called <code>colors</code></li>
+<li>creates a variable called <code>colors</code></li>
 <li>assigns colors &quot;blue&quot; and &quot;yellow&quot; as a comma separate string to <code>colors</code></li>
 <li>logs the type <code>colors</code> using <code>typeof</code>.</li>
 </ul>
@@ -986,8 +988,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>greeting<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Logs &quot;Hello, my name is Daniel&quot;</span>
 </code></pre>
-<h3 id="exercise-5-mins">Exercise (5 mins)</h3>
+<h3 id="exercise-e-5-mins">Exercise E (5 mins)</h3>
 <ol>
+<li>Create the file <code>exercise-E.js</code> script in the folder <code>week-1/InClass</code></li>
 <li>Write a program that logs a message with a greeting and your name using the two concatenation methods we used</li>
 </ol>
 <h2 id="numbers-as-integers">Numbers as integers</h2>
@@ -1001,8 +1004,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">const</span> quotient <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 5</span>
 <span class="token keyword">const</span> difference <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 8</span>
 </code></pre>
-<h3 id="exercise-10-mins">Exercise (10 mins)</h3>
+<h3 id="exercise-f-10-mins">Exercise F (10 mins)</h3>
 <ol>
+<li>Create the file <code>exercise-F.js</code> script in the folder <code>week-1/InClass</code></li>
 <li>Create two variables <code>numberOfStudents</code> and <code>numberOfMentors</code></li>
 <li>Log a message that displays the total number of students and mentors</li>
 </ol>
@@ -1019,8 +1023,9 @@ Total number of students and mentors: <span class="token number">23</span>
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> preciseAge <span class="token operator">=</span> <span class="token number">30.612437</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> roughAge <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>preciseAge<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 31</span>
 </code></pre>
-<h3 id="exercise-15-mins">Exercise (15 mins)</h3>
+<h3 id="exercise-g-15-mins">Exercise G (15 mins)</h3>
 <ol>
+<li>Create the file <code>exercise-G.js</code> script in the folder <code>week-1/InClass</code></li>
 <li>Using the variables provided in the exercise calculate the percentage of mentors and students in the group (percentages must be a rounded to the nearest integer)</li>
 <li>Using online documentation, what other things can you do with the <code>Math</code> library? Pick one thing on your table that you can do other than <code>Math.round</code> and prepare an explanation for the rest of the class</li>
 </ol>
@@ -1054,24 +1059,21 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token keyword">return</span> num1 <span class="token operator">+</span> num2<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="exercise-20-minutes">Exercise (20 minutes)</h3>
+<h3 id="exercise-h-20-minutes">Exercise H (20 minutes)</h3>
 <ol>
-<li>In pairs, design and create a function that:<ul>
+<li>Create the file <code>exercise-H.js</code> script in the folder <code>week-1/InClass</code></li>
+<li>Design and create a function that:<ol>
 <li>takes in more than one input</li>
 <li>uses string concatenation</li>
 <li>this means adding two strings together</li>
 <li>performs some form of operation on a number</li>
 <li>uses <code>return</code> to return a <strong>string</strong></li>
-</ul>
+</ol>
 </li>
 <li>Add a comment above your function to explain what it does</li>
 <li>Call your function and run your script</li>
 <li>What&apos;s the difference between a <code>return</code> and <code>console.log</code>?</li>
 <li>When would you choose to use functions over the way we have been scripting so far?</li>
-</ol>
-<h3 id="exercise-10-minutes">Exercise (10 minutes)</h3>
-<ol>
-<li>Swap your laptop with your neighbouring pair and review each other&apos;s code - what can be improved? Is the code readable?</li>
 </ol>
 <h2 id="calling-functions-inside-functions">Calling functions inside functions</h2>
 <p>Functions are very powerful.</p>
@@ -1091,8 +1093,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token keyword">return</span> message<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="exercise-20-mins">Exercise (20 mins)</h3>
+<h3 id="exercise-i-20-mins">Exercise I (20 mins)</h3>
 <ol>
+<li>Create the file <code>exercise-I.js</code> script in the folder <code>week-1/InClass</code></li>
 <li>Write a function that returns the year someone is born given their age as input</li>
 <li>Using the answer from step 1, write a function that takes someone&apos;s name and age as input and returns a string that states the person&apos;s name and year they were born in a sentence</li>
 </ol>
@@ -1108,9 +1111,16 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 <h1 id="homework">Homework</h1>
 <ol>
-<li><a href="https://github.com/Migracode-Barcelona/js-exercises" target="_blank">The repo</a> that you
-have forked during this class contains few challenges - solve all the pending exercises in <code>week-1</code> and <code>week-1-practise</code> in
-JavaScript!</li>
+<li>From the <a href="https://github.com/Migracode-Barcelona/exercises-js1" target="_blank">Javascript/Core Module 1 repository</a> review and finish all exercises in the folder <code>week-1/InClass</code></li>
+<li>Complete all of the exercises in the folder <code>week-1/Homework</code></li>
+<li><a href="../../others/git.html#commit-and-push-your-changes-to-github">Push</a> the changes to your repository in Github</li>
+<li>Complete the <a href="https://form.jotformeu.com/93377027809365" target="_blank">Homework Form</a>, to notify mentors and add comments and questions about the exercises</li>
+</ol>
+<h1 id="practice-day-saturday">Practice Day (Saturday)</h1>
+<ol>
+<li>Check together, solve doubts and fix the Homework exercises</li>
+<li>[Optional] Complete the exercises in the folder <code>week-1/Extra</code></li>
+<li><a href="../../others/git.html#commit-and-push-your-changes-to-github">Push</a> the changes to your repository in Github</li>
 </ol>
 
                                 
@@ -1155,7 +1165,7 @@ JavaScript!</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"next":{"title":"Week 5 - Expressions and Arrays","level":"1.4.2","depth":2,"path":"js-core/week-05/lesson.md","ref":"js-core/week-05/lesson.md","articles":[]},"previous":{"title":"JavaScript I","level":"1.4","depth":1,"path":"js-core/index.md","ref":"js-core/index.md","articles":[{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core/week-04/lesson.md","ref":"js-core/week-04/lesson.md","articles":[]},{"title":"Week 5 - Expressions and Arrays","level":"1.4.2","depth":2,"path":"js-core/week-05/lesson.md","ref":"js-core/week-05/lesson.md","articles":[]},{"title":"Week 6 - Loops and callbacks","level":"1.4.3","depth":2,"path":"js-core/week-06/lesson.md","ref":"js-core/week-06/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/week-04/lesson.md","mtime":"2020-08-10T11:46:28.471Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-10T11:47:16.756Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"next":{"title":"Week 5 - Expressions and Arrays","level":"1.4.2","depth":2,"path":"js-core/week-05/lesson.md","ref":"js-core/week-05/lesson.md","articles":[]},"previous":{"title":"JavaScript I","level":"1.4","depth":1,"path":"js-core/index.md","ref":"js-core/index.md","articles":[{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core/week-04/lesson.md","ref":"js-core/week-04/lesson.md","articles":[]},{"title":"Week 5 - Expressions and Arrays","level":"1.4.2","depth":2,"path":"js-core/week-05/lesson.md","ref":"js-core/week-05/lesson.md","articles":[]},{"title":"Week 6 - Loops and callbacks","level":"1.4.3","depth":2,"path":"js-core/week-06/lesson.md","ref":"js-core/week-06/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/week-04/lesson.md","mtime":"2020-08-10T15:16:57.957Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-10T15:17:48.808Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

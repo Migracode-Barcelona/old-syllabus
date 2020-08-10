@@ -1,12 +1,12 @@
 # Homework
 
-1. Review all exercises explained during the class
-1. (Delivery) Fork to your GitHub account the repository [Homework JS1-Week3](https://github.com/Migracode-Barcelona/homework-js1-week3) and do all exercises. Push them tou your GitHub account and complete the [Homework Form](https://form.jotformeu.com/93377027809365), use the form to notify your comments and questions about the exercises
-1. Go to [The Modern JavaScript Tutorial](https://javascript.info) and widen your knowledge on:
+1. Complete all of the tasks in the folder `week-1/Homework` of the [Javascript/Core Module 1 repository](https://github.com/Migracode-Barcelona/exercises-js1)
+2. Once you push your changes to your GitHub account, complete the [Homework Form](https://form.jotformeu.com/93377027809365), to notify mentors and add comments and questions about the exercises
+3. Go to [The Modern JavaScript Tutorial](https://javascript.info) and widen your knowledge on:
     1. [2.12 Loops: while and for](https://javascript.info/while-for)
     1. [2.13 Switch](https://javascript.info/switch)
     1. [5.5 Array methods](https://javascript.info/array-methods)
-1. Go to [Codecademy’s JS Course](https://www.codecademy.com/learn/introduction-to-javascript) and do all the exercises for part 5 and 6.
+4. Go to [Codecademy’s JS Course](https://www.codecademy.com/learn/introduction-to-javascript) and do all the exercises for part 5 and 6.
 
 # Practice class
 
