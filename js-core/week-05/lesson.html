@@ -885,7 +885,6 @@
 <li>Define comparator operators and list the different types</li>
 <li>Use comparator operators in an <code>if</code> statement</li>
 <li>Define what a logical operator is and give examples</li>
-<li>Write functionality that uses the <code>assert</code> module</li>
 <li>Describe what an array is and write code that interacts with them</li>
 </ul>
 <hr>
@@ -957,64 +956,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ol>
 <h2 id="comparison-operators">Comparison Operators</h2>
 <p>In the previous exercise, you used an <strong>expression</strong> that returns a <code>boolean</code> value. This was possible because of the <strong>comparison operator</strong> <code>===</code>. Using a comparison operator will always return a <code>boolean</code> value.</p>
-<h3 id="assert">Assert</h3>
-<p>We will also be using a new keyword to make sure the comparisons we do below return <code>true</code>. This is the <code>assert</code>.</p>
-<p>When given <code>true</code>, it does nothing. Nice. When given <code>false</code>, it will error. It is very good for testing things you expect to be <code>true</code>.</p>
-<p>Here&apos;s an expression that evaluates to a <code>boolean</code>.</p>
-<p><strong>Can you work out what will happen with the code below?</strong></p>
-<pre class="language-"><code class="lang-js"><span class="token function">assert</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&gt;</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// and...</span>
-<span class="token function">assert</span><span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>The <code>&gt;</code> symbol in the expression is a <strong>comparison operator</strong>. Comparison operators compare two values. This operator checks to see if the number on the left is bigger than the number on the right.</p>
-<pre class="language-"><code class="lang-sh"><span class="token operator">&gt;</span>   greater than
-<span class="token operator">&lt;</span>   <span class="token function">less</span> than
-<span class="token operator">&lt;</span><span class="token operator">=</span>  <span class="token function">less</span> than or equal
-<span class="token operator">&gt;</span><span class="token operator">=</span>  greater than or equal
-<span class="token operator">==</span><span class="token operator">=</span> same value and same <span class="token builtin class-name">type</span>
-<span class="token operator">!=</span><span class="token operator">=</span> not the same value and <span class="token builtin class-name">type</span>
-</code></pre>
-<p>You might see people use two other comparison operators. They are valid, but are the evil twins of <code>===</code> and <code>!==</code> and it is generally considered bad practice because of the bugs the can cause.</p>
-<pre class="language-"><code class="lang-sh"><span class="token operator">==</span> equal compares only value
-<span class="token operator">!=</span> unequal compares only value
-</code></pre>
-<pre class="language-"><code class="lang-sh"><span class="token operator">==</span><span class="token operator">=</span> equal compares both value and <span class="token builtin class-name">type</span>
-<span class="token operator">!=</span><span class="token operator">=</span> unequal compares both value and <span class="token builtin class-name">type</span>
-</code></pre>
-<p>If you see these, suggest people change them in pull requests.</p>
-<h3 id="exercise-c-5-mins">Exercise C (5 mins)</h3>
-<ol>
-<li>Modify the values below to have the compare function return the desired value:</li>
-</ol>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> assert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;assert&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> mentorCount <span class="token operator">=</span> <span class="token comment">// TODO</span>
-<span class="token keyword">const</span> studentCount <span class="token operator">=</span> <span class="token comment">// TODO</span>
-<span class="token function">assert</span><span class="token punctuation">(</span>mentorCount <span class="token operator">&lt;</span> studentCount<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> capacity <span class="token operator">=</span> <span class="token number">25</span>
-<span class="token keyword">const</span> people <span class="token operator">=</span> <span class="token comment">// TODO</span>
-<span class="token function">assert</span><span class="token punctuation">(</span>capacity <span class="token operator">&gt;</span> people<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> name1 <span class="token operator">=</span> <span class="token comment">// TODO</span>
-<span class="token keyword">const</span> name2 <span class="token operator">=</span> <span class="token comment">// TODO</span>
-<span class="token function">assert</span><span class="token punctuation">(</span>name1 <span class="token operator">===</span> name2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> number1 <span class="token operator">=</span> <span class="token comment">// TODO</span>
-<span class="token keyword">const</span> number2 <span class="token operator">=</span> <span class="token comment">// TODO</span>
-<span class="token function">assert</span><span class="token punctuation">(</span>number1 <span class="token operator">!==</span> number2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> thisNumber <span class="token operator">=</span> <span class="token comment">// TODO</span>
-<span class="token keyword">const</span> thatNumber <span class="token operator">=</span> <span class="token comment">// TODO</span>
-<span class="token function">assert</span><span class="token punctuation">(</span>thisNumber <span class="token operator">===</span> thatNumber<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> thisArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> thatArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token function">assert</span><span class="token punctuation">(</span>thisArray <span class="token operator">===</span> thatArray<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>The array comparison doesn&apos;t work because JavaScript comparison only works as expected on <code>number</code>s, <code>string</code>s, and <code>boolean</code>s.</p>
-<p>You need to be aware of this, and its possible for you to go deeper into array comparisons outside of the lesson, though generally remember that only <code>number</code>s, <code>string</code>s, and <code>boolean</code>s work with equality.</p>
-<p>MDN has some slightly in-depth documentation <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness" target="_blank">here</a>.</p>
 <h2 id="conditionals">Conditionals</h2>
 <p>Like humans, computer programs make decisions based on the information given to them. <strong>Conditionals</strong> are a way of representing these decisions in code (remember, you saw this in a previous exercise!)</p>
 <p>For example:</p>
@@ -1067,8 +1008,17 @@ console<span class="token punctuation">.</span><span class="token function">log<
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;I am not happy &#x1F622;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>What if there is more than one condition you want to handle in your function? For example, what if you can be confused as well? You can use <strong>else if</strong> to handle multiple conditions.</p>
-<h3 id="exercise-d-5-mins">Exercise D (5 mins)</h3>
+<p>You can use <strong>else if</strong> to handle multiple conditions.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">24</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>age <span class="token operator">&gt;=</span> <span class="token number">65</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;John is an old guy.&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>age <span class="token operator">&lt;</span> <span class="token number">18</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;John is a young boy.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;John is an adult.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="exercise-c-5-mins">Exercise C (5 mins)</h3>
 <p>Can you explain what this function does line by line? What happens when you pass in a string?</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">numberChecker</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">&gt;</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1082,7 +1032,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="exercise-e-10-mins">Exercise E (10 mins)</h3>
+<h3 id="exercise-d-10-mins">Exercise D (10 mins)</h3>
 <p>Create a function that gives you a message depending on your mood! It should:</p>
 <ul>
 <li>take one input</li>
@@ -1106,7 +1056,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span>
 </code></pre>
 <p>We can test expressions with logical operators in a node console too.</p>
-<h3 id="exercise-5-mins">Exercise (5 mins)</h3>
+<h3 id="exercise-e-5-mins">Exercise E (5 mins)</h3>
 <p>Type the following expressions into your node REPL and note the output. Anything you didn&apos;t expect?</p>
 <ul>
 <li><code>let num = 10</code></li>
@@ -1118,7 +1068,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li><code>!greaterThan5</code></li>
 <li><code>!(num === 10)</code></li>
 </ul>
-<h3 id="exercise-15-mins">Exercise (15 mins)</h3>
+<h3 id="exercise-f-15-mins">Exercise F (15 mins)</h3>
 <p>In pairs, write a function that checks a username is of an acceptable format for a user type. The function must:</p>
 <ul>
 <li>take two parameters: one for the username and one for the user type</li>
@@ -1128,37 +1078,76 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h2 id="loops">Loops</h2>
 <p>When we&apos;re writing programs, we often find that we want to repeat a bit of code over and over, or repeat it but change something about it each time. To save ourselves from writing all that code, we can use a <strong>loop</strong>. JavaScript has two kinds of loops, a <code>while</code> loop and a <code>for</code> loop.</p>
 <h3 id="while-loop">while loop</h3>
-<p>A <code>while</code> loop is a way to repeat code until some condition is evaluated to <code>false</code>. For example:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token function">someFunction</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  i<span class="token operator">++</span><span class="token punctuation">;</span>
+<p>Programs are very efficient when executing recurring tasks, but now imagine you are asked to log numbers from 1 to 100:</p>
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is 1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is 2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is 3&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is 4&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is 5&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// ...</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is 100&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Although this would work you would need to write 100 lines of code to achieve the desired output. A better solution for this problem would require that we could execute a block of code multiple times. This form of control is what we call a loop.</p>
+<p>There are many ways to create a loop in a program, the first we will study is the <code>while</code> loop:</p>
+<h3 id="while-----"><code>while ( ) { //... }</code></h3>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is: &quot;</span> <span class="token operator">+</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  count <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Notice the line <strong>i++</strong> - this is the same as saying <strong>i = i + 1</strong> It does exactly the same thing but it is just more convenient to write.</p>
-<p>It&apos;s important that the condition inside the parenthesis becomes false at some point - otherwise, we&apos;ll have what&apos;s known as an infinite loop!</p>
-<h3 id="exercise-10-minutes">Exercise (10 minutes)</h3>
-<p>Write a function that:</p>
-<ul>
-<li>Takes one number <code>n</code> as a parameter</li>
-<li>Adds all numbers from <code>0</code> to <code>n</code>. For example, if the input is <code>3</code>, the output should be <code>0 + 1 + 2 + 3</code></li>
-<li>You should use a while loop</li>
-</ul>
+<p>The <code>while</code> statement creates a loop. The syntax is somehow similar to the <code>if</code> statement, it evaluates a condition inside the parentheses <code>(true|false)</code> and then it executes the code inside the <code>{ }</code> block only if that condition evaluates to <code>true</code>. </p>
+<h3 id="exercise-g-10-mins">Exercise G (10 mins)</h3>
+<p>Log the Apollo 11 countdown, use the message provided as the last output.
+It starts from 8 till 0!</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> apolloCountdownMessage <span class="token operator">=</span> <span class="token string">&quot;all engine running... LIFT-OFF!&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> countdown <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>apolloCountdownMessage<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Expected output</p>
+<pre class="language-"><code class="lang-js"><span class="token number">8</span>
+<span class="token number">7</span>
+<span class="token number">6</span>
+<span class="token number">5</span>
+<span class="token number">4</span>
+<span class="token number">3</span>
+<span class="token number">2</span>
+<span class="token number">1</span>
+<span class="token number">0</span>
+all engine running<span class="token operator">...</span> <span class="token constant">LIFT</span><span class="token operator">-</span><span class="token constant">OFF</span><span class="token operator">!</span>
+</code></pre>
 <h3 id="for-loop">for loop</h3>
 <p>The <code>for</code> loop is similar to a while loop, but with a more specialized syntax. Programmers invented the for loop when they realized they were always doing the same three things: creating loop counter variables (like <code>i</code> above), incrementing them by some amount, and checking that they&apos;re less than a value.</p>
 <p>The <code>for</code> loop syntax has special places for each of those three things. Here&apos;s the same loop as the first while loop above, as a for loop:</p>
+<h3 id="for-initialization-condition-final-expression---"><code>for (initialization; condition; final-expression) { //... }</code></h3>
 <p><img src="https://user-images.githubusercontent.com/31692/75388870-9213a880-58dd-11ea-90e6-4e67eabf390b.png" alt="For loop"></p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token function">someFunction</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;The count is: &quot;</span> <span class="token operator">+</span> counter<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="exercise-10-minutes">Exercise (10 minutes)</h3>
-<p>Write a function, similar to the last exercise, that:</p>
-<ul>
-<li>Takes one number <code>n</code> as a parameter</li>
-<li>Adds all numbers from <code>0</code> to <code>n</code>. For example, if the input is <code>3</code>, the output should be <code>0 + 1 + 2 + 3</code></li>
-<li>You should use an for loop</li>
-</ul>
+<p>The initialization is <code>let i = 0</code>, the condition is <code>i &lt; 100</code> and the final-expression is <code>i++</code>. Those blocks can be seen inside the parentheses after the <code>for</code> keyword and separated by semicolons <code>;</code>, in the following order <code>(initialization; condition; final-expression)</code>.</p>
+<p>Notice the line <strong>i++</strong> - this is the same as saying <strong>i = i + 1</strong> It does exactly the same thing but it is just more convenient to write.</p>
+<h3 id="exercise-h-10-mins">Exercise H (10 mins)</h3>
+<p>Calculate the exponential of the even numbers from 5 to 20
+Using a for loop and the helper functions provided.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">exponential</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> number <span class="token operator">*</span> number<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">isEven</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> number <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Expected output</p>
+<pre class="language-"><code class="lang-js">The exponential <span class="token keyword">of</span> <span class="token number">6</span> is <span class="token number">36</span>
+The exponential <span class="token keyword">of</span> <span class="token number">8</span> is <span class="token number">64</span>
+The exponential <span class="token keyword">of</span> <span class="token number">10</span> is <span class="token number">100</span>
+The exponential <span class="token keyword">of</span> <span class="token number">12</span> is <span class="token number">144</span>
+The exponential <span class="token keyword">of</span> <span class="token number">14</span> is <span class="token number">196</span>
+The exponential <span class="token keyword">of</span> <span class="token number">16</span> is <span class="token number">256</span>
+The exponential <span class="token keyword">of</span> <span class="token number">18</span> is <span class="token number">324</span>
+</code></pre>
 <h2 id="arrays">Arrays</h2>
 <p>If you ever find yourself writing code like this...</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> mentor1 <span class="token operator">=</span> <span class="token string">&quot;Daniel&quot;</span><span class="token punctuation">;</span>
@@ -1188,7 +1177,7 @@ students<span class="token punctuation">[</span><span class="token number">2</sp
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>students<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [&quot;Ahmed&quot;, &quot;Maria&quot;, &quot;Bianca&quot;, &quot;Nahidul&quot;, &quot;Jack&quot;]</span>
 </code></pre>
-<h3 id="exercise-5-mins">Exercise (5 mins)</h3>
+<h3 id="exercise-i-5-mins">Exercise I (5 mins)</h3>
 <p>In the node REPL, enter the following array:</p>
 <pre class="language-"><code class="lang-sh"><span class="token operator">&gt;</span> const fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;banana&apos;</span>, <span class="token string">&apos;apple&apos;</span>, <span class="token string">&apos;strawberry&apos;</span>, <span class="token string">&apos;kiwi&apos;</span>, <span class="token string">&apos;fig&apos;</span>, <span class="token string">&apos;orange&apos;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 </code></pre>
@@ -1200,7 +1189,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>banana</li>
 </ul>
 <p>Then, replace &apos;apple&apos; with &apos;raspberry&apos;, and replace &apos;fig&apos; with &apos;pineapple&apos;.</p>
-<h3 id="exercise-5-mins">Exercise (5 mins)</h3>
+<h3 id="exercise-j-5-mins">Exercise J (5 mins)</h3>
 <p>Complete this function so that, if the second index in the array contains the name &quot;Amy&quot;, it returns <code>&quot;Second index matched!&quot;</code></p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">secondMatchesAmy</span><span class="token punctuation">(</span><span class="token parameter">array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1228,18 +1217,31 @@ console<span class="token punctuation">.</span><span class="token function">log<
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>indexMessage<span class="token punctuation">,</span> dayMessage<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="exercise-10-mins">Exercise (10 mins)</h3>
+<h3 id="exercise-k-10-mins">Exercise K (10 mins)</h3>
 <p>Write a function which takes your <strong>students</strong> array as an input. In the function, use a for loop to <strong>iterate</strong> over the array and print the name of each student to the console.</p>
-<h3 id="exercise---extra-credit-20-mins">Exercise - extra credit (20 mins)</h3>
-<p>In pairs, write a function which squares all numbers in an array and returns the array of squared numbers.</p>
-<p>Write a second function which takes an input of arrays and only returns an array of even numbers.</p>
-<p>How can you combine the two functions to return an array of even and squared numbers?</p>
-<h2 id="extra-exercises">Extra exercises</h2>
-<h3 id="playing-computer-i">Playing computer I</h3>
+<h2 id="glossary">Glossary</h2>
+<ul>
+<li>Duplicate: exact copies of something (e.g. two or more files, numbers, directory can be exactly the same)</li>
+<li>Index: numbers that let you know an item&apos;s position inside an array</li>
+<li>Element: another name for an item in an array</li>
+<li>Iterate: to repeat some code multiple times, as we do when we use a loop</li>
+<li>REPL: (Read-Eval-Print-Loop) an interactive way to execute code you write inside the console</li>
+<li>Zero-based Index: an <code>array</code> starting at <code>0</code> and not at <code>1</code></li>
+</ul>
+<p>For words like <strong>Terminal</strong>, <strong>Primitive Types</strong> please see <a href="../week-1/lesson.md#Glossary">Glossary: JavaScript Core I - 2</a></p>
+<h1 id="homework">Homework</h1>
 <ol>
-<li>Working in pairs or groups, you have to predict the output of this program without executing it.</li>
+<li>From the <a href="https://github.com/Migracode-Barcelona/exercises-js1" target="_blank">Javascript/Core Module 1 repository</a> review and finish all exercises in the folder <code>week-2/InClass</code></li>
+<li>Go to <a href="https://javascript.info" target="_blank">The Modern JavaScript Tutorial</a> and widen your knowledge on <a href="https://javascript.info/while-for" target="_blank">2.12 Loops: while and for</a></li>
+<li>Complete all of the exercises in the folder <code>week-2/Homework</code></li>
+<li><a href="../../others/git.html#commit-and-push-your-changes-to-github">Push</a> the changes to your repository in Github</li>
+<li>Complete the <a href="https://form.jotformeu.com/93377027809365" target="_blank">Homework Form</a>, to notify mentors and add comments and questions about the exercises</li>
+</ol>
+<h1 id="practice-day-saturday">Practice Day (Saturday)</h1>
+<h2 id="playing-computer-i">Playing computer I</h2>
+<ol>
+<li>You have to predict the output of this program without executing it.</li>
 <li>What is printed to the console?</li>
-<li>Have you learned anything new during this exercise?</li>
 </ol>
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> daysOfWeek <span class="token operator">=</span> <span class="token punctuation">[</span>
   <span class="token string">&quot;Monday&quot;</span><span class="token punctuation">,</span>
@@ -1269,11 +1271,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="playing-computer-ii">Playing computer II</h3>
+<h2 id="playing-computer-ii">Playing computer II</h2>
 <ol>
-<li>Working in pairs or groups, you have to predict the output of this program without executing it.</li>
+<li>You have to predict the output of this program without executing it.</li>
 <li>What is printed to the console?</li>
-<li>Have you learned anything new during this exercise?</li>
 </ol>
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
@@ -1296,12 +1297,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="playing-computer-iii">Playing computer III</h3>
+<h2 id="playing-computer-iii">Playing computer III</h2>
 <ol>
-<li>Again, working in pairs or groups, you have to predict the output of this program without executing it.</li>
+<li>Again, you have to predict the output of this program without executing it.</li>
 <li>What is printed to the console?</li>
 <li>What was difficult about this exercise?</li>
-<li>Have you learned anything new?</li>
 </ol>
 <pre class="language-"><code class="lang-js"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
@@ -1332,22 +1332,22 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h2 id="glossary">Glossary</h2>
-<ul>
-<li>Assert: to determine whether something is <code>true</code> or not <code>true</code>, more precisely <code>false</code></li>
-<li>Duplicate: exact copies of something (e.g. two or more files, numbers, directory can be exactly the same)</li>
-<li>Index: numbers that let you know an item&apos;s position inside an array</li>
-<li>Element: another name for an item in an array</li>
-<li>Iterate: to repeat some code multiple times, as we do when we use a loop</li>
-<li>REPL: (Read-Eval-Print-Loop) an interactive way to execute code you write inside the console</li>
-<li>Zero-based Index: an <code>array</code> starting at <code>0</code> and not at <code>1</code></li>
-</ul>
-<p>For words like <strong>Terminal</strong>, <strong>Primitive Types</strong> please see <a href="../week-1/lesson.md#Glossary">Glossary: JavaScript Core I - 2</a></p>
-<h2 id="homework">Homework</h2>
-<h1 id="homework">Homework</h1>
 <ol>
-<li>Complete all of the tasks in the folder <code>week-2/Homework</code> of the <a href="https://github.com/Migracode-Barcelona/exercises-js1" target="_blank">Javascript/Corde Module 1 repository</a></li>
-<li>Once you push your changes to your GitHub account, complete the <a href="https://form.jotformeu.com/93377027809365" target="_blank">Homework Form</a>, to notify mentors and add comments and questions about the exercises</li>
+<li>Go to <a href="https://codewars.com" target="_blank">CodeWars</a> and solve as many katas as you can:<ol>
+<li><a href="https://www.codewars.com/kata/reversed-strings/javascript" target="_blank">Reversed Strings</a></li>
+<li><a href="https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0" target="_blank">Remove First and Last Character</a></li>
+<li><a href="https://www.codewars.com/kata/5715eaedb436cf5606000381" target="_blank">Stats: Sum of positive</a></li>
+<li><a href="https://www.codewars.com/kata/find-the-smallest-integer-in-the-array/javascript" target="_blank">Find the smallest integer in the array</a></li>
+<li><a href="https://www.codewars.com/kata/counting-sheep-dot-dot-dot/javascript" target="_blank">Counting sheep&#x2026;</a></li>
+<li><a href="https://www.codewars.com/kata/grasshopper-summation/javascript" target="_blank">Grasshopper - Summation</a></li>
+<li><a href="https://www.codewars.com/kata/515e271a311df0350d00000f" target="_blank">Stats: Square(n) Sum</a></li>
+<li><a href="https://www.codewars.com/kata/invert-values/train/javascript" target="_blank">Invert values</a></li>
+<li><a href="https://www.codewars.com/kata/56676e8fabd2d1ff3000000c/javascript" target="_blank">A Needle in the Haystack</a></li>
+<li><a href="https://www.codewars.com/kata/sum-of-positive/train/javascript" target="_blank">Sum of positive</a></li>
+<li><a href="https://www.codewars.com/kata/sum-without-highest-and-lowest-number/train/javascript" target="_blank">Sum without highest and lowest number</a></li>
+<li><a href="https://www.codewars.com/kata/count-of-positives-slash-sum-of-negatives/train/javascript" target="_blank">Count of positives / sum of negatives</a></li>
+</ol>
+</li>
 </ol>
 
                                 
@@ -1392,7 +1392,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 5 - Expressions and Arrays","level":"1.4.2","depth":2,"next":{"title":"Week 6 - Loops and callbacks","level":"1.4.3","depth":2,"path":"js-core/week-06/lesson.md","ref":"js-core/week-06/lesson.md","articles":[]},"previous":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core/week-04/lesson.md","ref":"js-core/week-04/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/week-05/lesson.md","mtime":"2020-08-10T15:43:36.310Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-10T15:44:35.219Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 5 - Expressions and Arrays","level":"1.4.2","depth":2,"next":{"title":"Week 6 - Loops and callbacks","level":"1.4.3","depth":2,"path":"js-core/week-06/lesson.md","ref":"js-core/week-06/lesson.md","articles":[]},"previous":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core/week-04/lesson.md","ref":"js-core/week-04/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/week-05/lesson.md","mtime":"2020-08-11T10:12:35.944Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-11T10:13:28.973Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
