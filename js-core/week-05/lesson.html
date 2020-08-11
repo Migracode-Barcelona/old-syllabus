@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Week 5 - Expressions and Arrays · GitBook</title>
+        <title>Week 5 - Expressions and loops · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -252,7 +252,7 @@
                 <a href="lesson.html">
             
                     
-                    Week 5 - Expressions and Arrays
+                    Week 5 - Expressions and loops
             
                 </a>
             
@@ -265,7 +265,7 @@
                 <a href="../week-06/lesson.html">
             
                     
-                    Week 6 - Loops and callbacks
+                    Week 6 - Arrays and callbacks
             
                 </a>
             
@@ -847,7 +847,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Week 5 - Expressions and Arrays</a>
+        <a href="../.." >Week 5 - Expressions and loops</a>
     </h1>
 </div>
 
@@ -1238,101 +1238,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>Complete the <a href="https://form.jotformeu.com/93377027809365" target="_blank">Homework Form</a>, to notify mentors and add comments and questions about the exercises</li>
 </ol>
 <h1 id="practice-day-saturday">Practice Day (Saturday)</h1>
-<h2 id="playing-computer-i">Playing computer I</h2>
 <ol>
-<li>You have to predict the output of this program without executing it.</li>
-<li>What is printed to the console?</li>
-</ol>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> daysOfWeek <span class="token operator">=</span> <span class="token punctuation">[</span>
-  <span class="token string">&quot;Monday&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;Tuesday&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;Wednesday&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;Thursday&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;Friday&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;Saturday&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;Sunday&quot;</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-<span class="token keyword">function</span> <span class="token function">workingDay</span><span class="token punctuation">(</span><span class="token parameter">day</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> day <span class="token operator">+</span> <span class="token string">&quot; is a working day&quot;</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">function</span> <span class="token function">weekendDay</span><span class="token punctuation">(</span><span class="token parameter">day</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> day <span class="token operator">+</span> <span class="token string">&quot; is at the weekend!&quot;</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> daysOfWeek<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> day <span class="token operator">=</span> <span class="token function">workingDay</span><span class="token punctuation">(</span>daysOfWeek<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>day<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> day <span class="token operator">=</span> <span class="token function">weekendDay</span><span class="token punctuation">(</span>daysOfWeek<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>day<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h2 id="playing-computer-ii">Playing computer II</h2>
-<ol>
-<li>You have to predict the output of this program without executing it.</li>
-<li>What is printed to the console?</li>
-</ol>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> <span class="token function-variable function">multiplyNumbers</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> a <span class="token operator">*</span> b<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> <span class="token function-variable function">addNumbers</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> day <span class="token operator">=</span> <span class="token function">addNumbers</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>day<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> day <span class="token operator">=</span> <span class="token function">multiplyNumbers</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>day<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h2 id="playing-computer-iii">Playing computer III</h2>
-<ol>
-<li>Again, you have to predict the output of this program without executing it.</li>
-<li>What is printed to the console?</li>
-<li>What was difficult about this exercise?</li>
-</ol>
-<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> <span class="token function-variable function">f1</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> a <span class="token operator">*</span> b<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> <span class="token function-variable function">f2</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-x <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-y <span class="token operator">=</span> <span class="token function">f1</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  a <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> d <span class="token operator">=</span> <span class="token function">f2</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> y<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> e <span class="token operator">=</span> <span class="token function">f1</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<ol>
+<li>Check together, solve doubts and fix the Homework exercises</li>
 <li>Go to <a href="https://codewars.com" target="_blank">CodeWars</a> and solve as many katas as you can:<ol>
 <li><a href="https://www.codewars.com/kata/reversed-strings/javascript" target="_blank">Reversed Strings</a></li>
 <li><a href="https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0" target="_blank">Remove First and Last Character</a></li>
@@ -1348,6 +1255,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li><a href="https://www.codewars.com/kata/count-of-positives-slash-sum-of-negatives/train/javascript" target="_blank">Count of positives / sum of negatives</a></li>
 </ol>
 </li>
+<li>[Optional] Complete the exercises in the folder <code>week-2/Extra</code></li>
+<li><a href="../../others/git.html#commit-and-push-your-changes-to-github">Push</a> the changes to your repository in Github</li>
 </ol>
 
                                 
@@ -1381,7 +1290,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 </a>
                 
                 
-                <a href="../week-06/lesson.html" class="navigation navigation-next " aria-label="Next page: Week 6 - Loops and callbacks">
+                <a href="../week-06/lesson.html" class="navigation navigation-next " aria-label="Next page: Week 6 - Arrays and callbacks">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1392,7 +1301,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 5 - Expressions and Arrays","level":"1.4.2","depth":2,"next":{"title":"Week 6 - Loops and callbacks","level":"1.4.3","depth":2,"path":"js-core/week-06/lesson.md","ref":"js-core/week-06/lesson.md","articles":[]},"previous":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core/week-04/lesson.md","ref":"js-core/week-04/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/week-05/lesson.md","mtime":"2020-08-11T10:12:35.944Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-11T10:13:28.973Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 5 - Expressions and loops","level":"1.4.2","depth":2,"next":{"title":"Week 6 - Arrays and callbacks","level":"1.4.3","depth":2,"path":"js-core/week-06/lesson.md","ref":"js-core/week-06/lesson.md","articles":[]},"previous":{"title":"Week 4 - Hello JavaScript","level":"1.4.1","depth":2,"path":"js-core/week-04/lesson.md","ref":"js-core/week-04/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core/week-05/lesson.md","mtime":"2020-08-11T11:27:58.465Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-11T11:28:47.592Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
