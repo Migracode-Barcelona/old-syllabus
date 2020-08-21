@@ -700,116 +700,12 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../html-css/week-1/learning-objectives.html">
+        <li class="chapter " data-level="4.2" data-path="mentors-weeks.html">
             
-                <a href="../html-css/week-1/learning-objectives.html">
-            
-                    
-                    Learning objectives Week1
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.3" data-path="../html-css/week-2/learning-objectives.html">
-            
-                <a href="../html-css/week-2/learning-objectives.html">
+                <a href="mentors-weeks.html">
             
                     
-                    Learning objectives Week2
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.4" data-path="../html-css/week-3/learning-objectives.html">
-            
-                <a href="../html-css/week-3/learning-objectives.html">
-            
-                    
-                    Learning objectives Week3
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.5" data-path="../html-css/week-1/mentors.html">
-            
-                <a href="../html-css/week-1/mentors.html">
-            
-                    
-                    Mentors Info Week1
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.6" data-path="../html-css/week-2/mentors.html">
-            
-                <a href="../html-css/week-2/mentors.html">
-            
-                    
-                    Mentors Info Week2
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.7" data-path="../html-css/week-3/mentors.html">
-            
-                <a href="../html-css/week-3/mentors.html">
-            
-                    
-                    Mentors Info Week3
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.8" data-path="../js-core/week-04/mentors.html">
-            
-                <a href="../js-core/week-04/mentors.html">
-            
-                    
-                    Mentors Info Week4
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.9" data-path="../js-core/week-05/mentors.html">
-            
-                <a href="../js-core/week-05/mentors.html">
-            
-                    
-                    Mentors Info Week5
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.10" data-path="../js-core/week-06/mentors.html">
-            
-                <a href="../js-core/week-06/mentors.html">
-            
-                    
-                    Mentors Info Week6
+                    Mentors Weekly Contents
             
                 </a>
             
@@ -870,13 +766,14 @@
 <li><a href="#commit-and-push-your-changes-to-github">Commit and push your changes to Github</a></li>
 <li><a href="#how-to-publish-your-website-in-github.io">How to publish your website in Github.io</a></li>
 <li><a href="#basic-git-commands">Basic Git Commands</a></li>
-</ul>
-</li>
-<li>[Advanced]<ul>
 <li><a href="#what-is-a-remote">What is a remote?</a></li>
 <li><a href="#adding-a-remote">Adding a remote</a></li>
+</ul>
+</li>
+<li>[Advanced]    <ul>
 <li><a href="#branches">Branches</a></li>
 <li><a href="#creating-a-pr">Creating a Pull Request (PR)</a></li>
+<li><a href="#git-in-the-final-projects">Git in the final projects</a></li>
 </ul>
 </li>
 </ul>
@@ -980,6 +877,7 @@ icon in the top right corner.</li>
 <p><img src="assets/git/git-merge-conflict.png" alt="Visualization of a merge conflict"></p>
 <p>As a developer, you have to tell Git which version of the line of code is correct.</p>
 <p>Complete exercise 28 from week 3 of the <a href="https://github.com/Migracode-Barcelona/html-css-git-exercises" target="_blank">HTML, CSS and Git Exercises</a> to learn how to resolve a merge conflict.</p>
+<p><a href="https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts" target="_blank">https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts</a></p>
 <h2 id="git-conflicts">Git Conflicts</h2>
 <p>As a professional, you&apos;ll usually need to work alongside other coders to build an app or website. We use version control to coordinate changes and manage any conflicts that arise. <a href="https://git-scm.com/" target="_blank">Git</a> is a version control system which helps us merge code that we&apos;ve been working on separately into one common codebase.</p>
 <p>To manage conflicts, we will need a common code base in which all changes are coordinated. When working on our own, we&apos;ll make our changes in <code>branches</code> to keep the code separate. Then we&apos;ll learn how to refresh your individual <code>branch</code> with the common code base, and prepare your changes to be merged.</p>
@@ -1098,10 +996,44 @@ origin git@github.com:CodeYourFuture/css-skin.git (push)
 <p><img src="assets/git/create-pull-request-2.png" alt="Create pull request"></p>
 <p>That&apos;s it! You created your PR!</p>
 <p><img src="assets/git/created-pr.png" alt="Created PR"></p>
-<h2 id="resources">Resources</h2>
-<ol>
-<li><a href="https://help.github.com/articles/creating-a-pull-request-from-a-fork/" target="_blank">Creating a pull request from a fork</a></li>
-</ol>
+<p><a href="https://help.github.com/articles/creating-a-pull-request-from-a-fork/" target="_blank">Creating a pull request from a fork</a></p>
+<h2 id="git-in-the-final-projects">Git in the final projects</h2>
+<p>In the final projects you will have to manage a Git repository to work all the Team toghether, there are many ways to do it, but these are our recommendations:</p>
+<ul>
+<li>Separate front and back code: Create one repository for the back-end code and another one for the front-end code<ul>
+<li>Put names easy to manage, like yourprojectname_be and yourprojectname_fe</li>
+<li>You can manage everything in one repository... but take into account to manage the folders and package.json properly without breaking others work</li>
+</ul>
+</li>
+<li>One Team, One Repo: Create the repositories in the account of one member of the team, and grant the others students to work there<ul>
+<li>The other members should clone directly the repository, DO NOT FORK IT! if you fork it every member of the team will work in an independent reposotory adding difficulties to manage merges of work</li>
+<li>To give push privileges to other team members, go in GiHub to your repository and go to Settings-&gt;Manage access -&gt; Invite a collaborator</li>
+</ul>
+</li>
+<li>Use branches: once you divide your work in different team members, always are files in common that you will write at the sema time and could create conflicts, to reduce the number of merges and do not involve everybody in the common files, this is our suggestion:<ul>
+<li>In each repository create a branch to each member that will make changes in the code, for example in a repository we will have these branches: master, studentA, studentB, studentC</li>
+<li>Each student will work only in his/her repository, implementing the assigned functionalities</li>
+<li>Master is the branch were everythink should work, all functionalities there are working and are not breaking others work</li>
+<li>The Team Leader, or another student will assume the role of Git Leader, will manage all the merges as follows:</li>
+<li>When the student A finishes a functionality and it is tested (working properly) will push the changes to remote and notify the Git Leader</li>
+<li>The Git Leader will move to the master version (git checkout master) and pull the changes from all branches, then will merge the branch master with the work of branch studentA, after it will solve any conflict and will check that this new functionality is working, but also the older ones.</li>
+<li>Then the Git Leader will push everyting to master and will notify all students to pull new changes from master, each student will have to solve conflicts from master and her/his branch</li>
+<li>Migracode Team and mentors will help the Git Leader to solve conflicts and manage the versions of the project.</li>
+</ul>
+</li>
+<li>Use gitignore</li>
+</ul>
+<p>To create this structure you will have to:</p>
+<ul>
+<li>create a branch for each students (git checkout -b studentA)</li>
+<li>push the branches to remot (git push -u origin studentA)</li>
+<li>Each student should, have a copy in local of all the branches (git fectch --all)</li>
+</ul>
+<p>Main commands used in the management method:
+git fetch --all
+git pull
+git merge
+git echoubut -b</p>
 
                                 
                                 </section>
@@ -1145,7 +1077,7 @@ origin git@github.com:CodeYourFuture/css-skin.git (push)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"3.1","depth":1,"next":{"title":"Coding 101","level":"3.2","depth":1,"path":"others/coding-101.md","ref":"others/coding-101.md","articles":[]},"previous":{"title":"Career Development","level":"2.3","depth":1,"path":"others/career-development.md","ref":"others/career-development.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/git.md","mtime":"2020-08-11T11:27:58.537Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-11T11:28:47.592Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Git","level":"3.1","depth":1,"next":{"title":"Coding 101","level":"3.2","depth":1,"path":"others/coding-101.md","ref":"others/coding-101.md","articles":[]},"previous":{"title":"Career Development","level":"2.3","depth":1,"path":"others/career-development.md","ref":"others/career-development.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/git.md","mtime":"2020-08-21T11:51:23.224Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-21T11:52:11.847Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
