@@ -1012,7 +1012,7 @@ origin git@github.com:CodeYourFuture/css-skin.git (push)
 <h3 id="small-teams-git-strategy">Small Teams Git strategy</h3>
 <p>There are strategies with more branches and more structurated, like the common strategy in companies, but taking into account number of people, the criticallity of our software and to not spend many hours merging. We recommend you this strategy for the final project!</p>
 <ul>
-<li>3 type of branches: <em>master</em>, <em>develop</em> and <em>feature</em> branches</li>
+<li>3 type of branches: <em>master</em>, <em>develop</em> and <em>developers</em> branches</li>
 <li>2 user roles: <em>Release Manager</em> and <em>Developer</em></li>
 </ul>
 <p><img src="assets/git/gitteam.png" alt="Git Team"></p>
@@ -1024,8 +1024,8 @@ origin git@github.com:CodeYourFuture/css-skin.git (push)
 </ul>
 <p><strong>Roles:</strong></p>
 <ul>
-<li>Release Manager: is the one that manages <em>master</em> and <em>develop</em>. This user, that at the same time is a Developer, do all merges between developers branches and <em>develop</em>. Also is the one that creates versions in <em>master</em>.</li>
-<li>Developer: all the members on the team are developeres, they develop the assigned features in the branch.</li>
+<li><strong>Release Manager</strong>: is the one that manages <em>master</em> and <em>develop</em>. This user, that at the same time is a Developer, do all merges between developers branches and <em>develop</em>. Also is the one that creates versions in <em>master</em>.</li>
+<li><strong>Developer</strong>: all the members on the team are developeres, they develop the assigned features in the branch.</li>
 </ul>
 <h3 id="actions-and-commands">Actions and commands</h3>
 <h4 id="first-steps">First steps:</h4>
@@ -1033,77 +1033,77 @@ origin git@github.com:CodeYourFuture/css-skin.git (push)
 <ul>
 <li>Create and add write and push privileges to all developers</li>
 <li>Create a new branch develop from master:<ul>
-<li>git checkout master //be sure you are on master branch</li>
-<li>git checkout -b develop //Create the branch <em>develop</em> from <em>master</em></li>
-<li>git push -u origin develop //Push the local branch to remote, so it is published on Github and other members can see it</li>
+<li><code>git checkout master</code> be sure you are on master branch</li>
+<li><code>git checkout -b develop</code> Create the branch <em>develop</em> from <em>master</em></li>
+<li><code>git push -u origin develop</code> Push the local branch to remote, so it is published on Github and other members can see it</li>
 </ul>
 </li>
 <li>Create a new branch for each developer from develop:<ul>
-<li>git checkout -b dev_john</li>
-<li>git push -u origin develop</li>
+<li><code>git checkout -b dev_john</code></li>
+<li><code>git push -u origin develop</code></li>
 </ul>
 </li>
 </ul>
 <p><strong>Move to working repositories (all developers):</strong></p>
 <ul>
 <li>Each developer should get the new branches from remote and move to the assigned branch:<ul>
-<li>git fetch --all</li>
-<li>git checkout dev_john</li>
+<li><code>git fetch --all</code> Get all new branches created</li>
+<li><code>git checkout dev_john</code> Move yo your name branch</li>
 </ul>
 </li>
 </ul>
 <h4 id="daily-work">Daily work:</h4>
 <ul>
-<li>All evelopers should commit and push all your work<ul>
-<li>git add .</li>
-<li>git commit -m &quot;new feature&quot;</li>
-<li>git push</li>
+<li>All developers should commit and push all your work<ul>
+<li><code>git add .</code></li>
+<li><code>git commit -m &quot;new feature&quot;</code></li>
+<li><code>git push</code></li>
 </ul>
 </li>
 </ul>
 <h4 id="end-of-a-sprint">End of a sprint:</h4>
 <p><strong>Create the sprint version (Release Manager):</strong></p>
 <ul>
-<li>git checkout develop </li>
-<li>git fetch --all</li>
+<li><code>git checkout develop</code></li>
+<li><code>git fetch --all</code></li>
 <li>Merge develop branch with the branch of each developer<ul>
-<li>git merge dev_john</li>
-<li>git add .</li>
-<li>git commit -m &quot;merge with john&quot;</li>
-<li>git push</li>
+<li><code>git merge dev_john</code></li>
+<li><code>git add .</code></li>
+<li><code>git commit -m &quot;merge with john&quot;</code></li>
+<li><code>git push</code></li>
 </ul>
 </li>
 <li>Check that all functionalities are working together, have a meeting to check the version and fix all integration or merge problems</li>
 <li>As a closed version, move the code to <em>master</em>:<ul>
-<li>git checkout master</li>
-<li>git merge develop</li>
-<li>git add .</li>
-<li>git commit -m &quot;merge with john&quot;</li>
-<li>git push</li>
+<li><code>git checkout master</code></li>
+<li><code>git merge develop</code></li>
+<li><code>git add .</code></li>
+<li><code>git commit -m &quot;merge with john&quot;</code></li>
+<li><code>git push</code></li>
 </ul>
 </li>
 <li>Go back to your working branch<ul>
-<li>git checkout dev_me</li>
+<li><code>git checkout dev_me</code></li>
 </ul>
 </li>
 </ul>
 <p><strong>Update your working branches with last version (all developers)</strong></p>
 <ul>
-<li>git fetch --all //to get last version of all branches</li>
-<li>git merge develop</li>
-<li>git add .</li>
-<li>git commit -m &quot;merge with develop&quot;</li>
-<li>git push</li>
+<li><code>git fetch --all</code> to get last version of all branches</li>
+<li><code>git merge develop</code></li>
+<li><code>git add .</code></li>
+<li><code>git commit -m &quot;merge with develop&quot;</code></li>
+<li><code>git push</code></li>
 </ul>
 <h3 id="main-companies-git-strategy">Main companies Git strategy</h3>
 <p>Here you can find an example on how to manage planified and unplanified (with bugs) versions of a software. <a href="https://nvie.com/posts/a-successful-git-branching-model/" target="_blank">More information</a></p>
 <p><img src="assets/git/gitcompany.png" alt="Git Company"></p>
 <ul>
-<li>master: The master branch stores the official release history, for each published version a tag is assigned with a version number</li>
-<li>hotfix: is the branch we use to fix bugs from the published version as soon as possible, without adding new features. As we can see in v0.1 version the software has a bug, we fix it in the Hotfix branch, and then we merge it directly with master. Also this change is added to develop brach for future versions.</li>
-<li>release-xxx: release branches are created from develop, to have a version that should be tested in detail to become  a new version, if during the test some bugs are found are fix directly in this branch. xxx is the name o the release</li>
-<li>develop: The develop branch serves as an integration branch for features. Once develop has acquired enough features for a release, a new release branch is created to test it before go to master.</li>
-<li>feature-xxx. Each new feature with name xxx, should reside in its own branch. But, instead of branching off of master, feature branches use develop as their parent branch. When a feature is complete, it gets merged back into develop. Features should never interact directly with master.</li>
+<li><strong><em>master</em></strong>: The master branch stores the official release history, for each published version a tag is assigned with a version number</li>
+<li><strong><em>hotfix</em></strong>: is the branch we use to fix bugs from the published version as soon as possible, without adding new features. As we can see in v0.1 version the software has a bug, we fix it in the Hotfix branch, and then we merge it directly with master. Also this change is added to develop brach for future versions.</li>
+<li><strong><em>release-xxx</em></strong>: release branches are created from develop, to have a version that should be tested in detail to become  a new version, if during the test some bugs are found are fix directly in this branch. xxx is the name o the release</li>
+<li><strong><em>develop</em></strong>: The develop branch serves as an integration branch for features. Once develop has acquired enough features for a release, a new release branch is created to test it before go to master.</li>
+<li><strong><em>feature-xxx</em></strong>: Each new feature with name xxx, should reside in its own branch. But, instead of branching off of master, feature branches use develop as their parent branch. When a feature is complete, it gets merged back into develop. Features should never interact directly with master.</li>
 </ul>
 
                                 
@@ -1148,7 +1148,7 @@ origin git@github.com:CodeYourFuture/css-skin.git (push)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"3.1","depth":1,"next":{"title":"Coding 101","level":"3.2","depth":1,"path":"others/coding-101.md","ref":"others/coding-101.md","articles":[]},"previous":{"title":"Career Development","level":"2.3","depth":1,"path":"others/career-development.md","ref":"others/career-development.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/git.md","mtime":"2020-08-22T10:53:03.328Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-22T10:53:53.620Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Git","level":"3.1","depth":1,"next":{"title":"Coding 101","level":"3.2","depth":1,"path":"others/coding-101.md","ref":"others/coding-101.md","articles":[]},"previous":{"title":"Career Development","level":"2.3","depth":1,"path":"others/career-development.md","ref":"others/career-development.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/git.md","mtime":"2020-08-22T11:19:26.660Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-22T11:20:18.199Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
