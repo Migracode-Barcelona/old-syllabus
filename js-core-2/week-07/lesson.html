@@ -760,8 +760,9 @@
                                 
                                 <h1 id="javascript-core-ii---1">JavaScript Core II - 1</h1>
 <h2 id="before-the-class">Before the class</h2>
-<h3 id="fork-the-exercises-module-repo">Fork the exercises module repo</h3>
-<p>Fork the <a href="https://github.com/Migracode-Barcelona/exercises-js2" target="_blank">Javascript/Core Module 2 repository</a> to your personal account and clone it. Find help in the <a href="../../others/git.html#fork-and-clone-an-existing-project-from-github">Migracode GIT Guide</a>. This is the repo we will use during the first Javascript module, and for homework.</p>
+<ul>
+<li>Fork the <a href="https://github.com/Migracode-Barcelona/exercises-js2" target="_blank">Javascript/Core Module 2 repository</a> to your personal account and clone it. Find help in the <a href="../../others/git.html#fork-and-clone-an-existing-project-from-github">Migracode GIT Guide</a>. This is the repo we will use during the first Javascript module, and for homework.</li>
+</ul>
 <h2 id="contents">Contents</h2>
 <ul>
 <li><a href="#objects">Objects</a></li>
@@ -796,7 +797,7 @@ By the end of this lesson students should be able to:</p>
   isTouchscreen<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="exercise-a-5-min">Exercise A (5 min)</h3>
+<h3 id="exercise-a-1-5-min">Exercise A-1 (5 min)</h3>
 <p>Describe your own laptop as a JavaScript object. Try to think of as many properties as you can!</p>
 <p>Example:</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">let</span> laptop <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -805,16 +806,19 @@ By the end of this lesson students should be able to:</p>
   isTouchscreen<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="exercise-b-5-min">Exercise B (5 min)</h3>
+<h3 id="exercise-a-2-5-min">Exercise A-2 (5 min)</h3>
 <p>Think of 5 different real world &quot;things&quot; that you can describe with a JavaScript object
 Assign each of them to a separate variable</p>
 <p>Example:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> jumper <span class="token operator">=</span> <span class="token punctuation">{</span>
-  color<span class="token operator">:</span> <span class="token string">&quot;blue&quot;</span><span class="token punctuation">,</span>
-  isCotton<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> car <span class="token operator">=</span> <span class="token punctuation">{</span>
+    brand<span class="token operator">:</span> <span class="token string">&quot;Seat&quot;</span><span class="token punctuation">,</span>
+    model<span class="token operator">:</span> <span class="token string">&quot;Arona&quot;</span><span class="token punctuation">,</span>
+    color<span class="token operator">:</span> <span class="token string">&quot;white&quot;</span><span class="token punctuation">,</span>
+    horsepower<span class="token operator">:</span> <span class="token number">115</span><span class="token punctuation">,</span>
+    doors<span class="token operator">:</span> <span class="token number">5</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="exercise-c-5-min">Exercise C (5 min)</h3>
+<h3 id="exercise-a-3-5-min">Exercise A-3 (5 min)</h3>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 The objects below have some syntax issues - try and fix them all!
 */</span>
@@ -859,7 +863,7 @@ The objects below have some syntax issues - try and fix them all!
 <p>You can also use the bracket notation (although this is rarely used, it&apos;s good to know):</p>
 <pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>laptop<span class="token punctuation">[</span><span class="token string">&quot;brand&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise-d-5-min">Exercise D (5 min)</h4>
+<h4 id="exercise-b-1-5-min">Exercise B-1 (5 min)</h4>
 <p>Console.log the values of each property of &quot;kitten&quot;</p>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 Console.log the values of each property of &quot;kitten&quot;
@@ -871,7 +875,7 @@ Console.log the values of each property of &quot;kitten&quot;
   furColour<span class="token operator">:</span> <span class="token string">&quot;brown&quot;</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise-e-5-min">Exercise E (5 min)</h4>
+<h4 id="exercise-b-2-5-min">Exercise B-2 (5 min)</h4>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 The following code contains syntax errors - try and fix them!
 Once you fix them, run the code, it should output the correct values!
@@ -911,7 +915,7 @@ laptop<span class="token punctuation">.</span>screenSize <span class="token oper
 <span class="token comment">// OK TO DO</span>
 laptop<span class="token punctuation">.</span>screenSize <span class="token operator">=</span> <span class="token number">15</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise-f-5-min">Exercise F (5 min)</h4>
+<h4 id="exercise-b-3-5-min">Exercise B-3 (5 min)</h4>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 Write code in the space provided so that it outputs &quot;Gilbert&quot;
 */</span>
@@ -923,7 +927,7 @@ Write code in the space provided so that it outputs &quot;Gilbert&quot;
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>kitten<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// -&gt; it should output: &quot;Gilbert&quot;</span>
 </code></pre>
-<h4 id="exercise-g-5-min">Exercise G (5 min)</h4>
+<h4 id="exercise-b-4-5-min">Exercise B-4 (5 min)</h4>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 Write code in the space provided so that the expected values output
 */</span>
@@ -958,7 +962,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise-h-5-min">Exercise H (5 min)</h4>
+<h4 id="exercise-c-1-5-min">Exercise C-1 (5 min)</h4>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 Given the following house - follow the instructions below.
 
@@ -998,7 +1002,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: Montgomery. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>house<span class="token punctuation">.</span>currentOwner<span class="token punctuation">.</span>lastName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise-i-5-min">Exercise I (5 min)</h4>
+<h4 id="exercise-c-2-5-min">Exercise C-2 (5 min)</h4>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 Given the same &quot;house&quot; object again
 
@@ -1042,7 +1046,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: false. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>house<span class="token punctuation">.</span>isForSale<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise-j-5-min">Exercise J (5 min)</h4>
+<h4 id="exercise-c-3-5-min">Exercise C-3 (5 min)</h4>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 
 Given the same &quot;house&quot; object again
@@ -1161,7 +1165,7 @@ athlete<span class="token punctuation">.</span><span class="token function">winN
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>athlete<span class="token punctuation">.</span>goldMedals<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// prints &quot;25&quot;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>athlete<span class="token punctuation">.</span>silverMedals<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// prints &quot;8&quot;</span>
 </code></pre>
-<h4 id="exercise-k-5-min">Exercise K (5 min)</h4>
+<h4 id="exercise-d-1-5-min">Exercise D-1 (5 min)</h4>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 
 A person named Alice is defined below.
@@ -1186,7 +1190,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: &apos;My name is Alice&apos;. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>person<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise-l-5-min">Exercise L (5 min)</h4>
+<h4 id="exercise-d-2-5-min">Exercise D-2 (5 min)</h4>
 <p>The following code contains syntax errors - try and fix them!
 Once you fix them, run this file, it should output the correct values!</p>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
@@ -1207,7 +1211,7 @@ Once you fix them, run this file, it should output the correct values!
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise-3">Exercise (3)</h4>
+<h4 id="exercise-d-3-5-min">Exercise D-3 (5 min)</h4>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 The following code contains syntax errors - try and fix them!
 
@@ -1237,7 +1241,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 person<span class="token punctuation">.</span><span class="token function">celebrateBirthday</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: 26. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>person<span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise-4">Exercise (4)</h4>
+<h4 id="exercise-d-4-5-min">Exercise D-4 (5 min)</h4>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 Alice has a list of good friends.
 
@@ -1259,7 +1263,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: &apos;John,Nina,Bob&apos;. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>person<span class="token punctuation">.</span>friends<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise-5">Exercise (5)</h4>
+<h4 id="exercise-d-5-5-min">Exercise D-5 (5 min)</h4>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 A coffee machine is defined below.
 One can buy three different coffees.
@@ -1347,7 +1351,7 @@ kittens<span class="token punctuation">.</span><span class="token function">filt
 
 kittens<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>getName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns [&quot;Fluffy&quot;, &quot;Megatron&quot;, &quot;Billy&quot;]</span>
 </code></pre>
-<h3 id="exercise-1">Exercise (1)</h3>
+<h3 id="exercise-e-1-5-min">Exercise E-1 (5 min)</h3>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 1) Define an array containing the 3 persons defined below.
 2) Return an array of the person names (hint: use map).
@@ -1395,7 +1399,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Question 3: array containing the persons younger than 28 years old -&gt; &quot;</span><span class="token punctuation">,</span>
     <span class="token punctuation">(</span>personsYoungerThan28YearsOld<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">===</span> person1 <span class="token operator">&amp;&amp;</span> personsYoungerThan28YearsOld<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">===</span> person3<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">&apos;Passed :)&apos;</span> <span class="token operator">:</span> <span class="token string">&apos;Not yet :(&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="exercise-2">Exercise (2)</h3>
+<h3 id="exercise-e-2-5-min">Exercise E-2 (5 min)</h3>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 An array of travel destinations is defined below.
 Each destination has a name, a distance from Glasgow, and a list of transportations available to go there.
@@ -1453,7 +1457,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Question 2) Expected result: Dublin, actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>destinationNameReachableByFerry<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Question 3) Expected result: London,Paris, actual result:  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>destinationNamesMoreThan300KmsAwayByTrain<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="exercise-3">Exercise (3)</h3>
+<h3 id="exercise-e-3-5-min">Exercise E-3 (5 min)</h3>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 Below are some restaurants in Glasgow. Each restaurant has a name, the number of total seats,
 the number of customers in the restaurant at the moment and the menu with prices.
@@ -1558,28 +1562,28 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h3 id="objectkeys">Object.keys()</h3>
 <p>This method goes into our object, and returns the object property names as an array.</p>
 <p>Here is an example output for using <code>.keys()</code>:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> footballClubs <span class="token operator">=</span> <span class="token punctuation">{</span>
-  chelsea_fc<span class="token operator">:</span> <span class="token string">&quot;England&quot;</span><span class="token punctuation">,</span>
-  fc_barcelona<span class="token operator">:</span> <span class="token string">&quot;Spain&quot;</span><span class="token punctuation">,</span>
-  ac_milan<span class="token operator">:</span> <span class="token string">&quot;Italy&quot;</span><span class="token punctuation">,</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> car <span class="token operator">=</span> <span class="token punctuation">{</span>
+  brand<span class="token operator">:</span> <span class="token string">&quot;Seat&quot;</span><span class="token punctuation">,</span>
+  model<span class="token operator">:</span> <span class="token string">&quot;Arona&quot;</span><span class="token punctuation">,</span>
+  color<span class="token operator">:</span> <span class="token string">&quot;White&quot;</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>footballClubs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// prints [ &apos;chelsea_fc&apos;, &apos;fc_barcelona&apos;, &apos;ac_milan&apos; ]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>car<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// prints [ &apos;brand&apos;, &apos;model&apos;, &apos;color&apos; ]</span>
 </code></pre>
 <h3 id="objectvalues">Object.values()</h3>
 <p>This method goes into our object, and returns the values of every property as an array.</p>
 <p>Here is an example output for using <code>.values()</code>:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> footballClubs <span class="token operator">=</span> <span class="token punctuation">{</span>
-  chelsea_fc<span class="token operator">:</span> <span class="token string">&quot;England&quot;</span><span class="token punctuation">,</span>
-  fc_barcelona<span class="token operator">:</span> <span class="token string">&quot;Spain&quot;</span><span class="token punctuation">,</span>
-  ac_milan<span class="token operator">:</span> <span class="token string">&quot;Italy&quot;</span><span class="token punctuation">,</span>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> car <span class="token operator">=</span> <span class="token punctuation">{</span>
+  brand<span class="token operator">:</span> <span class="token string">&quot;Seat&quot;</span><span class="token punctuation">,</span>
+  model<span class="token operator">:</span> <span class="token string">&quot;Arona&quot;</span><span class="token punctuation">,</span>
+  color<span class="token operator">:</span> <span class="token string">&quot;White&quot;</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>footballClubs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// prints [ &apos;England&apos;, &apos;Spain&apos;, &apos;Italy&apos; ]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>car<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// prints [ &apos;Seat&apos;, &apos;Arona&apos;, &apos;White&apos; ]</span>
 </code></pre>
-<h3 id="exercise-1">Exercise (1)</h3>
+<h3 id="exercise-f-1-5-min">Exercise F-1 (5 min)</h3>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 
 Return the keys and values of the following object
@@ -1621,7 +1625,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>highScoresValues<span class="token punctuation">)</span>
 <span class="token comment">// prints [[ &apos;Sergi&apos;, &apos;Frank&apos; ], &apos;Alistair, &apos;David&apos;, &apos;Hannah&apos;]</span>
 </code></pre>
-<h3 id="exercise-2">Exercise (2)</h3>
+<h3 id="exercise-f-2-5-min">Exercise F-2 (5 min)</h3>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 
 You have an object of mentors and their ages below, but the keys are inconsistent. JOSH and JAMIE are uppercase, while james and Mozafar are not. You want to return an array of mentors with the names in uppercase.
@@ -1648,7 +1652,7 @@ You&apos;re going to have to used what we learned at the start of this lesson, a
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mentorsNamedUppercased<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// prints [ &apos;JAMES&apos;, &apos;JOSH&apos;, &apos;JAMIE&apos;, &apos;MOZAFAR&apos; ]</span>
 </code></pre>
-<h3 id="exercise-3">Exercise (3)</h3>
+<h3 id="exercise-f-3-5-min">Exercise F-3 (5 min)</h3>
 <pre class="language-"><code class="lang-js"><span class="token comment">/*
 
 Objects very often contain other objects.
@@ -1738,7 +1742,7 @@ flowerKeys<span class="token punctuation">.</span><span class="token function">f
 <span class="token comment">// rose: 10</span>
 <span class="token comment">// lily: 15</span>
 </code></pre>
-<h4 id="exercise-1">Exercise (1)</h4>
+<h4 id="exercise-g-1-5-min">Exercise G-1 (5 min)</h4>
 <pre class="language-"><code class="lang-js"><span class="token comment">// You are given an object of student names and grades</span>
 <span class="token comment">// Loop through all the students&apos; grades and console log the name and grade of the ones with grade more than 18</span>
 <span class="token comment">// Try to use both methods shown above to achieve this</span>
@@ -1809,7 +1813,7 @@ flowerKeys<span class="token punctuation">.</span><span class="token function">f
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"next":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},"previous":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser ","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-07/lesson.md","mtime":"2020-08-24T15:41:37.044Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-24T15:42:26.647Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"next":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},"previous":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser ","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-07/lesson.md","mtime":"2020-08-27T14:42:21.548Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-27T14:43:14.388Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
