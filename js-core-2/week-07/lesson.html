@@ -1046,71 +1046,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: false. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>house<span class="token punctuation">.</span>isForSale<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise-c-3-5-min">Exercise C-3 (5 min)</h4>
-<pre class="language-"><code class="lang-js"><span class="token comment">/*
-
-Given the same &quot;house&quot; object again
-
-Write the code for the functions as per the description above them
-
-*/</span>
-
-<span class="token keyword">let</span> kinningParkHouse <span class="token operator">=</span> <span class="token punctuation">{</span>
-  address<span class="token operator">:</span> <span class="token string">&quot;1 Kinning Park&quot;</span><span class="token punctuation">,</span>
-  price<span class="token operator">:</span> <span class="token number">180000</span><span class="token punctuation">,</span>
-  currentOwner<span class="token operator">:</span> <span class="token punctuation">{</span>
-    firstName<span class="token operator">:</span> <span class="token string">&quot;Margaret&quot;</span><span class="token punctuation">,</span>
-    lastName<span class="token operator">:</span> <span class="token string">&quot;Conway&quot;</span><span class="token punctuation">,</span>
-    email<span class="token operator">:</span> <span class="token string">&quot;margaret@fake-emails.com&quot;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> parkAvenueHouse <span class="token operator">=</span> <span class="token punctuation">{</span>
-  address<span class="token operator">:</span> <span class="token string">&quot;50 Park Avenue&quot;</span><span class="token punctuation">,</span>
-  price<span class="token operator">:</span> <span class="token number">195000</span><span class="token punctuation">,</span>
-  currentOwner<span class="token operator">:</span> <span class="token punctuation">{</span>
-    firstName<span class="token operator">:</span> <span class="token string">&quot;Marie&quot;</span><span class="token punctuation">,</span>
-    lastName<span class="token operator">:</span> <span class="token string">&quot;McDonald&quot;</span><span class="token punctuation">,</span>
-    email<span class="token operator">:</span> <span class="token string">&quot;marie.m@real-emails.com&quot;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment">/*
-  DO NOT EDIT ANYTHING ABOVE THIS LINE
-
-  WRITE YOUR CODE BELOW
-*/</span>
-
-<span class="token comment">// returns the full name (first name + last name) of the owner of the house</span>
-<span class="token keyword">function</span> <span class="token function">getOwnerFullName</span><span class="token punctuation">(</span><span class="token parameter">house</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token comment">// returns an array of the owners&apos; email addresses of the two houses</span>
-<span class="token keyword">function</span> <span class="token function">getEmailAddresses</span><span class="token punctuation">(</span><span class="token parameter">house1<span class="token punctuation">,</span> house2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token comment">// returns the address for the cheapest house out of the two</span>
-<span class="token keyword">function</span> <span class="token function">getCheapestAddress</span><span class="token punctuation">(</span><span class="token parameter">house1<span class="token punctuation">,</span> house2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token comment">/*
-  DO NOT EDIT ANYTHING BELOW THIS LINE
-*/</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
-  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: Margaret Conway. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getOwnerFullName</span><span class="token punctuation">(</span>
-    kinningParkHouse
-  <span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
-  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: margaret@fake-emails.com, marie.m@real-emails.com. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getEmailAddresses</span><span class="token punctuation">(</span>
-    kinningParkHouse<span class="token punctuation">,</span>
-    parkAvenueHouse
-  <span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
-  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: 1 Kinning Park. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getCheapestAddress</span><span class="token punctuation">(</span>
-    parkAvenueHouse<span class="token punctuation">,</span>
-    kinningParkHouse
-  <span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
 <h2 id="object-methods">Object Methods</h2>
 <p>Besides having specific properties, objects in the real world can also do things. For example, a computer can display something on the screen, a person can say their names etc... In Javascript, we do this using &apos;methods&apos;. A method is a function attached to a particular object. You have already used some predefined methods before, for example <em>toUpperCase()</em> on a string or <em>filter()</em> on an array.</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">let</span> athlete <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -1240,83 +1175,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 person<span class="token punctuation">.</span><span class="token function">celebrateBirthday</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: 26. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>person<span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h4 id="exercise-d-4-5-min">Exercise D-4 (5 min)</h4>
-<pre class="language-"><code class="lang-js"><span class="token comment">/*
-Alice has a list of good friends.
-
-Define a method &quot;makeFriend&quot; to add a new friend to her list.
-*/</span>
-
-<span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
-  name<span class="token operator">:</span> <span class="token string">&quot;Alice&quot;</span><span class="token punctuation">,</span>
-  friends<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Nina&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment">/*
-DO NOT EDIT ANYTHING BELOW THIS LINE
-*/</span>
-
-person<span class="token punctuation">.</span><span class="token function">makeFriend</span><span class="token punctuation">(</span><span class="token string">&quot;Bob&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
-  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: &apos;John,Nina,Bob&apos;. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>person<span class="token punctuation">.</span>friends<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h4 id="exercise-d-5-5-min">Exercise D-5 (5 min)</h4>
-<pre class="language-"><code class="lang-js"><span class="token comment">/*
-A coffee machine is defined below.
-One can buy three different coffees.
-Complete the methods &quot;insertMoney&quot; and &quot;getCoffee&quot; to match the expected result.
-
-insertMoney takes an amount in parameter to add money in the coffee machine.
-getCoffee takes a coffee type in parameter and dispends the selected coffee
-only if the inserted amount is greater or equal than the price of the coffee!
-*/</span>
-
-<span class="token keyword">let</span> coffeeMachine <span class="token operator">=</span> <span class="token punctuation">{</span>
-  brand<span class="token operator">:</span> <span class="token string">&quot;Super Coffee&quot;</span><span class="token punctuation">,</span>
-  prices<span class="token operator">:</span> <span class="token punctuation">{</span>
-    cappuccino<span class="token operator">:</span> <span class="token number">2.4</span><span class="token punctuation">,</span>
-    blackCoffee<span class="token operator">:</span> <span class="token number">1.5</span><span class="token punctuation">,</span>
-    flatWhite<span class="token operator">:</span> <span class="token number">3.0</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  insertedAmount<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">insertMoney</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">amount</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">getCoffee</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">coffee</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment">/*
-DO NOT EDIT ANYTHING BELOW THIS LINE
-*/</span>
-
-coffeeMachine<span class="token punctuation">.</span><span class="token function">insertMoney</span><span class="token punctuation">(</span><span class="token number">2.4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
-  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: &apos;Please take your cappuccino&apos;. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>coffeeMachine<span class="token punctuation">.</span><span class="token function">getCoffee</span><span class="token punctuation">(</span>
-    <span class="token string">&quot;cappuccino&quot;</span>
-  <span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-coffeeMachine<span class="token punctuation">.</span><span class="token function">insertMoney</span><span class="token punctuation">(</span><span class="token number">1.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
-  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: &apos;Please take your blackCoffee&apos;. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>coffeeMachine<span class="token punctuation">.</span><span class="token function">getCoffee</span><span class="token punctuation">(</span>
-    <span class="token string">&quot;blackCoffee&quot;</span>
-  <span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-coffeeMachine<span class="token punctuation">.</span><span class="token function">insertMoney</span><span class="token punctuation">(</span><span class="token number">4.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
-  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: &apos;Please take your flatWhite&apos;. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>coffeeMachine<span class="token punctuation">.</span><span class="token function">getCoffee</span><span class="token punctuation">(</span>
-    <span class="token string">&quot;flatWhite&quot;</span>
-  <span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-coffeeMachine<span class="token punctuation">.</span><span class="token function">insertMoney</span><span class="token punctuation">(</span><span class="token number">2.4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
-  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expected result: &apos;Sorry you don&apos;t have enough money for a flatWhite&apos;. Actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>coffeeMachine<span class="token punctuation">.</span><span class="token function">getCoffee</span><span class="token punctuation">(</span>
-    <span class="token string">&quot;flatWhite&quot;</span>
-  <span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="arrays-of-objects">Arrays of objects</h2>
 <p>In the past weeks, you&apos;ve learned about using arrays of numbers, arrays of string etc... In the following, we will learn how to use arrays of objects.</p>
@@ -1457,103 +1315,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Question 2) Expected result: Dublin, actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>destinationNameReachableByFerry<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Question 3) Expected result: London,Paris, actual result:  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>destinationNamesMoreThan300KmsAwayByTrain<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="exercise-e-3-5-min">Exercise E-3 (5 min)</h3>
-<pre class="language-"><code class="lang-js"><span class="token comment">/*
-Below are some restaurants in Glasgow. Each restaurant has a name, the number of total seats,
-the number of customers in the restaurant at the moment and the menu with prices.
-
-We want to build an object to simulate a Restaurant Finder application (see below restaurantFinderApplication).
-
-1) Define a method findAvailableRestaurants which takes a number of people in parameter and returns
-all the restaurant names which have the required number of seats available at the moment.
-
-2) Define a method findRestaurantServingDish which takes a dish name in parameter and returns
-all the restaurant names serving this dish.
-
-3) Define a method countNumberOfRestaurantsInArea which takes an area of Glasgow in parameter (center, west),
-and returns the number of restaurants in this area.
-*/</span>
-
-<span class="token keyword">let</span> restaurant1 <span class="token operator">=</span> <span class="token punctuation">{</span>
-  name<span class="token operator">:</span> <span class="token string">&quot;Paesano&quot;</span><span class="token punctuation">,</span>
-  totalSeats<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-  numberOfCustomers<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
-  address<span class="token operator">:</span> <span class="token punctuation">{</span>
-    city<span class="token operator">:</span> <span class="token string">&quot;Glasgow&quot;</span><span class="token punctuation">,</span>
-    area<span class="token operator">:</span> <span class="token string">&quot;center&quot;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  menu<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;pizza&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;calzone&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;salad&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> restaurant2 <span class="token operator">=</span> <span class="token punctuation">{</span>
-  name<span class="token operator">:</span> <span class="token string">&quot;Ubiquitous Chip&quot;</span><span class="token punctuation">,</span>
-  totalSeats<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
-  numberOfCustomers<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-  address<span class="token operator">:</span> <span class="token punctuation">{</span>
-    city<span class="token operator">:</span> <span class="token string">&quot;Glasgow&quot;</span><span class="token punctuation">,</span>
-    area<span class="token operator">:</span> <span class="token string">&quot;west&quot;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  menu<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;salad&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;chocolate cake&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;roast lamb&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> restaurant3 <span class="token operator">=</span> <span class="token punctuation">{</span>
-  name<span class="token operator">:</span> <span class="token string">&quot;Monkeyz&quot;</span><span class="token punctuation">,</span>
-  totalSeats<span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
-  numberOfCustomers<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
-  address<span class="token operator">:</span> <span class="token punctuation">{</span>
-    city<span class="token operator">:</span> <span class="token string">&quot;Glasgow&quot;</span><span class="token punctuation">,</span>
-    area<span class="token operator">:</span> <span class="token string">&quot;center&quot;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  menu<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;stew&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;chocolate cake&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;panini&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> restaurants <span class="token operator">=</span> <span class="token punctuation">[</span>restaurant1<span class="token punctuation">,</span> restaurant2<span class="token punctuation">,</span> restaurant3<span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-<span class="token comment">/*
-DO NOT EDIT ANYTHING ABOVE THIS LINE
-WRITE YOUR CODE BELOW
-*/</span>
-
-<span class="token keyword">let</span> restaurantFinderApplication <span class="token operator">=</span> <span class="token punctuation">{</span>
-  applicationName<span class="token operator">:</span> <span class="token string">&quot;Restaurant Finder&quot;</span><span class="token punctuation">,</span>
-  applicationVersion<span class="token operator">:</span> <span class="token string">&quot;1.0&quot;</span><span class="token punctuation">,</span>
-  restaurants<span class="token operator">:</span> restaurants<span class="token punctuation">,</span>
-  <span class="token function-variable function">findAvailableRestaurants</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">numberOfPeople</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">// Complete here</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">findRestaurantServingDish</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">dishName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">// Complete here</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">countNumberOfRestaurantsInArea</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">area</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">// Complete here</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment">/*
-DO NOT EDIT ANYTHING BELOW THIS LINE
-*/</span>
-
-<span class="token keyword">let</span> restaurantsAvailableFor5People <span class="token operator">=</span> restaurantFinderApplication<span class="token punctuation">.</span><span class="token function">findAvailableRestaurants</span><span class="token punctuation">(</span>
-  <span class="token number">5</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
-  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Find available restaurants for 5 people: Expected result: Ubiquitous Chip,Monkeyz, actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>restaurantsAvailableFor5People<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> restaurantsServingSalad <span class="token operator">=</span> restaurantFinderApplication<span class="token punctuation">.</span><span class="token function">findRestaurantServingDish</span><span class="token punctuation">(</span>
-  <span class="token string">&quot;salad&quot;</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
-  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Find restaurants serving salad: Expected result: Paesano,Ubiquitous Chip, actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>restaurantsServingSalad<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> numberOfRestaurantsInCityCentre <span class="token operator">=</span> restaurantFinderApplication<span class="token punctuation">.</span><span class="token function">countNumberOfRestaurantsInArea</span><span class="token punctuation">(</span>
-  <span class="token string">&quot;center&quot;</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
-  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Number of restaurants in city centre: Expected result: 2, actual result: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>numberOfRestaurantsInCityCentre<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
 <h2 id="object-built-in-methods">Object built-in methods</h2>
 <p>Since we started JavaScript, we have used <code>console.log</code> to print things to our console.</p>
 <p>In week 2 and 3, you learned about array methods like <code>.map()</code>, and <code>.filter()</code>.</p>
@@ -1624,81 +1385,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>highScoresValues<span class="token punctuation">)</span>
 <span class="token comment">// prints [[ &apos;Sergi&apos;, &apos;Frank&apos; ], &apos;Alistair, &apos;David&apos;, &apos;Hannah&apos;]</span>
-</code></pre>
-<h3 id="exercise-f-2-5-min">Exercise F-2 (5 min)</h3>
-<pre class="language-"><code class="lang-js"><span class="token comment">/*
-
-You have an object of mentors and their ages below, but the keys are inconsistent. JOSH and JAMIE are uppercase, while james and Mozafar are not. You want to return an array of mentors with the names in uppercase.
-
-You&apos;re going to have to used what we learned at the start of this lesson, and some other JavaScript methods to accomplish this task.
-
-*/</span>
-
-<span class="token keyword">let</span> mentorsAges <span class="token operator">=</span> <span class="token punctuation">{</span>
-  james<span class="token operator">:</span> <span class="token number">29</span><span class="token punctuation">,</span>
-  <span class="token constant">JOSH</span><span class="token operator">:</span> <span class="token number">35</span><span class="token punctuation">,</span>
-  <span class="token constant">JAMIE</span><span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span>
-  Mozafar<span class="token operator">:</span> <span class="token number">30</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment">// ONLY EDIT BELOW THIS LINE</span>
-
-<span class="token keyword">let</span> mentorsNames <span class="token operator">=</span> <span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> mentorsNamedUppercased <span class="token operator">=</span> <span class="token punctuation">;</span>
-
-<span class="token comment">// ONLY EDIT ABOVE THIS LINE</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mentorsNamedUppercased<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// prints [ &apos;JAMES&apos;, &apos;JOSH&apos;, &apos;JAMIE&apos;, &apos;MOZAFAR&apos; ]</span>
-</code></pre>
-<h3 id="exercise-f-3-5-min">Exercise F-3 (5 min)</h3>
-<pre class="language-"><code class="lang-js"><span class="token comment">/*
-
-Objects very often contain other objects.
-
-This exercise will give you practice in getting the keys of objects inside other objects.
-
-Use the provided console.log statements below and follow the instructions above them.
-
-*/</span>
-
-<span class="token keyword">let</span> storeBranches <span class="token operator">=</span> <span class="token punctuation">{</span>
-  glasgow<span class="token operator">:</span> <span class="token punctuation">{</span>
-    manager<span class="token operator">:</span> <span class="token string">&quot;Andrew&quot;</span><span class="token punctuation">,</span>
-    assistant<span class="token operator">:</span> <span class="token string">&quot;Laura&quot;</span><span class="token punctuation">,</span>
-    interns<span class="token operator">:</span> <span class="token punctuation">{</span>
-      head_intern<span class="token operator">:</span> <span class="token string">&quot;Mozafar&quot;</span><span class="token punctuation">,</span>
-      intern<span class="token operator">:</span> <span class="token string">&quot;James&quot;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-
-  edinburgh<span class="token operator">:</span> <span class="token punctuation">{</span>
-    director<span class="token operator">:</span> <span class="token string">&quot;Kelly&quot;</span><span class="token punctuation">,</span>
-    manager<span class="token operator">:</span> <span class="token string">&quot;Sally&quot;</span><span class="token punctuation">,</span>
-    assistant<span class="token operator">:</span> <span class="token string">&quot;Derek&quot;</span><span class="token punctuation">,</span>
-    interns<span class="token operator">:</span> <span class="token punctuation">{</span>
-      head_intern<span class="token operator">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span>
-      intern<span class="token operator">:</span> <span class="token string">&quot;Sarah&quot;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment">// ONLY EDIT BELOW THIS LINE</span>
-
-<span class="token comment">// # 1</span>
-<span class="token comment">// prints [ &apos;glasgow&apos;, &apos;edinburgh&apos; ]</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// # 2</span>
-<span class="token comment">// prints [ &apos;manager&apos;, &apos;assistant&apos;, &apos;interns&apos; ]</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// # 3</span>
-<span class="token comment">// prints [ &apos;head_intern&apos;, &apos;intern&apos; ]</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// ONLY EDIT ABOVE THIS LINE</span>
 </code></pre>
 <h2 id="loop-through-an-object">Loop through an Object</h2>
 <p>Once in a while it will be required to loop through objects. You can achieve this in various ways.</p>
@@ -1813,7 +1499,7 @@ flowerKeys<span class="token punctuation">.</span><span class="token function">f
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"next":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},"previous":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser ","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-07/lesson.md","mtime":"2020-08-31T16:38:25.212Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-31T16:39:14.091Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"next":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},"previous":{"title":"JavaScript II","level":"1.5","depth":1,"path":"js-core-2/index.md","ref":"js-core-2/index.md","articles":[{"title":"Week 7 - Objects","level":"1.5.1","depth":2,"path":"js-core-2/week-07/lesson.md","ref":"js-core-2/week-07/lesson.md","articles":[]},{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},{"title":"Week 9 - More JS in the Browser ","level":"1.5.3","depth":2,"path":"js-core-2/week-09/lesson.md","ref":"js-core-2/week-09/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-07/lesson.md","mtime":"2020-08-31T17:07:14.760Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-31T17:08:05.055Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
