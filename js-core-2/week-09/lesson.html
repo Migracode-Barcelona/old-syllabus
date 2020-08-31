@@ -758,16 +758,23 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><img src="https://img.shields.io/badge/status-draft-darkred.svg" alt="Draft lesson"></p>
-<h1 id="javascript-core-ii---3">JavaScript Core II - 3</h1>
-<p><strong>What we will learn today?</strong></p>
+                                <h1 id="javascript-core-ii---3">JavaScript Core II - 3</h1>
+<h2 id="learning-objectives">Learning objectives</h2>
 <p>In this lesson you will learn about Synchronous and Asynchronous programming and what is a callback, complex concepts that write code is needed to understand them.
 Also, you will understand the architecture client/server, what HTTP works and how to use fetch.</p>
+<p>By the end of this lesson students should be able to:</p>
+<ul>
+<li>Define the difference between synchronous and asynchronous code</li>
+<li>Describe why writing asynchronous code is important when working with the internet</li>
+<li>Write code that is able to pass a function to another function as a parameter and run it</li>
+<li>Use callbacks to run code at some point in the future</li>
+<li>Define a client&apos;s and server&apos;s role in the client/server architecture</li>
+<li>Describe the difference between a GET and POST request</li>
+<li>Explain how resources are loaded on the internet using GET and POST</li>
+<li>List the steps that a browser does when loading a website from the internet</li>
+</ul>
 <p><strong>Before the class</strong></p>
-<blockquote>
-<p>Please before start the class fork and clone <a href="https://github.com/Migracode-Barcelona/exercises-js2-week3" target="_blank">exercises-js2-week3 repo</a></p>
-</blockquote>
-<h2 id="index">Index</h2>
+<h2 id="contents">Contents</h2>
 <ul>
 <li><a href="#synchronous-and-asynchronous-programming">Synchronous and Asynchronous programming</a><ul>
 <li><a href="#a-real-life-example">A real life example</a></li>
@@ -839,8 +846,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </code></pre>
 <p>As you can observe, functions in Javascript are asynchronous, the main code continues without waiting the function is finished.
 In some other programming languages, functions by default are synchronous.</p>
-<h4 id="exercise">Exercise</h4>
-<p>From <a href="https://github.com/Migracode-Barcelona/exercises-js2-week3" target="_blank">exercises-js2-week3 repo</a> in folder <strong>InClass/A-timeout</strong> do exercise.js</p>
+<h4 id="exercise-a-15-min">Exercise A (15 min)</h4>
+<p>In folder <strong>InClass/A-timeout</strong> do exercise.js</p>
 <h3 id="callbacks">Callbacks</h3>
 <p>We have already seen callback functions - in the Array methods <code>forEach</code>, <code>map</code>, <code>filter</code> etc. They are functions that are passed as parameter to another function.</p>
 <p>In order to achieve asynchronicity, callbacks can be passed on functions that perform a slow action. By doing so, the callback function can be called with the result.
@@ -883,8 +890,8 @@ This allows you to run some other code while you&apos;re waiting for something t
 <span class="token punctuation">}</span>
 <span class="token function">mainFunction</span><span class="token punctuation">(</span>myCallbackFunction<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise">Exercise</h4>
-<p>From <a href="https://github.com/Migracode-Barcelona/exercises-js2-week3" target="_blank">exercises-js2-week3 repo</a> in folder <strong>InClass/B-movies</strong> do exercise.js</p>
+<h4 id="exercise-b-15-min">Exercise B (15 min)</h4>
+<p>In folder <strong>InClass/B-movies</strong> do exercise.js</p>
 <h2 id="how-does-the-web-work">How does the web work?</h2>
 <h3 id="clientserver-architecture">Client/Server architecture</h3>
 <p><img src="client-server.png" alt=""></p>
@@ -917,6 +924,51 @@ This allows you to run some other code while you&apos;re waiting for something t
 </tbody>
 </table>
 <p>HTTP is the language of the internet. In our case we&apos;re using Javascript, but you can send HTTP requests with other laguages as well.</p>
+<h3 id="the-network-tab">The Network Tab</h3>
+<p>The network tab is a useful tool that helps us understand how content is loaded on a website.</p>
+<p>You can view it by <code>Right Click</code> &gt; <code>Inspect</code> &gt; <code>Network</code>.</p>
+<p>Take some time to look at the network tab when we open <a href="../week-3/lesson">this lesson</a>.</p>
+<p>The important parts of the the Network Tab are:</p>
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/network#load" target="_blank">Network Log</a></li>
+<li>Timeline View</li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/network#details" target="_blank">Resource Details</a></li>
+</ul>
+<h4 id="exercise-c-1-10-min">Exercise C-1 (10 min)</h4>
+<blockquote>
+<p>Let&apos;s take a look at GET requests in the Browser.</p>
+<p>Look at this repository here:</p>
+<ul>
+<li><a href="https://github.com/CodeYourFuture/Network-Tab-Example" target="_blank">https://github.com/CodeYourFuture/Network-Tab-Example</a></li>
+</ul>
+<p>In your groups, you should try to work out what you expect to see in the Network tab when we look at it. You should create a list of the requests that will be made in this format.</p>
+<p><strong>You are not allowed to open the website in a browser</strong></p>
+<p>e.g.</p>
+<ol>
+<li>GET index.html</li>
+<li>GET format.de</li>
+<li>GET otherfile.se</li>
+<li>...</li>
+</ol>
+<p>When you have completed the list you should share it on Slack</p>
+<p>You can see the website online here</p>
+<ul>
+<li><a href="https://codeyourfuture.github.io/Network-Tab-Example/" target="_blank">https://codeyourfuture.github.io/Network-Tab-Example/</a></li>
+</ul>
+</blockquote>
+<h4 id="exercise-c-2-10-min">Exercise C-2 (10 min)</h4>
+<blockquote>
+<p>Let&apos;s take a look at POST requests in the Browser.</p>
+<p>You can see the website online here</p>
+<ul>
+<li><a href="https://codeyourfuture.github.io/Network-Tab-Example/" target="_blank">https://codeyourfuture.github.io/Network-Tab-Example/</a></li>
+</ul>
+<p>At the bottom of the page you will see a series of buttons. When you click a button on the website it will send a POST request to a server.</p>
+<ol>
+<li><strong>Using only the Network tab</strong> work out which button is sending a post request.</li>
+<li>What is in the <code>body</code> of the post request?</li>
+</ol>
+</blockquote>
 <h3 id="fetch">Fetch</h3>
 <p>The interface through which browser JavaScript can make HTTP requests is called fetch. By default, fetch uses GET method.
 Calling fetch returns a promise that resolves to a Response object holding information about the server&#x2019;s response, such as its status code and its headers.
@@ -934,12 +986,21 @@ Execute the URL directly in the browser to see the structure and information of 
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Get more information about fetch in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank">Developer Mozilla: Using fetch</a></p>
-<h4 id="exercise">Exercise</h4>
-<p>From <a href="https://github.com/Migracode-Barcelona/exercises-js2-week3" target="_blank">exercises-js2-week3 repo</a> in folder <strong>InClass/C-fetch</strong> do exercise.js</p>
+<h4 id="exercise-d-15-min">Exercise D (15 min)</h4>
+<p>In folder <strong>InClass/D-fetch</strong> do exercise.js</p>
 <h1 id="homework">Homework</h1>
 <ol>
-<li>In <a href="https://github.com/Migracode-Barcelona/exercises-js2-week3" target="_blank">exercises-js2-week3 repo</a> in the <code>InClass</code> folder finish all exercises if are not finished</li>
-<li>(Delivery) In <a href="https://github.com/Migracode-Barcelona/exercises-js2-week3" target="_blank">exercises-js2-week3 repo</a> in the <code>Homework/mandatory</code> folder do all exercises. Push them to your GitHub account and complete the <a href="https://form.jotformeu.com/93377027809365" target="_blank">Homework Form</a>, use the form to notify your comments and questions about the exercises</li>
+<li>From the <a href="https://github.com/Migracode-Barcelona/exercises-js2" target="_blank">Javascript/Core Module 2 repository</a> review and finish all exercises in the folder <code>week-3/InClass</code></li>
+<li>Complete exercises in the folder <code>week-3/Homework/alarmclock</code></li>
+<li><a href="../../others/git.html#commit-and-push-your-changes-to-github">Push</a> the changes to your repository in Github</li>
+<li>Complete the <a href="https://form.jotformeu.com/93377027809365" target="_blank">Homework Form</a>, to notify mentors and add comments and questions about the exercises</li>
+</ol>
+<h1 id="practice-day-saturday">Practice Day (Saturday)</h1>
+<ol>
+<li>Check together, solve doubts and fix the Homework exercises</li>
+<li>Complete the exercises in the folder <code>week-3/Homework</code></li>
+<li>[Optional] Complete the exercises in the folder <code>week-3/Extra</code></li>
+<li><a href="../../others/git.html#commit-and-push-your-changes-to-github">Push</a> the changes to your repository in Github</li>
 </ol>
 
                                 
@@ -984,7 +1045,7 @@ Execute the URL directly in the browser to see the structure and information of 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 9 - More JS in the Browser ","level":"1.5.3","depth":2,"next":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - ES6 and debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},{"title":"Week 11 - Unit tests and TDD","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},{"title":"Week 12 - Recap","level":"1.6.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]}]},"previous":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-09/lesson.md","mtime":"2020-08-31T15:13:08.459Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-31T15:14:02.164Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 9 - More JS in the Browser ","level":"1.5.3","depth":2,"next":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - ES6 and debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},{"title":"Week 11 - Unit tests and TDD","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},{"title":"Week 12 - Recap","level":"1.6.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]}]},"previous":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-09/lesson.md","mtime":"2020-08-31T16:38:25.212Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-31T16:39:14.091Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
