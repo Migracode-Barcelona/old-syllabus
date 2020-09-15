@@ -773,7 +773,6 @@ Also, you will understand the architecture client/server, what HTTP works and ho
 <li>Explain how resources are loaded on the internet using GET and POST</li>
 <li>List the steps that a browser does when loading a website from the internet</li>
 </ul>
-<p><strong>Before the class</strong></p>
 <h2 id="contents">Contents</h2>
 <ul>
 <li><a href="#synchronous-and-asynchronous-programming">Synchronous and Asynchronous programming</a><ul>
@@ -927,7 +926,7 @@ This allows you to run some other code while you&apos;re waiting for something t
 <h3 id="the-network-tab">The Network Tab</h3>
 <p>The network tab is a useful tool that helps us understand how content is loaded on a website.</p>
 <p>You can view it by <code>Right Click</code> &gt; <code>Inspect</code> &gt; <code>Network</code>.</p>
-<p>Take some time to look at the network tab when we open <a href="../week-3/lesson">this lesson</a>.</p>
+<p>Take some time to look at the network tab when we open <a href="lesson.html">this lesson</a>.</p>
 <p>The important parts of the the Network Tab are:</p>
 <ul>
 <li><a href="https://developers.google.com/web/tools/chrome-devtools/network#load" target="_blank">Network Log</a></li>
@@ -987,7 +986,20 @@ Execute the URL directly in the browser to see the structure and information of 
 </code></pre>
 <p>Get more information about fetch in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank">Developer Mozilla: Using fetch</a></p>
 <h4 id="exercise-d-15-min">Exercise D (15 min)</h4>
-<p>In folder <strong>InClass/D-fetch</strong> do exercise.js</p>
+<p>In folder <strong>InClass/D-fetch</strong> do exercise.js
+Going back to asynchronous programming, when the temperature will be printed?
+What if we have a code like this, predict the order of the console.log():</p>
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Starting...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token constant">URL</span> <span class="token operator">=</span> <span class="token string">&quot;https://fcc-weather-api.glitch.me/api/current?lat=35&amp;lon=160&quot;</span><span class="token punctuation">;</span>
+<span class="token function">fetch</span><span class="token punctuation">(</span><span class="token constant">URL</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">myJson</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Temperature is: &quot;</span> <span class="token operator">+</span> myJson<span class="token punctuation">.</span>main<span class="token punctuation">.</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Finishing...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <h1 id="homework">Homework</h1>
 <ol>
 <li>From the <a href="https://github.com/Migracode-Barcelona/exercises-js2" target="_blank">Javascript/Core Module 2 repository</a> review and finish all exercises in the folder <code>week-3/InClass</code></li>
@@ -1045,7 +1057,7 @@ Execute the URL directly in the browser to see the structure and information of 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 9 - More JS in the Browser ","level":"1.5.3","depth":2,"next":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - ES6 and debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},{"title":"Week 11 - Unit tests and TDD","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},{"title":"Week 12 - Recap","level":"1.6.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]}]},"previous":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-09/lesson.md","mtime":"2020-08-31T17:07:14.760Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-31T17:08:05.055Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 9 - More JS in the Browser ","level":"1.5.3","depth":2,"next":{"title":"JavaScript III","level":"1.6","depth":1,"path":"js-core-3/index.md","ref":"js-core-3/index.md","articles":[{"title":"Week 10 - ES6 and debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},{"title":"Week 11 - Unit tests and TDD","level":"1.6.2","depth":2,"path":"js-core-3/week-11/lesson.md","ref":"js-core-3/week-11/lesson.md","articles":[]},{"title":"Week 12 - Recap","level":"1.6.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]}]},"previous":{"title":"Week 8 - JS in the Browser","level":"1.5.2","depth":2,"path":"js-core-2/week-08/lesson.md","ref":"js-core-2/week-08/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-2/week-09/lesson.md","mtime":"2020-09-15T14:23:33.941Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-15T14:24:25.005Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
