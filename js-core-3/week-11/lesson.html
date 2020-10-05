@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Week 11 - Unit tests and TDD · GitBook</title>
+        <title>Week 11 - Fetch and API · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -368,7 +368,7 @@
                 <a href="lesson.html">
             
                     
-                    Week 11 - Unit tests and TDD
+                    Week 11 - Fetch and API
             
                 </a>
             
@@ -381,7 +381,7 @@
                 <a href="../week-12/lesson.html">
             
                     
-                    Week 12 - Recap
+                    Week 12 - Project
             
                 </a>
             
@@ -743,7 +743,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Week 11 - Unit tests and TDD</a>
+        <a href="../.." >Week 11 - Fetch and API</a>
     </h1>
 </div>
 
@@ -771,29 +771,11 @@
 <li>The learner should be able to use <code>DOM</code> manipulation to add content to the <code>DOM</code></li>
 <li>The learner should understand <code>window.onload</code> and <code>document.onload</code> and should be able to assign functions to run at specific life cycle events</li>
 </ul>
-<h2 id="agenda">Agenda</h2>
-<p>The purpose of this class is to introduce to the student:</p>
-<ol>
-<li>Debugging Quiz</li>
-<li>How the web works</li>
-<li>What are <code>APIs</code> and how to interact with them</li>
-<li>How to use the <code>fetch</code> API to do AJAX calls</li>
-</ol>
-<h2 id="1-debugging-quiz">1. Debugging Quiz</h2>
-<p>Let&apos;s see what you remember from last week!</p>
-<p><em>Answer in a thread on Slack</em></p>
-<ol>
-<li>What are the four questions we ask ourselves in the Debugging Framework?</li>
-<li>What are three of the tools we could use to debug our programs?</li>
-<li>What is a <code>syntax</code> error?</li>
-<li>What is a <code>reference</code> error?</li>
-<li>What is a <code>type</code> error?</li>
-</ol>
-<h2 id="2-how-the-web-works---quick-recap">2. How the web works - quick recap</h2>
+<h2 id="1-how-the-web-works---quick-recap">1. How the web works - quick recap</h2>
 <p>In this session we will look at how computer talk to each other using the web.</p>
 <p>At the core of the web is the URL, which stands for Uniform Resource Locator. We use the term resource to mean anything that a server might return such as webpage, CSS, JavaScript, image, data etc. A good way to think of a URL is as an address. It allows us to refer to webpages, images, data etc that is stored on servers elsewhere.</p>
 <h3 id="methods">Methods</h3>
-<p>The main methods used to send requests on the web are <code>GET</code> and <code>POST</code>. However, later in the course when we look at building APIs using Node we will also look at other methods such as <code>PUT</code>, <code>PATCH</code> and <code>DELETE</code>.</p>
+<p>The main methods used to send requests on the web are <code>GET</code> and <code>POST</code>. However, later in the course when we look at building APIs using Node we will also look at other methods such as <code>PUT</code> and <code>DELETE</code>.</p>
 <p>A <code>GET</code> method is a way of asking a server for a webpage, resource or a piece of data. For example, when we type a URL into a browser and submit it. The browser will send a <code>GET</code> request.</p>
 <p>A <code>POST</code> method is used to send data to a server.</p>
 <p>The main difference between <code>GET</code> and <code>POST</code> is that a <code>POST</code> method has a body, that is it can contain some data that we are sending. Whereas a <code>GET</code> does not have a body since we use it to request data.</p>
@@ -839,7 +821,7 @@
 - What can HTTP headers contain?
 - What is the purpose of status codes?
 - What can an HTTP message contain?
-</code></pre><h2 id="3-what-are-apis-and-how-to-interact-with-them">3. What are APIs and how to interact with them</h2>
+</code></pre><h2 id="2-what-are-apis-and-how-to-interact-with-them">2. What are APIs and how to interact with them</h2>
 <h3 id="explanation">Explanation</h3>
 <ul>
 <li>API stands for <code>Application Programming Interface</code></li>
@@ -896,10 +878,7 @@ C) APIs can control access to data or features of an application.
 D) You can change data via an API.
 </code></pre><p><strong>Question:</strong></p>
 <pre class="language-"><code>Give an example of a company that uses an API to allow access to their data.
-</code></pre><p><strong>Question:</strong></p>
-<pre class="language-"><code>What is the `myapi/` part of a url called in this url?
-http://www.google.com/**myapi**/
-</code></pre><h2 id="4-how-to-use-fetch-to-do-network-requests">4. How to use <code>fetch</code> to do network requests</h2>
+</code></pre><h2 id="3-how-to-use-fetch-to-do-network-requests">3. How to use <code>fetch</code> to do network requests</h2>
 <h3 id="explanation">Explanation</h3>
 <ul>
 <li>Fetch is a function to request from other places on the web</li>
@@ -987,66 +966,14 @@ http://www.google.com/**myapi**/
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise">Exercise</h4>
-<p>In groups the students should create a page of details about the United Kingdom.</p>
-<p>The API endpoint can be found <a href="https://restcountries.eu/rest/v2/name/Great%20Britain?fullText=true" target="_blank">here</a></p>
-<p>The website should include</p>
-<ul>
-<li>The name of the country</li>
-<li>The country&apos;s capital city</li>
-<li>An unordered list of the country&apos;s name in other all of the other returned languages</li>
-</ul>
-<h5 id="getting-started">Getting Started</h5>
-<ol>
-<li>Go to <a href="https://glitch.com/edit/#!/js3-2-country-exercise?path=README.md%3A3%3A80" target="_blank">this Glitch Project</a></li>
-<li>Click <code>Remix to Start</code> to being working</li>
-</ol>
-<h5 id="steps">Steps</h5>
-<p>Example <code>html</code> and <code>javascript</code> files can be found in the section below</p>
-<ol>
-<li>Create a <code>HTML</code>, <code>CSS</code> and <code>JavaScript</code> file to hold different types of code</li>
-<li>In your <code>HTML</code> file, write a simple basis for your website (e.g. <a href="https://www.sitepoint.com/a-basic-html5-template/" target="_blank">this</a>)<ul>
-<li>Make sure all of your <code>HTML</code>, <code>CSS</code> and <code>JavaScript</code> files are linked together!</li>
-</ul>
-</li>
-<li>Write a function using fetch that retrieves the <code>JSON</code> from the <em>Country API</em><ul>
-<li>To make sure it&apos;s working print the JSON to the console using <code>console.log()</code></li>
-</ul>
-</li>
-<li>Create a <code>h1</code> tag on the website using DOM manipulation and add the country&apos;s name inside it<ul>
-<li>Go back to <a href="../../js-core-2/week-2/lesson">Week 5</a> if you need a reminder</li>
-</ul>
-</li>
-<li>Create a <code>h2</code> tag on the website using DOM manipulation and add the capital city&apos;s name inside it</li>
-<li>Create a <code>ul</code> tag on the website using DOM manipulation<ul>
-<li>For each of the translated names in the JSON, add a <code>li</code> tag</li>
-</ul>
-</li>
-<li>Uncomment the lines inside <code>onLoad()</code> to load other countries details!</li>
-</ol>
-<p><strong>Extra</strong></p>
-<ul>
-<li>Load the country&apos;s flag into an <code>img</code> tag</li>
-<li>Add CSS to make your website look really nice</li>
-<li>Add other information from the JSON to your Country Details</li>
-</ul>
-<h5 id="finished-example">Finished Example</h5>
-<p>You can find the finished example of this website <a href="https://codeyourfuture.github.io/completed-country-website/" target="_blank">here</a>.</p>
 <h4 id="recap">Recap</h4>
-<p><strong>Question (5 mins):</strong></p>
-<pre class="language-"><code>Complete the following sentence:
-
-Fetch is a web API that allows you to **\_** from **\_**.
-</code></pre><p><strong>Task (5 mins):</strong></p>
+<p><strong>Task (5 mins):</strong></p>
 <pre class="language-"><code>Complete the rest of this code to connect to the following API: `https://dog.ceo/api/breeds/image/random`
 
     fetch(_____)
     .then(_____)
     .then(body =&gt; console.log(body))
     .catch(error =&gt; console.log(error));
-
-1. Post your code on Slack
-2. Post the image you retrieved on Slack
 </code></pre><h2 id="homework">Homework</h2>
 <p>Follow the steps and complete all the steps you can from the <a href="https://docs.google.com/presentation/d/1vdQT9M8jMmdWwhEOWUTBkNP5E0ddEdpV5pQtjf9acaM/edit#slide=id.g879a9f0369_0_124" target="_blank">Weather Project</a></p>
 
@@ -1081,7 +1008,7 @@ Fetch is a web API that allows you to **\_** from **\_**.
                 </a>
                 
                 
-                <a href="../week-12/lesson.html" class="navigation navigation-next " aria-label="Next page: Week 12 - Recap">
+                <a href="../week-12/lesson.html" class="navigation navigation-next " aria-label="Next page: Week 12 - Project">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1092,7 +1019,7 @@ Fetch is a web API that allows you to **\_** from **\_**.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 11 - Unit tests and TDD","level":"1.6.2","depth":2,"next":{"title":"Week 12 - Recap","level":"1.6.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]},"previous":{"title":"Week 10 - ES6 and debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-11/lesson.md","mtime":"2020-10-02T14:45:59.933Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-02T14:46:53.757Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 11 - Fetch and API","level":"1.6.2","depth":2,"next":{"title":"Week 12 - Project","level":"1.6.3","depth":2,"path":"js-core-3/week-12/lesson.md","ref":"js-core-3/week-12/lesson.md","articles":[]},"previous":{"title":"Week 10 - ES6 and debugging","level":"1.6.1","depth":2,"path":"js-core-3/week-10/lesson.md","ref":"js-core-3/week-10/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js-core-3/week-11/lesson.md","mtime":"2020-10-05T16:10:37.476Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-05T16:11:30.650Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
