@@ -758,25 +758,25 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><img src="https://img.shields.io/badge/status-review-orange.svg" alt=""></p>
-<h1 id="node---week-1">Node - Week 1</h1>
-<hr>
-<p><strong>Teaching this lesson?</strong></p>
-<p>Read the Mentors Notes <a href="mentors.md">here</a></p>
-<hr>
-<h2 id="contents">Contents</h2>
+                                <h1 id="node---week-1">Node - Week 1</h1>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this lesson students should be able to:</p>
 <ul>
-<li><a href="#what-is-a-server">What is a server?</a></li>
-<li><a href="#node-and-its-ecosystem">Node and its ecosystem</a></li>
-<li><a href="#express">Express</a></li>
-<li><a href="#Routing">Routing</a></li>
+<li>Explain what is a <code>server</code> and how works <code>node</code></li>
+<li>Use Glitch to deploy and edit <code>express</code> servers</li>
+<li>Use <code>npm</code> to start a node server</li>
+<li>Explain what <code>express</code> is and what it is used for</li>
+<li>Use <code>express</code> to create an API that will accept a <code>GET</code> request that returns JSON</li>
+<li>Implement routing to return different resources depending on URL</li>
+<li>Implement query params to return different content (?query=ses)</li>
 </ul>
 <hr>
-<h2 id="what-is-a-server">What is a server?</h2>
+<h2 id="intro-to-servers-and-node">Intro to Servers and Node</h2>
+<h3 id="what-is-a-server">What is a server?</h3>
 <p>Servers are computer programs that receive requests from other programs, the
 <em>clients</em> and send back a response e.g share data, information or hardware and
 software resources.</p>
-<h3 id="and-what-is-a-server-in-plain-english">...and what is a server in plain English?</h3>
+<h4 id="and-what-is-a-server-in-plain-english">...and what is a server in plain English?</h4>
 <p>A server is a computer program. Its job is to send and receive data.</p>
 <p>Let&apos;s take a website for example. A website is just a collection of HTML and CSS
 files, images, maybe some javascript files. When you type a website address in
@@ -784,21 +784,13 @@ your browser&apos;s address bar, the browser (client) sends a <strong>request</s
 server that lives at that address. The browser asks the server to give it the
 files it needs to display the website properly. Another client can be a mobile application.</p>
 <p><img src="https://files.gitter.im/heron2014/FiiK/server.png" alt="Server flow"></p>
-<h2 id="node-and-its-ecosystem">Node and its ecosystem</h2>
+<h3 id="node-and-its-ecosystem">Node and its ecosystem</h3>
 <blockquote>
 <p><a href="https://nodejs.org/en/" target="_blank">Node.js&#xAE;</a> is a <strong>JavaScript runtime</strong> built on
 Chrome&apos;s <strong>V8 JavaScript engine</strong>. Node.js uses an <strong>event-driven</strong>,
 <strong>non-blocking</strong> I/O model that makes it lightweight and efficient.</p>
 </blockquote>
-<h3 id="what-is-it-used-for">What is it used for?</h3>
-<ul>
-<li>web servers, so creating dynamic websites</li>
-<li>set up a local web development environment</li>
-<li>easier to build desktop applications with Electron: Slack, Visual Code, Atom</li>
-<li>some of the biggest companies use Node.js in production: Netflix, Walmart,
-IBM, etc.</li>
-</ul>
-<h3 id="what-is-the-difference-between-javascript-in-a-browser-and-node">What is the difference between javascript in a browser and Node?</h3>
+<h4 id="what-is-the-difference-between-javascript-in-a-browser-and-node">What is the difference between javascript in a browser and Node?</h4>
 <ul>
 <li>Javascript is a popular programming language and it runs in any web browser with a good web browser.</li>
 <li>JavaScript is mainly used for the client-side activity for one particular web application. Some of these activities can be dynamic page display in some schedule time interval, addressing business validation or basic Ajax call kind of task.</li>
@@ -808,227 +800,250 @@ IBM, etc.</li>
 <li>executing or creating a shell script</li>
 <li>access to the hardware, for example the hard disk</li>
 </ul>
+<p>If we execute this Node script, what would happen?</p>
 <pre class="language-"><code class="lang-js"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;fs&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span><span class="token string">&apos;hello.txt&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Hey!!&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h4 id="exercise-running-in-node">Exercise: Running in node</h4>
-<blockquote>
-<p>Create a Javascript and run the last code, what happens?</p>
-</blockquote>
-<h3 id="a-simple-nodejs-server">A simple Node.js server</h3>
-<p>This app starts a server and listens on port 3000 for connections. The app responds with &#x201C;Hello World!&#x201D; for requests,
-set a <strong>port</strong> for our server to listen to. Think of a port as a door number; any requests that come to the server will come via
-that door. Setting a port will allow us to find where our server is running.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;http&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">&quot;Hello World!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Node.js web server at port 3000 is running..&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>The example above is actually a working server: Go ahead and click on the URL shown. You&#x2019;ll get a response, with real-time logs on the page, and any changes you make will be reflected in real time.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;http&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Main page requested at &quot;</span> <span class="token operator">+</span> <span class="token function">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">&quot;Hello World&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">&quot;/weather&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Migracode page requested at &quot;</span> <span class="token operator">+</span> <span class="token function">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">&quot;The weather is 24.5!&quot;</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h2 id="express">Express</h2>
+<h3 id="express">Express</h3>
 <p><a href="http://expressjs.com/" target="_blank">Express</a> is one of the most widely-used frameworks for
 Node.js. It simplifies base features of Node.js, making it easier and faster to
 build your application&apos;s backend. Learning Express gives you a great foundation
 for becoming a Node.js developer.</p>
-<h3 id="hello-world-example">Hello world example</h3>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;express&apos;</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token number">3000</span>
-
-app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&apos;/&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;a client connected to the endpoint /&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;Hello World!&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Example app listening at http://localhost:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<h2 id="intro-to-node-on-glitch">Intro to Node on Glitch</h2>
+<h3 id="running-a-very-simple-web-server">Running a very simple web-server</h3>
+<p>Run the simplest web server code.</p>
+<p>We&apos;ve made a really simple server about cats. You can check it out here:</p>
+<ul>
+<li><a href="https://glitch.com/~cyfcats" target="_blank">Source</a></li>
+<li><a href="https://cyfcats.glitch.me/" target="_blank">Live</a></li>
+</ul>
+<p>Let&apos;s inspect the different parts of the Node App and how Express works. Let&apos;s discuss</p>
+<ul>
+<li><code>require</code> on Line 1</li>
+<li><code>express()</code> on Line 2</li>
+<li><code>app.get()</code> on Line 10</li>
+<li><code>app.listen()</code> on Line 15</li>
+<li><code>response.sendFile()</code> on Line 6 and Line 7</li>
+</ul>
+<p>Can we work out what each those lines are doing?</p>
+<blockquote>
+<p>In-Class Exercise</p>
+<p>As a class - try to make a simple express server.</p>
+<p>You can pick any theme you like but maybe try</p>
+<ul>
+<li>The class&apos; favorite foods</li>
+<li>The class&apos; favorite songs</li>
+<li>or get ideas from the class!</li>
+</ul>
+</blockquote>
+<p>Now let&apos;s make a server ourselves from scratch.......</p>
+<h4 id="exercise-make-your-own-node-server-on-glitch">Exercise: Make your own node server (on glitch)</h4>
+<pre class="language-"><code>All students should &quot;remix&quot; this one for a simple start: https://glitch.com/~cyf-simple-express
+Have them it read and modify it to do something different.
+1. Login to Glitch and &#x2018;remix&#x2019; this project and rename to be yours
+2. e.g. say &quot;Hello Miles&quot;, instead of &quot;Hello Kash&quot;
+3. Make it return an array of strings as json.
+4. Make it return the current time
+5. Advanced: make it return whatever you want! 3 minutes.
+</code></pre><h2 id="make-a-node-api">Make a Node API</h2>
+<p>The rest of today&apos;s lesson is a workshop.</p>
+<p>In small groups complete each of the steps below. At different points, the teacher will introduce new concepts.</p>
+<h3 id="get-started">Get Started</h3>
+<p>Fork and clone the repo <a href="https://github.com/CodeYourFuture/Node-Starter-Kit" target="_blank">https://github.com/CodeYourFuture/Node-Starter-Kit</a>.</p>
+<p>It is an empty project that includes all the details you need to get started building your first Node App.</p>
+<h4 id="download-postman">Download Postman</h4>
+<p>Postman is a tool that helps us test and develop APIs.</p>
+<blockquote>
+<p>Download and install <a href="https://www.getpostman.com/" target="_blank">Postman</a>.</p>
+</blockquote>
+<h2 id="step-1---installing-the-project">Step 1 - Installing The Project</h2>
+<p>We&apos;re going to use the <strong><a href="https://www.npmjs.com/" target="_blank">Node Package Manager (npm)</a></strong> to
+setup the project using the <strong><code>npm install</code></strong> command.</p>
+<p>NPM is the place to go to download other Node code written by other people.
+There are thousands of open-source, 3rd-party Node modules (also known as
+<em>packages</em>) written by other people that you can download and use in your own projects.</p>
+<p>Run the following command in your terminal:</p>
+<pre class="language-"><code class="lang-sh"><span class="token function">npm</span> <span class="token function">install</span>
 </code></pre>
-<p>This app starts a server and listens on port 3000 for connections. The app responds with &#x201C;Hello World!&#x201D; for requests to the root URL (/) or route. For every other path, it will respond with a 404 Not Found.</p>
-<p>To initialise our server, we just need to call the <code>express()</code> function. This
+<h2 id="step-2---building-the-server">Step 2 - Building the server</h2>
+<p>The first thing we need to do is build our server. You will always need to build
+a server when writing back-end code. A server can be built in pure Node.js, but
+Express is simpler to work with.</p>
+<h3 id="1-create-a-serverjs-file">1. Create a <code>server.js</code> file</h3>
+<p>Let&apos;s build our server! Before we do anything, let&apos;s create a new file called
+<code>server.js</code>. This is where all our server code is going to live.</p>
+<h3 id="2-require-the-express-library">2. <code>require</code> the <code>express</code> library</h3>
+<p>We already installed Express in Step 2, but we need to make sure it is included
+in this file specifically so we can use its methods. In Node.js, when
+you want to use a package in another file, you must <code>require</code> it.</p>
+<p>To require Express, write the following inside <code>server.js</code>:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;express&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p>Let us get used to ES6 syntax - so use <code>const</code> and <code>let</code> instead of
+<code>var</code>, arrow methods instead of functions, etc...</p>
+</blockquote>
+<h3 id="3-initialise-the-server">3. Initialise the server</h3>
+<p>To initialise our server, we need to call the <code>express()</code> function. This
 will create an Express application for us to work with.</p>
+<p>Add the second line of code to your <code>server.js</code> file:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;express&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="4-start-listening-for-potential-requests">4. Start &apos;listening&apos; for potential requests</h3>
+<p>One more step left, we need to set a <strong>port</strong> for our server to listen to. Think
+of a port as a door number; any requests that come to the server will come via
+that door. Setting a port will allow us to find where our server is running.</p>
 <p>We use the <strong><code>app.listen</code></strong> method to do this. This method takes two arguments:
 a <strong>port</strong> and a <strong>callback function</strong> telling it what to do once the server is
-running. Need clarification? Read more about the <code>app.listen</code> method in the
-<a href="https://expressjs.com/en/4x/api.html#app.listen" target="_blank">Express documentation</a>.</p>
+running.</p>
+<blockquote>
+<p>Need clarification? Read more about the <code>app.listen</code> method in the <a href="http://expressjs.com/en/4x/api.html#app.listen" target="_blank">Express documentation</a>.</p>
+</blockquote>
+<p>We&apos;re going to run our server on port <code>3000</code>, and add a simple <code>console.log</code> in the callback function. Update your <code>server.js</code> file, calling the <code>app.listen</code> method:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;express&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Server is listening on port 3000. Ready to accept requests!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p>Try to use ES6 arrow functions instead of <code>function</code>.</p>
+</blockquote>
+<h3 id="5-switch-the-server-on">5. Switch the server on!</h3>
+<p>You&apos;ve built your server, but it isn&apos;t running yet. We need to run a command in
+the terminal to do this. We are going to use the <code>node</code> keyword to run the
+server file.</p>
+<p>Type the following command in your terminal:</p>
+<pre class="language-"><code class="lang-sh">node server.js
+</code></pre>
+<p>If you see this, congratulations! You have built yourself a server!</p>
+<p><img src="https://raw.githubusercontent.com/node-girls/workshop-cms/master/readme-images/step2-server02.png" alt="success"></p>
+<h3 id="6-npm-script">6. npm script</h3>
+<p>To exit the running the server, type <code>crtl + c</code>. Instead of running the server with <code>node server.js</code> everytime, we can create an alias for it in <code>package.json</code>.</p>
+<p>Under the <code>scripts</code> property, add <code>start: node server.js</code>. We can now run our server using <code>npm start</code> which will be an alias (a shortcut) to <code>node server.js</code>.</p>
+<p>Go to the terminal and type <code>npm start</code> and make sure that the server still runs.</p>
+<h2 id="step-3---communicating-with-the-server">Step 3 - Communicating with the server</h2>
+<p>Now that we&apos;ve built the server, we need to communicate with it. We are going to
+control the server with <strong>handler functions</strong>.</p>
+<h3 id="what-is-a-handler-function">What is a handler function?</h3>
 <p>When a request reaches the server, we need a way of responding to it. In comes
 the handler function. The handler function is just a function which receives
 requests and handles them, hence the name.</p>
-<p>The handler function always takes a <code>request</code> and <code>response</code> object, and sends
-the response back to the client along with some information. You can decide what
-to send back in your response.</p>
-<h4 id="exercise-running-a-server-locally">Exercise: Running a Server locally</h4>
-<blockquote>
-<p>[1] First create a directory named myapp to hold your application, and make that your working directory:</p>
-</blockquote>
-<pre class="language-"><code class="lang-js">$ mkdir myapp
-$ cd myapp
+<p>The handler function is always called with a <code>request</code> and <code>response</code> object. The response object is what gets sent back to the client. It contains the information that gets displayed in the web page. You can decide what to send back in your response.</p>
+<h4 id="what-does-a-handler-function-look-like-in-express">What does a handler function look like in Express?</h4>
+<p>The <code>get()</code> <a href="http://expressjs.com/en/api.html#app.get.method" target="_blank">method</a> is one of the methods used to
+define a handler function in Express. It takes two parameters: the <strong>endpoint</strong>
+at which to trigger an action (we&apos;ll explain more about this in the next step),
+and the handler function that tells it exactly what to do. Here&apos;s a simple
+&quot;Hello World!&quot; example:</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">// req is the Request object, res is the Response object</span>
+<span class="token comment">// (these are just variable names, they can be anything but it&apos;s a convention to call them req and res)</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;Hello World!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Here, we are telling our server to respond with &quot;Hello World!&quot; when someone
+tries to access the webpage.</p>
+<h3 id="1-create-your-own-handler-function">1. Create your own handler function</h3>
+<p>Let us add a handler handler function to send back a message to the client. To do that,
+we&apos;re going to use the Express <code>send()</code>
+<a href="http://expressjs.com/en/api.html#res.send" target="_blank">method</a>. This will update the
+response object with the message.</p>
+<p>Update your handler function like so:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;express&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;Yay Node!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Server is listening on port 3000. Ready to accept requests!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <blockquote>
-<p>[2] Make a package.json file. The package.json file is easy to create from the command line. Type the following command into your terminal to get started:</p>
+<p>Exercise: Try to <code>console.log</code> the <code>request</code> object inside the handler
+function. Restart your server, send the request again with Postman, then go to your terminal
+to see what it looks like. You should see a lot of data come through.</p>
 </blockquote>
-<pre class="language-"><code class="lang-js">$ npm init
+<h3 id="2-check-it-out-in-postman">2. Check it out in Postman</h3>
+<p>Quit your server in the terminal with <code>ctrl + c</code>. Then restart it to run your
+new changes.</p>
+<pre class="language-"><code class="lang-sh">node server.js
 </code></pre>
+<p>Now, open Postman, and send a <code>GET</code> request to
+<code>http://localhost:3000</code>. If you see your message in Postman,
+congratulations! You just sent your first response from the server.</p>
 <blockquote>
-<p>This command will initialise a step-by-step process for creating the package.json. It will ask you a bunch of questions.</p>
-<p>You can skip most of the questions but change the <code>entry point</code> from
-<code>(index.js)</code> to <code>server.js</code>.</p>
-<p>The wizard asks you for the following information: <code>name</code>, <code>version</code>,
-<code>description</code>, <code>main</code>, <code>test</code>, <code>repository</code>, <code>keywords</code>, <code>author</code>, <code>license</code> -
-do you understand all of them?</p>
-<p>At the endo of the wizard, you should see a new file called <code>package.json</code> in
-your project&apos;s folder.</p>
-<p>Here is an example <code>package.json</code> file for a project called <a href="https://github.com/jaredhanson/passport/blob/master/package.json" target="_blank">Passport</a>.</p>
-<p>[3] Before we write any code, you&apos;ll need to install the Express library. </p>
-<p>As we install Express, we&apos;ll need to update the <code>package.json</code> to add Express as
-a dependency. We do this so that other people working on the project will know
-to install Express before running any of the code. This can be done by adding
-<strong><code>--save</code></strong> to the end of your command.</p>
-<p>Run the following command in your terminal:</p>
+<p>Checkpoint: Do you understand all these terms? You should be able to see examples of them in Postman</p>
 </blockquote>
-<pre class="language-"><code class="lang-sh"><span class="token function">npm</span> <span class="token function">install</span> express --save
-</code></pre>
+<ul>
+<li style="list-style: none"><input type="checkbox" disabled="disabled"> Client</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled"> Server</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled"> Front-end</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled"> Back-end</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled"> Full stack developer</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled"> Request</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled"> Response</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled"> HTTP</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled"> HTTP Response Codes</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled"> HTTP Request Methods (or Verbs)</li>
+</ul>
+<h2 id="step-4---routing">Step 4 - Routing</h2>
+<p>At the moment our server only does one thing. When it receives a request from
+the <code>/</code> endpoint, it sends back the same response: &quot;Yay Node!&quot;.</p>
 <blockquote>
-<p>Express should now be installed. Check your <code>package.json</code> file to make sure it
-has been added as a dependency. It will look like this:</p>
+<p>Try typing <a href="http://localhost:3000/node" target="_blank">http://localhost:3000/node</a> and see what happens.</p>
 </blockquote>
-<p><img src="https://cloud.githubusercontent.com/assets/10683087/16382664/be35f0b4-3c79-11e6-82b6-ae9e4a037c3f.png" alt="package.json screenshot"></p>
-<blockquote>
-<p>[4] In the myapp directory, create a file named server.js and copy in the code from the example above.</p>
-<p>[5] Run the app with the following command:</p>
-</blockquote>
-<pre class="language-"><code class="lang-js">$ node app<span class="token punctuation">.</span>js
-</code></pre>
-<blockquote>
-<p>[6] Then, load <a href="http://localhost:3000/" target="_blank">http://localhost:3000/</a> in a browser to see the output of the browser and the terminal</p>
-</blockquote>
-<h2 id="routing">Routing</h2>
-<p>Routing refers to determining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, and so on).</p>
+<p>However by making use of endpoints, we can make the server send different
+responses for different requests. This concept is called <strong>routing</strong>.</p>
 <h3 id="what-is-an-endpoint">What is an endpoint?</h3>
 <p>An endpoint is the part of the URL which comes after <code>/</code>. For example:
-<code>/products</code> is the &quot;products&quot; endpoint. It&apos;s the URL to which you send a
+<code>/chocolate</code> is the &quot;chocolate&quot; endpoint. It&apos;s the URL to which you send a
 request.</p>
 <h3 id="what-is-url">What is URL?</h3>
-<p><img src="../assets/http1-url-structure.png" alt="URL structure" title="URL"></p>
-<h3 id="a-server-with-different-endpoints">A server with different endpoints</h3>
+<p><img src="../assets/http1-url-structure.png" alt="alt text"></p>
+<h3 id="create-your-own-endpoints-and-send-different-responses">Create your own endpoints and send different responses</h3>
 <p>We&apos;re going to try sending different responses at different endpoints. Remember
 the <code>app.get()</code> method? To set up routing in your server, we just need to repeat
 this method with different endpoints.</p>
 <p>For example:</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;express&apos;</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token number">3000</span>
+<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;Hello World!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&apos;/&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;a client connected to the endpoint /&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;Hello World!&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&apos;/weather&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;a client requested the weather&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;The weather is 24.5!&apos;</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span> 
-
-app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Example app listening at http://localhost:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/chocolate&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;Mm chocolate :O&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>Each route can have one or more handler functions, which are executed when the route is matched.</p>
-<p>Route definition takes the following structure:</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token constant">METHOD</span><span class="token punctuation">(</span><span class="token constant">PATH</span><span class="token punctuation">,</span> <span class="token constant">HANDLER</span><span class="token punctuation">)</span>
-</code></pre>
-<p>Where:</p>
-<ul>
-<li>app is an instance of express.</li>
-<li>METHOD is an HTTP request method, in lowercase.</li>
-<li>PATH is a path on the server.</li>
-<li>HANDLER is the function executed when the route is matched.</li>
-</ul>
-<h4 id="exercise-add-an-enpoint">Exercise: Add an enpoint</h4>
 <blockquote>
-<p>Add some code so that your server sends one message when the
-endpoint is <code>/cities</code>.</p>
+<p><strong>Exercise:</strong> Add some code so that your server sends one message when the
+endpoint is <code>/node</code> and another one when it&apos;s <code>/migracode</code>.</p>
 </blockquote>
-<h3 id="reading-endpoint-parameters">Reading endpoint parameters</h3>
-<ul>
-<li><a href="http://localhost:3000/weather/Valencia" target="_blank">http://localhost:3000/weather/Valencia</a></li>
-<li><a href="https://app.slack.com/client/TMSJ4SYVD/D010G6978CC/thread/CU83UPAQH-1583245406.004600" target="_blank">https://app.slack.com/client/TMSJ4SYVD/D010G6978CC/thread/CU83UPAQH-1583245406.004600</a></li>
-</ul>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&apos;/weather/:cityName&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> name <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>cityName<span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;a client request the weather of &quot;</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;The weather in &apos;</span> <span class="token operator">+</span> name <span class="token operator">+</span>  <span class="token string">&apos; is 24.5!&apos;</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
-<h3 id="reading-endpoint-query">Reading endpoint query</h3>
-<ul>
-<li><a href="http://localhost:3000/weather?name=Valencia" target="_blank">http://localhost:3000/weather?name=Valencia</a></li>
-<li><a href="https://music.youtube.com/watch?v=0aJVOz5rilY&amp;list=RDMMpsK9eOtj2ms" target="_blank">https://music.youtube.com/watch?v=0aJVOz5rilY&amp;list=RDMMpsK9eOtj2ms</a></li>
-</ul>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&apos;/weather&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> name <span class="token operator">=</span> req<span class="token punctuation">.</span>query<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;a client request the weather of &quot;</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;The weather in &apos;</span> <span class="token operator">+</span> name <span class="token operator">+</span>  <span class="token string">&apos; is 24.5!&apos;</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
-<h4 id="exercise-make-a-calculator">Exercise: make a calculator</h4>
+<h2 id="step-5---query-parameters">Step 5 - Query Parameters</h2>
+<p>So, what is a query parameter?</p>
+<p>In simple terms, a query string is the part of a URL (Uniform Resource Locater) after the question mark (?). It is meant to send small amounts of information to the server via the url. This information is usually used as parameters to query a database, or maybe to filter results. It&apos;s really up to you what they&apos;re used for.</p>
+<p>Here is an example of a URL with query strings attached:</p>
 <blockquote>
-<p>Make a calculator adding an endpoint for each operation [Add,Substract,Multiply,Divide], each endpoint will receive two numbers and return the result</p>
+<p><a href="https://stackabuse.com/?page=2&amp;limit=3" target="_blank">https://stackabuse.com/?page=2&amp;limit=3</a></p>
 </blockquote>
-<h3 id="responding-objects">Responding objects</h3>
-<p>A server can respond text, HTML, but also JSON objects</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&apos;/weather/:cityName&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> name <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>cityName<span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;a client request the weather of &quot;</span> <span class="token operator">+</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">let</span> city <span class="token operator">=</span> <span class="token punctuation">{</span>
-        cityName<span class="token operator">:</span> name<span class="token punctuation">,</span> 
-        weather<span class="token operator">:</span><span class="token number">24.5</span>
-    <span class="token punctuation">}</span><span class="token punctuation">;</span>
-    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<h3 id="1-detect-query-parameters">1. Detect Query Parameters</h3>
+<p>We&apos;re going to try sending different responses at different endpoints. Remember
+the <code>app.get()</code> method? To set up routing in your server, we just need to repeat
+this method with different endpoints.</p>
+<p>For example:</p>
+<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> searchQuery <span class="token operator">=</span> req<span class="token punctuation">.</span>query<span class="token punctuation">.</span>search<span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;Hello World! You searched for &quot;</span> <span class="token operator">+</span> searchQuery<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="logger">Logger</h3>
-<p>Adding this logger to your server, will log in the console all the requests</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token function-variable function">myLogger</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> visitTime <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">visited </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>req<span class="token punctuation">.</span>url<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> at </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>visitTime<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>myLogger<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h4 id="exercise-use-logger">Exercise: Use logger</h4>
 <blockquote>
-<p>Put the logger in your server and see the results</p>
+<p><strong>Exercise:</strong> Follow the instructions of <a href="https://github.com/Migracode-Barcelona/node-challenge-calculator" target="_blank">node-challenge-calculator</a></p>
 </blockquote>
 <h1 id="homework">Homework</h1>
-<p>Add this array of objects to your server</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> myCities <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>id<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span> cityName<span class="token operator">:</span> <span class="token string">&quot;Valencia&quot;</span><span class="token punctuation">,</span> country<span class="token operator">:</span><span class="token string">&quot;Spain&quot;</span><span class="token punctuation">,</span> latitude<span class="token operator">:</span><span class="token number">39.46</span><span class="token punctuation">,</span> longitude<span class="token operator">:</span><span class="token operator">-</span><span class="token number">0.37</span><span class="token punctuation">,</span> weather<span class="token operator">:</span><span class="token number">28.5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>id<span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span> cityName<span class="token operator">:</span> <span class="token string">&quot;Paris&quot;</span><span class="token punctuation">,</span> country<span class="token operator">:</span><span class="token string">&quot;Spain&quot;</span><span class="token punctuation">,</span> latitude<span class="token operator">:</span><span class="token number">48.85</span><span class="token punctuation">,</span> longitude<span class="token operator">:</span><span class="token number">2.27</span><span class="token punctuation">,</span> weather<span class="token operator">:</span><span class="token number">24.5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>id<span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span> cityName<span class="token operator">:</span> <span class="token string">&quot;Estambul&quot;</span><span class="token punctuation">,</span> country<span class="token operator">:</span><span class="token string">&quot;Turkey&quot;</span><span class="token punctuation">,</span> latitude<span class="token operator">:</span><span class="token number">41.04</span><span class="token punctuation">,</span> longitude<span class="token operator">:</span><span class="token number">28.99</span><span class="token punctuation">,</span> weather<span class="token operator">:</span><span class="token number">34.5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>id<span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">,</span> cityName<span class="token operator">:</span> <span class="token string">&quot;Tokyo&quot;</span><span class="token punctuation">,</span> country<span class="token operator">:</span><span class="token string">&quot;Japan&quot;</span><span class="token punctuation">,</span> latitude<span class="token operator">:</span><span class="token number">35.50</span><span class="token punctuation">,</span> longitude<span class="token operator">:</span><span class="token number">138.64</span><span class="token punctuation">,</span> weather<span class="token operator">:</span><span class="token number">29.5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span class="token punctuation">;</span>
-</code></pre>
-<p>And develop the next endpoints (cityName, countryName,cityId latitude and longitude are variables):</p>
-<ul>
-<li>/ : will respond an array of objects with the name and the weather</li>
-<li>/city/:cityName : giving the name will respond an object with the name and the weather </li>
-<li>/city?name=cityName: giving the name will respond an object with the name and the weather </li>
-<li>/city?lat=latitude&amp;lon=longitude: giving the latitude and longitude will respond an object with the name and the weather </li>
-<li>/city?id=cityId: giving the name will respond an object with the name and the weather </li>
-<li>/country/:countryName : giving the name of a country will respond an array of objects with the name and the weather</li>
-<li>/city/search/:text : giving the string text, will respond an array of objects with the name and the weather of those cities that the cityName includes the string</li>
-</ul>
-<p>Then, add a logger and control of errors to each endpoint</p>
+<p>Fork and clone the [node-challenge-quote-server]</p>
 
                                 
                                 </section>
@@ -1072,7 +1087,7 @@ app<span class="token punctuation">.</span><span class="token function">use</spa
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"next":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},"previous":{"title":"Node/DB","level":"1.8","depth":1,"path":"node/index.md","ref":"node/index.md","articles":[{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-13/lesson.md","ref":"node/week-13/lesson.md","articles":[]},{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},{"title":"Week 19 - More SQL and integration with NodeJS","level":"1.8.4","depth":2,"path":"db/week-2/lesson.md","ref":"db/week-2/lesson.md","articles":[]},{"title":"Week 20 - SQL with NodeJS","level":"1.8.5","depth":2,"path":"db/week-3/lesson.md","ref":"db/week-3/lesson.md","articles":[]},{"title":"Week 21 - NodeJS Workshop","level":"1.8.6","depth":2,"path":"db/week-4/lesson.md","ref":"db/week-4/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-13/lesson.md","mtime":"2020-10-08T14:55:34.188Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-08T14:56:25.699Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"next":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},"previous":{"title":"Node/DB","level":"1.8","depth":1,"path":"node/index.md","ref":"node/index.md","articles":[{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-13/lesson.md","ref":"node/week-13/lesson.md","articles":[]},{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},{"title":"Week 19 - More SQL and integration with NodeJS","level":"1.8.4","depth":2,"path":"db/week-2/lesson.md","ref":"db/week-2/lesson.md","articles":[]},{"title":"Week 20 - SQL with NodeJS","level":"1.8.5","depth":2,"path":"db/week-3/lesson.md","ref":"db/week-3/lesson.md","articles":[]},{"title":"Week 21 - NodeJS Workshop","level":"1.8.6","depth":2,"path":"db/week-4/lesson.md","ref":"db/week-4/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-13/lesson.md","mtime":"2020-10-31T12:54:35.197Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-31T12:55:28.954Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

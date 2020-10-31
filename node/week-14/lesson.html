@@ -758,160 +758,212 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><img src="https://img.shields.io/badge/status-review-orange.svg" alt=""></p>
-<h1 id="node---week-2">Node - Week 2</h1>
-<hr>
-<p><strong>Teaching this lesson?</strong></p>
-<p>Read the Mentors Notes <a href="mentors.md">here</a></p>
-<hr>
-<h2 id="contents">Contents</h2>
+                                <h1 id="node---week-2">Node - Week 2</h1>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this lesson students should be able to:</p>
 <ul>
-<li><a href="#HTTP">HTTP</a></li>
-<li><a href="#apis">APIs</a></li>
-<li><a href="#CORS">CORS</a></li>
-<li><a href="#Postman-API-Client">Postman</a></li>
-<li><a href="#Read-POST-and-PUT">Read POST and PUT</a></li>
-<li><a href="#Nodemon">Nodemon</a></li>
-<li><a href="#workshop">Workshop</a></li>
+<li>Define what each part of CRUD is and what it does</li>
+<li>Process a GET request using Express and Node to retrieve data from memory</li>
+<li>Process a POST request using Express and Node and store data in memory</li>
+<li>Process a DELETE request using Express and Node to remove data from memory</li>
+<li>Install a third party library using <code>npm</code></li>
 </ul>
 <hr>
-<h1 id="http">HTTP</h1>
-<blockquote>
-<p>It is a protocol that browser and the server uses to talk to each other</p>
-</blockquote>
-<p><img src="../assets/http_diagram.png" alt="HTTP"></p>
-<p>Respond with Hello World! on the homepage:</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&apos;/&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;Hello World!&apos;</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
-<p>Respond to POST request on the root route (/), the application&#x2019;s home page:</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">&apos;/&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;Got a POST request&apos;</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
-<p>Respond to a PUT request to the /user route:</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&apos;/user&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;Got a PUT request at /user&apos;</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
-<p>Respond to a DELETE request to the /user route:</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">&apos;/user&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;Got a DELETE request at /user&apos;</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
-<p>Read more on Mozilla&apos;s:</p>
-<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview" target="_blank">An overview of HTTP</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#HTTP_Messages" target="_blank">HTTP messages</a></li>
-</ul>
-<h1 id="apis">APIs</h1>
-<p>APIs (Application Programming Interfaces) provide a way for applications to
-communicate with each other. We already consumed an API earlier in the day:
-<strong>Github API</strong>. We managed to <em>communicate</em> with Github and get important
-information. We - the client - can use this information in a number of different
-ways. Our client, in this case, is a Web page but it could have easily been a
-Mobile Application, or a TV setbox etc...</p>
-<blockquote>
-<p><strong>Let&apos;s</strong> watch this video about APIs -
-<a href="https://www.youtube.com/watch?v=s7wmiS2mSXY" target="_blank">What is an API</a></p>
-</blockquote>
-<h2 id="rest-api">REST API</h2>
-<p><a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> (REpresentational State Transfer) and RESTful APIs provide a convention and architecture for building APIs that is simple and scalable.</p>
-<p>There are many constraints and aspects to building a REST API, but one
-fundamental constraint is the use of a URL (Uniform Resource Locator) and HTTP
-Methods (GET, POST, PUT, DELETE etc..)</p>
-<p>In our <em>endpoint</em> that we just created <code>/api/get-posts</code>, the <em>get</em> part of the
-URL is redundant as the HTTP Method <code>GET</code> already tells that we are <em>GETting</em> a
-<em>Resource</em>. The Resource in this case is called <strong>posts</strong>.</p>
-<blockquote>
-<p><strong>Watch</strong>: <a href="https://www.youtube.com/watch?v=7YcW25PHnAA" target="_blank">What is a REST API</a>
-(up to 3 minutes)</p>
-<p>Analyze the <a href="https://developer.typeform.com/create/reference/create-form/" target="_blank">TypeForm REST API</a></p>
-</blockquote>
-<p>REST is a big topic that we will revisit again. The table below from Wikipedia
-shows how a typical RESTful API would look like.</p>
-<p><img src="../assets/REST.png" alt="">
-<a href="https://en.wikipedia.org/wiki/Representational_state_transfer#Uniform_interface" target="_blank">Wikipedia</a></p>
-<p>For now, remember when building APIs, to use <strong>Resource</strong> names to identify your
-endpoints and make use of the <strong>HTTP methods (Verbs)</strong> to describe operations
-performed on those resources.</p>
-<h1 id="cors">CORS</h1>
-<p>Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served. More info in <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">Wiki</a></p>
-<p>Certain &quot;cross-domain&quot; requests, are forbidden by default by the same-origin security policy. CORS defines a way in which a browser and server can interact to determine whether it is safe to allow the cross-origin request.</p>
-<p>Express has a package to manage CORS, available through npm. </p>
-<p>Find in this <a href="https://expressjs.com/en/resources/middleware/cors.html" target="_blank">link</a> information to install and use it in your server.</p>
-<h1 id="postman-api-client">Postman API Client</h1>
-<p>Postman is a platform for API development. We can use the API Client to check and test our API, simplifying each step of building.</p>
-<p><a href="https://www.postman.com/product/api-client/" target="_blank">https://www.postman.com/product/api-client/</a></p>
-<p>Add postman as a Chrome extension.</p>
-<p>When we use the methods POST and PUT, how do we read them from the server?</p>
-<h1 id="read-post-and-put">Read POST and PUT</h1>
-<p>The contents of POST and PUT are hidden in the req object. You need to use express-formidable to be able to read them.
-Go to your terminal and install express-formidable:</p>
-<pre class="language-"><code class="lang-js">$ npm install express<span class="token operator">-</span>formidable <span class="token operator">--</span>save
-</code></pre>
-<p>Next, you need to require the express-formidable library so you can use it in your code.</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> formidable <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;express-formidable&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>After the server requires, add the instruction to use the module:</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">formidable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>Then, check in your server how are you able to read what the client sent:</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">&apos;/&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>fields<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;Got a POST request&apos;</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
-<h1 id="nodemon">Nodemon</h1>
-<p>It is a bit annoying that we have to kill and restart our server every time we want to test our changes. There is a handy npm package that can help us with that task.</p>
-<pre class="language-"><code class="lang-js">$ npm install <span class="token operator">--</span>save<span class="token operator">-</span>dev nodemon
-</code></pre>
-<p>Make sure the package is added to your package.json, add this line to the script:</p>
-<pre class="language-"><code class="lang-js">scripts<span class="token operator">:</span> <span class="token punctuation">{</span>
-  start<span class="token operator">:</span> <span class="token string">&quot;node server.js&quot;</span><span class="token punctuation">,</span>
-  dev<span class="token operator">:</span> <span class="token string">&apos;nodemon server.js&apos;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>now from your terminal, use the command npm run dev and that will run the server with nodemon which is a package that makes the server listen to code changes and automatically restart.</p>
-<h1 id="exercise-crud">Exercise: CRUD</h1>
-<p>So what will we build? we will build a CRUD API. CRUD stands for Create, Retrieve, Update, Delete. If you think about it, this is what most applications do:</p>
+<h2 id="crud-continued">CRUD Continued</h2>
+<p>So what will we build? we will build a <strong>CRUD</strong> API. CRUD stands for Create, Retrieve, Update, Delete. If you think about it, this is what most applications do:</p>
 <ul>
 <li>Create some &quot;resources&quot;</li>
 <li>Retrieve them (GET them)</li>
 <li>Update them</li>
 <li>Delete them</li>
 </ul>
-<p>Taking the exercise from the last week:</p>
+<p>Below are three in-class exercises which can be used to demonstrate parts of the API workshop below.</p>
+<h3 id="1-get-exercise">(1) Get Exercise</h3>
+<p>This is an Teacher led exercise which can be used to show how we might retrieve an element by ID using a GET request.</p>
+<h4 id="objective">Objective</h4>
+<p>Change a quote API server to allow GETting a quote according to the given ID.</p>
+<p>The id should be given in the URL structure like this:</p>
+<blockquote>
+<p>/quotes/2</p>
+</blockquote>
+<p>You should use the starting project: <a href="https://glitch.com/~cyf-quotes-id-start" target="_blank">cyf-quotes-id-start</a>. This is because this project has quotes with IDs.</p>
+<p>When you remix the starting project, immediately rename it as your own.</p>
+<h3 id="2-post-exercise">(2) Post Exercise</h3>
+<p>This is an Teacher led exercise which can be used to show how we might add an element to an array</p>
+<h4 id="objective">Objective</h4>
+<p>Change a quote API server to allow POSTs of new quotes.</p>
+<p>The new quotes should be added to your quotes list, which is just an array in memory.</p>
+<p>You can assume the POSTed quotes are all in the correct JSON format.</p>
+<p>The route should use the HTTP method POST and should use the URL:</p>
+<blockquote>
+<p>/quotes</p>
+</blockquote>
+<p>You should use the starting project: <a href="https://glitch.com/~cyf-quotes-post-start" target="_blank">cyf-quotes-post-start</a>, NOT your own existing quote server. This is because our project has an HTML form for creating new quotes.</p>
+<p>When you remix our starting project, immediately rename it.</p>
+<p>Then you can visit / and submit the form there, when you are ready to try to submit new quotes!</p>
+<h3 id="3-delete-exercise">(3) Delete Exercise</h3>
+<p>This is an Teacher led exercise which can be used to show how we might remove an element to an array</p>
+<h4 id="objective">Objective</h4>
+<p>Change a quote API server to allow updating a quote according to the given ID.</p>
+<p>The id should be given in the URL structure like this:</p>
+<p>/quotes/2</p>
+<p>You should use the <code>delete</code> HTTP method</p>
+<p>You should use this starting project: <a href="https://glitch.com/~cyf-quotes-id-start" target="_blank">cyf-quotes-id-start</a>, NOT your own existing quote server. This is because this project has quotes with IDs.</p>
+<p>When you remix the starting project, immediately rename it as your own.</p>
+<h2 id="workshop">Workshop</h2>
+<p>You can use this <a href="https://github.com/nbogie/express-notes/blob/master/express-cheatsheet.md" target="_blank">Express Cheatsheet</a> to help you.</p>
+<p><strong>API</strong> stands for Application Programming Interface.</p>
+<p>Read this description of what an API from <a href="https://www.howtogeek.com/343877/what-is-an-api/" target="_blank">How To Geek</a>.</p>
+<blockquote>
+<p>Think of an API like a menu in a restaurant. The menu provides a list of dishes you can order, along with a description of each dish. When you specify what menu items you want, the restaurant&#x2019;s kitchen does the work and provides you with some finished dishes. You don&#x2019;t know exactly how the restaurant prepares that food, and you don&#x2019;t really need to.
+Similarly, an API lists a bunch of operations that developers can use, along with a description of what they do. The developer doesn&#x2019;t necessarily need to know how, for example, an operating system builds and presents a &#x201C;Save As&#x201D; dialog box. They just need to know that it&#x2019;s available for use in their app.</p>
+</blockquote>
+<p>An API does not have to be web-based. But in our work, since we are doing web development, we will work only with web based APIs, so you might as well hear the word <strong>Web Service</strong>, and we will communicate with those services using the protocol for Web: <strong>HTTP</strong>.</p>
+<blockquote>
+<p><strong>Checkpoint:</strong> Let us recap what we know about HTTP before continuing.</p>
+</blockquote>
+<h3 id="objective">Objective</h3>
+<p>Our <strong>API</strong> will manage Beyonc&#xE9; albums:</p>
+<ul>
+<li>Create a new album,</li>
+<li>Retrieve a list of albums or a single album,</li>
+<li>Update an existing album&apos;s information</li>
+<li>Delete an album</li>
+</ul>
+<p>We will build these endpoints:</p>
+<p><code>GET /albums</code> should return all the albums
+<code>GET /albums/:albumId</code> should return a single album (that matches the passed albumId)
+<code>POST /albums</code> should save a new album
+<code>PUT /albums/:albumId</code> should update the album (that matches the passed albumId)
+<code>DELETE /albums/:albumId</code> should delete the album (that matches the passed albumId)</p>
+<h3 id="get-albums">GET /Albums</h3>
 <ol>
-<li>Add an endpoint to the API server to allow GETting a vity according to the given ID. The id should be given in the URL structure like this: /citycrud/2</li>
-<li>Add an endpoint to allow POST new cities, the new cities should be added to your cities list, which is just an array in memory. The route should use the HTTP method POST and should use the URL: /citycrud</li>
-<li>Add an endpoint to the API server to allow update (PUT) a city according to the given ID. The id should be given in the URL structure like this:
-/citycrud/2</li>
-<li>Add an endpoint to the API server to allow delete a city according to the given ID. The id should be given in the URL structure like this:
-/citycrud/2</li>
+<li>In <code>server.js</code> Add the endpoint for <code>GET /albums</code>.</li>
 </ol>
-<p>Check all the endpoints using Postman</p>
-<h1 id="workshop">Workshop</h1>
-<p>In the next steps, we will building a <strong>CMS (Content Management System)</strong> - a
-system to write, publish and save blog posts. </p>
-<p>Fork and Clone the <a href="https://github.com/node-girls/express-workshop" target="_blank">Node Girls Repo</a>, follow the instructions in this <a href="https://node-girls.gitbook.io/intro-to-express/" target="_blank">link</a></p>
-<h2 id="resources">Resources</h2>
-<p>More about HTTP:
-<a href="https://code.tutsplus.com/tutorials/http-headers-for-dummies--net-8039" target="_blank">Tutsplus tutorial</a></p>
-<p>Take a look at the following links to learn more about Node.js.</p>
-<ul>
-<li>Read: <a href="https://github.com/maxogden/art-of-node/#the-art-of-node" target="_blank">The art of node</a></li>
-<li>Read: <a href="https://node.cool#resources" target="_blank">Node Resources</a></li>
-</ul>
-<p>More about JSON:</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/JSON" target="_blank">https://en.wikipedia.org/wiki/JSON</a></li>
-<li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse" target="_blank">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify</a></li>
-</ul>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> albumsData <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    albumId<span class="token operator">:</span> <span class="token string">&quot;10&quot;</span><span class="token punctuation">,</span>
+    artistName<span class="token operator">:</span> <span class="token string">&quot;Beyonc&#xE9;&quot;</span><span class="token punctuation">,</span>
+    collectionName<span class="token operator">:</span> <span class="token string">&quot;Lemonade&quot;</span><span class="token punctuation">,</span>
+    artworkUrl100<span class="token operator">:</span>
+      <span class="token string">&quot;http://is1.mzstatic.com/image/thumb/Music20/v4/23/c1/9e/23c19e53-783f-ae47-7212-03cc9998bd84/source/100x100bb.jpg&quot;</span><span class="token punctuation">,</span>
+    releaseDate<span class="token operator">:</span> <span class="token string">&quot;2016-04-25T07:00:00Z&quot;</span><span class="token punctuation">,</span>
+    primaryGenreName<span class="token operator">:</span> <span class="token string">&quot;Pop&quot;</span><span class="token punctuation">,</span>
+    url<span class="token operator">:</span>
+      <span class="token string">&quot;https://www.youtube.com/embed/PeonBmeFR8o?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    albumId<span class="token operator">:</span> <span class="token string">&quot;11&quot;</span><span class="token punctuation">,</span>
+    artistName<span class="token operator">:</span> <span class="token string">&quot;Beyonc&#xE9;&quot;</span><span class="token punctuation">,</span>
+    collectionName<span class="token operator">:</span> <span class="token string">&quot;Dangerously In Love&quot;</span><span class="token punctuation">,</span>
+    artworkUrl100<span class="token operator">:</span>
+      <span class="token string">&quot;http://is1.mzstatic.com/image/thumb/Music/v4/18/93/6d/18936d85-8f6b-7597-87ef-62c4c5211298/source/100x100bb.jpg&quot;</span><span class="token punctuation">,</span>
+    releaseDate<span class="token operator">:</span> <span class="token string">&quot;2003-06-24T07:00:00Z&quot;</span><span class="token punctuation">,</span>
+    primaryGenreName<span class="token operator">:</span> <span class="token string">&quot;Pop&quot;</span><span class="token punctuation">,</span>
+    url<span class="token operator">:</span>
+      <span class="token string">&quot;https://www.youtube.com/embed/ViwtNLUqkMY?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/albums&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>albumsData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ol>
+<li><p>Test the endpoint with Postman. <code>GET /songs</code> should return a JSON reply with the array we specified.</p>
+</li>
+<li><p>Add another item to the array and test that the <code>GET /songs</code> returns three items. (Remember you need to close the server <code>ctrl+c</code> and run it again <code>node server.js</code>)</p>
+</li>
+</ol>
+<h3 id="step-1-get-albumsalbumid">Step 1: GET /albums/:albumId</h3>
+<p><strong>Complete in-class (1) GET Exercise at this point</strong></p>
+<p>Sometimes, we do not want to <em>list</em> all the information in one request, maybe we only want to get the information related to a single album. Imagine if we have a page to display the details of one album, we could call the server and get all albums then filter the one we need <em>client-side</em>, but would it not be more effective to tell the server to just return the one album we are interested in?</p>
+<p>Let us add a new endpoint to return only a single album <code>GET /albums/:albumId</code>. In this case, <em>albumId</em> will tell us what album we can return so the call will be something like <code>GET /albums/10</code> and that will return the album with that has <em>albumId</em> 10 ()</p>
+<p>This endpoint has something different. The endpoint <code>/albums/:albumId</code> has a <em>dynamic</em> part, the <em>albumId</em> will vary depending on what the client send. If we call <code>/albums/12</code> then albumId is 12, if we call <code>/albums/10</code> then we will return the album with albumId 10 and so on.</p>
+<p>How can we achieve that using <code>express</code> - <code>req.params</code> will have the value of</p>
+<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/albums/:albumId&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// req.params.albumId will match the value in the url after /albums/</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>albumId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// now we can use the value for req.params.albumId to find the album requested</span>
+  <span class="token comment">// how do we &quot;find&quot; something in an array</span>
+
+  <span class="token comment">// finish the code yourself - it should end with res.send(album) where album is the single album you found  based on the id</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="step-11---install-nodemon">Step 1.1 - Install nodemon</h3>
+<p>It is a bit annoying that we have to <em>kill</em> and <em>restart</em> our server every time we want to test our changes. There is a handy <strong>npm package</strong> that can help us with that task.</p>
+<p><code>npm install --save-dev nodemon</code></p>
+<p>Make sure the package is added to your <em>package.json</em>, add this line to the script:</p>
+<pre class="language-"><code class="lang-js">scripts<span class="token operator">:</span> <span class="token punctuation">{</span>
+  start<span class="token operator">:</span> <span class="token string">&quot;node server.js&quot;</span><span class="token punctuation">,</span>
+  dev<span class="token operator">:</span> <span class="token string">&apos;nodemon server.js&apos;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>now from your terminal, use the command <code>npm run dev</code> and that will run the <em>server</em> with <code>nodemon</code> which is a package that makes the server listen to code changes and automatically restart.</p>
+<h3 id="step-2-add-a-new-album">Step 2: Add a new album</h3>
+<p><strong>Complete in-class (2) Post Exercise at this point</strong></p>
+<blockquote>
+<p>Our analogy with the Restaurant menu is somewhat incomplete. In a restaurant, we only GET items from the menu. In the world of APIs, we also have the possibility to create items, we can provide <em>ingredients</em> to create a new dish. In this case, we provide some data (a payload) and we use a different verb <strong>POST</strong> (Create) as opposed to GET.</p>
+</blockquote>
+<p><code>POST /albums</code> should save a new album and return <code>200</code> with JSON <code>{ success: true }</code> to the user.</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">// notice .post (not .get)</span>
+app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">&quot;/albums&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;POST /albums route&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Let&apos;s start by testing using Postman. Do a <code>POST</code> request to the endpoint and make sure it prints the console.log message we have added.</p>
+<blockquote>
+<p>In Postman, change the request <code>method</code> to <code>POST</code> instead of <code>GET</code> and test our endpoint. It should log the message to the terminal but the request will hang because we did not end it, i.e. we did not say <code>res.send(something)</code></p>
+</blockquote>
+<p>So what format does the client send the data with? It is up to us, but since we already are familiar with <code>json</code>, let us use it.</p>
+<p>In order for our <em>server-side</em> to receive and use the data sent by the client. We will need to install and use a <strong>middleware</strong>.</p>
+<blockquote>
+<p>Middleware: We will cover middleware in more details in the next class. For now, imagine them piece of code that process a request and pass them to the next middleware until one of them returns a response (with <code>res.send</code> for example)</p>
+</blockquote>
+<p><a href="https://github.com/expressjs/body-parser#examples" target="_blank">Express Body Parser</a> makes it easier for our <em>endpoints</em> to receive and understand different formats of data.</p>
+<p>First install the package: <code>npm install body-parser --save</code></p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> bodyParser <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;body-parser&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>bodyParser<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// before our routes definition</span>
+</code></pre>
+<p>Now we will receive the data as <code>req.body</code>.</p>
+<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">&quot;/albums&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;POST /albums route&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p>Exercise: Use Postman to <code>POST</code> this data to <code>/albums</code> endpoint.</p>
+</blockquote>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;albumId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;13&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;artistName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Beyonc&#xE9;&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;collectionName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;B&apos;Day (Deluxe Edition)&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;artworkUrl100&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://is5.mzstatic.com/image/thumb/Music/v4/6c/fc/6a/6cfc6a13-0633-f96b-9d72-cf56774beb4b/source/100x100bb.jpg&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;releaseDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2007-05-29T07:00:00Z&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;primaryGenreName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Pop&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://www.youtube.com/embed/RQ9BWndKEgs?rel=0&amp;amp;controls=0&amp;amp;showinfo=0&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>Finish the code for the route <code>POST /albums</code> to add the album data to the albums list (how to amend to an array?)</p>
+</blockquote>
+<h3 id="step-3-delete-an-album">Step 3: Delete an album</h3>
+<p><strong>Complete in-class (3) DELETE Exercise at this point</strong></p>
+<p>Lets look back at our original objectives.</p>
+<blockquote>
+<p><code>DELETE /albums/:albumId</code> should delete the album (that matches the passed albumId)</p>
+</blockquote>
+<p>This means that <code>DELETE /albums/2</code> should delete an album with the id <code>2</code> and return <code>200</code> with JSON <code>{ success: true }</code> to the user.</p>
+<p>The code will look like this</p>
+<pre class="language-"><code class="lang-js"><span class="token comment">// notice .delete</span>
+app<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">&quot;/albums/:albumID&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;DELETE /albums route&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Can you work out how to remove an album using this code?</p>
 <h1 id="homework">Homework</h1>
-<p>Complete the CMS Workshop</p>
+<p>Fork and clone the <a href="https://github.com/CodeYourFuture/node-challenge-chat-server" target="_blank">node-challenge-chat-server</a></p>
 
                                 
                                 </section>
@@ -955,7 +1007,7 @@ system to write, publish and save blog posts. </p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"next":{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},"previous":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-13/lesson.md","ref":"node/week-13/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-14/lesson.md","mtime":"2020-10-08T14:55:34.188Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-08T14:56:25.699Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"next":{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"path":"db/week-1/lesson.md","ref":"db/week-1/lesson.md","articles":[]},"previous":{"title":"Week 16 - Node and Express 101","level":"1.8.1","depth":2,"path":"node/week-13/lesson.md","ref":"node/week-13/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/week-14/lesson.md","mtime":"2020-10-31T12:54:35.197Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-31T12:55:28.954Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
