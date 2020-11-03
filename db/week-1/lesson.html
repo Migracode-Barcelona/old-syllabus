@@ -985,33 +985,7 @@ If you think create tables in the command line is a bit confusing to you, this i
 <li>Retrieve all bookings before 2020 for less than 4 nights.</li>
 </ul>
 <h2 id="homework">Homework</h2>
-<ol>
-<li>Create a new database called <code>migracode_classes</code> (hint: use <code>createdb</code> in the terminal)</li>
-<li>Save the next instructions in a file with the name <code>migracode_classes.sql</code>, the idea is to build a script like the one we used in Exercise 5</li>
-<li>Create a new table <code>mentors</code>, for each mentor we want to save their name, how many years they lived in Barcelona, their address and their favourite programming language.</li>
-<li>Insert 5 mentors in the <code>mentors</code> table</li>
-<li>Create a new table <code>students</code>, for each student we want to save their name, address and age.</li>
-<li>Insert 10 students in the <code>students</code> table.</li>
-<li>Verify that the data you created for mentors and students are correctly stored in their respective tables (hint: use a <code>select</code> SQL statement).</li>
-<li><p>Create a new <code>classes</code> table to record the following information:</p>
-<ul>
-<li>A class has a leading mentor</li>
-<li>A class has a topic (such as Javascript, NodeJS)</li>
-<li>A class is taught at a specific date and at a specific location</li>
-</ul>
-</li>
-<li><p>Insert a few classes in the <code>classes</code> table</p>
-</li>
-<li>We now want to store who among the students attends a specific class. How would you store that? Come up with a solution and insert some data if you model this as a new table.</li>
-<li>Answer the following questions using a <code>select</code> SQL statement:<ul>
-<li>Retrieve all the mentors who lived more than 5 years in Barcelona</li>
-<li>Retrieve all the mentors whose favourite language is Javascript</li>
-<li>Retrieve all the students under 25 years old</li>
-<li>Retrieve all the classes taught before June this year</li>
-<li>Retrieve all the students (retrieving student ids only is fine) who attended the Javascript class (or any other class that you have in the <code>classes</code> table).</li>
-</ul>
-</li>
-</ol>
+<p>Follow the steps in <strong>Week 1</strong> of the <a href="https://github.com/CodeYourFuture/Databases-Homework" target="_blank">Database Homework repository</a>.</p>
 
                                 
                                 </section>
@@ -1055,7 +1029,7 @@ If you think create tables in the command line is a bit confusing to you, this i
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"next":{"title":"Week 19 - More SQL and integration with NodeJS","level":"1.8.4","depth":2,"path":"db/week-2/lesson.md","ref":"db/week-2/lesson.md","articles":[]},"previous":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"db/week-1/lesson.md","mtime":"2020-10-31T12:54:35.129Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-31T12:55:28.954Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 18 - Introduction to SQL","level":"1.8.3","depth":2,"next":{"title":"Week 19 - More SQL and integration with NodeJS","level":"1.8.4","depth":2,"path":"db/week-2/lesson.md","ref":"db/week-2/lesson.md","articles":[]},"previous":{"title":"Week 17 - More APIs in Node","level":"1.8.2","depth":2,"path":"node/week-14/lesson.md","ref":"node/week-14/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"db/week-1/lesson.md","mtime":"2020-11-03T20:32:34.313Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-03T20:33:45.443Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
