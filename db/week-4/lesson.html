@@ -767,13 +767,10 @@
 <h2 id="contents">Contents</h2>
 <ul>
 <li><a href="#node-recap">Node Recap</a></li>
-<li><a href="#best-practices">Best Practices</a></li>
-<li><a href="#node-process-managers">Node Process Managers</a></li>
-<li><a href="#rest">REST</a></li>
-<li><a href="#security">Security</a></li>
 <li><a href="#authentication">Authentication</a></li>
-<li><a href="#Deploying-to-Heroku">Deploying to Heroku</a></li>
-<li><a href="#hotel-workshop">Hotel Workshop</a></li>
+<li><a href="#security">Security</a></li>
+<li><a href="#best-practices">Best Practices</a></li>
+<li><a href="#login-workshop">Login Workshop</a></li>
 </ul>
 <hr>
 <h2 id="node-recap">Node Recap</h2>
@@ -792,44 +789,43 @@
 <li>Video: <a href="https://www.youtube.com/watch?v=vKlybue_yMQ" target="_blank">body-parser</a> which makes it easier to work with POST requests and forms.</li>
 </ul>
 </blockquote>
-<h3 id="routing">Routing</h3>
+<h2 id="authentication">Authentication</h2>
 <p>Routing refers to how an application&#x2019;s endpoints (URIs) respond to the client requests. These are configured differently for each framework, and can range from basic configuration to very extensive for more complex use cases.</p>
 <p>Simple example</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>More complicated example using <code>Passport.js</code> middleware for authentication</p>
-<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">ensureAuthenticated</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span><span class="token function">isAuthenticated</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">else</span> res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">&quot;/login&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/account&quot;</span><span class="token punctuation">,</span> ensureAuthenticated<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;welcome user!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>Sometimes you need to add user functionality for your website. Example using <code>express-session</code> for authentication</p>
+<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&apos;/&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>request<span class="token punctuation">.</span>session<span class="token punctuation">.</span>loggedin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        response<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;Welcome back, &apos;</span> <span class="token operator">+</span> request<span class="token punctuation">.</span>session<span class="token punctuation">.</span>username <span class="token operator">+</span> <span class="token string">&apos;!&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        response<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;Please login to view this page!&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    response<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
+<p>To understand express-session, we need to know first, what is a session and a cookie?</p>
+<ul>
+<li>Session: is a single interval of time in which the user is authenticated.</li>
+<li>Cookie: are used to collect identifying information about the user, such as Web surfing behavior or user preferences for a specific Web site, also are used to store user sessions. Depending on the management, Cookies are stored during a specified period of time, in the browser or in the hard drive</li>
+</ul>
 <blockquote>
 <ul>
-<li>Express Documentation: <a href="https://expressjs.com/en/guide/routing.html" target="_blank">Routing</a></li>
+<li>Read the <a href="https://www.sohamkamani.com/blog/2017/01/08/web-security-session-cookies/" target="_blank">Basics on Authentication</a> to understand better the process.</li>
 </ul>
 </blockquote>
-<h2 id="best-practices">Best Practices</h2>
-<p>Express have their own recommended <a href="https://expressjs.com/en/advanced/best-practice-performance.html" target="_blank">best practices page</a></p>
-<h2 id="node-process-managers">Node Process Managers</h2>
-<p>These process managers monitor for any changes in your node.js application and automatically restart the server, perfect for development and production.</p>
+<p><strong>Exercise:</strong> Create a server using express-session by following the next <a href="https://www.geeksforgeeks.org/session-management-using-express-session-module-in-node-js/" target="_blank">steps</a></p>
 <blockquote>
-<p>Popular PMs include:</p>
 <ul>
-<li><a href="http://nodemon.io/" target="_blank">nodemon</a></li>
-<li><a href="https://expressjs.com/en/advanced/pm.html#pm2" target="_blank">pm2</a></li>
+<li>Example: <a href="https://medium.com/javascript-in-plain-english/storing-user-sessions-on-the-server-with-express-session-422fe11bc500" target="_blank">express-session-example</a></li>
+<li>Documentation: <a href="http://expressjs.com/en/resources/middleware/session.html" target="_blank">express-session</a></li>
 </ul>
-</blockquote>
-<h2 id="rest">REST</h2>
-<p>REST is a convention of how to design your API, whether it is for your own frontend, or other frontends and clients.</p>
-<blockquote>
+<p>For more information of other and more complex authentication methods read:</p>
 <ul>
-<li>Read: Resource naming in <a href="http://www.restapitutorial.com/lessons/restfulresourcenaming.html" target="_blank">REST</a> convention</li>
+<li><a href="https://tools.ietf.org/html/rfc6750" target="_blank">OAuth 2.0 Authorization Framework: Bearer Token Usage</a></li>
+<li><a href="https://medium.com/@weinberger.ariel/json-web-token-jwt-the-only-explanation-youll-ever-need-cf53f0822f50" target="_blank">Json Web Tokens</a></li>
 </ul>
 </blockquote>
 <h2 id="security">Security</h2>
@@ -843,79 +839,27 @@ app<span class="token punctuation">.</span><span class="token function">get</spa
 <li>Read: <a href="https://devcenter.heroku.com/articles/ssl" target="_blank">Heroku SSL</a></li>
 </ul>
 </blockquote>
-<h2 id="authentication">Authentication</h2>
-<p>Sometimes you need to add user functionality for your website. To do this you can make use of external libraries like <a href="www.passportjs.org">passport</a> to add authentication to your website.</p>
+<h2 id="best-practices">Best Practices</h2>
+<p>Express have their own recommended <a href="https://expressjs.com/en/advanced/best-practice-performance.html" target="_blank">best practices page</a></p>
+<h3 id="rest">REST</h3>
+<p>REST is a convention of how to design your API, whether it is for your own frontend, or other frontends and clients.</p>
 <blockquote>
-<p>For more information read:</p>
 <ul>
-<li><a href="https://tools.ietf.org/html/rfc6750" target="_blank">OAuth 2.0 Authorization Framework: Bearer Token Usage</a></li>
-<li><a href="https://github.com/jaredhanson/passport-http-bearer" target="_blank">Bearer Strategy</a></li>
+<li>Read: Resource naming in <a href="http://www.restapitutorial.com/lessons/restfulresourcenaming.html" target="_blank">REST</a> convention</li>
 </ul>
 </blockquote>
-<h1 id="deploying-to-heroku">Deploying to Heroku</h1>
-<p>Heroku is a cloud platform as a service (PaaS) that lets companies build,
-deliver, monitor, and scale apps. Developers use Heroku to deploy, manage, and
-scale modern apps. Heroku is fully managed, giving developers the freedom to
-focus on their core product without the distraction of maintaining servers,
-hardware, or infrastructure.</p>
-<ol>
-<li><a href="https://signup.heroku.com/" target="_blank">Signup for an account</a> on Heroku<ul>
-<li>It will send a verification to your email so make sure you&apos;ve entered a
-valid email</li>
+<h2 id="login-workshop">Login Workshop</h2>
+<p>Get in to groups of 3/4 and checkout the <a href="https://github.com/Migracode-Barcelona/migracode-users-session" target="_blank">login workshop</a>.</p>
+<h2 id="homework">Homework</h2>
+<ul>
+<li>Finish the Part1 of the Login Workshop.</li>
+<li>Start the Part2 of the Login Workshop.</li>
 </ul>
-</li>
-<li>Download the <a href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install" target="_blank">Heroku CLI</a></li>
-<li>We need to do a small tweak to our app to be ready to be deployed on Heroku.</li>
-</ol>
-<p>On server.js, add the <code>process.env.PORT</code> bit of code</p>
-<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PORT</span> <span class="token operator">||</span> <span class="token number">3000</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Server is listening on port 3000. Ready to accept requests!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>This tells our server to look for an <strong>environment variable</strong> called <code>PORT</code> and
-use it to run the server, otherwise use Port 3000. When the server runs on
-heroku, then Heroku sets the <code>PORT</code> to the correct value.</p>
-<p><code>git add</code> and <code>commit</code> your change.</p>
-<ol>
-<li>Now open the command line in the folder where you have your
-<strong>express-workshop</strong> repo running. If you run the command <code>git remote -v</code>,
-you should see one remote <strong>origin</strong> pointing to your repo.</li>
-</ol>
-<p>Run these commands:</p>
-<p><code>heroku login</code></p>
-<blockquote>
-<p>This will ask you for your heroku email and password that you used to
-register.</p>
-</blockquote>
-<p>Once you&apos;re logged in:</p>
-<p><code>heroku create</code></p>
-<blockquote>
-<p>The heroku create command creates a new application on Heroku &#x2013; along with a
-git remote that must be used to receive your application source.</p>
-</blockquote>
-<p>If you check <code>git remote -v</code>, you should see a second remote called <strong>heroku</strong>.</p>
-<p>Now push your code to heroku <code>git push heroku master</code>. The push will run few
-commands from Heroku, then you should see a url similar to
-<code>https://some-random-name-XXXX.herokuapp.com</code> - go to the URL and if all goes
-well, your app should be up and running.</p>
-<p>To read more about Heroku and deploying Node Apps to Heroku, check:</p>
-<ol>
-<li><a href="https://devcenter.heroku.com/articles/git" target="_blank">Deploying with Git</a></li>
-<li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up" target="_blank">Getting Started on Heroku with Node.js</a></li>
-</ol>
-<h2 id="hotel-workshop">Hotel Workshop</h2>
-<p>Get in to groups of 3/4 and checkout the <a href="workshop.html">workshop brief</a>.</p>
-<blockquote>
-<p><strong>Exercise</strong>: Please fork and clone <a href="https://github.com/CodeYourFuture/cyf-hotel" target="_blank">CYF-Hotel</a> repository and follow the exercises in the <code>README.MD</code>.</p>
-</blockquote>
-<h1 id="escalation-policy">Escalation policy</h1>
-<p>When you get stuck during the homework you should follow the
-following:</p>
-<ol>
-<li>First, search for answers on Google and Stack Overflow. If you have an error message, copy and paste it into Google.</li>
-<li>When you are stuck for longer than 20 minutes - no longer! - write a question to your fellow students in your class channel on slack. Take a while to think carefully about the question. This is an important skill. There is a great guide to writing good questions <a href="http://stackoverflow.com/help/how-to-ask" target="_blank">here</a></li>
-<li>If you cannot get an answer from your fellow students, post your question in your class public channel, @ the mentor for the class that covered the topic and we will reply as soon as we can.</li>
-</ol>
+<p>If this Workshop was too easy for you, here you have 2 more Workshops to practice:</p>
+<ul>
+<li>Do a login system using <a href="https://github.com/Migracode-Barcelona/migracode-users-jwt" target="_blank">Json Web Tokens (JWT)</a></li>
+<li>Fork and clone <a href="https://github.com/CodeYourFuture/cyf-hotel" target="_blank">CYF-Hotel</a> repository and follow the exercises</li>
+</ul>
 
                                 
                                 </section>
@@ -959,7 +903,7 @@ following:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 21 - NodeJS Workshop","level":"1.8.6","depth":2,"next":{"title":"Useful links","level":"2.1","depth":1,"path":"others/useful-links.md","ref":"others/useful-links.md","articles":[]},"previous":{"title":"Week 20 - SQL with NodeJS","level":"1.8.5","depth":2,"path":"db/week-3/lesson.md","ref":"db/week-3/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"db/week-4/lesson.md","mtime":"2020-11-03T20:32:34.313Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-03T20:33:45.443Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 21 - NodeJS Workshop","level":"1.8.6","depth":2,"next":{"title":"Useful links","level":"2.1","depth":1,"path":"others/useful-links.md","ref":"others/useful-links.md","articles":[]},"previous":{"title":"Week 20 - SQL with NodeJS","level":"1.8.5","depth":2,"path":"db/week-3/lesson.md","ref":"db/week-3/lesson.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"db/week-4/lesson.md","mtime":"2021-01-05T11:23:29.808Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-05T11:24:23.117Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
