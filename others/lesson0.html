@@ -824,15 +824,14 @@ Ubuntu is based on a maintained distribution by a community called Debian. Debia
 </ul>
 <h2 id="the-command-line">The Command Line</h2>
 <p>The <strong>Command Line</strong>, also knows as <strong>Bash</strong>, <strong>Terminal</strong> or <strong>Shell</strong> (<strong>L&#xED;nea de Comandos</strong> &#xF3; <strong>S&#xED;mbolo de sistema</strong> in Spanish) is a way of controlling a computer based on a text interface. </p>
-<div style="text-align: center;">
-  <img src="assets/lesson-0/ubuntu-bash.png" width="400" alt="Ubuntu Bash">
-</div>
-
-<p>It will help you to interact with you computer faster, by helping you to:</p>
+<p><img src="assets/lesson-0/ubuntu-bash.png" alt="Ubuntu Bash"></p>
+<p>Ok, but why I should use it?</p>
 <ul>
-<li>Create and delete files.</li>
-<li>Install web development tools.</li>
-<li>Start a server.</li>
+<li>Once you know the basics, will help you to interact with you computer faster</li>
+<li>Some software for developers shold be used from a terminal</li>
+<li>You have more control to the software</li>
+<li>It allow to create scripts (list of commands) and automate manual tasks</li>
+<li>In movies they use it to be like a hacker</li>
 </ul>
 <h3 id="how-do-i-use-it-on-my-computer">How do I use it on my computer?</h3>
 <p>So now that you know what the terminal can do for you, how do you use it? Please
@@ -842,11 +841,8 @@ find instructions for your operating system below. </p>
 <li>Linux: You can open Terminal by directly pressing [ctrl+alt+T] or you can search it up by clicking the &#x201C;Dash&#x201D; icon, typing in &#x201C;terminal&#x201D; in the search box, and opening the Terminal application. Again, this should open up an app with a black background. When you see your username followed by a dollar sign, you&#x2019;re ready to start using the command line.</li>
 <li>Windows: Windows has its own <strong>Command Prompt</strong>, it is very similar to the Unix command line, but some commands are not exactly the same, find the main differences in this <a href="https://enexdi.sciencesconf.org/data/pages/windows_vs_mac_commands_1.pdf" target="_blank">link</a>. Because of these differences and with theobjective to learn UNIX commands, we can use the <strong>Git Bash</strong>. Go to the Windows &quot;Start&quot; button and search the program <strong>Git Bash</strong>, once you open it you will see a screen like this one:</li>
 </ul>
-<div style="text-align: center;">
-  <img src="assets/lesson-0/gitbash.PNG" width="400" alt="Windows Git Bash">
-</div>
-
-<p><strong>Exercise:</strong> After you have followed the instructions, open a terminal and write <code>ls</code>, then press the <code>Enter</code> key. What do you see?</p>
+<p><img src="assets/lesson-0/gitbash.PNG" alt="Windows Git Bash"></p>
+<p>After you have followed the instructions, open a terminal and write <code>ls</code>, then press the <code>Enter</code> key. What do you see?</p>
 <h3 id="commonly-used-commands">Commonly used commands</h3>
 <p>There&apos;s a set of commands you should become comfortable with during the course to allow you to effectively move around the filesystem and write software on your laptop.</p>
 <ul>
@@ -862,16 +858,10 @@ find instructions for your operating system below. </p>
 <h4 id="command-syntax">Command Syntax</h4>
 <p>Flags are a way to set options and pass in arguments to the commands you run. Commands you run will change their behavior based on what flags are set. You should read the documentation of each command to know what flags are available.
 Think of flags as accessories. You have your basic command like rm that deletes file and if you give him -r it learns to delete folders, if you give him -f it gets powers and can delete no matter what, and if you give him -rf it, well, it can delete folders no matter what.</p>
-<div style="text-align: center;">
-  <img src="assets/lesson-0/command-syntax.PNG" width="400" alt="Command Syntax">
-</div>
-
+<p><img src="assets/lesson-0/command-syntax.PNG" alt="Command Syntax"></p>
 <h4 id="getting-help">Getting Help</h4>
 <p>When you&apos;re stuck and need help with a Linux command, help is usually only a few keystrokes away! Help on most Linux commands is typically built right into the commands themselves, available through online help programs (&#x201C;man pages&#x201D; and &#x201C;info pages&#x201D;), and of course online.</p>
-<div style="text-align: center;">
-  <img src="assets/lesson-0/help.PNG" width="400" alt="">
-</div>
-
+<p><img src="assets/lesson-0/help.PNG" alt="Help"></p>
 <h3 id="more-commands">More commands</h3>
 <h4 id="commands-for-navigating-the-filesystem">Commands for Navigating the filesystem</h4>
 <p>The first thing you usually want to do when learning about the Linux filesystem is take some time to look around and see what&apos;s there! These next few commands will: </p>
@@ -880,38 +870,71 @@ Think of flags as accessories. You have your basic command like rm that deletes 
 <li>b) take you somewhere else, and </li>
 <li>c) show you what&apos;s there. The following table describes the basic operation of the pwd, cd, and ls commands, and compares them to certain DOS commands that you might already be familiar with.</li>
 </ul>
-<div style="text-align: center;">
-  <img src="assets/lesson-0/commands1.PNG" width="400" alt="">
-</div>
-<div style="text-align: center;">
-  <img src="assets/lesson-0/commands2.PNG" width="400" alt="">
-</div>
-
+<p><img src="assets/lesson-0/commands1.PNG" alt="Commands1"></p>
+<p><img src="assets/lesson-0/commands2.PNG" alt="Commands2"></p>
 <h4 id="working-with-files-and-directories">Working With Files and Directories</h4>
 <p>These commands can be used to: find out information about files, display files, and manipulate them in other ways (copy, move, delete).</p>
-<div style="text-align: center;">
-  <img src="assets/lesson-0/commands3.PNG" width="400" alt="">
-</div>
-
+<p><img src="assets/lesson-0/commands3.PNG" alt="Commands3"></p>
 <h4 id="finding-things">Finding things</h4>
 <p>The following commands are used to find files. &#x201C;ls&#x201D; is good for finding files if you already know approximately where they are, but sometimes you need more powerful tools such as these:</p>
-<div style="text-align: center;">
-  <img src="assets/lesson-0/commands4.PNG" width="400" alt="">
-</div>
-
+<p><img src="assets/lesson-0/commands4.PNG" alt="Commands4"></p>
 <h4 id="other-utilities">Other Utilities</h4>
 <p>Here are some other commands that are useful to know:</p>
-<div style="text-align: center;">
-  <img src="assets/lesson-0/commands5.PNG" width="400" alt="">
-</div>
-
+<p><img src="assets/lesson-0/commands5.PNG" alt="Commands5"></p>
 <p>Some tips to be a master using commands:</p>
 <ul>
 <li>Autocomplete: when you are writing the name of an existing command or folder, press TAB to automplete</li>
 <li>History: press up-arrow to see the last commands you executed, so you don&apos;t have to write again the most used commands</li>
 </ul>
 <h3 id="exercises">Exercises</h3>
-<p>Open a terminal and create the following structure</p>
+<p><strong>Exercise T-1:</strong> Open a terminal and create the following structure:</p>
+<ul>
+<li>terminal-exercises-1<ul>
+<li>src<ul>
+<li>css</li>
+<li>html</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>To check out we can run ls with R option (ls -R) from folder /terminal-exercises-1   </p>
+<p><strong>Exercise T-2:</strong> add files to the css and html folders, the final structure should be like:</p>
+<ul>
+<li>terminal-exercises-1<ul>
+<li>src<ul>
+<li>css<ul>
+<li>file1.css</li>
+</ul>
+</li>
+<li>html<ul>
+<li>file2.html</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Exercise T-3:</strong> go to the folder /terminal-exercises-1, create a file with the name index.html, once created move it to the folder /html
+The final structure should be like:</p>
+<ul>
+<li>terminal-exercises-1<ul>
+<li>src<ul>
+<li>css<ul>
+<li>file1.css</li>
+</ul>
+</li>
+<li>html<ul>
+<li>file2.html</li>
+<li>index.html</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="videos-and-tutorials">Videos and tutorials</h3>
 <p>Watch, read and practice with these videos and tutorials:</p>
 <ul>
@@ -1154,7 +1177,7 @@ it happens, please ask your mentors or classmates for help in Slack.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"next":{"title":"House Rules","level":"1.2.2","depth":2,"path":"others/house-rules.md","ref":"others/house-rules.md","articles":[]},"previous":{"title":"Before you start","level":"1.2","depth":1,"ref":"","articles":[{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"path":"others/lesson0.md","ref":"others/lesson0.md","articles":[]},{"title":"House Rules","level":"1.2.2","depth":2,"path":"others/house-rules.md","ref":"others/house-rules.md","articles":[]},{"title":"Code of Conduct","level":"1.2.3","depth":2,"path":"CODE_OF_CONDUCT.md","ref":"CODE_OF_CONDUCT.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/lesson0.md","mtime":"2021-01-12T13:29:06.637Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-12T13:29:55.069Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"next":{"title":"House Rules","level":"1.2.2","depth":2,"path":"others/house-rules.md","ref":"others/house-rules.md","articles":[]},"previous":{"title":"Before you start","level":"1.2","depth":1,"ref":"","articles":[{"title":"Week 0 - Introduction and basic setup","level":"1.2.1","depth":2,"path":"others/lesson0.md","ref":"others/lesson0.md","articles":[]},{"title":"House Rules","level":"1.2.2","depth":2,"path":"others/house-rules.md","ref":"others/house-rules.md","articles":[]},{"title":"Code of Conduct","level":"1.2.3","depth":2,"path":"CODE_OF_CONDUCT.md","ref":"CODE_OF_CONDUCT.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"others/lesson0.md","mtime":"2021-01-12T14:27:57.654Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-12T14:28:47.975Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
