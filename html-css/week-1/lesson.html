@@ -780,13 +780,9 @@
 <li><a href="#box-model">Box model: <code>margin</code>/<code>padding</code>/<code>border</code> etc...</a></li>
 </ul>
 <hr>
-<h2 id="learning-objectives">Learning Objectives</h2>
-<p>Learning objectives for this lesson can be found <a href="learning-objectives.md">here</a></p>
-<hr>
-<h2 id="what-makes-a-web-page">What makes a web page?</h2>
-<p><img src="../assets/webpage-parts.png" alt="What makes a web page"></p>
 <h2 id="html-syntax">HTML Syntax</h2>
 <p>You&apos;re already familiar with HTML code from your application process. If you want to refresh your memory, read this <a href="http://marksheet.io/html-syntax.html" target="_blank">quick guide to the HTML syntax</a>.</p>
+<h3 id="exercise-1-minute">Exercise (1 minute)</h3>
 <p>All together, let&apos;s review the basic syntax in the following example:</p>
 <pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Learning HTML<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
@@ -794,14 +790,12 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>http://html5rocks.com<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Read Article<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-<blockquote>
-<p><strong>Question</strong> Which parts are the <strong>Tags</strong> and which parts are the <strong>Attributes</strong>?.</p>
-</blockquote>
+<p>Which parts are the <strong>Tags</strong> and which parts are the <strong>Attributes</strong>.</p>
+<h2 id="html-tags">HTML Tags</h2>
 <p>HTML tags are arranged in a hierarchy. This is sometimes called &quot;nesting&quot; tags or creating an HTML &quot;tree&quot;. Between the opening <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span></code> tag and the closing <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">&gt;</span></span></code> tag there are three other tags. We call these &quot;child&quot; tags, because they have a parent-child relationship.</p>
-<p><img src="../assets/html-hierarchy.png" alt="HTML Hierarchy"></p>
-<blockquote>
-<p><strong>Question</strong> As a group, let&apos;s try to name all of the parent and child tags in the following example.</p>
-</blockquote>
+<p><img src="{require(&apos;!file-loader!../assets/html-hierarchy.png&apos;).default}"></p>
+<h3 id="exercise-5-minutes">Exercise (5 minutes)</h3>
+<p>As a group, let&apos;s try to name all of the parent and child tags in the following example.</p>
 <pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Learning HTML<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
@@ -815,15 +809,15 @@
 <h2 id="example-htmlcss-project">Example HTML/CSS Project</h2>
 <p>In today&apos;s class, we will begin adapting styles on this example website. We&apos;ll review some of the HTML/CSS basics you already encountered during your application process and learn some new techniques. By the end of the third lesson, we will have worked together to improve the example site on the left so that it looks like the screenshot on the right.</p>
 <p><a href="../assets/screenshot-start.png" target="blank">
-  <img src="../assets/screenshot-start.png" style="border: 1px solid #bababa; width: 48%; max-height: 293px">
+ <img src="{require(&apos;!file-loader!../assets/screenshot-start.png&apos;).default}">
 </a>
 <a href="../assets/screenshot-complete.png" target="blank">
-  <img src="../assets/screenshot-complete.png" style="border: 1px solid #bababa; width: 48%;">
+ <img src="{require(&apos;!file-loader!../assets/screenshot-complete.png&apos;).default}">
 </a></p>
-<blockquote>
-<p><strong>Exercise</strong>: Fork the <a href="https://github.com/Migracode-Barcelona/html-css-git-exercises" target="_blank">HTML/CSS exercises</a> repository to your personal account and clone it. Find in the <a href="../../others/git.html#fork-and-clone-an-existing-project-from-github">Migracode GIT Guide</a> the instructions</p>
-<p><strong>Exercise</strong>: Spend a few minutes exploring the <code>.html</code> and <code>.css</code> files for this page. Why don&apos;t we put everything in one file?</p>
-</blockquote>
+<p>The example website you&apos;ll begin working with is available on this Code Your Future GitHub repository -
+<a href="https://github.com/CodeYourFuture/bikes-for-refugees" target="_blank">Bikes for Refugees</a>. Fork the repository to your personal account and then clone the repository</p>
+<h3 id="exercise-5-minutes">Exercise (5 minutes)</h3>
+<p>Spend a few minutes exploring the <code>.html</code> and <code>.css</code> files for this page. Why don&apos;t we put everything in one file?</p>
 <h2 id="semantic-html">Semantic HTML</h2>
 <p>When writing HTML code, you can use different tags to describe the content. Is it a navigation menu, a paragraph of text, or an article? By using the correct tag, you help search engines like Google or screen readers for the visually impaired.</p>
 <blockquote>
@@ -838,15 +832,15 @@
 <li><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span></code></li>
 <li><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>complementary<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span></code></li>
 </ul>
-<blockquote>
-<p><strong>Exercise (pair programming):</strong> Work in pairs to determine where to place these new Tags and Attributes in the index.html file. Who benefits when we write &quot;semantic&quot; HTML?</p>
-</blockquote>
+<h3 id="exercise-10-minutes">Exercise (10 minutes)</h3>
+<p>Determine where to place these new Tags and Attributes in the index.html file. Who benefits when we write &quot;semantic&quot; HTML?</p>
 <h2 id="css-selectors">CSS Selectors</h2>
 <p>During your application process, you became familiar with CSS selectors. We&apos;ll review the basic selectors and then practice combining these to modify our button styles.</p>
 <blockquote>
 <p>If you want to review the selectors, read the <a href="http://learn.shayhowe.com/advanced-html-css/complex-selectors/" target="_blank">Common Selectors section</a> of this page.</p>
-<p><strong>Exercise (pair programming):</strong> Work in pairs to make the blue buttons on the page red (<code>#ce5f31</code>). The white button, which says &quot;Volunteer&quot;, should remain white but the text should change to red.</p>
 </blockquote>
+<h3 id="exercise-10-minutes">Exercise (10 minutes)</h3>
+<p>Make the blue buttons on the page red (<code>#ce5f31</code>). The white button, which says &quot;Volunteer&quot;, should remain white but the text should change to red.</p>
 <h2 id="pseudo-classes">Pseudo Classes</h2>
 <p>You can assign CSS rules to a class like this:</p>
 <pre class="language-"><code class="lang-css"><span class="token selector">.btn</span> <span class="token punctuation">{</span>
@@ -868,47 +862,39 @@
   <span class="token property">background</span><span class="token punctuation">:</span> #ef7f52<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<blockquote>
-<p><strong>Exercise:</strong> Work in pairs and use the pseudo classes to make the background color of the red buttons change when in a &quot;hover&quot; or &quot;focus&quot; state. See if you can make the white &quot;Volunteer&quot; button change to a different background without effecting the red buttons.</p>
-</blockquote>
+<h3 id="exercise-10-minutes">Exercise (10 minutes)</h3>
+<p>Work in pairs and use the pseudo classes to make the background color of the red buttons change when in a &quot;hover&quot; or &quot;focus&quot; state. See if you can make the white &quot;Volunteer&quot; button change to a different background without effecting the red buttons.</p>
 <h2 id="box-model">Box Model</h2>
 <p>In CSS, everything is a box. An image is a box. A link is a box. The area around this box can be modified with properites that we call margins, borders and padding. Here&apos;s a diagram showing what the box looks like.</p>
 <p><img src="https://mdn.mozillademos.org/files/13647/box-model-standard-small.png" alt="Box Model. Source: MDN"></p>
-<blockquote>
-<p><strong>Exercise:</strong> Work in pairs and use the <code>margin</code> and <code>padding</code> rules to spread your navigation links out a bit wider. There should be a small gap between them and enough padding so that the border is not too tight on the text.</p>
-</blockquote>
+<h3 id="exercise-10-minutes">Exercise (10 minutes)</h3>
+<p>Work in pairs and use the <code>margin</code> and <code>padding</code> rules to spread your navigation links out a bit wider. There should be a small gap between them and enough padding so that the border is not too tight on the text.</p>
+<h2 id="borders">Borders</h2>
 <p>You may have noticed that the border you added to the navigation links causes the links to jump around when you move your mouse over them. That&apos;s because the border is adding to the width of the box model, pushing the others to the side.</p>
 <p>You can also set a transparent border, so that it takes up the space without showing a visible border.</p>
 <pre class="language-"><code class="lang-css"><span class="token selector">.navlink</span> <span class="token punctuation">{</span>
   <span class="token property">border</span><span class="token punctuation">:</span> 1px solid transparent<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<blockquote>
-<p><strong>Exercise:</strong> Use a transparent border so that the width of each navigation menu item stays the same even when it is hovered or focused.</p>
-</blockquote>
+<h3 id="exercise-10-minutes">Exercise (10 minutes)</h3>
+<p>Use a transparent border so that the width of each navigation menu item stays the same even when it is hovered or focused.</p>
+<h2 id="css-project-60-minutes">CSS Project (60 minutes+)</h2>
+<p>In this repository you will find a CSS Project for you to complete using what you&apos;ve learnt so far today.</p>
+<p>Work in pairs to complete all the mistakes in the project and fix them.</p>
+<p><a href="https://github.com/CodeYourFuture/HTML-CSS-Challenges/tree/main/zoo-css-challenge" target="_blank">Zoo Project</a></p>
 <h1 id="homework">Homework</h1>
-<h2 id="readings-and-games">Readings and games:</h2>
-<p>Advanced CSS Selectors:</p>
-<ul>
-<li>Read this about <a href="http://learn.shayhowe.com/advanced-html-css/complex-selectors/" target="_blank">CSS Selectors</a></li>
-<li>Play this <a href="https://flukeout.github.io/" target="_blank">game</a> and complete it:</li>
-</ul>
-<p>HTML Reading:</p>
-<ul>
-<li>Read this page on <a href="https://marksheet.io/html-syntax.html" target="_blank">HTML syntax</a></li>
-</ul>
-<h2 id="delivery">Delivery:</h2>
-<ul>
-<li>From the <a href="https://github.com/Migracode-Barcelona/html-css-git-exercises" target="_blank">Exercises Repo</a> complete the exercise in the folder <code>/week1/1-bikes-for-refugees/</code> by following these <a href="https://github.com/Migracode-Barcelona/html-css-git-exercises/tree/master/week1/1-bikes-for-refugees" target="_blank">steps</a></li>
-<li><a href="../../others/git.html#commit-and-push-your-changes-to-github">Push</a> the changes to your repository in Github</li>
-</ul>
-<h1 id="practice-day-saturday">Practice Day (Saturday)</h1>
-<ul>
-<li>Check together the result of Bikes-for-refugees</li>
-<li>From the <a href="https://github.com/Migracode-Barcelona/html-css-git-exercises" target="_blank">Exercises Repo</a> complete the exercise in the folder <code>/week1/2-website/</code> by following the <a href="https://github.com/Migracode-Barcelona/html-css-git-exercises/tree/master/week1/2-website" target="_blank">steps</a></li>
-<li><a href="../../others/git.html#commit-and-push-your-changes-to-github">Push</a>  the changes to your repository in Github</li>
-</ul>
-<h1 id="resources">Resources</h1>
+<h2 id="1-advanced-css-selectors">1) Advanced CSS Selectors</h2>
+<h3 id="11-read-about-css-selectors-1-hour">1.1) Read about CSS Selectors (1 Hour)</h3>
+<p>Read this article about <a href="http://learn.shayhowe.com/advanced-html-css/complex-selectors/" target="_blank">CSS Selectors</a></p>
+<h3 id="12-css-diner-3-hours">1.2) CSS Diner (3 hours)</h3>
+<p>This online game will help you learn Advanced CSS Selectors.</p>
+<p>You should complete every level before moving onto the next part of the homework. <a href="https://flukeout.github.io/" target="_blank">Flukeout Game</a></p>
+<h2 id="2-html-reading-1-hour">2) HTML Reading (1 hour)</h2>
+<p>Read this page on HTML syntax. It gives you a good overview of how HTML works inside a website. <a href="https://marksheet.io/html-syntax.html" target="_blank">HTML Syntax</a></p>
+<h2 id="3-htmlcss-project-5-hours">3) HTML/CSS Project (5 hours)</h2>
+<p>In this repository you will find a project for you to complete <a href="https://github.com/CodeYourFuture/HTML-CSS-Coursework-Week1" target="_blank">HTML-CSS-Coursework-Week1</a></p>
+<p>Before you start, <strong>make sure you fork the repository</strong> to your Github account.</p>
+<h2 id="resources">Resources</h2>
 <ol>
 <li><a href="https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5" target="_blank">HTML5 - semantic elements</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank">CSS Selectors - MDN</a></li>
@@ -961,7 +947,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 1 - Semantic HTML and CSS","level":"1.3.1","depth":2,"next":{"title":"Week 2 - Responsive Web and layout","level":"1.3.2","depth":2,"path":"html-css/week-2/lesson.md","ref":"html-css/week-2/lesson.md","articles":[]},"previous":{"title":"HTML/CSS","level":"1.3","depth":1,"path":"html-css/index.md","ref":"html-css/index.md","articles":[{"title":"Week 1 - Semantic HTML and CSS","level":"1.3.1","depth":2,"path":"html-css/week-1/lesson.md","ref":"html-css/week-1/lesson.md","articles":[]},{"title":"Week 2 - Responsive Web and layout","level":"1.3.2","depth":2,"path":"html-css/week-2/lesson.md","ref":"html-css/week-2/lesson.md","articles":[]},{"title":"Week 3 - Bootstrap","level":"1.3.3","depth":2,"path":"html-css/week-3/lesson.md","ref":"html-css/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"html-css/week-1/lesson.md","mtime":"2021-01-20T18:28:50.377Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-20T18:29:42.538Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 1 - Semantic HTML and CSS","level":"1.3.1","depth":2,"next":{"title":"Week 2 - Responsive Web and layout","level":"1.3.2","depth":2,"path":"html-css/week-2/lesson.md","ref":"html-css/week-2/lesson.md","articles":[]},"previous":{"title":"HTML/CSS","level":"1.3","depth":1,"path":"html-css/index.md","ref":"html-css/index.md","articles":[{"title":"Week 1 - Semantic HTML and CSS","level":"1.3.1","depth":2,"path":"html-css/week-1/lesson.md","ref":"html-css/week-1/lesson.md","articles":[]},{"title":"Week 2 - Responsive Web and layout","level":"1.3.2","depth":2,"path":"html-css/week-2/lesson.md","ref":"html-css/week-2/lesson.md","articles":[]},{"title":"Week 3 - Bootstrap","level":"1.3.3","depth":2,"path":"html-css/week-3/lesson.md","ref":"html-css/week-3/lesson.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["prism","-highlight","todo","scripts"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"scripts":{"files":["./checkboxRemember.js"]},"todo":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"html-css/week-1/lesson.md","mtime":"2021-01-23T15:27:41.655Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-23T15:28:32.275Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

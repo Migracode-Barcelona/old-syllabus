@@ -1,23 +1,23 @@
 # Homework
 
-## Readings and games:
+## 1) Advanced CSS Selectors
 
-Advanced CSS Selectors:
+### 1.1) Read about CSS Selectors (1 Hour)
 
-- Read this about [CSS Selectors](http://learn.shayhowe.com/advanced-html-css/complex-selectors/)
-- Play this [game](https://flukeout.github.io/) and complete it:
+Read this article about [CSS Selectors](http://learn.shayhowe.com/advanced-html-css/complex-selectors/)
 
-HTML Reading:
+### 1.2) CSS Diner (3 hours)
 
-- Read this page on [HTML syntax](https://marksheet.io/html-syntax.html)
+This online game will help you learn Advanced CSS Selectors.
 
-## Delivery:
+You should complete every level before moving onto the next part of the homework. [Flukeout Game](https://flukeout.github.io/)
 
-- From the [Exercises Repo](https://github.com/Migracode-Barcelona/html-css-git-exercises) complete the exercise in the folder `/week1/1-bikes-for-refugees/` by following these [steps](https://github.com/Migracode-Barcelona/html-css-git-exercises/tree/master/week1/1-bikes-for-refugees)
-- [Push](/others/git.html#commit-and-push-your-changes-to-github) the changes to your repository in Github
+## 2) HTML Reading (1 hour)
 
-# Practice Day (Saturday)
+Read this page on HTML syntax. It gives you a good overview of how HTML works inside a website. [HTML Syntax](https://marksheet.io/html-syntax.html)
 
-- Check together the result of Bikes-for-refugees
-- From the [Exercises Repo](https://github.com/Migracode-Barcelona/html-css-git-exercises) complete the exercise in the folder `/week1/2-website/` by following the [steps](https://github.com/Migracode-Barcelona/html-css-git-exercises/tree/master/week1/2-website)
-- [Push](/others/git.html#commit-and-push-your-changes-to-github)  the changes to your repository in Github
+## 3) HTML/CSS Project (5 hours)
+
+In this repository you will find a project for you to complete [HTML-CSS-Coursework-Week1](https://github.com/CodeYourFuture/HTML-CSS-Coursework-Week1)
+
+Before you start, **make sure you fork the repository** to your Github account.
